@@ -18,7 +18,7 @@
 
 #include <stdint.h>
 #include <stm32f4xx.h>
-
+//this is just a test
 
 
 void delay(){
@@ -27,7 +27,6 @@ void delay(){
 
 }
 
-#define BUTTON_PRESSED 0
 int main(void)
 {
 
