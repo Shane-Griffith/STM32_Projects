@@ -1,5 +1,5 @@
 # 1 "../Src/main.c"
-# 1 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Debug//"
+# 1 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Debug//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 201112L
@@ -1076,8 +1076,8 @@ typedef __uint_least64_t uint_least64_t;
 
 #define _GCC_WRAP_STDINT_H 
 # 20 "../Src/main.c" 2
-# 1 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 16 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 1 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 16 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define INC_STM32F4XX_H_ 
 
 
@@ -1090,14 +1090,14 @@ typedef __uint_least64_t uint_least64_t;
 #define SRAM2_BASEADDR 0x2001C000U
 #define ROM 0x1FFF0000U
 #define SRAM SRAM1_BASEADDR
-# 36 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 36 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define PERIPHERAL_BASEADDR 0x40000000U
 #define APB1PERIPHERAL_BASEADDR PERIPHERAL_BASEADDR
 #define APB2PERIPHERAL_BASEADDR 0x40010000U
 #define AHB1PERIPHERAL_BASEADDR 0x40020000U
 #define AHB2PERIPHERAL_BASEADDR 0x50000000U
 #define AHB3PERIPHERAL_BASEADDR 0xA0000000U
-# 50 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 50 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)
 #define GPIOB_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0400)
 #define GPIOC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0800)
@@ -1125,7 +1125,7 @@ typedef __uint_least64_t uint_least64_t;
 #define USART3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4800)
 #define UART4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4c00)
 #define UART5_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5000)
-# 86 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 86 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)
 #define SPI1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3000)
 #define USART1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1000)
@@ -1141,7 +1141,7 @@ typedef __uint_least64_t uint_least64_t;
 
 #define NVIC_ISER_BASEADDR (0xE000E100)
 #define NVIC_ICER_BASEADDR (0XE000E180)
-#define NVIC_ipr_BASEADDR (0xE000E400)
+#define NVIC_IPR_BASEADDR (0xE000E400)
 
 
 
@@ -1169,7 +1169,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 128 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 128 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 typedef struct{
 
  volatile uint32_t MODER;
@@ -1291,7 +1291,7 @@ typedef struct{
 
 typedef struct{
 
- volatile uint32_t NVIC_ipr[23];
+ volatile uint32_t NVIC_IPR[23];
 
 }NVIC_ipr_RegDef_t;
 
@@ -1312,11 +1312,11 @@ typedef struct{
 #define GPIOH_PCLK_EN (RCC->AHB1ENR |= (1 << 7))
 #define GPIOI_PCLK_EN (RCC->AHB1ENR |= (1 << 8))
 #define APB2_PCLK_EN (RCC->APB2ENR |= (1 << 14))
-# 286 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 287 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define I2C1_PCLK_EN (RCC->APB1ENR |= (1 << 21))
 #define I2C2_PCLK_EN (RCC->APB1ENR |= (1 << 22))
 #define I2C3_PCLK_EN (RCC->APB1ENR |= (1 << 23))
-# 297 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 298 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define SPI1_PCLK_EN (RCC->APB2ENR |= (1 << 12))
 #define SPI2_PCLK_EN (RCC->APB1ENR |= (1 << 14))
 #define SPI3_PCLK_EN (RCC->APB1ENR |= (1 << 15))
@@ -1333,7 +1333,7 @@ typedef struct{
 #define USART3_PCLK_EN (RCC->APB1ENR |= (1 << 18))
 #define UART4_PCLK_EN (RCC->APB1ENR |= (1 << 19))
 #define UART5_PCLK_EN (RCC->APB1ENR |= (1 << 20))
-# 321 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 322 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define SYSCFG_PCLK_EN() (RCC->APB2ENR |= (1 << 14))
 
 
@@ -1409,7 +1409,7 @@ typedef struct{
 
 
 #define GPIO_BASEADDR_TO_CODE(x) ((x == GPIOA)? 0 : (x == GPIOB) ? 1 : (x == GPIOC) ? 2 : (x == GPIOD) ? 3 : (x == GPIOE) ? 4 : (x == GPIOF) ? 5 : (x == GPIOG) ? 6 : (x == GPIOH) ? 7 : (x == GPIOI) ? 8 : 0)
-# 412 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 413 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define IRQ_NO_EXTI0 (6)
 #define IRQ_NO_EXTI1 (7)
 #define IRQ_NO_EXTI2 (8)
@@ -1433,12 +1433,12 @@ typedef struct{
 
 
 
-# 1 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
-# 9 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+# 1 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
+# 9 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 #define INC_STM32F407XX_GPIO_DRIVER_H_ 
 
-# 1 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 12 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
+# 1 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 12 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
 
 
 
@@ -1524,7 +1524,7 @@ typedef struct{
 
 
 }GPIO_Handle_t;
-# 106 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+# 106 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
 
@@ -1548,9 +1548,8 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void GPIO_IRQHandler(uint8_t pinNumber);
-# 436 "C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 437 "C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 21 "../Src/main.c" 2
-
 
 
 void delay(){
@@ -1559,7 +1558,6 @@ void delay(){
 
 }
 
-#define BUTTON_PRESSED 0
 int main(void)
 {
 
@@ -1597,10 +1595,7 @@ int main(void)
 
  while(1){
 
- if(GPIO_ReadFromInputPin(configUserButton.pGPIOx, configUserButton.GPIO_PinConfig.GPIO_PinNumber) == 0){
-   delay();
-   GPIO_ToggleOutputPin(configRedLed.pGPIOx, configRedLed.GPIO_PinConfig.GPIO_PinNumber);
- }
+
 
 
  }

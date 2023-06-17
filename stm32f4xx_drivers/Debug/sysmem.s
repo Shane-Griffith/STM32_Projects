@@ -3482,8 +3482,6 @@ _sbrk:
 	.ascii	"ENOTDIR 20\000"
 .LASF221:
 	.ascii	"__FLT64_HAS_INFINITY__ 1\000"
-.LASF503:
-	.ascii	"_READ_WRITE_BUFSIZE_TYPE int\000"
 .LASF899:
 	.ascii	"../Src/sysmem.c\000"
 .LASF644:
@@ -3511,6 +3509,8 @@ _sbrk:
 	.ascii	"__TQ_IBIT__ 0\000"
 .LASF214:
 	.ascii	"__FLT64_DECIMAL_DIG__ 17\000"
+.LASF186:
+	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
 .LASF621:
 	.ascii	"_REENT_SIGNAL_SIZE 24\000"
 .LASF665:
@@ -4000,6 +4000,8 @@ _sbrk:
 	.ascii	"__USFRACT_IBIT__ 0\000"
 .LASF111:
 	.ascii	"__INT32_C(c) c ## L\000"
+.LASF688:
+	.ascii	"EXDEV 18\000"
 .LASF663:
 	.ascii	"_REENT_SIGNAL_BUF(ptr) ((ptr)->_signal_buf)\000"
 .LASF245:
@@ -4627,9 +4629,8 @@ _sbrk:
 	.ascii	"EWOULDBLOCK EAGAIN\000"
 .LASF80:
 	.ascii	"__SHRT_WIDTH__ 16\000"
-.LASF900:
-	.ascii	"C:/Users/shane/STM32CubeIDE/workspace_1.8.0/stm32f4"
-	.ascii	"xx_drivers/Debug\000"
+.LASF503:
+	.ascii	"_READ_WRITE_BUFSIZE_TYPE int\000"
 .LASF747:
 	.ascii	"ETOOMANYREFS 129\000"
 .LASF815:
@@ -4650,8 +4651,6 @@ _sbrk:
 	.ascii	"__FLT_HAS_QUIET_NAN__ 1\000"
 .LASF487:
 	.ascii	"__ATFILE_VISIBLE 1\000"
-.LASF259:
-	.ascii	"__LFRACT_IBIT__ 0\000"
 .LASF262:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
 .LASF892:
@@ -4734,8 +4733,8 @@ _sbrk:
 	.ascii	"__ARM_32BIT_STATE 1\000"
 .LASF105:
 	.ascii	"__INT8_C(c) c\000"
-.LASF688:
-	.ascii	"EXDEV 18\000"
+.LASF259:
+	.ascii	"__LFRACT_IBIT__ 0\000"
 .LASF514:
 	.ascii	"_STDDEF_H_ \000"
 .LASF163:
@@ -5001,8 +5000,9 @@ _sbrk:
 	.ascii	"__INT64_C(c) c ## LL\000"
 .LASF462:
 	.ascii	"HAVE_INITFINI_ARRAY 1\000"
-.LASF186:
-	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
+.LASF900:
+	.ascii	"C:/Users/shane/OneDrive/Documents/Repo/stm32f4xx_dr"
+	.ascii	"ivers/Debug\000"
 .LASF434:
 	.ascii	"__ARM_FEATURE_CDE\000"
 .LASF289:

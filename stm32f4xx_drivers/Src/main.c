@@ -18,7 +18,6 @@
 
 #include <stdint.h>
 #include <stm32f4xx.h>
-//this is just a test for rebasing
 
 
 void delay(){
@@ -64,10 +63,7 @@ int main(void)
 
 	while(1){
 
-	if(GPIO_ReadFromInputPin(configUserButton.pGPIOx, configUserButton.GPIO_PinConfig.GPIO_PinNumber) == BUTTON_PRESSED){
-			delay();
-			GPIO_ToggleOutputPin(configRedLed.pGPIOx, configRedLed.GPIO_PinConfig.GPIO_PinNumber);
-	}
+
 
 
 	}
@@ -77,3 +73,9 @@ int main(void)
 
 
 }
+
+void EXTI0_IRQHandler(){
+	GPIO_IRQHandler(GPIO_PIN_0);
+}
+
+

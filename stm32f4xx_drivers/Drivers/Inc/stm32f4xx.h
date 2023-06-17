@@ -246,7 +246,7 @@ typedef struct{
 
 typedef struct{
 
-	__vo uint32_t NVIC_ipr[23];
+	__vo uint32_t NVIC_IPR[23];
 
 }NVIC_ipr_RegDef_t;
 

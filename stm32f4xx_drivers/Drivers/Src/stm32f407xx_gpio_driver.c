@@ -33,46 +33,45 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 {
 
 if(EnorDi == ENABLE){
-
 	if(pGPIOx == GPIOA){
 		GPIOA_PCLK_EN;
-	}else if(pGPIOx == GPIOB){
-			GPIOB_PCLK_EN;
-	}else if(pGPIOx == GPIOC){
-			GPIOC_PCLK_EN;
-	}else if(pGPIOx == GPIOD){
-			GPIOD_PCLK_EN;
-	}else if(pGPIOx == GPIOE){
-			GPIOE_PCLK_EN;
-	}else if(pGPIOx == GPIOF){
-			GPIOF_PCLK_EN;
-	}else if(pGPIOx == GPIOG){
-			GPIOG_PCLK_EN;
-	}else if(pGPIOx == GPIOH){
-			GPIOH_PCLK_EN;
-	}
-
-}else{
+	}if(pGPIOx == GPIOB){
+		GPIOB_PCLK_EN;
+	}if(pGPIOx == GPIOC){
+		GPIOC_PCLK_EN;
+	}if(pGPIOx == GPIOD){
+		GPIOD_PCLK_EN;
+	}if(pGPIOx == GPIOE){
+		GPIOE_PCLK_EN;
+	}if(pGPIOx == GPIOF){
+		GPIOF_PCLK_EN;
+	}if(pGPIOx == GPIOG){
+		GPIOG_PCLK_EN;
+	}if(pGPIOx == GPIOH){
+		GPIOH_PCLK_EN;
+	}if(pGPIOx == GPIOI){
+		GPIOI_PCLK_EN;
+	}else{
 		if(pGPIOx == GPIOA){
-			GPIOA_PCLK_DI;
-		}else if(pGPIOx == GPIOB){
-			GPIOB_PCLK_DI;
-		}else if(pGPIOx == GPIOC){
-			GPIOC_PCLK_DI;
-		}else if(pGPIOx == GPIOD){
-			GPIOD_PCLK_DI;
-		}else if(pGPIOx == GPIOE){
-			GPIOE_PCLK_DI;
-		}else if(pGPIOx == GPIOF){
-			GPIOF_PCLK_DI;
-		}else if(pGPIOx == GPIOG){
-			GPIOG_PCLK_DI;
-		}else if(pGPIOx == GPIOH){
-			GPIOH_PCLK_DI;
-		}else if(pGPIOx == GPIOI){
-			GPIOI_PCLK_DI;
-		}
-
+				GPIOA_PCLK_DI;
+			}if(pGPIOx == GPIOB){
+				GPIOB_PCLK_DI;
+			}if(pGPIOx == GPIOC){
+				GPIOC_PCLK_DI;
+			}if(pGPIOx == GPIOD){
+				GPIOD_PCLK_DI;
+			}if(pGPIOx == GPIOE){
+				GPIOE_PCLK_DI;
+			}if(pGPIOx == GPIOF){
+				GPIOF_PCLK_DI;
+			}if(pGPIOx == GPIOG){
+				GPIOG_PCLK_DI;
+			}if(pGPIOx == GPIOH){
+				GPIOH_PCLK_DI;
+			}if(pGPIOx == GPIOI){
+				GPIOI_PCLK_DI;
+			}
+	}
 }
 
 }
@@ -245,9 +244,11 @@ void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority){
 	//configure irq Priority
 		uint8_t iprReg = IRQNumber / 4;
 		uint8_t bitOffset = ((IRQNumber % 4) * 8);
-		NVIC_Priority_Set->NVIC_ICPR[iprReg] |= (IRQPriority << bitOffset);
+		NVIC_Priority_Set->NVIC_IPR[iprReg] |= (IRQNumber << bitOffset);
 }
-void GPIO_IRQHandler(uint8_t pinNumber);
+void GPIO_IRQHandler(uint8_t pinNumber){
+	EXTI->PR |= (0x1 << 0);
+}
 
 
 
