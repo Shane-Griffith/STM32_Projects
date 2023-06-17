@@ -93,8 +93,13 @@ if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode < GPIO_MODE_IT_FT){
 
 }else{
 
+	//configure pin mode
+	pGPIOHandle->pGPIOx->MODER |= (GPIO_MODE_INPUT << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+
 	//configure pin for desired interrupt trigger type
 	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_FT){
+
+
 		//configure falling edge
 		EXTI->FTRS |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 		//make sure that rising edge is clear
@@ -119,7 +124,8 @@ if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode < GPIO_MODE_IT_FT){
 	uint8_t portCode = GPIO_BASEADDR_TO_CODE(pGPIOHandle->pGPIOx);
 	SYSCFG_PCLK_EN();
 	SYSCFG->EXTICR[temp1] |= (portCode << temp2);
-
+	//enable exti interrupt using imr
+	EXTI->IMR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 
 
 }
@@ -139,10 +145,9 @@ if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN){
 		pGPIOHandle->pGPIOx->AFRL |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode <<
 						(4 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 	}
-	//configure the gpio port selection in syscfg exticr
 
-	//enable exti interrupt using imr
-	EXTI->IMR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+
+
 }
 
 
@@ -235,7 +240,6 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 	}else{
 		NVIC_CLR_EN->NVIC_ICER[temp1] |= (0x1 << temp2);
 	}
-
 
 
 }

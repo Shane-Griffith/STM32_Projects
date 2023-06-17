@@ -1622,7 +1622,12 @@ if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode < (4)){
 }else{
 
 
+ pGPIOHandle->pGPIOx->MODER |= ((0) << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+
+
  if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == (4)){
+
+
 
   ((EXTI_RegDef_t*) (0x40010000U + 0x3c00))->FTRS |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 
@@ -1648,6 +1653,7 @@ if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode < (4)){
  (((RCC_RegDef_t*) (0x40020000U + 0x3800))->APB2ENR |= (1 << 14));
  ((SYSCFG_RegDef_t*)(0x40010000U + 0x3800))->EXTICR[temp1] |= (portCode << temp2);
 
+ ((EXTI_RegDef_t*) (0x40010000U + 0x3c00))->IMR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 
 
 }
@@ -1670,7 +1676,6 @@ if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == (2)){
 
 
 
- ((EXTI_RegDef_t*) (0x40010000U + 0x3c00))->IMR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 }
 
 
@@ -1765,7 +1770,6 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
  }
 
 
-
 }
 
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority){
@@ -1774,4 +1778,6 @@ void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority){
   uint8_t bitOffset = ((IRQNumber % 4) * 8);
   ((NVIC_ipr_RegDef_t*) (0xE000E400))->NVIC_IPR[iprReg] |= (IRQNumber << bitOffset);
 }
-void GPIO_IRQHandler(uint8_t pinNumber);
+void GPIO_IRQHandler(uint8_t pinNumber){
+ ((EXTI_RegDef_t*) (0x40010000U + 0x3c00))->PR |= (0x1 << 0);
+}

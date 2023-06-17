@@ -236,13 +236,13 @@ typedef struct{
 }NVIC_EN_RegDef_t ;
 
 
-#define  NVIC_SET_EN  	((NVIC_EN_RegDef_t*) NVIC_ISER_BASEADDR)
+#define  NVIC_SET_EN  			((NVIC_EN_RegDef_t*) NVIC_ISER_BASEADDR)
 
 typedef struct{
 	__vo uint32_t NVIC_ICER[3];
 }NVIC_DI_RegDef_t;
 
-#define NVIC_CLR_EN 	((NVIC_DI_RegDef_t*)NVIC_ICER_BASEADDR)
+#define NVIC_CLR_EN 			((NVIC_DI_RegDef_t*)NVIC_ICER_BASEADDR)
 
 typedef struct{
 

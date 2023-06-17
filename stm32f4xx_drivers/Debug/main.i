@@ -1552,56 +1552,36 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 # 21 "../Src/main.c" 2
 
 
-void delay(){
 
- for(int i = 0; i < 250000; i++);
-
-}
 
 int main(void)
 {
 
+ GPIO_Handle_t userButton = {0};
+ userButton.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0000));
+ userButton.GPIO_PinConfig.GPIO_PinMode = (5);
+ userButton.GPIO_PinConfig.GPIO_PinNumber = (0);
+ GPIO_IRQInterruptConfig((6), 1);
+ GPIO_Init(&userButton);
 
 
- GPIO_Handle_t configUserButton = {0};
-
- configUserButton.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0000));
- configUserButton.GPIO_PinConfig.GPIO_PinMode = (6);
- configUserButton.GPIO_PinConfig.GPIO_PinNumber = (0);
- configUserButton.GPIO_PinConfig.GPIO_PinPuPDcontrol = (1);
- GPIO_PeriClockControl(configUserButton.pGPIOx, 1);
- GPIO_Init(&configUserButton);
+ GPIO_Handle_t redLed = {0};
+ redLed.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0C00));
+ redLed.GPIO_PinConfig.GPIO_PinMode = (1);
+ redLed.GPIO_PinConfig.GPIO_PinNumber = (14);
+ GPIO_Init(&redLed);
 
 
-
- GPIO_Handle_t configRedLed = {0};
-
- configRedLed.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0000));
- configRedLed.GPIO_PinConfig.GPIO_PinMode = (1);
- configRedLed.GPIO_PinConfig.GPIO_PinNumber = (13);
- GPIO_PeriClockControl(configRedLed.pGPIOx, 1);
- GPIO_Init(&configRedLed);
-
-
- GPIO_Handle_t greenLed = {0};
-
- greenLed.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0C00));
- greenLed.GPIO_PinConfig.GPIO_PinMode = (1);
- greenLed.GPIO_PinConfig.GPIO_PinNumber = (14);
- GPIO_PeriClockControl(greenLed.pGPIOx, 1);
- GPIO_Init(&greenLed);
-
-
-
- while(1){
+ while(1);
 
 
 
 
- }
 
+}
 
-
-
+void EXTI0_IRQHandler(GPIO_Handle_t handle){
+ GPIO_IRQHandler((0));
+ GPIO_WriteToOutputPin(handle.pGPIOx, handle.GPIO_PinConfig.GPIO_PinNumber, 1);
 
 }

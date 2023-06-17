@@ -20,53 +20,27 @@
 #include <stm32f4xx.h>
 
 
-void delay(){
 
-	for(int i = 0; i < 250000; i++);
-
-}
 
 int main(void)
 {
+//configure user button (interrupt trigger)
+	GPIO_Handle_t userButton = {0};
+	userButton.pGPIOx = GPIOA;
+	userButton.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IT_RT;
+	userButton.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_0;
+	GPIO_IRQInterruptConfig(IRQ_NO_EXTI0, ENABLE);
+	GPIO_Init(&userButton);
+
+//configure red led
+	GPIO_Handle_t redLed = {0};
+	redLed.pGPIOx = GPIOD;
+	redLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
+	redLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_14;
+	GPIO_Init(&redLed);
 
 
-	//enable user button as input
-	GPIO_Handle_t configUserButton = {0};
-
-	configUserButton.pGPIOx = GPIOA;
-	configUserButton.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IT_RFT;
-	configUserButton.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_0;
-	configUserButton.GPIO_PinConfig.GPIO_PinPuPDcontrol = GPIO_PIN_PU;
-	GPIO_PeriClockControl(configUserButton.pGPIOx, ENABLE);
-	GPIO_Init(&configUserButton);
-
-
-	//configure data for LED
-	GPIO_Handle_t configRedLed = {0};
-
-	configRedLed.pGPIOx = GPIOA;
-	configRedLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
-	configRedLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_13;
-	GPIO_PeriClockControl(configRedLed.pGPIOx, ENABLE);
-	GPIO_Init(&configRedLed);
-
-	//configure green led
-	GPIO_Handle_t greenLed = {0};
-
-	greenLed.pGPIOx = GPIOD;
-	greenLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
-	greenLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_14;
-	GPIO_PeriClockControl(greenLed.pGPIOx, ENABLE);
-	GPIO_Init(&greenLed);
-
-
-
-	while(1){
-
-
-
-
-	}
+	while(1);
 
 
 
@@ -74,8 +48,10 @@ int main(void)
 
 }
 
-void EXTI0_IRQHandler(){
+void EXTI0_IRQHandler(GPIO_Handle_t handle){
 	GPIO_IRQHandler(GPIO_PIN_0);
+	GPIO_WriteToOutputPin(handle.pGPIOx, handle.GPIO_PinConfig.GPIO_PinNumber, ENABLE);
+
 }
 
 
