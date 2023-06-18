@@ -1553,7 +1553,7 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 
 
 
-
+ uint8_t INTERRUPT_TRIGGERED = 0;
 int main(void)
 {
 
@@ -1561,6 +1561,7 @@ int main(void)
  userButton.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0000));
  userButton.GPIO_PinConfig.GPIO_PinMode = (5);
  userButton.GPIO_PinConfig.GPIO_PinNumber = (0);
+ GPIO_PeriClockControl(userButton.pGPIOx, 1);
  GPIO_IRQInterruptConfig((6), 1);
  GPIO_Init(&userButton);
 
@@ -1569,19 +1570,23 @@ int main(void)
  redLed.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0C00));
  redLed.GPIO_PinConfig.GPIO_PinMode = (1);
  redLed.GPIO_PinConfig.GPIO_PinNumber = (14);
+ GPIO_PeriClockControl(redLed.pGPIOx, 1);
  GPIO_Init(&redLed);
 
 
- while(1);
+ while(1){
+  if(INTERRUPT_TRIGGERED){
+   GPIO_WriteToOutputPin(redLed.pGPIOx, redLed.GPIO_PinConfig.GPIO_PinNumber, 1);
+  }else{
+   GPIO_WriteToOutputPin(redLed.pGPIOx, redLed.GPIO_PinConfig.GPIO_PinNumber, 0);
+  }
 
-
-
-
-
+ }
 }
 
-void EXTI0_IRQHandler(GPIO_Handle_t handle){
+void EXTI0_IRQHandler(){
  GPIO_IRQHandler((0));
- GPIO_WriteToOutputPin(handle.pGPIOx, handle.GPIO_PinConfig.GPIO_PinNumber, 1);
+ INTERRUPT_TRIGGERED++;
+
 
 }

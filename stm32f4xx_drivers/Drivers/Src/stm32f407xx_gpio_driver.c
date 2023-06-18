@@ -35,40 +35,40 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 if(EnorDi == ENABLE){
 	if(pGPIOx == GPIOA){
 		GPIOA_PCLK_EN;
-	}if(pGPIOx == GPIOB){
+	}else if(pGPIOx == GPIOB){
 		GPIOB_PCLK_EN;
-	}if(pGPIOx == GPIOC){
+	}else if(pGPIOx == GPIOC){
 		GPIOC_PCLK_EN;
-	}if(pGPIOx == GPIOD){
+	}else if(pGPIOx == GPIOD){
 		GPIOD_PCLK_EN;
-	}if(pGPIOx == GPIOE){
+	}else if(pGPIOx == GPIOE){
 		GPIOE_PCLK_EN;
-	}if(pGPIOx == GPIOF){
+	}else if(pGPIOx == GPIOF){
 		GPIOF_PCLK_EN;
-	}if(pGPIOx == GPIOG){
+	}else if(pGPIOx == GPIOG){
 		GPIOG_PCLK_EN;
-	}if(pGPIOx == GPIOH){
+	}else if(pGPIOx == GPIOH){
 		GPIOH_PCLK_EN;
-	}if(pGPIOx == GPIOI){
+	}else if(pGPIOx == GPIOI){
 		GPIOI_PCLK_EN;
 	}else{
 		if(pGPIOx == GPIOA){
 				GPIOA_PCLK_DI;
-			}if(pGPIOx == GPIOB){
+			}else if(pGPIOx == GPIOB){
 				GPIOB_PCLK_DI;
-			}if(pGPIOx == GPIOC){
+			}else if(pGPIOx == GPIOC){
 				GPIOC_PCLK_DI;
-			}if(pGPIOx == GPIOD){
+			}else if(pGPIOx == GPIOD){
 				GPIOD_PCLK_DI;
-			}if(pGPIOx == GPIOE){
+			}else if(pGPIOx == GPIOE){
 				GPIOE_PCLK_DI;
-			}if(pGPIOx == GPIOF){
+			}else if(pGPIOx == GPIOF){
 				GPIOF_PCLK_DI;
-			}if(pGPIOx == GPIOG){
+			}else if(pGPIOx == GPIOG){
 				GPIOG_PCLK_DI;
-			}if(pGPIOx == GPIOH){
+			}else if(pGPIOx == GPIOH){
 				GPIOH_PCLK_DI;
-			}if(pGPIOx == GPIOI){
+			}else if(pGPIOx == GPIOI){
 				GPIOI_PCLK_DI;
 			}
 	}

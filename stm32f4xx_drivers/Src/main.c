@@ -21,7 +21,7 @@
 
 
 
-
+ uint8_t INTERRUPT_TRIGGERED = 0;
 int main(void)
 {
 //configure user button (interrupt trigger)
@@ -29,6 +29,7 @@ int main(void)
 	userButton.pGPIOx = GPIOA;
 	userButton.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IT_RT;
 	userButton.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_0;
+	GPIO_PeriClockControl(userButton.pGPIOx, ENABLE);
 	GPIO_IRQInterruptConfig(IRQ_NO_EXTI0, ENABLE);
 	GPIO_Init(&userButton);
 
@@ -37,20 +38,24 @@ int main(void)
 	redLed.pGPIOx = GPIOD;
 	redLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
 	redLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_14;
+	GPIO_PeriClockControl(redLed.pGPIOx, ENABLE);
 	GPIO_Init(&redLed);
 
 
-	while(1);
+	while(1){
+		if(INTERRUPT_TRIGGERED){
+			GPIO_WriteToOutputPin(redLed.pGPIOx, redLed.GPIO_PinConfig.GPIO_PinNumber, ENABLE);
+		}else{
+			GPIO_WriteToOutputPin(redLed.pGPIOx, redLed.GPIO_PinConfig.GPIO_PinNumber, DISABLE);
+		}
 
-
-
-
-
+	}
 }
 
-void EXTI0_IRQHandler(GPIO_Handle_t handle){
+void EXTI0_IRQHandler(){
 	GPIO_IRQHandler(GPIO_PIN_0);
-	GPIO_WriteToOutputPin(handle.pGPIOx, handle.GPIO_PinConfig.GPIO_PinNumber, ENABLE);
+	INTERRUPT_TRIGGERED++;
+
 
 }
 

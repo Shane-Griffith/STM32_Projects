@@ -1563,40 +1563,40 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 if(EnorDi == 1){
  if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0000))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 0));
- }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0400))){
+ }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0400))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 1));
- }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0800))){
+ }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0800))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 2));
- }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0C00))){
+ }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0C00))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 3));
- }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1000))){
+ }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1000))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 4));
- }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1400))){
+ }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1400))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 4));
- }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1800))){
+ }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1800))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 6));
- }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1C00))){
+ }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1C00))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 7));
- }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x2000))){
+ }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x2000))){
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 8));
  }else{
   if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0000))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 0));
-   }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0400))){
+   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0400))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 1));
-   }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0800))){
+   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0800))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 2));
-   }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0C00))){
+   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0C00))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 3));
-   }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1000))){
+   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1000))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 4));
-   }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1400))){
+   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1400))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 4));
-   }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1800))){
+   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1800))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 6));
-   }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1C00))){
+   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1C00))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 7));
-   }if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x2000))){
+   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x2000))){
     (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 8));
    }
  }

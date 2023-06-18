@@ -56,8 +56,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	orr	r3, r3, #1
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L3:
-	.loc 1 38 5
+	.loc 1 38 10
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+8
 	cmp	r3, r2
@@ -68,8 +70,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	orr	r3, r3, #2
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L4:
-	.loc 1 40 5
+	.loc 1 40 10
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+12
 	cmp	r3, r2
@@ -80,8 +84,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	orr	r3, r3, #4
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L5:
-	.loc 1 42 5
+	.loc 1 42 10
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+16
 	cmp	r3, r2
@@ -92,8 +98,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	orr	r3, r3, #8
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L6:
-	.loc 1 44 5
+	.loc 1 44 10
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+20
 	cmp	r3, r2
@@ -104,8 +112,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	orr	r3, r3, #16
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L7:
-	.loc 1 46 5
+	.loc 1 46 10
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+24
 	cmp	r3, r2
@@ -116,8 +126,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	orr	r3, r3, #16
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L8:
-	.loc 1 48 5
+	.loc 1 48 10
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+28
 	cmp	r3, r2
@@ -128,8 +140,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	orr	r3, r3, #64
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L9:
-	.loc 1 50 5
+	.loc 1 50 10
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+32
 	cmp	r3, r2
@@ -140,8 +154,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	orr	r3, r3, #128
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L10:
-	.loc 1 52 5
+	.loc 1 52 10
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+36
 	cmp	r3, r2
@@ -166,8 +182,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	bic	r3, r3, #1
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L12:
-	.loc 1 57 7
+	.loc 1 57 12
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+8
 	cmp	r3, r2
@@ -178,8 +196,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	bic	r3, r3, #2
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L13:
-	.loc 1 59 7
+	.loc 1 59 12
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+12
 	cmp	r3, r2
@@ -190,8 +210,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	bic	r3, r3, #4
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L14:
-	.loc 1 61 7
+	.loc 1 61 12
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+16
 	cmp	r3, r2
@@ -202,8 +224,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	bic	r3, r3, #8
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L15:
-	.loc 1 63 7
+	.loc 1 63 12
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+20
 	cmp	r3, r2
@@ -214,8 +238,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	bic	r3, r3, #16
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L16:
-	.loc 1 65 7
+	.loc 1 65 12
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+24
 	cmp	r3, r2
@@ -226,8 +252,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	bic	r3, r3, #16
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L17:
-	.loc 1 67 7
+	.loc 1 67 12
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+28
 	cmp	r3, r2
@@ -238,8 +266,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	bic	r3, r3, #64
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L18:
-	.loc 1 69 7
+	.loc 1 69 12
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+32
 	cmp	r3, r2
@@ -250,8 +280,10 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+4
 	bic	r3, r3, #128
 	str	r3, [r2, #48]
+	.loc 1 77 1
+	b	.L20
 .L19:
-	.loc 1 71 7
+	.loc 1 71 12
 	ldr	r3, [r7, #4]
 	ldr	r2, .L21+36
 	cmp	r3, r2
