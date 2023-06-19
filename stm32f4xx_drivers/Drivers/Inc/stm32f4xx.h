@@ -421,13 +421,19 @@ typedef struct{
 
 
 //Some generic Macros
-#define ENABLE 			1
-#define DISABLE 		0
-#define SET 			ENABLE
-#define RESET 			DISABLE
-#define GPIO_PIN_SET 	SET
-#define GPIO_PIN_RESET	RESET
+#define ENABLE 				1
+#define DISABLE 			0
+#define SET 				ENABLE
+#define RESET 				DISABLE
+#define GPIO_PIN_SET 		SET
+#define GPIO_PIN_RESET		RESET
+#define ENABLE_GREEN_LED	(GPIOD->ODR  |= (1 << 12))
+#define ENABLE_RED_LED		(GPIOD->ODR  |= (1 << 14))
+#define DISABLE_GREEN_LED	(GPIOD->ODR  &= ~(1 << 12))
+#define DISABLE_RED_LED		(GPIOD->ODR  &= ~(1 << 14))
 
+
+#define DELAY()				(for(int i = 0; i < 250000; i++))
 
 
 

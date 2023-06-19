@@ -18,10 +18,14 @@
 
 #include <stdint.h>
 #include <stm32f4xx.h>
+#include <unistd.h>
 
 
 
- uint8_t INTERRUPT_TRIGGERED = 0;
+uint8_t triggered = 0;
+
+
+
 int main(void)
 {
 //configure user button (interrupt trigger)
@@ -40,23 +44,30 @@ int main(void)
 	redLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_14;
 	GPIO_PeriClockControl(redLed.pGPIOx, ENABLE);
 	GPIO_Init(&redLed);
+//configure green led
+	GPIO_Handle_t greenLed = {0};
+	greenLed.pGPIOx = GPIOD;
+	greenLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_12;
+	greenLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
+	GPIO_Init(&greenLed);
 
+
+	GPIO_WriteToOutputPin(greenLed.pGPIOx, greenLed.GPIO_PinConfig.GPIO_PinNumber, ENABLE);
 
 	while(1){
-		if(INTERRUPT_TRIGGERED){
-			GPIO_WriteToOutputPin(redLed.pGPIOx, redLed.GPIO_PinConfig.GPIO_PinNumber, ENABLE);
+		if(triggered){
+			printf("d");
 		}else{
-			GPIO_WriteToOutputPin(redLed.pGPIOx, redLed.GPIO_PinConfig.GPIO_PinNumber, DISABLE);
+			printf("f");
 		}
-
 	}
 }
 
 void EXTI0_IRQHandler(){
 	GPIO_IRQHandler(GPIO_PIN_0);
-	INTERRUPT_TRIGGERED++;
-
-
+	triggered++;
+	DISABLE_GREEN_LED;
+	ENABLE_RED_LED;
 }
 
 
