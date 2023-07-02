@@ -19,7 +19,7 @@
 #include <stdint.h>
 #include <stm32f4xx.h>
 #include <unistd.h>
-
+#include <stdio.h>
 
 
 uint8_t triggered = 0;
@@ -28,46 +28,10 @@ uint8_t triggered = 0;
 
 int main(void)
 {
-//configure user button (interrupt trigger)
-	GPIO_Handle_t userButton = {0};
-	userButton.pGPIOx = GPIOA;
-	userButton.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_IT_RT;
-	userButton.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_0;
-	GPIO_PeriClockControl(userButton.pGPIOx, ENABLE);
-	GPIO_IRQInterruptConfig(IRQ_NO_EXTI0, ENABLE);
-	GPIO_Init(&userButton);
-
-//configure red led
-	GPIO_Handle_t redLed = {0};
-	redLed.pGPIOx = GPIOD;
-	redLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
-	redLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_14;
-	GPIO_PeriClockControl(redLed.pGPIOx, ENABLE);
-	GPIO_Init(&redLed);
-//configure green led
-	GPIO_Handle_t greenLed = {0};
-	greenLed.pGPIOx = GPIOD;
-	greenLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_12;
-	greenLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
-	GPIO_Init(&greenLed);
 
 
-	GPIO_WriteToOutputPin(greenLed.pGPIOx, greenLed.GPIO_PinConfig.GPIO_PinNumber, ENABLE);
 
-	while(1){
-		if(triggered){
-			printf("d");
-		}else{
-			printf("f");
-		}
-	}
 }
 
-void EXTI0_IRQHandler(){
-	GPIO_IRQHandler(GPIO_PIN_0);
-	triggered++;
-	DISABLE_GREEN_LED;
-	ENABLE_RED_LED;
-}
 
 

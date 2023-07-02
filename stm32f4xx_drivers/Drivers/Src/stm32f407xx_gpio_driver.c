@@ -234,6 +234,7 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 	uint8_t temp2 = IRQNumber % 32;
 
 	if(EnorDi == ENABLE){
+
 		NVIC_SET_EN->NVIC_ISER[temp1] |= (0x1 << temp2);
 
 
