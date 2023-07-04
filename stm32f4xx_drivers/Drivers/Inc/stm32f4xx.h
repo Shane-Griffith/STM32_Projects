@@ -17,6 +17,7 @@
 
 #include <stdint.h>
 
+
 #define __vo volatile
 
 
@@ -74,7 +75,7 @@
 
 
 //APB2 Peripheral Base Addresses
- #define EXTI_BASEADDR				(APB2PERIPHERAL_BASEADDR + 0x3c00)
+#define EXTI_BASEADDR				(APB2PERIPHERAL_BASEADDR + 0x3c00)
 #define SPI1_BASEADDR				(APB2PERIPHERAL_BASEADDR + 0x3000)
 #define USART1_BASEADDR				(APB2PERIPHERAL_BASEADDR + 0x1000)
 #define USART6_BASEADDR				(APB2PERIPHERAL_BASEADDR + 0x1400)
@@ -127,8 +128,9 @@
 #define	SYSCFG 				((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
 #define RCC					((RCC_RegDef_t*	) RCC_BASEADDR)
 #define SPI1				((SPI_RegDef_t*	) SPI1_BASEADDR)
-#define SPI2				((SPI_RegDef_t*) SPI4_BASEADDR)
-
+#define SPI2				((SPI_RegDef_t*) SPI2_BASEADDR)
+#define SPI3				((SPI_RegDef_t*) SPI3_BASEADDR)
+#define SPI4				((SPI_RegDef_t*) SPI4_BASEADDR)
 
 //Interrupt configuraiton macros
 #define NVIC_Priority_Set		((NVIC_ipr_RegDef_t*) NVIC_IPR_BASEADDR)
@@ -148,7 +150,7 @@
 #define GPIOG_PCLK_EN 	(RCC->AHB1ENR |= (1 << 6))
 #define GPIOH_PCLK_EN 	(RCC->AHB1ENR |= (1 << 7))
 #define GPIOI_PCLK_EN 	(RCC->AHB1ENR |= (1 << 8))
-#define APB2_PCLK_EN	(RCC->APB2ENR |= (1 << 14))
+#define SYSCFG_PCLK_EN	(RCC->APB2ENR |= (1 << 14))
 //
  // Clock Enable Macros for I2cx Peripherals
  //
@@ -164,7 +166,7 @@
 #define SPI1_PCLK_EN	(RCC->APB2ENR |= (1 << 12))
 #define SPI2_PCLK_EN 	(RCC->APB1ENR |= (1 << 14))
 #define SPI3_PCLK_EN	(RCC->APB1ENR |= (1 << 15))
-#define SPI4_PCLK_DI	(RCC->APB2ENR |= (1 << 13))
+#define SPI4_PCLK_EN	(RCC->APB2ENR |= (1 << 13))
 //
  //
  // Clock Enable Macros for USARTx Peripherals
@@ -181,7 +183,7 @@
  // Clock Enable Macros for SYSCFG Peripheral
  //
  //
-#define SYSCFG_PCLK_EN()	(RCC->APB2ENR |= (1 << 14))
+
 //
  //  Clock Disable Macros GPIOx
  //
@@ -422,6 +424,7 @@ typedef struct{
 
 
 #include "stm32f407xx_gpio_driver.h"
+#include "stm32f407xx_spi_driver.h"
 
 
 

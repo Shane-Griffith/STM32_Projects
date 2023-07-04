@@ -475,11 +475,6 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __USES_INITFINI__ 1
-#define DEBUG 1
-#define STM32 1
-#define STM32F407G_DISC1 1
-#define STM32F4 1
-#define STM32F407VGTx 1
 # 1 "../Src/sysmem.c"
 # 24 "../Src/sysmem.c"
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\errno.h" 1 3

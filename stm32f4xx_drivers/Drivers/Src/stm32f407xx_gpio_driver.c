@@ -5,8 +5,8 @@
  *      Author: shane
  */
 #include "stm32f407xx_GPIO_driver.h"
-#include "stm32f4xx.h"
 #include <stdint.h>
+
 
 
 /*
@@ -122,7 +122,7 @@ if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode < GPIO_MODE_IT_FT){
 	uint8_t temp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;
 	uint8_t temp2 = (4 *(pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 4) );
 	uint8_t portCode = GPIO_BASEADDR_TO_CODE(pGPIOHandle->pGPIOx);
-	SYSCFG_PCLK_EN();
+	SYSCFG_PCLK_EN;
 	SYSCFG->EXTICR[temp1] |= (portCode << temp2);
 	//enable exti interrupt using imr
 	EXTI->IMR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);

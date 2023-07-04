@@ -475,9 +475,1231 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __USES_INITFINI__ 1
-#define DEBUG 1
-#define STM32 1
-#define STM32F407G_DISC1 1
-#define STM32F4 1
-#define STM32F407VGTx 1
 # 1 "../Drivers/Src/stm32f407xx_spi_driver.c"
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 1 3 4
+# 9 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 3 4
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 1 3 4
+# 10 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define _STDINT_H 
+
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 1 3 4
+
+
+
+
+
+#define _MACHINE__DEFAULT_TYPES_H 
+
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 1 3 4
+# 22 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
+#define _SYS_FEATURES_H 
+
+
+
+
+
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\_newlib_version.h" 1 3 4
+
+
+
+#define _NEWLIB_VERSION_H__ 1
+
+#define _NEWLIB_VERSION "4.1.0"
+#define __NEWLIB__ 4
+#define __NEWLIB_MINOR__ 1
+#define __NEWLIB_PATCHLEVEL__ 0
+# 29 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 2 3 4
+
+
+
+
+#define __GNUC_PREREQ(maj,min) ((__GNUC__ << 16) + __GNUC_MINOR__ >= ((maj) << 16) + (min))
+
+
+
+
+
+
+#define __GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)
+# 131 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
+#undef _DEFAULT_SOURCE
+#define _DEFAULT_SOURCE 1
+
+
+
+#undef _POSIX_SOURCE
+#define _POSIX_SOURCE 1
+#undef _POSIX_C_SOURCE
+#define _POSIX_C_SOURCE 200809L
+# 158 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
+#undef _ATFILE_SOURCE
+#define _ATFILE_SOURCE 1
+# 247 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
+#define __ATFILE_VISIBLE 1
+
+
+
+
+
+#define __BSD_VISIBLE 1
+
+
+
+
+
+
+
+#define __GNU_VISIBLE 0
+
+
+
+
+#define __ISO_C_VISIBLE 2011
+# 277 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
+#define __LARGEFILE_VISIBLE 0
+
+
+
+#define __MISC_VISIBLE 1
+
+
+
+
+
+#define __POSIX_VISIBLE 200809
+# 303 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
+#define __SVID_VISIBLE 1
+# 319 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
+#define __XSI_VISIBLE 0
+# 330 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h" 3 4
+#define __SSP_FORTIFY_LEVEL 0
+# 9 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 2 3 4
+
+
+
+
+
+
+#define __EXP(x) __ ##x ##__
+# 26 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+#define __have_longlong64 1
+
+
+
+
+
+
+#define __have_long32 1
+
+
+
+
+
+
+
+
+# 41 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef signed char __int8_t;
+
+typedef unsigned char __uint8_t;
+
+
+
+#define ___int8_t_defined 1
+
+
+
+
+
+
+
+typedef short int __int16_t;
+
+typedef short unsigned int __uint16_t;
+
+
+
+#define ___int16_t_defined 1
+# 77 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long int __int32_t;
+
+typedef long unsigned int __uint32_t;
+
+
+
+#define ___int32_t_defined 1
+# 103 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long long int __int64_t;
+
+typedef long long unsigned int __uint64_t;
+
+
+
+#define ___int64_t_defined 1
+# 134 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef signed char __int_least8_t;
+
+typedef unsigned char __uint_least8_t;
+
+
+
+#define ___int_least8_t_defined 1
+# 160 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef short int __int_least16_t;
+
+typedef short unsigned int __uint_least16_t;
+
+
+
+#define ___int_least16_t_defined 1
+# 182 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long int __int_least32_t;
+
+typedef long unsigned int __uint_least32_t;
+
+
+
+#define ___int_least32_t_defined 1
+# 200 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+typedef long long int __int_least64_t;
+
+typedef long long unsigned int __uint_least64_t;
+
+
+
+#define ___int_least64_t_defined 1
+
+
+
+
+
+
+
+typedef long long int __intmax_t;
+
+
+
+
+
+
+
+typedef long long unsigned int __uintmax_t;
+
+
+
+
+
+
+
+typedef int __intptr_t;
+
+typedef unsigned int __uintptr_t;
+# 244 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h" 3 4
+#undef __EXP
+# 13 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 2 3 4
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 1 3 4
+# 10 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define _SYS__INTSUP_H 
+
+
+
+
+
+#define __STDINT_EXP(x) __ ##x ##__
+# 35 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+       
+       
+       
+       
+       
+       
+       
+       
+#undef signed
+#undef unsigned
+#undef char
+#undef short
+#undef int
+#undef __int20
+#undef __int20__
+#undef long
+#define signed +0
+#define unsigned +0
+#define char +0
+#define short +1
+#define __int20 +2
+#define __int20__ +2
+#define int +2
+#define long +4
+# 67 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define _INTPTR_EQ_INT 
+
+
+
+
+
+
+#define _INT32_EQ_LONG 
+
+
+
+
+
+
+
+#define __INT8 "hh"
+# 93 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define __INT16 "h"
+# 104 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define __INT32 "l"
+# 113 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define __INT64 "ll"
+
+
+
+
+
+
+#define __FAST8 
+# 129 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define __FAST16 
+
+
+
+
+
+
+#define __FAST32 
+# 147 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define __FAST64 "ll"
+
+
+
+#define __LEAST8 "hh"
+# 162 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define __LEAST16 "h"
+# 173 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define __LEAST32 "l"
+# 182 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#define __LEAST64 "ll"
+
+#undef signed
+#undef unsigned
+#undef char
+#undef short
+#undef int
+#undef long
+       
+       
+       
+       
+       
+# 194 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#undef __int20
+       
+# 195 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h" 3 4
+#undef __int20__
+       
+       
+# 14 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 2 3 4
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_stdint.h" 1 3 4
+# 10 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_stdint.h" 3 4
+#define _SYS__STDINT_H 
+# 20 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_stdint.h" 3 4
+typedef __int8_t int8_t ;
+#define _INT8_T_DECLARED 
+
+
+typedef __uint8_t uint8_t ;
+#define _UINT8_T_DECLARED 
+
+#define __int8_t_defined 1
+
+
+
+
+typedef __int16_t int16_t ;
+#define _INT16_T_DECLARED 
+
+
+typedef __uint16_t uint16_t ;
+#define _UINT16_T_DECLARED 
+
+#define __int16_t_defined 1
+
+
+
+
+typedef __int32_t int32_t ;
+#define _INT32_T_DECLARED 
+
+
+typedef __uint32_t uint32_t ;
+#define _UINT32_T_DECLARED 
+
+#define __int32_t_defined 1
+
+
+
+
+typedef __int64_t int64_t ;
+#define _INT64_T_DECLARED 
+
+
+typedef __uint64_t uint64_t ;
+#define _UINT64_T_DECLARED 
+
+#define __int64_t_defined 1
+
+
+
+typedef __intmax_t intmax_t;
+#define _INTMAX_T_DECLARED 
+
+
+
+typedef __uintmax_t uintmax_t;
+#define _UINTMAX_T_DECLARED 
+
+
+
+typedef __intptr_t intptr_t;
+#define _INTPTR_T_DECLARED 
+
+
+
+typedef __uintptr_t uintptr_t;
+#define _UINTPTR_T_DECLARED 
+# 15 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 2 3 4
+
+
+
+
+
+
+typedef __int_least8_t int_least8_t;
+typedef __uint_least8_t uint_least8_t;
+#define __int_least8_t_defined 1
+
+
+
+typedef __int_least16_t int_least16_t;
+typedef __uint_least16_t uint_least16_t;
+#define __int_least16_t_defined 1
+
+
+
+typedef __int_least32_t int_least32_t;
+typedef __uint_least32_t uint_least32_t;
+#define __int_least32_t_defined 1
+
+
+
+typedef __int_least64_t int_least64_t;
+typedef __uint_least64_t uint_least64_t;
+#define __int_least64_t_defined 1
+# 51 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+  typedef int int_fast8_t;
+  typedef unsigned int uint_fast8_t;
+#define __int_fast8_t_defined 1
+
+
+
+
+
+
+
+  typedef int int_fast16_t;
+  typedef unsigned int uint_fast16_t;
+#define __int_fast16_t_defined 1
+
+
+
+
+
+
+
+  typedef int int_fast32_t;
+  typedef unsigned int uint_fast32_t;
+#define __int_fast32_t_defined 1
+
+
+
+
+
+
+
+  typedef long long int int_fast64_t;
+  typedef long long unsigned int uint_fast64_t;
+#define __int_fast64_t_defined 1
+# 128 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INTPTR_MIN (-__INTPTR_MAX__ - 1)
+#define INTPTR_MAX (__INTPTR_MAX__)
+#define UINTPTR_MAX (__UINTPTR_MAX__)
+# 152 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT8_MIN (-__INT8_MAX__ - 1)
+#define INT8_MAX (__INT8_MAX__)
+#define UINT8_MAX (__UINT8_MAX__)
+
+
+
+
+
+
+
+#define INT_LEAST8_MIN (-__INT_LEAST8_MAX__ - 1)
+#define INT_LEAST8_MAX (__INT_LEAST8_MAX__)
+#define UINT_LEAST8_MAX (__UINT_LEAST8_MAX__)
+# 174 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT16_MIN (-__INT16_MAX__ - 1)
+#define INT16_MAX (__INT16_MAX__)
+#define UINT16_MAX (__UINT16_MAX__)
+
+
+
+
+
+
+
+#define INT_LEAST16_MIN (-__INT_LEAST16_MAX__ - 1)
+#define INT_LEAST16_MAX (__INT_LEAST16_MAX__)
+#define UINT_LEAST16_MAX (__UINT_LEAST16_MAX__)
+# 196 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT32_MIN (-__INT32_MAX__ - 1)
+#define INT32_MAX (__INT32_MAX__)
+#define UINT32_MAX (__UINT32_MAX__)
+# 212 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT_LEAST32_MIN (-__INT_LEAST32_MAX__ - 1)
+#define INT_LEAST32_MAX (__INT_LEAST32_MAX__)
+#define UINT_LEAST32_MAX (__UINT_LEAST32_MAX__)
+# 230 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT64_MIN (-__INT64_MAX__ - 1)
+#define INT64_MAX (__INT64_MAX__)
+#define UINT64_MAX (__UINT64_MAX__)
+# 246 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT_LEAST64_MIN (-__INT_LEAST64_MAX__ - 1)
+#define INT_LEAST64_MAX (__INT_LEAST64_MAX__)
+#define UINT_LEAST64_MAX (__UINT_LEAST64_MAX__)
+# 262 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT_FAST8_MIN (-__INT_FAST8_MAX__ - 1)
+#define INT_FAST8_MAX (__INT_FAST8_MAX__)
+#define UINT_FAST8_MAX (__UINT_FAST8_MAX__)
+# 278 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT_FAST16_MIN (-__INT_FAST16_MAX__ - 1)
+#define INT_FAST16_MAX (__INT_FAST16_MAX__)
+#define UINT_FAST16_MAX (__UINT_FAST16_MAX__)
+# 294 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT_FAST32_MIN (-__INT_FAST32_MAX__ - 1)
+#define INT_FAST32_MAX (__INT_FAST32_MAX__)
+#define UINT_FAST32_MAX (__UINT_FAST32_MAX__)
+# 310 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT_FAST64_MIN (-__INT_FAST64_MAX__ - 1)
+#define INT_FAST64_MAX (__INT_FAST64_MAX__)
+#define UINT_FAST64_MAX (__UINT_FAST64_MAX__)
+# 326 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INTMAX_MAX (__INTMAX_MAX__)
+#define INTMAX_MIN (-INTMAX_MAX - 1)
+
+
+
+
+
+
+
+#define UINTMAX_MAX (__UINTMAX_MAX__)
+
+
+
+
+
+
+
+#define SIZE_MAX (__SIZE_MAX__)
+
+
+
+
+
+#define SIG_ATOMIC_MIN (-__STDINT_EXP(INT_MAX) - 1)
+#define SIG_ATOMIC_MAX (__STDINT_EXP(INT_MAX))
+
+
+
+#define PTRDIFF_MAX (__PTRDIFF_MAX__)
+
+
+
+#define PTRDIFF_MIN (-PTRDIFF_MAX - 1)
+
+
+
+
+#define WCHAR_MIN (__WCHAR_MIN__)
+# 374 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define WCHAR_MAX (__WCHAR_MAX__)
+# 384 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define WINT_MAX (__WINT_MAX__)
+
+
+
+
+#define WINT_MIN (__WINT_MIN__)
+
+
+
+
+
+
+#define INT8_C(x) __INT8_C(x)
+#define UINT8_C(x) __UINT8_C(x)
+# 408 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT16_C(x) __INT16_C(x)
+#define UINT16_C(x) __UINT16_C(x)
+# 420 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT32_C(x) __INT32_C(x)
+#define UINT32_C(x) __UINT32_C(x)
+# 433 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INT64_C(x) __INT64_C(x)
+#define UINT64_C(x) __UINT64_C(x)
+# 449 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 3 4
+#define INTMAX_C(x) __INTMAX_C(x)
+#define UINTMAX_C(x) __UINTMAX_C(x)
+# 10 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 2 3 4
+
+
+
+#define _GCC_WRAP_STDINT_H 
+# 2 "../Drivers/Src/stm32f407xx_spi_driver.c" 2
+# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
+# 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+#define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
+
+
+# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 16 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define INC_STM32F4XX_H_ 
+
+
+
+
+#define __vo volatile
+
+
+#define FLASH_BASEADDR 0x08000000U
+#define SRAM1_BASEADDR 0x20000000U
+#define SRAM2_BASEADDR 0x2001C000U
+#define ROM 0x1FFF0000U
+#define SRAM SRAM1_BASEADDR
+# 37 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define PERIPHERAL_BASEADDR 0x40000000U
+#define APB1PERIPHERAL_BASEADDR PERIPHERAL_BASEADDR
+#define APB2PERIPHERAL_BASEADDR 0x40010000U
+#define AHB1PERIPHERAL_BASEADDR 0x40020000U
+#define AHB2PERIPHERAL_BASEADDR 0x50000000U
+#define AHB3PERIPHERAL_BASEADDR 0xA0000000U
+# 51 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)
+#define GPIOB_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0400)
+#define GPIOC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0800)
+#define GPIOD_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0C00)
+#define GPIOE_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1000)
+#define GPIOF_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1400)
+#define GPIOG_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1800)
+#define GPIOH_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1C00)
+#define GPIOI_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x2000)
+#define RCC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x3800)
+#define RCC_RESET_REG (AHB1PERIPHERAL_BASEADDR + 0x10)
+
+
+
+#define I2C1_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5400)
+#define I2C2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5800)
+#define I2C3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5c00)
+#define SPI2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3800)
+#define SPI3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3c00)
+#define SPI4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3400)
+#define USART2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4400)
+#define USART3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4800)
+#define UART4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4c00)
+#define UART5_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5000)
+
+
+
+#define EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)
+#define SPI1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3000)
+#define USART1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1000)
+#define USART6_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1400)
+#define EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)
+#define SYSCFG_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3800)
+
+
+
+
+
+
+#define NVIC_ISER_BASEADDR (0xE000E100)
+#define NVIC_ICER_BASEADDR (0XE000E180)
+#define NVIC_IPR_BASEADDR (0xE000E400)
+
+
+
+
+
+
+#define PRIORITY_LVL_0 (0x00)
+#define PRIORITY_LVL_1 (0x10)
+#define PRIORITY_LVL_2 (0x20)
+#define PRIORITY_LVL_3 (0x30)
+#define PRIORITY_LVL_4 (0x40)
+#define PRIORITY_LVL_5 (0x50)
+#define PRIORITY_LVL_6 (0x60)
+#define PRIORITY_LVL_7 (0x70)
+#define PRIORITY_LVL_8 (0x80)
+#define PRIORITY_LVL_9 (0x90)
+#define PRIORITY_LVL_10 (0xA0)
+#define PRIORITY_LVL_11 (0xb0)
+#define PRIORITY_LVL_12 (0xc0)
+#define PRIORITY_LVL_13 (0xd0)
+#define PRIORITY_LVL_14 (0xe0)
+#define PRIORITY_LVL_15 (0xf0)
+
+
+
+#define GPIOA ((GPIO_RegDef_t*) GPIOA_BASEADDR)
+#define GPIOB ((GPIO_RegDef_t*) GPIOB_BASEADDR)
+#define GPIOC ((GPIO_RegDef_t*) GPIOC_BASEADDR)
+#define GPIOD ((GPIO_RegDef_t*) GPIOD_BASEADDR)
+#define GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)
+#define GPIOF ((GPIO_RegDef_t*) GPIOF_BASEADDR)
+#define GPIOG ((GPIO_RegDef_t*) GPIOG_BASEADDR)
+#define GPIOH ((GPIO_RegDef_t*) GPIOH_BASEADDR)
+#define GPIOI ((GPIO_RegDef_t*) GPIOI_BASEADDR)
+#define EXTI ((EXTI_RegDef_t*) EXTI_BASEADDR)
+#define SYSCFG ((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
+#define RCC ((RCC_RegDef_t* ) RCC_BASEADDR)
+#define SPI1 ((SPI_RegDef_t* ) SPI1_BASEADDR)
+#define SPI2 ((SPI_RegDef_t*) SPI2_BASEADDR)
+#define SPI3 ((SPI_RegDef_t*) SPI3_BASEADDR)
+#define SPI4 ((SPI_RegDef_t*) SPI4_BASEADDR)
+
+
+#define NVIC_Priority_Set ((NVIC_ipr_RegDef_t*) NVIC_IPR_BASEADDR)
+#define NVIC_CLR_EN ((NVIC_DI_RegDef_t*)NVIC_ICER_BASEADDR)
+#define NVIC_SET_EN ((NVIC_EN_RegDef_t*) NVIC_ISER_BASEADDR)
+
+
+
+
+
+#define GPIOA_PCLK_EN (RCC->AHB1ENR |= (1 << 0))
+#define GPIOB_PCLK_EN (RCC->AHB1ENR |= (1 << 1))
+#define GPIOC_PCLK_EN (RCC->AHB1ENR |= (1 << 2))
+#define GPIOD_PCLK_EN (RCC->AHB1ENR |= (1 << 3))
+#define GPIOE_PCLK_EN (RCC->AHB1ENR |= (1 << 4))
+#define GPIOF_PCLK_EN (RCC->AHB1ENR |= (1 << 4))
+#define GPIOG_PCLK_EN (RCC->AHB1ENR |= (1 << 6))
+#define GPIOH_PCLK_EN (RCC->AHB1ENR |= (1 << 7))
+#define GPIOI_PCLK_EN (RCC->AHB1ENR |= (1 << 8))
+#define SYSCFG_PCLK_EN (RCC->APB2ENR |= (1 << 14))
+
+
+
+
+#define I2C1_PCLK_EN (RCC->APB1ENR |= (1 << 21))
+#define I2C2_PCLK_EN (RCC->APB1ENR |= (1 << 22))
+#define I2C3_PCLK_EN (RCC->APB1ENR |= (1 << 23))
+
+
+
+
+
+#define SPI1_PCLK_EN (RCC->APB2ENR |= (1 << 12))
+#define SPI2_PCLK_EN (RCC->APB1ENR |= (1 << 14))
+#define SPI3_PCLK_EN (RCC->APB1ENR |= (1 << 15))
+#define SPI4_PCLK_EN (RCC->APB2ENR |= (1 << 13))
+
+
+
+
+
+#define USART1_PCLK_EN (RCC->APB2ENR |= (1 << 4))
+#define USART6_PCLK_EN (RCC->APB2ENR |= (1 << 5))
+#define USART2_PCLK_EN (RCC->APB1ENR |= (1 << 17))
+#define USART3_PCLK_EN (RCC->APB1ENR |= (1 << 18))
+#define UART4_PCLK_EN (RCC->APB1ENR |= (1 << 19))
+#define UART5_PCLK_EN (RCC->APB1ENR |= (1 << 20))
+# 191 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define GPIOA_PCLK_DI (RCC->AHB1ENR &= ~(1 << 0))
+#define GPIOB_PCLK_DI (RCC->AHB1ENR &= ~(1 << 1))
+#define GPIOC_PCLK_DI (RCC->AHB1ENR &= ~(1 << 2))
+#define GPIOD_PCLK_DI (RCC->AHB1ENR &= ~(1 << 3))
+#define GPIOE_PCLK_DI (RCC->AHB1ENR &= ~(1 << 4))
+#define GPIOF_PCLK_DI (RCC->AHB1ENR &= ~(1 << 4))
+#define GPIOG_PCLK_DI (RCC->AHB1ENR &= ~(1 << 6))
+#define GPIOH_PCLK_DI (RCC->AHB1ENR &= ~(1 << 7))
+#define GPIOI_PCLK_DI (RCC->AHB1ENR &= ~(1 << 8))
+
+
+
+
+
+#define I2C1_PCLK_DI (RCC->APB1ENR &= ~(1 << 21))
+#define I2C2_PCLK_DI (RCC->APB1ENR &= ~(1 << 22))
+#define I2C3_PCLK_DI (RCC->APB1ENR &= ~(1 << 23))
+
+
+
+
+
+
+#define SPI1_PCLK_DI (RCC->APB2ENR &= ~(1 << 12))
+#define SPI4_PCLK_DI (RCC->APB2ENR &= ~(1 << 13))
+#define SPI2_PCLK_DI (RCC->APB1ENR &= ~(1 << 14))
+#define SPI3_PCLK_DI (RCC->APB1ENR &= ~(1 << 15))
+
+
+
+
+
+#define USART1_PCLK_DI (RCC->APB2ENR &= ~(1 << 4))
+#define USART6_PCLK_DI (RCC->APB2ENR &= ~(1 << 5))
+#define USART2_PCLK_DI (RCC->APB1ENR &= ~(1 << 17))
+#define USART3_PCLK_DI (RCC->APB1ENR &= ~(1 << 18))
+#define UART4_PCLK_DI (RCC->APB1ENR &= ~(1 << 19))
+#define UART5_PCLK_DI (RCC->APB1ENR &= ~(1 << 20))
+
+
+
+
+
+
+#define SYSCFG_PCLK_DI (RCC->APB2ENR &= ~(1 << 14))
+
+
+
+
+
+#define GPIOA_RESET() do{ (RCC->AHB1RSTR |= (1 << 0)); (RCC->AHB1RSTR &= ~(1 << 0)); } while(0)
+#define GPIOB_RESET() do{ (RCC->AHB1RSTR |= (1 << 1)); (RCC->AHB1RSTR &= ~(1 << 1)); } while(0)
+#define GPIOC_RESET() do{ (RCC->AHB1RSTR |= (1 << 2)); (RCC->AHB1RSTR &= ~(1 << 2)); } while(0)
+#define GPIOD_RESET() do{ (RCC->AHB1RSTR |= (1 << 3)); (RCC->AHB1RSTR &= ~(1 << 3)); } while(0)
+#define GPIOE_RESET() do{ (RCC->AHB1RSTR |= (1 << 4)); (RCC->AHB1RSTR &= ~(1 << 4)); } while(0)
+#define GPIOF_RESET() do{ (RCC->AHB1RSTR |= (1 << 5)); (RCC->AHB1RSTR &= ~(1 << 5)); } while(0)
+#define GPIOG_RESET() do{ (RCC->AHB1RSTR |= (1 << 6)); (RCC->AHB1RSTR &= ~(1 << 6)); } while(0)
+#define GPIOH_RESET() do{ (RCC->AHB1RSTR |= (1 << 7)); (RCC->AHB1RSTR &= ~(1 << 7)); } while(0)
+
+
+#define GPIO_BASEADDR_TO_CODE(x) ((x == GPIOA)? 0 : (x == GPIOB) ? 1 : (x == GPIOC) ? 2 : (x == GPIOD) ? 3 : (x == GPIOE) ? 4 : (x == GPIOF) ? 5 : (x == GPIOG) ? 6 : (x == GPIOH) ? 7 : (x == GPIOI) ? 8 : 0)
+# 265 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define IRQ_NO_EXTI0 (6)
+#define IRQ_NO_EXTI1 (7)
+#define IRQ_NO_EXTI2 (8)
+#define IRQ_NO_EXTI3 (9)
+#define IRQ_NO_EXTI4 (10)
+#define IRQ_NO_EXTI9_5 (23)
+#define IRQ_NO_EXTI15_10 (40)
+#define IRQ_NO_SPI1 (35)
+#define IRQ_NO_SPI2 (36)
+#define IRQ_NO_SPI3 (51)
+#define IRQ_NO_SPI4 (84)
+
+
+#define ENABLE 1
+#define DISABLE 0
+#define SET ENABLE
+#define RESET DISABLE
+#define GPIO_PIN_SET SET
+#define GPIO_PIN_RESET RESET
+#define ENABLE_GREEN_LED (GPIOD->ODR |= (1 << 12))
+#define ENABLE_RED_LED (GPIOD->ODR |= (1 << 14))
+#define DISABLE_GREEN_LED (GPIOD->ODR &= ~(1 << 12))
+#define DISABLE_RED_LED (GPIOD->ODR &= ~(1 << 14))
+
+
+#define DELAY() (for(int i = 0; i < 250000; i++))
+# 299 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+
+# 299 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+typedef struct{
+
+ volatile uint32_t CR;
+ volatile uint32_t PLLCFGR;
+ volatile uint32_t CFGR;
+ volatile uint32_t CIR;
+ volatile uint32_t AHB1RSTR;
+ volatile uint32_t AHB2RSTR;
+ volatile uint32_t AHB3RSTR;
+  uint32_t RESERVED;
+ volatile uint32_t APB1RSTR;
+ volatile uint32_t APB2RSTR;
+  uint32_t RESERVED2;
+  uint32_t RESERVED3;
+ volatile uint32_t AHB1ENR;
+ volatile uint32_t AHB2ENR;
+ volatile uint32_t AHB3ENR;
+ volatile uint32_t RESERVED4;
+ volatile uint32_t APB1ENR;
+ volatile uint32_t APB2ENR;
+  uint32_t RESERVED5;
+  uint32_t RESERVED6;
+ volatile uint32_t AHB1LPENR;
+ volatile uint32_t AHB2LPENR;
+ volatile uint32_t AHB3LPENR;
+  uint32_t RESERVED7;
+ volatile uint32_t APB1LPENR;
+ volatile uint32_t APB2LPENR;
+  uint32_t RESERVED8;
+  uint32_t RESERVED9;
+ volatile uint32_t BDCR;
+ volatile uint32_t CSR;
+  uint32_t RESERVED10;
+  uint32_t RESERVED11;
+ volatile uint32_t SSCGR;
+ volatile uint32_t PLLI2SCFGR;
+ volatile uint32_t PLLSAICFGR;
+ volatile uint32_t DCKCFGR;
+
+}RCC_RegDef_t;
+
+
+
+
+
+typedef struct{
+
+ volatile uint32_t SPI_CR1;
+ volatile uint32_t SPI_CR2;
+ volatile uint32_t SPI_SR;
+ volatile uint32_t SPI_DR;
+ volatile uint32_t SPI_CRCPR;
+ volatile uint32_t SPIs_RXCRCR;
+ volatile uint32_t SPI_TXCRCR;
+ volatile uint32_t SPI_TXRCR;
+ volatile uint32_t SPI_IS2CFGR;
+ volatile uint32_t SPI_IS2PR;
+
+
+}SPI_RegDef_t;
+
+
+
+typedef struct{
+ volatile uint32_t IMR;
+ volatile uint32_t EMR;
+ volatile uint32_t RTSR;
+ volatile uint32_t FTRS;
+ volatile uint32_t SWIER;
+ volatile uint32_t PR;
+
+}EXTI_RegDef_t;
+
+
+
+
+typedef struct{
+
+ volatile uint32_t MEMRMP;
+ volatile uint32_t PMC;
+ volatile uint32_t EXTICR[4];
+   uint32_t RESERVED[2];
+ volatile uint32_t CMPCR;
+
+
+}SYSCFG_RegDef_t;
+
+
+
+typedef struct{
+
+ volatile uint32_t NVIC_ISER[3];
+
+}NVIC_EN_RegDef_t ;
+
+
+typedef struct{
+
+ volatile uint32_t NVIC_ICER[3];
+
+}NVIC_DI_RegDef_t;
+
+
+
+typedef struct{
+
+ volatile uint32_t NVIC_IPR[23];
+
+}NVIC_ipr_RegDef_t;
+
+typedef struct{
+
+ volatile uint32_t MODER;
+ volatile uint32_t OTYPER;
+ volatile uint32_t OSPEEDR;
+ volatile uint32_t PUPDR;
+ volatile uint32_t IDR;
+ volatile uint32_t ODR;
+ volatile uint32_t BSRR;
+ volatile uint32_t LCKR;
+ volatile uint32_t AFRL;
+ volatile uint32_t AFRH;
+
+}GPIO_RegDef_t;
+
+
+
+# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
+# 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+#define INC_STM32F407XX_GPIO_DRIVER_H_ 
+
+
+# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
+
+
+
+#define GPIO_MODE_INPUT (0)
+#define GPIO_MODE_OUPUT (1)
+#define GPIO_MODE_ALTFN (2)
+#define GPIO_MODE_ANALOG (3)
+#define GPIO_MODE_IT_FT (4)
+#define GPIO_MODE_IT_RT (5)
+#define GPIO_MODE_IT_RFT (6)
+
+
+#define GPIO_OP_TYPE_PP (0)
+#define GPIO_OP_TYPE_OD (1)
+
+
+#define GPIO_SPEED_LOW (0)
+#define GPIO_SPEED_MED (1)
+#define GPIO_SPEED_HIGH (2)
+#define GPIO_SPEED_VHIGH (3)
+
+
+#define GPIO_NO_PUPD (0)
+#define GPIO_PIN_PU (1)
+#define GPIO_PIN_PD (2)
+
+
+#define GPIO_PIN_0 (0)
+#define GPIO_PIN_1 (1)
+#define GPIO_PIN_2 (2)
+#define GPIO_PIN_3 (3)
+#define GPIO_PIN_4 (4)
+#define GPIO_PIN_5 (5)
+#define GPIO_PIN_6 (6)
+#define GPIO_PIN_7 (7)
+#define GPIO_PIN_8 (8)
+#define GPIO_PIN_9 (9)
+#define GPIO_PIN_10 (10)
+#define GPIO_PIN_11 (11)
+#define GPIO_PIN_12 (12)
+#define GPIO_PIN_13 (13)
+#define GPIO_PIN_14 (14)
+#define GPIO_PIN_15 (15)
+
+
+#define GPIO_AF0 (0)
+#define GPIO_AF1 (1)
+#define GPIO_AF2 (2)
+#define GPIO_AF3 (3)
+#define GPIO_AF4 (4)
+#define GPIO_AF5 (5)
+#define GPIO_AF6 (6)
+#define GPIO_AF7 (7)
+#define GPIO_AF8 (8)
+#define GPIO_AF9 (9)
+#define GPIO_AF10 (10)
+#define GPIO_AF11 (11)
+#define GPIO_AF12 (12)
+#define GPIO_AF13 (13)
+#define GPIO_AF14 (14)
+#define GPIO_AF15 (15)
+
+
+
+
+typedef struct{
+
+ uint8_t GPIO_PinNumber;
+ uint8_t GPIO_PinMode;
+ uint8_t GPIO_PinOPType;
+ uint8_t GPIO_PinSpeed;
+ uint8_t GPIO_PinPuPDcontrol;
+ uint8_t GPIO_PinAltFunMode;
+
+
+}GPIO_PinConfig_t;
+
+typedef struct{
+
+ GPIO_RegDef_t *pGPIOx;
+ GPIO_PinConfig_t GPIO_PinConfig;
+
+}GPIO_Handle_t;
+# 105 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
+
+
+
+
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);
+
+
+
+
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx,uint8_t pinNumber, uint8_t value);
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t value);
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
+
+
+
+
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
+void GPIO_IRQHandler(uint8_t pinNumber);
+# 427 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
+# 428 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
+
+
+#define RATE_2 (0)
+#define RATE_4 (1)
+#define RATE_8 (2)
+#define RATE_16 (3)
+#define RATE_32 (4)
+#define RATE_64 (5)
+#define RATE_128 (6)
+#define RATE_256 (7)
+
+
+#define LEADING_EDGE (0)
+#define TRAILING_EDGE (1)
+
+
+#define IDLE_HIGH (1)
+#define IDLE_LOW (0)
+
+
+#define MASTER_SELECT (1)
+#define SLAVE_SELECT (0)
+
+
+
+
+
+
+#define EIGHT_BIT (0)
+#define SIXTEEN_BIT (1)
+
+
+
+typedef struct {
+
+uint8_t BusConfig;
+uint8_t SPI_EN;
+uint8_t SPI_SPEED;
+uint8_t SPI_CPHA;
+uint8_t SPI_CPOL;
+uint8_t SPI_DEVICEMODE;
+uint8_t SPI_DATA_FORMAT;
+
+
+} SPI_Config_t;
+
+
+typedef struct{
+
+ SPI_RegDef_t *pSPIx;
+ SPI_Config_t Spi_Config;
+
+
+}SPI_Handle_t;
+# 75 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
+
+
+void SPI_Init(SPI_Handle_t* pSPIHandler);
+void SPI_DeInit(SPI_RegDef_t *pSPIx);
+
+
+void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
+
+
+
+void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
+void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
+void SPI_IRQHandler(SPI_Handle_t *pHandle);
+# 3 "../Drivers/Src/stm32f407xx_spi_driver.c" 2
+# 13 "../Drivers/Src/stm32f407xx_spi_driver.c"
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi){
+ switch(enordi){
+ case 1:
+  if(pSPIx == ((SPI_RegDef_t* ) (0x40010000U + 0x3000))){
+   (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB2ENR |= (1 << 12));
+   break;
+  }else if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3800))){
+   (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB1ENR |= (1 << 14));
+   break;
+  }else if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3c00))){
+   (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB1ENR |= (1 << 15));
+   break;
+  }else if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3400))){
+   (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB2ENR |= (1 << 13));
+   break;
+  }
+ case 0:
+  if(pSPIx == ((SPI_RegDef_t* ) (0x40010000U + 0x3000))){
+   (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB2ENR &= ~(1 << 12));
+   break;
+  }else if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3800))){
+   (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB1ENR &= ~(1 << 14));
+   break;
+  }else if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3c00))){
+   (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB1ENR &= ~(1 << 15));
+   break;
+  }else if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3400))){
+   (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB2ENR &= ~(1 << 13));
+   break;
+  }default:
+   break;
+
+ }
+
+
+}
+
+
+void SPI_Init(SPI_Handle_t* pSPIHandler){
+
+ (pSPIHandler->pSPIx->SPI_CR1 |= (1 << 6));
+
+}
+void SPI_DeInit(SPI_RegDef_t *pSPIx){
+
+ if(pSPIx == ((SPI_RegDef_t* ) (0x40010000U + 0x3000))){
+  (((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB2RSTR |= (1 << 12));
+ }if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3400))){
+  ((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB2RSTR |= (1 << 13);
+ }if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3800))){
+  ((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB1RSTR |= (1 << 14);
+ }if(pSPIx == ((SPI_RegDef_t*) (0x40000000U + 0x3c00))){
+  ((RCC_RegDef_t* ) (0x40020000U + 0x3800))->APB1RSTR |= (1 << 15);
+ }
+
+}
+
+
+void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
+
+
+
+void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
+void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
+void SPI_IRQHandler(SPI_Handle_t *pHandle);

@@ -475,11 +475,6 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __USES_INITFINI__ 1
-#define DEBUG 1
-#define STM32 1
-#define STM32F407G_DISC1 1
-#define STM32F4 1
-#define STM32F407VGTx 1
 # 1 "../Src/main.c"
 # 19 "../Src/main.c"
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 1 3 4
@@ -1082,6 +1077,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
+
 #define __vo volatile
 
 
@@ -1090,14 +1086,14 @@ typedef __uint_least64_t uint_least64_t;
 #define SRAM2_BASEADDR 0x2001C000U
 #define ROM 0x1FFF0000U
 #define SRAM SRAM1_BASEADDR
-# 36 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 37 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define PERIPHERAL_BASEADDR 0x40000000U
 #define APB1PERIPHERAL_BASEADDR PERIPHERAL_BASEADDR
 #define APB2PERIPHERAL_BASEADDR 0x40010000U
 #define AHB1PERIPHERAL_BASEADDR 0x40020000U
 #define AHB2PERIPHERAL_BASEADDR 0x50000000U
 #define AHB3PERIPHERAL_BASEADDR 0xA0000000U
-# 50 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 51 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)
 #define GPIOB_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0400)
 #define GPIOC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0800)
@@ -1178,8 +1174,9 @@ typedef __uint_least64_t uint_least64_t;
 #define SYSCFG ((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
 #define RCC ((RCC_RegDef_t* ) RCC_BASEADDR)
 #define SPI1 ((SPI_RegDef_t* ) SPI1_BASEADDR)
-#define SPI2 ((SPI_RegDef_t*) SPI4_BASEADDR)
-
+#define SPI2 ((SPI_RegDef_t*) SPI2_BASEADDR)
+#define SPI3 ((SPI_RegDef_t*) SPI3_BASEADDR)
+#define SPI4 ((SPI_RegDef_t*) SPI4_BASEADDR)
 
 
 #define NVIC_Priority_Set ((NVIC_ipr_RegDef_t*) NVIC_IPR_BASEADDR)
@@ -1199,7 +1196,7 @@ typedef __uint_least64_t uint_least64_t;
 #define GPIOG_PCLK_EN (RCC->AHB1ENR |= (1 << 6))
 #define GPIOH_PCLK_EN (RCC->AHB1ENR |= (1 << 7))
 #define GPIOI_PCLK_EN (RCC->AHB1ENR |= (1 << 8))
-#define APB2_PCLK_EN (RCC->APB2ENR |= (1 << 14))
+#define SYSCFG_PCLK_EN (RCC->APB2ENR |= (1 << 14))
 
 
 
@@ -1215,7 +1212,7 @@ typedef __uint_least64_t uint_least64_t;
 #define SPI1_PCLK_EN (RCC->APB2ENR |= (1 << 12))
 #define SPI2_PCLK_EN (RCC->APB1ENR |= (1 << 14))
 #define SPI3_PCLK_EN (RCC->APB1ENR |= (1 << 15))
-#define SPI4_PCLK_DI (RCC->APB2ENR |= (1 << 13))
+#define SPI4_PCLK_EN (RCC->APB2ENR |= (1 << 13))
 
 
 
@@ -1227,16 +1224,7 @@ typedef __uint_least64_t uint_least64_t;
 #define USART3_PCLK_EN (RCC->APB1ENR |= (1 << 18))
 #define UART4_PCLK_EN (RCC->APB1ENR |= (1 << 19))
 #define UART5_PCLK_EN (RCC->APB1ENR |= (1 << 20))
-
-
-
-
-
-#define SYSCFG_PCLK_EN() (RCC->APB2ENR |= (1 << 14))
-
-
-
-
+# 191 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define GPIOA_PCLK_DI (RCC->AHB1ENR &= ~(1 << 0))
 #define GPIOB_PCLK_DI (RCC->AHB1ENR &= ~(1 << 1))
 #define GPIOC_PCLK_DI (RCC->AHB1ENR &= ~(1 << 2))
@@ -1298,7 +1286,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define GPIO_BASEADDR_TO_CODE(x) ((x == GPIOA)? 0 : (x == GPIOB) ? 1 : (x == GPIOC) ? 2 : (x == GPIOD) ? 3 : (x == GPIOE) ? 4 : (x == GPIOF) ? 5 : (x == GPIOG) ? 6 : (x == GPIOH) ? 7 : (x == GPIOI) ? 8 : 0)
-# 263 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 265 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define IRQ_NO_EXTI0 (6)
 #define IRQ_NO_EXTI1 (7)
 #define IRQ_NO_EXTI2 (8)
@@ -1325,9 +1313,9 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define DELAY() (for(int i = 0; i < 250000; i++))
-# 297 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 299 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 
-# 297 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 299 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 typedef struct{
 
  volatile uint32_t CR;
@@ -1459,8 +1447,9 @@ typedef struct{
 # 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 #define INC_STM32F407XX_GPIO_DRIVER_H_ 
 
+
 # 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 12 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
+# 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
 
 
 
@@ -1540,13 +1529,11 @@ typedef struct{
 
 typedef struct{
 
-
  GPIO_RegDef_t *pGPIOx;
  GPIO_PinConfig_t GPIO_PinConfig;
 
-
 }GPIO_Handle_t;
-# 106 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+# 105 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
 
@@ -1570,19 +1557,88 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void GPIO_IRQHandler(uint8_t pinNumber);
-# 425 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 427 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
+# 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+#define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
+
+
+
+
+
+#define RATE_2 (0)
+#define RATE_4 (1)
+#define RATE_8 (2)
+#define RATE_16 (3)
+#define RATE_32 (4)
+#define RATE_64 (5)
+#define RATE_128 (6)
+#define RATE_256 (7)
+
+
+#define LEADING_EDGE (0)
+#define TRAILING_EDGE (1)
+
+
+#define IDLE_HIGH (1)
+#define IDLE_LOW (0)
+
+
+#define MASTER_SELECT (1)
+#define SLAVE_SELECT (0)
+
+
+
+
+
+
+#define EIGHT_BIT (0)
+#define SIXTEEN_BIT (1)
+
+
+
+typedef struct {
+
+uint8_t BusConfig;
+uint8_t SPI_EN;
+uint8_t SPI_SPEED;
+uint8_t SPI_CPHA;
+uint8_t SPI_CPOL;
+uint8_t SPI_DEVICEMODE;
+uint8_t SPI_DATA_FORMAT;
+
+
+} SPI_Config_t;
+
+
+typedef struct{
+
+ SPI_RegDef_t *pSPIx;
+ SPI_Config_t Spi_Config;
+
+
+}SPI_Handle_t;
+# 75 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
+
+
+void SPI_Init(SPI_Handle_t* pSPIHandler);
+void SPI_DeInit(SPI_RegDef_t *pSPIx);
+
+
+void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
+
+
+
+void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
+void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
+void SPI_IRQHandler(SPI_Handle_t *pHandle);
+# 428 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 21 "../Src/main.c" 2
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\unistd.h" 1 3
-
-#define _UNISTD_H_ 
-
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\unistd.h" 1 3
-
-#define _SYS_UNISTD_H 
-
-
-
-
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 1 3
+# 27 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
+#define _STDIO_H_ 
 
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\_ansi.h" 1 3
 
@@ -1716,9 +1772,12 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 
 #define _NOINLINE __attribute__ ((__noinline__))
 #define _NOINLINE_STATIC _NOINLINE static
-# 9 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\unistd.h" 2 3
+# 30 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
+
+#define _FSTDIO 
+
 #define __need_size_t 
-#define __need_ptrdiff_t 
+#define __need_NULL 
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 1 3
 # 43 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 3
 #define _SYS_CDEFS_H_ 
@@ -1726,24 +1785,6 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 
 
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 1 3 4
-# 131 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#define _PTRDIFF_T 
-#define _T_PTRDIFF_ 
-#define _T_PTRDIFF 
-#define __PTRDIFF_T 
-#define _PTRDIFF_T_ 
-#define _BSD_PTRDIFF_T_ 
-#define ___int_ptrdiff_t_h 
-#define _GCC_PTRDIFF_T 
-#define _PTRDIFF_T_DECLARED 
-
-
-
-
-# 143 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-typedef int ptrdiff_t;
-# 155 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef __need_ptrdiff_t
 # 181 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
 #define __size_t__ 
 #define __SIZE_T__ 
@@ -1773,10 +1814,23 @@ typedef int ptrdiff_t;
 
 
 
+
+# 209 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
 typedef unsigned int size_t;
 # 231 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
 #undef __need_size_t
-# 401 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+# 390 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef NULL
+
+
+
+
+#define NULL ((void *)0)
+
+
+
+
+
 #undef __need_NULL
 # 48 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\cdefs.h" 2 3
 
@@ -2088,39 +2142,114 @@ typedef unsigned int size_t;
 
 #define __guarded_by(x) __lock_annotate(guarded_by(x))
 #define __pt_guarded_by(x) __lock_annotate(pt_guarded_by(x))
-# 12 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\unistd.h" 2 3
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\types.h" 1 3
-# 22 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\types.h" 3
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_types.h" 1 3
+# 36 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 1 3 4
+# 39 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#define _STDDEF_H 
+#define _STDDEF_H_ 
+
+#define _ANSI_STDDEF_H 
+# 131 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#define _PTRDIFF_T 
+#define _T_PTRDIFF_ 
+#define _T_PTRDIFF 
+#define __PTRDIFF_T 
+#define _PTRDIFF_T_ 
+#define _BSD_PTRDIFF_T_ 
+#define ___int_ptrdiff_t_h 
+#define _GCC_PTRDIFF_T 
+#define _PTRDIFF_T_DECLARED 
+
+
+
+typedef int ptrdiff_t;
+# 155 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef __need_ptrdiff_t
+# 231 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef __need_size_t
+# 260 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#define __wchar_t__ 
+#define __WCHAR_T__ 
+#define _WCHAR_T 
+#define _T_WCHAR_ 
+#define _T_WCHAR 
+#define __WCHAR_T 
+#define _WCHAR_T_ 
+#define _BSD_WCHAR_T_ 
+#define _WCHAR_T_DEFINED_ 
+#define _WCHAR_T_DEFINED 
+#define _WCHAR_T_H 
+#define ___int_wchar_t_h 
+#define __INT_WCHAR_T_H 
+#define _GCC_WCHAR_T 
+#define _WCHAR_T_DECLARED 
+# 287 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef _BSD_WCHAR_T_
+# 321 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+typedef unsigned int wchar_t;
+# 340 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef __need_wchar_t
+# 390 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef NULL
+
+
+
+
+#define NULL ((void *)0)
 
 
 
 
 
-#define _MACHINE__TYPES_H 
-# 23 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\types.h" 2 3
+#undef __need_NULL
+
+
+
+
+#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+
+
+
+
+#define _GCC_MAX_ALIGN_T 
+
+
+
+typedef struct {
+  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
+  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
+# 426 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+} max_align_t;
+# 37 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
+
+
+#define __need___va_list 
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdarg.h" 1 3 4
+# 34 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdarg.h" 3 4
+#undef __need___va_list
+
+
+
+
+#define __GNUC_VA_LIST 
+typedef __builtin_va_list __gnuc_va_list;
+# 41 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
 
 
 
 
 
-typedef __uint8_t u_int8_t;
+typedef __gnuc_va_list va_list;
+#define _VA_LIST_DEFINED 
+# 60 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 1 3
+# 11 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _SYS_REENT_H_ 
 
-
-typedef __uint16_t u_int16_t;
-
-
-typedef __uint32_t u_int32_t;
-
-
-typedef __uint64_t u_int64_t;
-
-typedef __intptr_t register_t;
-#define __BIT_TYPES_DEFINED__ 1
-
-
-
-#define _SYS_TYPES_H 
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\_ansi.h" 1 3
+# 14 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 1 3 4
+# 15 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_types.h" 1 3
 # 20 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_types.h" 3
 #define _SYS__TYPES_H 
@@ -2128,9 +2257,16 @@ typedef __intptr_t register_t;
 #define __need_size_t 
 #define __need_wint_t 
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 1 3 4
+# 155 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef __need_ptrdiff_t
 # 231 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
 #undef __need_size_t
-# 345 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+# 340 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef __need_wchar_t
+
+
+
+
 #define _WINT_T 
 
 
@@ -2139,12 +2275,35 @@ typedef __intptr_t register_t;
 typedef unsigned int wint_t;
 
 #undef __need_wint_t
-# 401 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+# 390 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef NULL
+
+
+
+
+#define NULL ((void *)0)
+
+
+
+
+
 #undef __need_NULL
+
+
+
+
+#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
 # 25 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_types.h" 2 3
 
 
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_types.h" 1 3
 
+
+
+
+
+#define _MACHINE__TYPES_H 
+# 28 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_types.h" 2 3
 
 
 typedef long __blkcnt_t;
@@ -2294,7 +2453,442 @@ typedef unsigned long __useconds_t;
 
 
 typedef __builtin_va_list __va_list;
-# 46 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\types.h" 2 3
+# 16 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
+
+#define _NULL 0
+
+
+
+#define __Long long
+typedef unsigned long __ULong;
+# 34 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\lock.h" 1 3
+
+#define __SYS_LOCK_H__ 
+# 33 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\lock.h" 3
+struct __lock;
+typedef struct __lock * _LOCK_T;
+#define _LOCK_RECURSIVE_T _LOCK_T
+
+#define __LOCK_INIT(class,lock) extern struct __lock __lock_ ## lock; class _LOCK_T lock = &__lock_ ## lock
+
+#define __LOCK_INIT_RECURSIVE(class,lock) __LOCK_INIT(class,lock)
+
+extern void __retarget_lock_init(_LOCK_T *lock);
+#define __lock_init(lock) __retarget_lock_init(&lock)
+extern void __retarget_lock_init_recursive(_LOCK_T *lock);
+#define __lock_init_recursive(lock) __retarget_lock_init_recursive(&lock)
+extern void __retarget_lock_close(_LOCK_T lock);
+#define __lock_close(lock) __retarget_lock_close(lock)
+extern void __retarget_lock_close_recursive(_LOCK_T lock);
+#define __lock_close_recursive(lock) __retarget_lock_close_recursive(lock)
+extern void __retarget_lock_acquire(_LOCK_T lock);
+#define __lock_acquire(lock) __retarget_lock_acquire(lock)
+extern void __retarget_lock_acquire_recursive(_LOCK_T lock);
+#define __lock_acquire_recursive(lock) __retarget_lock_acquire_recursive(lock)
+extern int __retarget_lock_try_acquire(_LOCK_T lock);
+#define __lock_try_acquire(lock) __retarget_lock_try_acquire(lock)
+extern int __retarget_lock_try_acquire_recursive(_LOCK_T lock);
+#define __lock_try_acquire_recursive(lock) __retarget_lock_try_acquire_recursive(lock)
+
+extern void __retarget_lock_release(_LOCK_T lock);
+#define __lock_release(lock) __retarget_lock_release(lock)
+extern void __retarget_lock_release_recursive(_LOCK_T lock);
+#define __lock_release_recursive(lock) __retarget_lock_release_recursive(lock)
+# 35 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
+typedef _LOCK_T _flock_t;
+
+
+
+
+
+
+
+struct _reent;
+
+struct __locale_t;
+
+
+
+
+
+
+struct _Bigint
+{
+  struct _Bigint *_next;
+  int _k, _maxwds, _sign, _wds;
+  __ULong _x[1];
+};
+
+
+struct __tm
+{
+  int __tm_sec;
+  int __tm_min;
+  int __tm_hour;
+  int __tm_mday;
+  int __tm_mon;
+  int __tm_year;
+  int __tm_wday;
+  int __tm_yday;
+  int __tm_isdst;
+};
+
+
+
+
+
+#define _ATEXIT_SIZE 32
+
+struct _on_exit_args {
+ void * _fnargs[32];
+ void * _dso_handle[32];
+
+ __ULong _fntypes;
+
+
+ __ULong _is_cxa;
+};
+
+
+struct _atexit {
+ struct _atexit *_next;
+ int _ind;
+ void (*_fns[32])(void);
+        struct _on_exit_args * _on_exit_args_ptr;
+};
+#define _ATEXIT_INIT {_NULL, 0, {_NULL}, _NULL}
+# 109 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _REENT_INIT_ATEXIT 
+# 122 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct __sbuf {
+ unsigned char *_base;
+ int _size;
+};
+# 158 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct __sFILE_fake {
+  unsigned char *_p;
+  int _r;
+  int _w;
+  short _flags;
+  short _file;
+  struct __sbuf _bf;
+  int _lbfsize;
+
+  struct _reent *_data;
+};
+
+
+
+
+extern void __sinit (struct _reent *);
+
+#define _REENT_SMALL_CHECK_INIT(ptr) do { if ((ptr) && !(ptr)->__sdidinit) __sinit (ptr); } while (0)
+# 186 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct __sFILE {
+  unsigned char *_p;
+  int _r;
+  int _w;
+  short _flags;
+  short _file;
+  struct __sbuf _bf;
+  int _lbfsize;
+
+
+  struct _reent *_data;
+
+
+
+  void * _cookie;
+
+  int (*_read) (struct _reent *, void *,
+        char *, int);
+  int (*_write) (struct _reent *, void *,
+         const char *,
+         int);
+  _fpos_t (*_seek) (struct _reent *, void *, _fpos_t, int);
+  int (*_close) (struct _reent *, void *);
+
+
+  struct __sbuf _ub;
+  unsigned char *_up;
+  int _ur;
+
+
+  unsigned char _ubuf[3];
+  unsigned char _nbuf[1];
+
+
+  struct __sbuf _lb;
+
+
+  int _blksize;
+  _off_t _offset;
+
+
+
+
+
+
+  _flock_t _lock;
+
+  _mbstate_t _mbstate;
+  int _flags2;
+};
+# 292 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+typedef struct __sFILE __FILE;
+
+
+
+struct _glue
+{
+  struct _glue *_next;
+  int _niobs;
+  __FILE *_iobs;
+};
+# 317 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _RAND48_SEED_0 (0x330e)
+#define _RAND48_SEED_1 (0xabcd)
+#define _RAND48_SEED_2 (0x1234)
+#define _RAND48_MULT_0 (0xe66d)
+#define _RAND48_MULT_1 (0xdeec)
+#define _RAND48_MULT_2 (0x0005)
+#define _RAND48_ADD (0x000b)
+struct _rand48 {
+  unsigned short _seed[3];
+  unsigned short _mult[3];
+  unsigned short _add;
+
+
+  __extension__ unsigned long long _rand_next;
+
+};
+
+
+#define _REENT_EMERGENCY_SIZE 25
+#define _REENT_ASCTIME_SIZE 26
+#define _REENT_SIGNAL_SIZE 24
+# 349 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+struct _mprec
+{
+
+  struct _Bigint *_result;
+  int _result_k;
+  struct _Bigint *_p5s;
+  struct _Bigint **_freelist;
+};
+
+
+struct _misc_reent
+{
+
+  char *_strtok_last;
+  _mbstate_t _mblen_state;
+  _mbstate_t _wctomb_state;
+  _mbstate_t _mbtowc_state;
+  char _l64a_buf[8];
+  int _getdate_err;
+  _mbstate_t _mbrlen_state;
+  _mbstate_t _mbrtowc_state;
+  _mbstate_t _mbsrtowcs_state;
+  _mbstate_t _wcrtomb_state;
+  _mbstate_t _wcsrtombs_state;
+};
+
+
+
+struct _reent
+{
+
+
+  int _errno;
+
+
+
+
+  __FILE *_stdin, *_stdout, *_stderr;
+
+  int _inc;
+
+  char *_emergency;
+
+  int __sdidinit;
+
+  int _unspecified_locale_info;
+  struct __locale_t *_locale;
+
+  struct _mprec *_mp;
+
+  void (*__cleanup) (struct _reent *);
+
+  int _gamma_signgam;
+
+
+  int _cvtlen;
+  char *_cvtbuf;
+
+  struct _rand48 *_r48;
+  struct __tm *_localtime_buf;
+  char *_asctime_buf;
+
+
+  void (**(_sig_func))(int);
+
+
+
+
+
+
+
+  struct _glue __sglue;
+  __FILE *__sf;
+  struct _misc_reent *_misc;
+  char *_signal_buf;
+};
+# 463 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+extern const struct __sFILE_fake __sf_fake_stdin;
+extern const struct __sFILE_fake __sf_fake_stdout;
+extern const struct __sFILE_fake __sf_fake_stderr;
+
+#define _REENT_INIT(var) { 0, (__FILE *)&__sf_fake_stdin, (__FILE *)&__sf_fake_stdout, (__FILE *)&__sf_fake_stderr, 0, _NULL, 0, 0, _NULL, _NULL, _NULL, 0, 0, _NULL, _NULL, _NULL, _NULL, _NULL, _REENT_INIT_ATEXIT {_NULL, 0, _NULL}, _NULL, _NULL, _NULL }
+# 493 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _REENT_INIT_PTR_ZEROED(var) { (var)->_stdin = (__FILE *)&__sf_fake_stdin; (var)->_stdout = (__FILE *)&__sf_fake_stdout; (var)->_stderr = (__FILE *)&__sf_fake_stderr; }
+# 503 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h" 1 3
+# 11 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h" 3
+#undef assert
+
+
+
+
+#define assert(__e) ((__e) ? (void)0 : __assert_func (__FILE__, __LINE__, __ASSERT_FUNC, #__e))
+# 26 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h" 3
+#define __ASSERT_FUNC __func__
+# 39 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h" 3
+void __assert (const char *, int, const char *)
+     __attribute__ ((__noreturn__));
+void __assert_func (const char *, int, const char *, const char *)
+     __attribute__ ((__noreturn__));
+
+
+#define static_assert _Static_assert
+# 504 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
+#define __reent_assert(x) ((x) ? (void)0 : __assert_func(__FILE__, __LINE__, (char *)0, "REENT malloc succeeded"))
+# 514 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _REENT_CHECK(var,what,type,size,init) do { struct _reent *_r = (var); if (_r->what == NULL) { _r->what = (type)malloc(size); __reent_assert(_r->what); init; } } while (0)
+# 523 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _REENT_CHECK_TM(var) _REENT_CHECK(var, _localtime_buf, struct __tm *, sizeof *((var)->_localtime_buf), )
+
+
+
+#define _REENT_CHECK_ASCTIME_BUF(var) _REENT_CHECK(var, _asctime_buf, char *, _REENT_ASCTIME_SIZE, memset((var)->_asctime_buf, 0, _REENT_ASCTIME_SIZE))
+
+
+
+
+#define _REENT_INIT_RAND48(var) do { struct _reent *_r = (var); _r->_r48->_seed[0] = _RAND48_SEED_0; _r->_r48->_seed[1] = _RAND48_SEED_1; _r->_r48->_seed[2] = _RAND48_SEED_2; _r->_r48->_mult[0] = _RAND48_MULT_0; _r->_r48->_mult[1] = _RAND48_MULT_1; _r->_r48->_mult[2] = _RAND48_MULT_2; _r->_r48->_add = _RAND48_ADD; _r->_r48->_rand_next = 1; } while (0)
+# 543 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _REENT_CHECK_RAND48(var) _REENT_CHECK(var, _r48, struct _rand48 *, sizeof *((var)->_r48), _REENT_INIT_RAND48((var)))
+
+
+#define _REENT_INIT_MP(var) do { struct _reent *_r = (var); _r->_mp->_result_k = 0; _r->_mp->_result = _r->_mp->_p5s = _NULL; _r->_mp->_freelist = _NULL; } while (0)
+
+
+
+
+
+#define _REENT_CHECK_MP(var) _REENT_CHECK(var, _mp, struct _mprec *, sizeof *((var)->_mp), _REENT_INIT_MP(var))
+
+
+#define _REENT_CHECK_EMERGENCY(var) _REENT_CHECK(var, _emergency, char *, _REENT_EMERGENCY_SIZE, )
+
+
+#define _REENT_INIT_MISC(var) do { struct _reent *_r = (var); _r->_misc->_strtok_last = _NULL; _r->_misc->_mblen_state.__count = 0; _r->_misc->_mblen_state.__value.__wch = 0; _r->_misc->_wctomb_state.__count = 0; _r->_misc->_wctomb_state.__value.__wch = 0; _r->_misc->_mbtowc_state.__count = 0; _r->_misc->_mbtowc_state.__value.__wch = 0; _r->_misc->_mbrlen_state.__count = 0; _r->_misc->_mbrlen_state.__value.__wch = 0; _r->_misc->_mbrtowc_state.__count = 0; _r->_misc->_mbrtowc_state.__value.__wch = 0; _r->_misc->_mbsrtowcs_state.__count = 0; _r->_misc->_mbsrtowcs_state.__value.__wch = 0; _r->_misc->_wcrtomb_state.__count = 0; _r->_misc->_wcrtomb_state.__value.__wch = 0; _r->_misc->_wcsrtombs_state.__count = 0; _r->_misc->_wcsrtombs_state.__value.__wch = 0; _r->_misc->_l64a_buf[0] = '\0'; _r->_misc->_getdate_err = 0; } while (0)
+# 580 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _REENT_CHECK_MISC(var) _REENT_CHECK(var, _misc, struct _misc_reent *, sizeof *((var)->_misc), _REENT_INIT_MISC(var))
+
+
+#define _REENT_CHECK_SIGNAL_BUF(var) _REENT_CHECK(var, _signal_buf, char *, _REENT_SIGNAL_SIZE, )
+
+
+#define _REENT_SIGNGAM(ptr) ((ptr)->_gamma_signgam)
+#define _REENT_RAND_NEXT(ptr) ((ptr)->_r48->_rand_next)
+#define _REENT_RAND48_SEED(ptr) ((ptr)->_r48->_seed)
+#define _REENT_RAND48_MULT(ptr) ((ptr)->_r48->_mult)
+#define _REENT_RAND48_ADD(ptr) ((ptr)->_r48->_add)
+#define _REENT_MP_RESULT(ptr) ((ptr)->_mp->_result)
+#define _REENT_MP_RESULT_K(ptr) ((ptr)->_mp->_result_k)
+#define _REENT_MP_P5S(ptr) ((ptr)->_mp->_p5s)
+#define _REENT_MP_FREELIST(ptr) ((ptr)->_mp->_freelist)
+#define _REENT_ASCTIME_BUF(ptr) ((ptr)->_asctime_buf)
+#define _REENT_TM(ptr) ((ptr)->_localtime_buf)
+#define _REENT_EMERGENCY(ptr) ((ptr)->_emergency)
+#define _REENT_STRTOK_LAST(ptr) ((ptr)->_misc->_strtok_last)
+#define _REENT_MBLEN_STATE(ptr) ((ptr)->_misc->_mblen_state)
+#define _REENT_MBTOWC_STATE(ptr) ((ptr)->_misc->_mbtowc_state)
+#define _REENT_WCTOMB_STATE(ptr) ((ptr)->_misc->_wctomb_state)
+#define _REENT_MBRLEN_STATE(ptr) ((ptr)->_misc->_mbrlen_state)
+#define _REENT_MBRTOWC_STATE(ptr) ((ptr)->_misc->_mbrtowc_state)
+#define _REENT_MBSRTOWCS_STATE(ptr) ((ptr)->_misc->_mbsrtowcs_state)
+#define _REENT_WCRTOMB_STATE(ptr) ((ptr)->_misc->_wcrtomb_state)
+#define _REENT_WCSRTOMBS_STATE(ptr) ((ptr)->_misc->_wcsrtombs_state)
+#define _REENT_L64A_BUF(ptr) ((ptr)->_misc->_l64a_buf)
+#define _REENT_GETDATE_ERR_P(ptr) (&((ptr)->_misc->_getdate_err))
+#define _REENT_SIGNAL_BUF(ptr) ((ptr)->_signal_buf)
+# 800 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _REENT_INIT_PTR(var) { memset((var), 0, sizeof(*(var))); _REENT_INIT_PTR_ZEROED(var); }
+
+
+
+
+
+
+
+#define _Kmax (sizeof (size_t) << 3)
+
+
+
+
+
+
+
+#define __ATTRIBUTE_IMPURE_PTR__ 
+
+
+extern struct _reent *_impure_ptr ;
+extern struct _reent *const _global_impure_ptr ;
+
+void _reclaim_reent (struct _reent *);
+# 832 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
+#define _REENT _impure_ptr
+
+
+#define _GLOBAL_REENT _global_impure_ptr
+
+
+extern struct _atexit *_global_atexit;
+#define _GLOBAL_ATEXIT _global_atexit
+# 61 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\types.h" 1 3
+# 28 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\types.h" 3
+typedef __uint8_t u_int8_t;
+
+
+typedef __uint16_t u_int16_t;
+
+
+typedef __uint32_t u_int32_t;
+
+
+typedef __uint64_t u_int64_t;
+
+typedef __intptr_t register_t;
+#define __BIT_TYPES_DEFINED__ 1
+
+
+
+#define _SYS_TYPES_H 
+
 
 
 
@@ -2713,1027 +3307,7 @@ typedef struct {
 
 
 #undef __need_inttypes
-# 13 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\unistd.h" 2 3
-
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 1 3 4
-# 39 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#define _STDDEF_H 
-#define _STDDEF_H_ 
-
-#define _ANSI_STDDEF_H 
-# 155 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 231 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef __need_size_t
-# 260 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#define __wchar_t__ 
-#define __WCHAR_T__ 
-#define _WCHAR_T 
-#define _T_WCHAR_ 
-#define _T_WCHAR 
-#define __WCHAR_T 
-#define _WCHAR_T_ 
-#define _BSD_WCHAR_T_ 
-#define _WCHAR_T_DEFINED_ 
-#define _WCHAR_T_DEFINED 
-#define _WCHAR_T_H 
-#define ___int_wchar_t_h 
-#define __INT_WCHAR_T_H 
-#define _GCC_WCHAR_T 
-#define _WCHAR_T_DECLARED 
-# 287 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef _BSD_WCHAR_T_
-# 321 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-typedef unsigned int wchar_t;
-# 340 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef __need_wchar_t
-# 390 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-
-
-
-
-#define _GCC_MAX_ALIGN_T 
-
-
-
-typedef struct {
-  long long __max_align_ll __attribute__((__aligned__(__alignof__(long long))));
-  long double __max_align_ld __attribute__((__aligned__(__alignof__(long double))));
-# 426 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-} max_align_t;
-# 15 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\unistd.h" 2 3
-
-extern char **environ;
-
-void _exit (int __status) __attribute__ ((__noreturn__));
-
-int access (const char *__path, int __amode);
-unsigned alarm (unsigned __secs);
-int chdir (const char *__path);
-int chmod (const char *__path, mode_t __mode);
-
-int chown (const char *__path, uid_t __owner, gid_t __group);
-
-
-int chroot (const char *__path);
-
-int close (int __fildes);
-
-size_t confstr (int __name, char *__buf, size_t __len);
-# 44 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\unistd.h" 3
-int daemon (int nochdir, int noclose);
-
-int dup (int __fildes);
-int dup2 (int __fildes, int __fildes2);
-# 56 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\unistd.h" 3
-void endusershell (void);
-
-
-
-
-int execl (const char *__path, const char *, ...);
-int execle (const char *__path, const char *, ...);
-int execlp (const char *__file, const char *, ...);
-
-int execlpe (const char *__file, const char *, ...);
-
-int execv (const char *__path, char * const __argv[]);
-int execve (const char *__path, char * const __argv[], char * const __envp[]);
-int execvp (const char *__file, char * const __argv[]);
-
-
-
-
-int faccessat (int __dirfd, const char *__path, int __mode, int __flags);
-
-
-int fchdir (int __fildes);
-
-
-int fchmod (int __fildes, mode_t __mode);
-
-
-
-int fchown (int __fildes, uid_t __owner, gid_t __group);
-
-
-
-int fchownat (int __dirfd, const char *__path, uid_t __owner, gid_t __group, int __flags);
-
-
-int fexecve (int __fd, char * const __argv[], char * const __envp[]);
-
-pid_t fork (void);
-long fpathconf (int __fd, int __name);
-int fsync (int __fd);
-
-int fdatasync (int __fd);
-
-
-
-
-char * getcwd (char *__buf, size_t __size);
-
-int getdomainname (char *__name, size_t __len);
-
-
-int getentropy (void *, size_t);
-
-
-gid_t getegid (void);
-uid_t geteuid (void);
-gid_t getgid (void);
-
-int getgroups (int __gidsetsize, gid_t __grouplist[]);
-
-long gethostid (void);
-
-char * getlogin (void);
-
-
-
-
-char * getpass (const char *__prompt);
-int getpagesize (void);
-
-
-int getpeereid (int, uid_t *, gid_t *);
-
-
-pid_t getpgid (pid_t);
-
-pid_t getpgrp (void);
-pid_t getpid (void);
-pid_t getppid (void);
-
-pid_t getsid (pid_t);
-
-
-uid_t getuid (void);
-
-
-char * getusershell (void);
-
-
-char * getwd (char *__buf);
-
-
-int iruserok (unsigned long raddr, int superuser, const char *ruser, const char *luser);
-
-int isatty (int __fildes);
-
-int issetugid (void);
-
-
-
-int lchown (const char *__path, uid_t __owner, gid_t __group);
-
-
-int link (const char *__path1, const char *__path2);
-
-int linkat (int __dirfd1, const char *__path1, int __dirfd2, const char *__path2, int __flags);
-
-
-int nice (int __nice_value);
-
-
-off_t lseek (int __fildes, off_t __offset, int __whence);
-
-
-#define F_ULOCK 0
-#define F_LOCK 1
-#define F_TLOCK 2
-#define F_TEST 3
-int lockf (int __fd, int __cmd, off_t __len);
-
-long pathconf (const char *__path, int __name);
-int pause (void);
-
-int pthread_atfork (void (*)(void), void (*)(void), void (*)(void));
-
-int pipe (int __fildes[2]);
-
-
-
-
-ssize_t pread (int __fd, void *__buf, size_t __nbytes, off_t __offset);
-ssize_t pwrite (int __fd, const void *__buf, size_t __nbytes, off_t __offset);
-
-int read (int __fd, void *__buf, size_t __nbyte);
-
-int rresvport (int *__alport);
-int revoke (char *__path);
-
-int rmdir (const char *__path);
-
-int ruserok (const char *rhost, int superuser, const char *ruser, const char *luser);
-
-
-void * sbrk (ptrdiff_t __incr);
-
-
-
-int setegid (gid_t __gid);
-int seteuid (uid_t __uid);
-
-int setgid (gid_t __gid);
-
-
-int setgroups (int ngroups, const gid_t *grouplist);
-
-
-int sethostname (const char *, size_t);
-
-int setpgid (pid_t __pid, pid_t __pgid);
-
-int setpgrp (void);
-
-
-int setregid (gid_t __rgid, gid_t __egid);
-int setreuid (uid_t __ruid, uid_t __euid);
-
-pid_t setsid (void);
-
-int setuid (uid_t __uid);
-
-
-void setusershell (void);
-
-unsigned sleep (unsigned int __seconds);
-
-
-
-long sysconf (int __name);
-pid_t tcgetpgrp (int __fildes);
-int tcsetpgrp (int __fildes, pid_t __pgrp_id);
-char * ttyname (int __fildes);
-int ttyname_r (int, char *, size_t);
-int unlink (const char *__path);
-
-int usleep (useconds_t __useconds);
-
-
-int vhangup (void);
-
-int write (int __fd, const void *__buf, size_t __nbyte);
-
-
-
-
-
-
-extern char *optarg;
-extern int optind, opterr, optopt;
-int getopt(int, char * const [], const char *);
-extern int optreset;
-
-
-
-pid_t vfork (void);
-# 283 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\unistd.h" 3
-int ftruncate (int __fd, off_t __length);
-
-
-int truncate (const char *, off_t __length);
-
-
-
-
-int getdtablesize (void);
-
-
-useconds_t ualarm (useconds_t __useconds, useconds_t __interval);
-
-
-
-
-
- int gethostname (char *__name, size_t __len);
-
-
-
-
-int setdtablesize (int);
-
-
-
-void sync (void);
-
-
-
-ssize_t readlink (const char *restrict __path,
-                          char *restrict __buf, size_t __buflen);
-int symlink (const char *__name1, const char *__name2);
-
-
-ssize_t readlinkat (int __dirfd1, const char *restrict __path,
-                            char *restrict __buf, size_t __buflen);
-int symlinkat (const char *, int, const char *);
-int unlinkat (int, const char *, int);
-
-
-#define F_OK 0
-#define R_OK 4
-#define W_OK 2
-#define X_OK 1
-
-#define SEEK_SET 0
-#define SEEK_CUR 1
-#define SEEK_END 2
-
-
-
-#define STDIN_FILENO 0
-#define STDOUT_FILENO 1
-#define STDERR_FILENO 2
-
-
-
-
-
-#define _SC_ARG_MAX 0
-#define _SC_CHILD_MAX 1
-#define _SC_CLK_TCK 2
-#define _SC_NGROUPS_MAX 3
-#define _SC_OPEN_MAX 4
-#define _SC_JOB_CONTROL 5
-#define _SC_SAVED_IDS 6
-#define _SC_VERSION 7
-#define _SC_PAGESIZE 8
-#define _SC_PAGE_SIZE _SC_PAGESIZE
-
-
-#define _SC_NPROCESSORS_CONF 9
-#define _SC_NPROCESSORS_ONLN 10
-#define _SC_PHYS_PAGES 11
-#define _SC_AVPHYS_PAGES 12
-
-#define _SC_MQ_OPEN_MAX 13
-#define _SC_MQ_PRIO_MAX 14
-#define _SC_RTSIG_MAX 15
-#define _SC_SEM_NSEMS_MAX 16
-#define _SC_SEM_VALUE_MAX 17
-#define _SC_SIGQUEUE_MAX 18
-#define _SC_TIMER_MAX 19
-#define _SC_TZNAME_MAX 20
-#define _SC_ASYNCHRONOUS_IO 21
-#define _SC_FSYNC 22
-#define _SC_MAPPED_FILES 23
-#define _SC_MEMLOCK 24
-#define _SC_MEMLOCK_RANGE 25
-#define _SC_MEMORY_PROTECTION 26
-#define _SC_MESSAGE_PASSING 27
-#define _SC_PRIORITIZED_IO 28
-#define _SC_REALTIME_SIGNALS 29
-#define _SC_SEMAPHORES 30
-#define _SC_SHARED_MEMORY_OBJECTS 31
-#define _SC_SYNCHRONIZED_IO 32
-#define _SC_TIMERS 33
-#define _SC_AIO_LISTIO_MAX 34
-#define _SC_AIO_MAX 35
-#define _SC_AIO_PRIO_DELTA_MAX 36
-#define _SC_DELAYTIMER_MAX 37
-#define _SC_THREAD_KEYS_MAX 38
-#define _SC_THREAD_STACK_MIN 39
-#define _SC_THREAD_THREADS_MAX 40
-#define _SC_TTY_NAME_MAX 41
-#define _SC_THREADS 42
-#define _SC_THREAD_ATTR_STACKADDR 43
-#define _SC_THREAD_ATTR_STACKSIZE 44
-#define _SC_THREAD_PRIORITY_SCHEDULING 45
-#define _SC_THREAD_PRIO_INHERIT 46
-
-#define _SC_THREAD_PRIO_PROTECT 47
-#define _SC_THREAD_PRIO_CEILING _SC_THREAD_PRIO_PROTECT
-#define _SC_THREAD_PROCESS_SHARED 48
-#define _SC_THREAD_SAFE_FUNCTIONS 49
-#define _SC_GETGR_R_SIZE_MAX 50
-#define _SC_GETPW_R_SIZE_MAX 51
-#define _SC_LOGIN_NAME_MAX 52
-#define _SC_THREAD_DESTRUCTOR_ITERATIONS 53
-#define _SC_ADVISORY_INFO 54
-#define _SC_ATEXIT_MAX 55
-#define _SC_BARRIERS 56
-#define _SC_BC_BASE_MAX 57
-#define _SC_BC_DIM_MAX 58
-#define _SC_BC_SCALE_MAX 59
-#define _SC_BC_STRING_MAX 60
-#define _SC_CLOCK_SELECTION 61
-#define _SC_COLL_WEIGHTS_MAX 62
-#define _SC_CPUTIME 63
-#define _SC_EXPR_NEST_MAX 64
-#define _SC_HOST_NAME_MAX 65
-#define _SC_IOV_MAX 66
-#define _SC_IPV6 67
-#define _SC_LINE_MAX 68
-#define _SC_MONOTONIC_CLOCK 69
-#define _SC_RAW_SOCKETS 70
-#define _SC_READER_WRITER_LOCKS 71
-#define _SC_REGEXP 72
-#define _SC_RE_DUP_MAX 73
-#define _SC_SHELL 74
-#define _SC_SPAWN 75
-#define _SC_SPIN_LOCKS 76
-#define _SC_SPORADIC_SERVER 77
-#define _SC_SS_REPL_MAX 78
-#define _SC_SYMLOOP_MAX 79
-#define _SC_THREAD_CPUTIME 80
-#define _SC_THREAD_SPORADIC_SERVER 81
-#define _SC_TIMEOUTS 82
-#define _SC_TRACE 83
-#define _SC_TRACE_EVENT_FILTER 84
-#define _SC_TRACE_EVENT_NAME_MAX 85
-#define _SC_TRACE_INHERIT 86
-#define _SC_TRACE_LOG 87
-#define _SC_TRACE_NAME_MAX 88
-#define _SC_TRACE_SYS_MAX 89
-#define _SC_TRACE_USER_EVENT_MAX 90
-#define _SC_TYPED_MEMORY_OBJECTS 91
-#define _SC_V7_ILP32_OFF32 92
-#define _SC_V6_ILP32_OFF32 _SC_V7_ILP32_OFF32
-#define _SC_XBS5_ILP32_OFF32 _SC_V7_ILP32_OFF32
-#define _SC_V7_ILP32_OFFBIG 93
-#define _SC_V6_ILP32_OFFBIG _SC_V7_ILP32_OFFBIG
-#define _SC_XBS5_ILP32_OFFBIG _SC_V7_ILP32_OFFBIG
-#define _SC_V7_LP64_OFF64 94
-#define _SC_V6_LP64_OFF64 _SC_V7_LP64_OFF64
-#define _SC_XBS5_LP64_OFF64 _SC_V7_LP64_OFF64
-#define _SC_V7_LPBIG_OFFBIG 95
-#define _SC_V6_LPBIG_OFFBIG _SC_V7_LPBIG_OFFBIG
-#define _SC_XBS5_LPBIG_OFFBIG _SC_V7_LPBIG_OFFBIG
-#define _SC_XOPEN_CRYPT 96
-#define _SC_XOPEN_ENH_I18N 97
-#define _SC_XOPEN_LEGACY 98
-#define _SC_XOPEN_REALTIME 99
-#define _SC_STREAM_MAX 100
-#define _SC_PRIORITY_SCHEDULING 101
-#define _SC_XOPEN_REALTIME_THREADS 102
-#define _SC_XOPEN_SHM 103
-#define _SC_XOPEN_STREAMS 104
-#define _SC_XOPEN_UNIX 105
-#define _SC_XOPEN_VERSION 106
-#define _SC_2_CHAR_TERM 107
-#define _SC_2_C_BIND 108
-#define _SC_2_C_DEV 109
-#define _SC_2_FORT_DEV 110
-#define _SC_2_FORT_RUN 111
-#define _SC_2_LOCALEDEF 112
-#define _SC_2_PBS 113
-#define _SC_2_PBS_ACCOUNTING 114
-#define _SC_2_PBS_CHECKPOINT 115
-#define _SC_2_PBS_LOCATE 116
-#define _SC_2_PBS_MESSAGE 117
-#define _SC_2_PBS_TRACK 118
-#define _SC_2_SW_DEV 119
-#define _SC_2_UPE 120
-#define _SC_2_VERSION 121
-#define _SC_THREAD_ROBUST_PRIO_INHERIT 122
-#define _SC_THREAD_ROBUST_PRIO_PROTECT 123
-#define _SC_XOPEN_UUCP 124
-#define _SC_LEVEL1_ICACHE_SIZE 125
-#define _SC_LEVEL1_ICACHE_ASSOC 126
-#define _SC_LEVEL1_ICACHE_LINESIZE 127
-#define _SC_LEVEL1_DCACHE_SIZE 128
-#define _SC_LEVEL1_DCACHE_ASSOC 129
-#define _SC_LEVEL1_DCACHE_LINESIZE 130
-#define _SC_LEVEL2_CACHE_SIZE 131
-#define _SC_LEVEL2_CACHE_ASSOC 132
-#define _SC_LEVEL2_CACHE_LINESIZE 133
-#define _SC_LEVEL3_CACHE_SIZE 134
-#define _SC_LEVEL3_CACHE_ASSOC 135
-#define _SC_LEVEL3_CACHE_LINESIZE 136
-#define _SC_LEVEL4_CACHE_SIZE 137
-#define _SC_LEVEL4_CACHE_ASSOC 138
-#define _SC_LEVEL4_CACHE_LINESIZE 139
-#define _SC_POSIX_26_VERSION 140
-
-
-
-
-
-#define _PC_LINK_MAX 0
-#define _PC_MAX_CANON 1
-#define _PC_MAX_INPUT 2
-#define _PC_NAME_MAX 3
-#define _PC_PATH_MAX 4
-#define _PC_PIPE_BUF 5
-#define _PC_CHOWN_RESTRICTED 6
-#define _PC_NO_TRUNC 7
-#define _PC_VDISABLE 8
-#define _PC_ASYNC_IO 9
-#define _PC_PRIO_IO 10
-#define _PC_SYNC_IO 11
-#define _PC_FILESIZEBITS 12
-#define _PC_2_SYMLINKS 13
-#define _PC_SYMLINK_MAX 14
-#define _PC_ALLOC_SIZE_MIN 15
-#define _PC_REC_INCR_XFER_SIZE 16
-#define _PC_REC_MAX_XFER_SIZE 17
-#define _PC_REC_MIN_XFER_SIZE 18
-#define _PC_REC_XFER_ALIGN 19
-#define _PC_TIMESTAMP_RESOLUTION 20
-# 5 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\unistd.h" 2 3
-# 22 "../Src/main.c" 2
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 1 3
-# 27 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
-#define _STDIO_H_ 
-
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\_ansi.h" 1 3
-# 30 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
-#define _FSTDIO 
-
-#define __need_size_t 
-#define __need_NULL 
-
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 1 3 4
-# 155 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef __need_ptrdiff_t
-# 231 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef __need_size_t
-# 340 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef __need_wchar_t
-# 390 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
-#undef NULL
-
-
-
-
-#define NULL ((void *)0)
-
-
-
-
-
-#undef __need_NULL
-
-
-
-
-#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
-# 37 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
-
-#define __need___va_list 
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdarg.h" 1 3 4
-# 34 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdarg.h" 3 4
-#undef __need___va_list
-
-
-
-
-#define __GNUC_VA_LIST 
-typedef __builtin_va_list __gnuc_va_list;
-# 41 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
-
-
-
-
-typedef __gnuc_va_list va_list;
-#define _VA_LIST_DEFINED 
-# 60 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 1 3
-# 11 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _SYS_REENT_H_ 
-
-
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 1 3 4
-# 15 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
-
-
-#define _NULL 0
-
-
-
-#define __Long long
-typedef unsigned long __ULong;
-# 34 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\lock.h" 1 3
-
-#define __SYS_LOCK_H__ 
-# 33 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\lock.h" 3
-struct __lock;
-typedef struct __lock * _LOCK_T;
-#define _LOCK_RECURSIVE_T _LOCK_T
-
-#define __LOCK_INIT(class,lock) extern struct __lock __lock_ ## lock; class _LOCK_T lock = &__lock_ ## lock
-
-#define __LOCK_INIT_RECURSIVE(class,lock) __LOCK_INIT(class,lock)
-
-extern void __retarget_lock_init(_LOCK_T *lock);
-#define __lock_init(lock) __retarget_lock_init(&lock)
-extern void __retarget_lock_init_recursive(_LOCK_T *lock);
-#define __lock_init_recursive(lock) __retarget_lock_init_recursive(&lock)
-extern void __retarget_lock_close(_LOCK_T lock);
-#define __lock_close(lock) __retarget_lock_close(lock)
-extern void __retarget_lock_close_recursive(_LOCK_T lock);
-#define __lock_close_recursive(lock) __retarget_lock_close_recursive(lock)
-extern void __retarget_lock_acquire(_LOCK_T lock);
-#define __lock_acquire(lock) __retarget_lock_acquire(lock)
-extern void __retarget_lock_acquire_recursive(_LOCK_T lock);
-#define __lock_acquire_recursive(lock) __retarget_lock_acquire_recursive(lock)
-extern int __retarget_lock_try_acquire(_LOCK_T lock);
-#define __lock_try_acquire(lock) __retarget_lock_try_acquire(lock)
-extern int __retarget_lock_try_acquire_recursive(_LOCK_T lock);
-#define __lock_try_acquire_recursive(lock) __retarget_lock_try_acquire_recursive(lock)
-
-extern void __retarget_lock_release(_LOCK_T lock);
-#define __lock_release(lock) __retarget_lock_release(lock)
-extern void __retarget_lock_release_recursive(_LOCK_T lock);
-#define __lock_release_recursive(lock) __retarget_lock_release_recursive(lock)
-# 35 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
-typedef _LOCK_T _flock_t;
-
-
-
-
-
-
-
-struct _reent;
-
-struct __locale_t;
-
-
-
-
-
-
-struct _Bigint
-{
-  struct _Bigint *_next;
-  int _k, _maxwds, _sign, _wds;
-  __ULong _x[1];
-};
-
-
-struct __tm
-{
-  int __tm_sec;
-  int __tm_min;
-  int __tm_hour;
-  int __tm_mday;
-  int __tm_mon;
-  int __tm_year;
-  int __tm_wday;
-  int __tm_yday;
-  int __tm_isdst;
-};
-
-
-
-
-
-#define _ATEXIT_SIZE 32
-
-struct _on_exit_args {
- void * _fnargs[32];
- void * _dso_handle[32];
-
- __ULong _fntypes;
-
-
- __ULong _is_cxa;
-};
-
-
-struct _atexit {
- struct _atexit *_next;
- int _ind;
- void (*_fns[32])(void);
-        struct _on_exit_args * _on_exit_args_ptr;
-};
-#define _ATEXIT_INIT {_NULL, 0, {_NULL}, _NULL}
-# 109 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_INIT_ATEXIT 
-# 122 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-# 158 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-struct __sFILE_fake {
-  unsigned char *_p;
-  int _r;
-  int _w;
-  short _flags;
-  short _file;
-  struct __sbuf _bf;
-  int _lbfsize;
-
-  struct _reent *_data;
-};
-
-
-
-
-extern void __sinit (struct _reent *);
-
-#define _REENT_SMALL_CHECK_INIT(ptr) do { if ((ptr) && !(ptr)->__sdidinit) __sinit (ptr); } while (0)
-# 186 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-struct __sFILE {
-  unsigned char *_p;
-  int _r;
-  int _w;
-  short _flags;
-  short _file;
-  struct __sbuf _bf;
-  int _lbfsize;
-
-
-  struct _reent *_data;
-
-
-
-  void * _cookie;
-
-  int (*_read) (struct _reent *, void *,
-        char *, int);
-  int (*_write) (struct _reent *, void *,
-         const char *,
-         int);
-  _fpos_t (*_seek) (struct _reent *, void *, _fpos_t, int);
-  int (*_close) (struct _reent *, void *);
-
-
-  struct __sbuf _ub;
-  unsigned char *_up;
-  int _ur;
-
-
-  unsigned char _ubuf[3];
-  unsigned char _nbuf[1];
-
-
-  struct __sbuf _lb;
-
-
-  int _blksize;
-  _off_t _offset;
-
-
-
-
-
-
-  _flock_t _lock;
-
-  _mbstate_t _mbstate;
-  int _flags2;
-};
-# 292 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-typedef struct __sFILE __FILE;
-
-
-
-struct _glue
-{
-  struct _glue *_next;
-  int _niobs;
-  __FILE *_iobs;
-};
-# 317 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _RAND48_SEED_0 (0x330e)
-#define _RAND48_SEED_1 (0xabcd)
-#define _RAND48_SEED_2 (0x1234)
-#define _RAND48_MULT_0 (0xe66d)
-#define _RAND48_MULT_1 (0xdeec)
-#define _RAND48_MULT_2 (0x0005)
-#define _RAND48_ADD (0x000b)
-struct _rand48 {
-  unsigned short _seed[3];
-  unsigned short _mult[3];
-  unsigned short _add;
-
-
-  __extension__ unsigned long long _rand_next;
-
-};
-
-
-#define _REENT_EMERGENCY_SIZE 25
-#define _REENT_ASCTIME_SIZE 26
-#define _REENT_SIGNAL_SIZE 24
-# 349 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-struct _mprec
-{
-
-  struct _Bigint *_result;
-  int _result_k;
-  struct _Bigint *_p5s;
-  struct _Bigint **_freelist;
-};
-
-
-struct _misc_reent
-{
-
-  char *_strtok_last;
-  _mbstate_t _mblen_state;
-  _mbstate_t _wctomb_state;
-  _mbstate_t _mbtowc_state;
-  char _l64a_buf[8];
-  int _getdate_err;
-  _mbstate_t _mbrlen_state;
-  _mbstate_t _mbrtowc_state;
-  _mbstate_t _mbsrtowcs_state;
-  _mbstate_t _wcrtomb_state;
-  _mbstate_t _wcsrtombs_state;
-};
-
-
-
-struct _reent
-{
-
-
-  int _errno;
-
-
-
-
-  __FILE *_stdin, *_stdout, *_stderr;
-
-  int _inc;
-
-  char *_emergency;
-
-  int __sdidinit;
-
-  int _unspecified_locale_info;
-  struct __locale_t *_locale;
-
-  struct _mprec *_mp;
-
-  void (*__cleanup) (struct _reent *);
-
-  int _gamma_signgam;
-
-
-  int _cvtlen;
-  char *_cvtbuf;
-
-  struct _rand48 *_r48;
-  struct __tm *_localtime_buf;
-  char *_asctime_buf;
-
-
-  void (**(_sig_func))(int);
-
-
-
-
-
-
-
-  struct _glue __sglue;
-  __FILE *__sf;
-  struct _misc_reent *_misc;
-  char *_signal_buf;
-};
-# 463 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-extern const struct __sFILE_fake __sf_fake_stdin;
-extern const struct __sFILE_fake __sf_fake_stdout;
-extern const struct __sFILE_fake __sf_fake_stderr;
-
-#define _REENT_INIT(var) { 0, (__FILE *)&__sf_fake_stdin, (__FILE *)&__sf_fake_stdout, (__FILE *)&__sf_fake_stderr, 0, _NULL, 0, 0, _NULL, _NULL, _NULL, 0, 0, _NULL, _NULL, _NULL, _NULL, _NULL, _REENT_INIT_ATEXIT {_NULL, 0, _NULL}, _NULL, _NULL, _NULL }
-# 493 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_INIT_PTR_ZEROED(var) { (var)->_stdin = (__FILE *)&__sf_fake_stdin; (var)->_stdout = (__FILE *)&__sf_fake_stdout; (var)->_stderr = (__FILE *)&__sf_fake_stderr; }
-# 503 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h" 1 3
-# 11 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h" 3
-#undef assert
-
-
-
-
-#define assert(__e) ((__e) ? (void)0 : __assert_func (__FILE__, __LINE__, __ASSERT_FUNC, #__e))
-# 26 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h" 3
-#define __ASSERT_FUNC __func__
-# 39 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h" 3
-void __assert (const char *, int, const char *)
-     __attribute__ ((__noreturn__));
-void __assert_func (const char *, int, const char *, const char *)
-     __attribute__ ((__noreturn__));
-
-
-#define static_assert _Static_assert
-# 504 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 2 3
-#define __reent_assert(x) ((x) ? (void)0 : __assert_func(__FILE__, __LINE__, (char *)0, "REENT malloc succeeded"))
-# 514 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_CHECK(var,what,type,size,init) do { struct _reent *_r = (var); if (_r->what == NULL) { _r->what = (type)malloc(size); __reent_assert(_r->what); init; } } while (0)
-# 523 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_CHECK_TM(var) _REENT_CHECK(var, _localtime_buf, struct __tm *, sizeof *((var)->_localtime_buf), )
-
-
-
-#define _REENT_CHECK_ASCTIME_BUF(var) _REENT_CHECK(var, _asctime_buf, char *, _REENT_ASCTIME_SIZE, memset((var)->_asctime_buf, 0, _REENT_ASCTIME_SIZE))
-
-
-
-
-#define _REENT_INIT_RAND48(var) do { struct _reent *_r = (var); _r->_r48->_seed[0] = _RAND48_SEED_0; _r->_r48->_seed[1] = _RAND48_SEED_1; _r->_r48->_seed[2] = _RAND48_SEED_2; _r->_r48->_mult[0] = _RAND48_MULT_0; _r->_r48->_mult[1] = _RAND48_MULT_1; _r->_r48->_mult[2] = _RAND48_MULT_2; _r->_r48->_add = _RAND48_ADD; _r->_r48->_rand_next = 1; } while (0)
-# 543 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_CHECK_RAND48(var) _REENT_CHECK(var, _r48, struct _rand48 *, sizeof *((var)->_r48), _REENT_INIT_RAND48((var)))
-
-
-#define _REENT_INIT_MP(var) do { struct _reent *_r = (var); _r->_mp->_result_k = 0; _r->_mp->_result = _r->_mp->_p5s = _NULL; _r->_mp->_freelist = _NULL; } while (0)
-
-
-
-
-
-#define _REENT_CHECK_MP(var) _REENT_CHECK(var, _mp, struct _mprec *, sizeof *((var)->_mp), _REENT_INIT_MP(var))
-
-
-#define _REENT_CHECK_EMERGENCY(var) _REENT_CHECK(var, _emergency, char *, _REENT_EMERGENCY_SIZE, )
-
-
-#define _REENT_INIT_MISC(var) do { struct _reent *_r = (var); _r->_misc->_strtok_last = _NULL; _r->_misc->_mblen_state.__count = 0; _r->_misc->_mblen_state.__value.__wch = 0; _r->_misc->_wctomb_state.__count = 0; _r->_misc->_wctomb_state.__value.__wch = 0; _r->_misc->_mbtowc_state.__count = 0; _r->_misc->_mbtowc_state.__value.__wch = 0; _r->_misc->_mbrlen_state.__count = 0; _r->_misc->_mbrlen_state.__value.__wch = 0; _r->_misc->_mbrtowc_state.__count = 0; _r->_misc->_mbrtowc_state.__value.__wch = 0; _r->_misc->_mbsrtowcs_state.__count = 0; _r->_misc->_mbsrtowcs_state.__value.__wch = 0; _r->_misc->_wcrtomb_state.__count = 0; _r->_misc->_wcrtomb_state.__value.__wch = 0; _r->_misc->_wcsrtombs_state.__count = 0; _r->_misc->_wcsrtombs_state.__value.__wch = 0; _r->_misc->_l64a_buf[0] = '\0'; _r->_misc->_getdate_err = 0; } while (0)
-# 580 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_CHECK_MISC(var) _REENT_CHECK(var, _misc, struct _misc_reent *, sizeof *((var)->_misc), _REENT_INIT_MISC(var))
-
-
-#define _REENT_CHECK_SIGNAL_BUF(var) _REENT_CHECK(var, _signal_buf, char *, _REENT_SIGNAL_SIZE, )
-
-
-#define _REENT_SIGNGAM(ptr) ((ptr)->_gamma_signgam)
-#define _REENT_RAND_NEXT(ptr) ((ptr)->_r48->_rand_next)
-#define _REENT_RAND48_SEED(ptr) ((ptr)->_r48->_seed)
-#define _REENT_RAND48_MULT(ptr) ((ptr)->_r48->_mult)
-#define _REENT_RAND48_ADD(ptr) ((ptr)->_r48->_add)
-#define _REENT_MP_RESULT(ptr) ((ptr)->_mp->_result)
-#define _REENT_MP_RESULT_K(ptr) ((ptr)->_mp->_result_k)
-#define _REENT_MP_P5S(ptr) ((ptr)->_mp->_p5s)
-#define _REENT_MP_FREELIST(ptr) ((ptr)->_mp->_freelist)
-#define _REENT_ASCTIME_BUF(ptr) ((ptr)->_asctime_buf)
-#define _REENT_TM(ptr) ((ptr)->_localtime_buf)
-#define _REENT_EMERGENCY(ptr) ((ptr)->_emergency)
-#define _REENT_STRTOK_LAST(ptr) ((ptr)->_misc->_strtok_last)
-#define _REENT_MBLEN_STATE(ptr) ((ptr)->_misc->_mblen_state)
-#define _REENT_MBTOWC_STATE(ptr) ((ptr)->_misc->_mbtowc_state)
-#define _REENT_WCTOMB_STATE(ptr) ((ptr)->_misc->_wctomb_state)
-#define _REENT_MBRLEN_STATE(ptr) ((ptr)->_misc->_mbrlen_state)
-#define _REENT_MBRTOWC_STATE(ptr) ((ptr)->_misc->_mbrtowc_state)
-#define _REENT_MBSRTOWCS_STATE(ptr) ((ptr)->_misc->_mbsrtowcs_state)
-#define _REENT_WCRTOMB_STATE(ptr) ((ptr)->_misc->_wcrtomb_state)
-#define _REENT_WCSRTOMBS_STATE(ptr) ((ptr)->_misc->_wcsrtombs_state)
-#define _REENT_L64A_BUF(ptr) ((ptr)->_misc->_l64a_buf)
-#define _REENT_GETDATE_ERR_P(ptr) (&((ptr)->_misc->_getdate_err))
-#define _REENT_SIGNAL_BUF(ptr) ((ptr)->_signal_buf)
-# 800 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT_INIT_PTR(var) { memset((var), 0, sizeof(*(var))); _REENT_INIT_PTR_ZEROED(var); }
-
-
-
-
-
-
-
-#define _Kmax (sizeof (size_t) << 3)
-
-
-
-
-
-
-
-#define __ATTRIBUTE_IMPURE_PTR__ 
-
-
-extern struct _reent *_impure_ptr ;
-extern struct _reent *const _global_impure_ptr ;
-
-void _reclaim_reent (struct _reent *);
-# 832 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h" 3
-#define _REENT _impure_ptr
-
-
-#define _GLOBAL_REENT _global_impure_ptr
-
-
-extern struct _atexit *_global_atexit;
-#define _GLOBAL_ATEXIT _global_atexit
-# 61 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
-
+# 62 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 2 3
 
 
 
@@ -3822,7 +3396,18 @@ typedef _fpos_t fpos_t;
 
 
 #define P_tmpdir "/tmp"
-# 158 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
+
+
+
+#define SEEK_SET 0
+
+
+#define SEEK_CUR 1
+
+
+#define SEEK_END 2
+
+
 #define TMP_MAX 26
 
 #define stdin (_REENT->_stdin)
@@ -4252,18 +3837,18 @@ _putchar_unlocked(int _c)
 #define L_ctermid 16
 # 797 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
 
-# 23 "../Src/main.c" 2
+# 22 "../Src/main.c" 2
 
 
 
-# 25 "../Src/main.c"
-uint8_t triggered = 0;
 
 
 
+# 27 "../Src/main.c"
 int main(void)
 {
 
 
+while(1);
 
 }

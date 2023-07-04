@@ -17,12 +17,10 @@
  */
 
 #include <stdint.h>
-#include <stm32f4xx.h>
-#include <unistd.h>
+#include "stm32f4xx.h"
 #include <stdio.h>
 
 
-uint8_t triggered = 0;
 
 
 
@@ -30,6 +28,7 @@ int main(void)
 {
 
 
+while(1);
 
 }
 

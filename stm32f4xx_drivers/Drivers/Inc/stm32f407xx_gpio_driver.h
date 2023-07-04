@@ -8,8 +8,9 @@
 #ifndef INC_STM32F407XX_GPIO_DRIVER_H_
 #define INC_STM32F407XX_GPIO_DRIVER_H_
 
-#include "stm32f4xx.h"
 #include <stdint.h>
+#include "stm32f4xx.h"
+
 
 //@GPIO_PIN_MODES PIN POSSIBLE MODES
 #define GPIO_MODE_INPUT		(0)
@@ -88,10 +89,8 @@ typedef struct{
 
 typedef struct{
 
-
 	GPIO_RegDef_t 		*pGPIOx; 			//Holds base address of the gpio port where pin belongs
 	GPIO_PinConfig_t 	GPIO_PinConfig; 	//Holds GPIO pin config settings
-
 
 }GPIO_Handle_t;
 
