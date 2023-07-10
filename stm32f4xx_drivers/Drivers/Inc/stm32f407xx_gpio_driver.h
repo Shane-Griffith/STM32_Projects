@@ -12,6 +12,7 @@
 #include "stm32f4xx.h"
 
 
+
 //@GPIO_PIN_MODES PIN POSSIBLE MODES
 #define GPIO_MODE_INPUT		(0)
 #define GPIO_MODE_OUPUT		(1)
@@ -75,7 +76,8 @@
 
 
 
-typedef struct{
+typedef struct
+{
 
 	uint8_t GPIO_PinNumber;				/*Possible Pin Numbers from @GPIO_PIN_NO*/
 	uint8_t	GPIO_PinMode;				/*Possible pin modes from @GPIO_PIN_MODES */

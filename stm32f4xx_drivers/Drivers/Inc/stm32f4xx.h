@@ -126,8 +126,8 @@
 #define GPIOI 				((GPIO_RegDef_t*) GPIOI_BASEADDR)
 #define EXTI 				((EXTI_RegDef_t*) EXTI_BASEADDR)
 #define	SYSCFG 				((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
-#define RCC					((RCC_RegDef_t*	) RCC_BASEADDR)
-#define SPI1				((SPI_RegDef_t*	) SPI1_BASEADDR)
+#define RCC					((RCC_RegDef_t*) RCC_BASEADDR)
+#define SPI1				((SPI_RegDef_t*) SPI1_BASEADDR)
 #define SPI2				((SPI_RegDef_t*) SPI2_BASEADDR)
 #define SPI3				((SPI_RegDef_t*) SPI3_BASEADDR)
 #define SPI4				((SPI_RegDef_t*) SPI4_BASEADDR)
@@ -263,7 +263,7 @@
 //TODO Implement the rest of them
 
 #define IRQ_NO_EXTI0		(6)
-#define IRQ_NO_EXTI1		(7)
+#define IRQ_NO_EXTI1		(7
 #define IRQ_NO_EXTI2		(8)
 #define IRQ_NO_EXTI3		(9)
 #define IRQ_NO_EXTI4		(10)
@@ -289,14 +289,58 @@
 
 #define DELAY()				(for(int i = 0; i < 250000; i++))
 
+//SPIx CR1 Register bit definitions
+#define SPI_CR1_CPHA			0
+#define SPI_CR1_CPOL			1
+#define SPI_CR1_MSTER			2
+#define SPI_CR1_BAUDRATE		3
+#define SPI_CR1_SPE				6
+#define SPI_CR1_LSB_FIRST		7
+#define SPI_CR1_SSI				8
+#define SPI_CR1_SSM				9
+#define SPI_CR1_RX_ONLY			10
+#define SPI_CR1_DFF				11
+#define SPI_CR1_CRC_NEXT		12
+#define SPI_CR1_CRC_EN			13
+#define SPI_CR1_BIDI_OE			14
+#define SPI_CR1_BIDI_MODE		15
+
+//SPIx CR2 Register bit definitions
+#define SPI_CR2_RXDMAEN			0
+#define SPI_CR2_TXDMAEN			1
+#define SPI_CR2_SSOE			2
+#define SPI_CR2_FRF				4
+#define SPI_CR2_ERRIE			5
+#define SPI_CR2_RXNEIE			6
+#define SPI_CR2_TXEIE			7
+
+//SPIx SR Register bit definitions
+#define SPI_SR_RXNE			0
+#define SPI_SR_TXE			1
+#define SPI_SR_CHSIDE		2
+#define SPI_SR_UDR			3
+#define SPI_SR_CRCERR		4
+#define SPI_SR_MODF			5
+#define SPI_SR_OVR			6
+#define SPI_SR_BSY			7
+#define SPI_SR_FRE			8
 
 
+//Testing values for SPI SR
+#define SPI_TX_BUFFER_EMPTY	(0x2)
+#define SPI_RX_BUFFER_EMPTY (0x1)
+#define SPI_BSY_FLAG		(0x80)
+
+
+//Testing value for SPI CR1
+#define SPI_DFF_VALUE			(0x400)
 //-----------------------------Struct Definitions-----------------------------
 
 
 //Rcc Struct macro
 
-typedef struct{
+typedef struct
+{
 
 	__vo uint32_t CR;
 	__vo uint32_t PLLCFGR;

@@ -233,27 +233,27 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 	uint8_t temp1 = IRQNumber / 32;
 	uint8_t temp2 = IRQNumber % 32;
 
-	if(EnorDi == ENABLE){
-
+	if(EnorDi == ENABLE)
+	{
 		NVIC_SET_EN->NVIC_ISER[temp1] |= (0x1 << temp2);
 
-
-	}else{
+	}
+	else
+	{
 		NVIC_CLR_EN->NVIC_ICER[temp1] |= (0x1 << temp2);
+
 	}
 
 
 }
 
-void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority){
-	//configure irq Priority
-		uint8_t iprReg = IRQNumber / 4;
-		uint8_t bitOffset = ((IRQNumber % 4) * 8);
-		NVIC_Priority_Set->NVIC_IPR[iprReg] |= (IRQNumber << bitOffset);
-}
+//void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority)
+//{
+//	//configure irq Priority
+//		uint8_t iprReg = IRQNumber / 4;
+//		uint8_t bitOffset = ((IRQNumber % 4) * 8);
+//		NVIC_Priority_Set->NVIC_IPR[iprReg] |= (IRQNumber << bitOffset);
+//}
 void GPIO_IRQHandler(uint8_t pinNumber){
-	EXTI->PR |= (0x1 << 0);
+	EXTI->PR |=(0x1 << 0);
 }
-
-
-

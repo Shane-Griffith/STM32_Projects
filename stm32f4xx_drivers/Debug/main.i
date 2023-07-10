@@ -1172,8 +1172,8 @@ typedef __uint_least64_t uint_least64_t;
 #define GPIOI ((GPIO_RegDef_t*) GPIOI_BASEADDR)
 #define EXTI ((EXTI_RegDef_t*) EXTI_BASEADDR)
 #define SYSCFG ((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
-#define RCC ((RCC_RegDef_t* ) RCC_BASEADDR)
-#define SPI1 ((SPI_RegDef_t* ) SPI1_BASEADDR)
+#define RCC ((RCC_RegDef_t*) RCC_BASEADDR)
+#define SPI1 ((SPI_RegDef_t*) SPI1_BASEADDR)
 #define SPI2 ((SPI_RegDef_t*) SPI2_BASEADDR)
 #define SPI3 ((SPI_RegDef_t*) SPI3_BASEADDR)
 #define SPI4 ((SPI_RegDef_t*) SPI4_BASEADDR)
@@ -1288,7 +1288,7 @@ typedef __uint_least64_t uint_least64_t;
 #define GPIO_BASEADDR_TO_CODE(x) ((x == GPIOA)? 0 : (x == GPIOB) ? 1 : (x == GPIOC) ? 2 : (x == GPIOD) ? 3 : (x == GPIOE) ? 4 : (x == GPIOF) ? 5 : (x == GPIOG) ? 6 : (x == GPIOH) ? 7 : (x == GPIOI) ? 8 : 0)
 # 265 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define IRQ_NO_EXTI0 (6)
-#define IRQ_NO_EXTI1 (7)
+#define IRQ_NO_EXTI1 (7
 #define IRQ_NO_EXTI2 (8)
 #define IRQ_NO_EXTI3 (9)
 #define IRQ_NO_EXTI4 (10)
@@ -1313,10 +1313,61 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define DELAY() (for(int i = 0; i < 250000; i++))
-# 299 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 
-# 299 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
-typedef struct{
+
+#define SPI_CR1_CPHA 0
+#define SPI_CR1_CPOL 1
+#define SPI_CR1_MSTER 2
+#define SPI_CR1_BAUDRATE 3
+#define SPI_CR1_SPE 6
+#define SPI_CR1_LSB_FIRST 7
+#define SPI_CR1_SSI 8
+#define SPI_CR1_SSM 9
+#define SPI_CR1_RX_ONLY 10
+#define SPI_CR1_DFF 11
+#define SPI_CR1_CRC_NEXT 12
+#define SPI_CR1_CRC_EN 13
+#define SPI_CR1_BIDI_OE 14
+#define SPI_CR1_BIDI_MODE 15
+
+
+#define SPI_CR2_RXDMAEN 0
+#define SPI_CR2_TXDMAEN 1
+#define SPI_CR2_SSOE 2
+#define SPI_CR2_FRF 4
+#define SPI_CR2_ERRIE 5
+#define SPI_CR2_RXNEIE 6
+#define SPI_CR2_TXEIE 7
+
+
+#define SPI_SR_RXNE 0
+#define SPI_SR_TXE 1
+#define SPI_SR_CHSIDE 2
+#define SPI_SR_UDR 3
+#define SPI_SR_CRCERR 4
+#define SPI_SR_MODF 5
+#define SPI_SR_OVR 6
+#define SPI_SR_BSY 7
+#define SPI_SR_FRE 8
+
+
+
+#define SPI_TX_BUFFER_EMPTY (0x2)
+#define SPI_RX_BUFFER_EMPTY (0x1)
+#define SPI_BSY_FLAG (0x80)
+
+
+
+#define SPI_DFF_VALUE (0x400)
+
+
+
+
+
+
+# 342 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+typedef struct
+{
 
  volatile uint32_t CR;
  volatile uint32_t PLLCFGR;
@@ -1453,6 +1504,7 @@ typedef struct{
 
 
 
+
 #define GPIO_MODE_INPUT (0)
 #define GPIO_MODE_OUPUT (1)
 #define GPIO_MODE_ALTFN (2)
@@ -1515,7 +1567,8 @@ typedef struct{
 
 
 
-typedef struct{
+typedef struct
+{
 
  uint8_t GPIO_PinNumber;
  uint8_t GPIO_PinMode;
@@ -1533,7 +1586,7 @@ typedef struct{
  GPIO_PinConfig_t GPIO_PinConfig;
 
 }GPIO_Handle_t;
-# 105 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+# 107 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
 
@@ -1557,7 +1610,7 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void GPIO_IRQHandler(uint8_t pinNumber);
-# 427 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 471 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
 # 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 #define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
@@ -1566,14 +1619,15 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 
 
 
-#define RATE_2 (0)
-#define RATE_4 (1)
-#define RATE_8 (2)
-#define RATE_16 (3)
-#define RATE_32 (4)
-#define RATE_64 (5)
-#define RATE_128 (6)
-#define RATE_256 (7)
+
+#define DIVISOR_2 (0)
+#define DIVISOR_4 (1)
+#define DIVISOR_8 (2)
+#define DIVISOR_16 (3)
+#define DIVISOR_32 (4)
+#define DIVISOR_64 (5)
+#define DIVISOR_128 (6)
+#define DIVISOR_256 (7)
 
 
 #define LEADING_EDGE (0)
@@ -1584,41 +1638,43 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 #define IDLE_LOW (0)
 
 
-#define MASTER_SELECT (1)
-#define SLAVE_SELECT (0)
+#define SPI_SW_SSM (1)
+#define SPI_HW_SSM (0)
 
 
+#define SPI_MASTER (0)
+#define SPI_SLAVE (1)
 
 
+#define DFF_8BIT (0)
+#define DFF_16BIT (1)
 
 
-#define EIGHT_BIT (0)
-#define SIXTEEN_BIT (1)
+#define SPI_CONFIG_HD (1)
+#define SPI_CONFIG_FD (2)
+#define SPI_SIMPLEX_RX_ONLY (3)
+# 57 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+typedef struct
+{
+ uint8_t BusConfig;
+ uint8_t SPI_SSM;
+ uint8_t SPI_Speed;
+ uint8_t SPI_CPHA;
+ uint8_t SPI_CPOL;
+ uint8_t SPI_DEVICEMODE;
+ uint8_t SPI_DFF;
+
+}SPI_Config_t;
 
 
-
-typedef struct {
-
-uint8_t BusConfig;
-uint8_t SPI_EN;
-uint8_t SPI_SPEED;
-uint8_t SPI_CPHA;
-uint8_t SPI_CPOL;
-uint8_t SPI_DEVICEMODE;
-uint8_t SPI_DATA_FORMAT;
-
-
-} SPI_Config_t;
-
-
-typedef struct{
-
+typedef struct
+{
  SPI_RegDef_t *pSPIx;
- SPI_Config_t Spi_Config;
+ SPI_Config_t SPI_Config;
 
 
 }SPI_Handle_t;
-# 75 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+# 85 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
 
 
@@ -1634,7 +1690,7 @@ void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandler(SPI_Handle_t *pHandle);
-# 428 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 472 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 21 "../Src/main.c" 2
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 1 3
 # 27 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
@@ -3847,6 +3903,31 @@ _putchar_unlocked(int _c)
 # 27 "../Src/main.c"
 int main(void)
 {
+char c[] = "Hello World";
+
+
+GPIO_Handle_t SPI2_MOSI = {0};
+SPI2_MOSI.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0400));
+SPI2_MOSI.GPIO_PinConfig.GPIO_PinNumber = (12);
+SPI2_MOSI.GPIO_PinConfig.GPIO_PinAltFunMode = (5);
+SPI2_MOSI.GPIO_PinConfig.GPIO_PinMode = (1);
+
+
+
+
+
+SPI_PeriClockControl(((SPI_RegDef_t*) (0x40000000U + 0x3800)), 1);
+
+SPI_Handle_t *spi2 = {0};
+
+spi2->pSPIx = ((SPI_RegDef_t*) (0x40000000U + 0x3800));
+spi2->SPI_Config.SPI_SSM = (0);
+spi2->SPI_Config.SPI_Speed = (7);
+spi2->SPI_Config.SPI_DFF= (0);
+spi2->SPI_Config.SPI_DEVICEMODE =
+spi2->SPI_Config.SPI_SSM = (1);
+
+SPI_Init(&spi2);
 
 
 while(1);

@@ -11,56 +11,66 @@
 #include <stdint.h>
 #include "stm32f4xx.h"
 
-//@Baud_Rate
-#define RATE_2 			(0)
-#define	RATE_4			(1)
-#define RATE_8 			(2)
-#define RATE_16			(3)
-#define RATE_32			(4)
-#define RATE_64     	(5)
-#define RATE_128		(6)
-#define RATE_256		(7)
+//@Baud_DIVISOR
+//This value will divide the pclk / divisor_x
+#define DIVISOR_2 			(0)
+#define	DIVISOR_4			(1)
+#define DIVISOR_8 			(2)
+#define DIVISOR_16			(3)
+#define DIVISOR_32			(4)
+#define DIVISOR_64     		(5)
+#define DIVISOR_128			(6)
+#define DIVISOR_256			(7)
 
 //@CPHA
-#define LEADING_EDGE 	(0)
-#define TRAILING_EDGE	(1)
+#define LEADING_EDGE 		(0)
+#define TRAILING_EDGE		(1)
 
 //@CPOL
-#define IDLE_HIGH		(1)
-#define IDLE_LOW		(0)
+#define IDLE_HIGH			(1)
+#define IDLE_LOW			(0)
 
-//@Master_slave_select
-#define MASTER_SELECT	(1)
-#define SLAVE_SELECT	(0)
-
-//Spi CLK Enable Macros
+//@Software_Select
+#define SPI_SW_SSM			(1)
+#define SPI_HW_SSM			(0)
 
 
+#define SPI_MASTER			(0)
+#define SPI_SLAVE			(1)
 
 //@FRAME_FORMAT_SELECT
-#define  EIGHT_BIT 		(0)
-#define  SIXTEEN_BIT	(1)
+#define DFF_8BIT 			(0)
+#define DFF_16BIT			(1)
+
+//@SPI_Bus_Config
+#define SPI_CONFIG_HD			(1)
+#define SPI_CONFIG_FD			(2)
+#define SPI_SIMPLEX_RX_ONLY		(3)
+
+
+
+
+
 
 //doing this to stop whatever is going on down below
 
-typedef struct {
+typedef struct
+{
+	uint8_t BusConfig;				//@SPI_BUS_CONFIG
+	uint8_t SPI_SSM;				//@Software_Slave_Select
+	uint8_t SPI_Speed;				//@Baud_DIVISOR
+	uint8_t	SPI_CPHA;				//@CPHA
+	uint8_t SPI_CPOL;				//@CPOL
+	uint8_t SPI_DEVICEMODE;			//@DEVICE_MODE
+	uint8_t SPI_DFF;
 
-uint8_t BusConfig;				//0x1
-uint8_t SPI_EN;					//0x1
-uint8_t SPI_SPEED;				//@Baud_Rate
-uint8_t	SPI_CPHA;				//@CPHA
-uint8_t SPI_CPOL;				//@CPOL
-uint8_t SPI_DEVICEMODE;			//@Master_slave_select
-uint8_t	SPI_DATA_FORMAT;		//@Frame_FORMAT_SELECT
+}SPI_Config_t;
 
 
-} SPI_Config_t;
-
-
-typedef struct{
-
+typedef struct
+{
 	SPI_RegDef_t  *pSPIx;
-	SPI_Config_t Spi_Config;
+	SPI_Config_t SPI_Config;
 
 
 }SPI_Handle_t;

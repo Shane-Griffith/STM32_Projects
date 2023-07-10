@@ -50,7 +50,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21
 	cmp	r3, r2
 	bne	.L3
-	.loc 1 37 55
+	.loc 1 37 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -64,7 +64,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+8
 	cmp	r3, r2
 	bne	.L4
-	.loc 1 39 55
+	.loc 1 39 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -78,7 +78,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+12
 	cmp	r3, r2
 	bne	.L5
-	.loc 1 41 55
+	.loc 1 41 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -92,7 +92,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+16
 	cmp	r3, r2
 	bne	.L6
-	.loc 1 43 55
+	.loc 1 43 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -106,7 +106,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+20
 	cmp	r3, r2
 	bne	.L7
-	.loc 1 45 55
+	.loc 1 45 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -120,7 +120,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+24
 	cmp	r3, r2
 	bne	.L8
-	.loc 1 47 55
+	.loc 1 47 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -134,7 +134,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+28
 	cmp	r3, r2
 	bne	.L9
-	.loc 1 49 55
+	.loc 1 49 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -148,7 +148,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+32
 	cmp	r3, r2
 	bne	.L10
-	.loc 1 51 55
+	.loc 1 51 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -162,7 +162,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+36
 	cmp	r3, r2
 	bne	.L11
-	.loc 1 53 55
+	.loc 1 53 54
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -176,7 +176,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21
 	cmp	r3, r2
 	bne	.L12
-	.loc 1 56 57
+	.loc 1 56 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -190,7 +190,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+8
 	cmp	r3, r2
 	bne	.L13
-	.loc 1 58 57
+	.loc 1 58 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -204,7 +204,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+12
 	cmp	r3, r2
 	bne	.L14
-	.loc 1 60 57
+	.loc 1 60 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -218,7 +218,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+16
 	cmp	r3, r2
 	bne	.L15
-	.loc 1 62 57
+	.loc 1 62 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -232,7 +232,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+20
 	cmp	r3, r2
 	bne	.L16
-	.loc 1 64 57
+	.loc 1 64 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -246,7 +246,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+24
 	cmp	r3, r2
 	bne	.L17
-	.loc 1 66 57
+	.loc 1 66 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -260,7 +260,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+28
 	cmp	r3, r2
 	bne	.L18
-	.loc 1 68 57
+	.loc 1 68 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -274,7 +274,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+32
 	cmp	r3, r2
 	bne	.L19
-	.loc 1 70 57
+	.loc 1 70 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -288,7 +288,7 @@ GPIO_PeriClockControl:
 	ldr	r2, .L21+36
 	cmp	r3, r2
 	bne	.L20
-	.loc 1 72 57
+	.loc 1 72 56
 	ldr	r3, .L21+4
 	ldr	r3, [r3, #48]
 	ldr	r2, .L21+4
@@ -619,7 +619,7 @@ GPIO_Init:
 .L46:
 	.loc 1 124 10 discriminator 36
 	strb	r3, [r7, #13]
-	.loc 1 125 54 is_stmt 1 discriminator 36
+	.loc 1 125 53 is_stmt 1 discriminator 36
 	ldr	r3, .L49+40
 	ldr	r3, [r3, #68]
 	ldr	r2, .L49+40
@@ -844,13 +844,13 @@ GPIO_DeInit:
 	ldr	r2, .L61
 	cmp	r3, r2
 	bne	.L52
-	.loc 1 169 60
+	.loc 1 169 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #1
 	str	r3, [r2, #16]
-	.loc 1 169 127
+	.loc 1 169 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
@@ -864,13 +864,13 @@ GPIO_DeInit:
 	ldr	r2, .L61+8
 	cmp	r3, r2
 	bne	.L54
-	.loc 1 171 60
+	.loc 1 171 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #2
 	str	r3, [r2, #16]
-	.loc 1 171 127
+	.loc 1 171 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
@@ -884,13 +884,13 @@ GPIO_DeInit:
 	ldr	r2, .L61+12
 	cmp	r3, r2
 	bne	.L55
-	.loc 1 173 60
+	.loc 1 173 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #4
 	str	r3, [r2, #16]
-	.loc 1 173 127
+	.loc 1 173 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
@@ -904,13 +904,13 @@ GPIO_DeInit:
 	ldr	r2, .L61+16
 	cmp	r3, r2
 	bne	.L56
-	.loc 1 175 60
+	.loc 1 175 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #8
 	str	r3, [r2, #16]
-	.loc 1 175 127
+	.loc 1 175 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
@@ -924,13 +924,13 @@ GPIO_DeInit:
 	ldr	r2, .L61+20
 	cmp	r3, r2
 	bne	.L57
-	.loc 1 177 60
+	.loc 1 177 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #16
 	str	r3, [r2, #16]
-	.loc 1 177 127
+	.loc 1 177 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
@@ -944,13 +944,13 @@ GPIO_DeInit:
 	ldr	r2, .L61+24
 	cmp	r3, r2
 	bne	.L58
-	.loc 1 179 60
+	.loc 1 179 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #32
 	str	r3, [r2, #16]
-	.loc 1 179 127
+	.loc 1 179 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
@@ -964,13 +964,13 @@ GPIO_DeInit:
 	ldr	r2, .L61+28
 	cmp	r3, r2
 	bne	.L59
-	.loc 1 181 60
+	.loc 1 181 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #64
 	str	r3, [r2, #16]
-	.loc 1 181 127
+	.loc 1 181 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
@@ -984,13 +984,13 @@ GPIO_DeInit:
 	ldr	r2, .L61+32
 	cmp	r3, r2
 	bne	.L60
-	.loc 1 183 60
+	.loc 1 183 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #128
 	str	r3, [r2, #16]
-	.loc 1 183 127
+	.loc 1 183 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
@@ -1311,25 +1311,25 @@ GPIO_IRQInterruptConfig:
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	orrs	r2, r2, r0
 	str	r2, [r1, r3, lsl #2]
-	.loc 1 246 1
+	.loc 1 248 1
 	b	.L73
 .L71:
-	.loc 1 242 55
+	.loc 1 243 55
 	ldr	r2, .L74+4
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	ldr	r2, [r2, r3, lsl #2]
-	.loc 1 242 63
+	.loc 1 243 63
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2
 	movs	r1, #1
 	lsl	r3, r1, r3
 	mov	r0, r3
-	.loc 1 242 55
+	.loc 1 243 55
 	ldr	r1, .L74+4
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	orrs	r2, r2, r0
 	str	r2, [r1, r3, lsl #2]
 .L73:
-	.loc 1 246 1
+	.loc 1 248 1
 	nop
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -1348,74 +1348,6 @@ GPIO_IRQInterruptConfig:
 	.cfi_endproc
 .LFE8:
 	.size	GPIO_IRQInterruptConfig, .-GPIO_IRQInterruptConfig
-	.section	.text.GPIO_IRQPriorityConfig,"ax",%progbits
-	.align	1
-	.global	GPIO_IRQPriorityConfig
-	.syntax unified
-	.thumb
-	.thumb_func
-	.type	GPIO_IRQPriorityConfig, %function
-GPIO_IRQPriorityConfig:
-.LFB9:
-	.loc 1 248 68
-	.cfi_startproc
-	@ args = 0, pretend = 0, frame = 16
-	@ frame_needed = 1, uses_anonymous_args = 0
-	@ link register save eliminated.
-	push	{r7}
-	.cfi_def_cfa_offset 4
-	.cfi_offset 7, -4
-	sub	sp, sp, #20
-	.cfi_def_cfa_offset 24
-	add	r7, sp, #0
-	.cfi_def_cfa_register 7
-	mov	r3, r0
-	mov	r2, r1
-	strb	r3, [r7, #7]
-	mov	r3, r2
-	strb	r3, [r7, #6]
-	.loc 1 250 11
-	ldrb	r3, [r7, #7]	@ zero_extendqisi2
-	lsrs	r3, r3, #2
-	strb	r3, [r7, #15]
-	.loc 1 251 11
-	ldrb	r3, [r7, #7]
-	and	r3, r3, #3
-	uxtb	r3, r3
-	lsls	r3, r3, #3
-	strb	r3, [r7, #14]
-	.loc 1 252 57
-	ldr	r2, .L77
-	ldrb	r3, [r7, #15]	@ zero_extendqisi2
-	ldr	r2, [r2, r3, lsl #2]
-	.loc 1 252 71
-	ldrb	r1, [r7, #7]	@ zero_extendqisi2
-	ldrb	r3, [r7, #14]	@ zero_extendqisi2
-	lsl	r3, r1, r3
-	mov	r0, r3
-	.loc 1 252 57
-	ldr	r1, .L77
-	ldrb	r3, [r7, #15]	@ zero_extendqisi2
-	orrs	r2, r2, r0
-	str	r2, [r1, r3, lsl #2]
-	.loc 1 253 1
-	nop
-	adds	r7, r7, #20
-	.cfi_def_cfa_offset 4
-	mov	sp, r7
-	.cfi_def_cfa_register 13
-	@ sp needed
-	ldr	r7, [sp], #4
-	.cfi_restore 7
-	.cfi_def_cfa_offset 0
-	bx	lr
-.L78:
-	.align	2
-.L77:
-	.word	-536812544
-	.cfi_endproc
-.LFE9:
-	.size	GPIO_IRQPriorityConfig, .-GPIO_IRQPriorityConfig
 	.section	.text.GPIO_IRQHandler,"ax",%progbits
 	.align	1
 	.global	GPIO_IRQHandler
@@ -1424,8 +1356,8 @@ GPIO_IRQPriorityConfig:
 	.thumb_func
 	.type	GPIO_IRQHandler, %function
 GPIO_IRQHandler:
-.LFB10:
-	.loc 1 254 40
+.LFB9:
+	.loc 1 257 40
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1439,13 +1371,13 @@ GPIO_IRQHandler:
 	.cfi_def_cfa_register 7
 	mov	r3, r0
 	strb	r3, [r7, #7]
-	.loc 1 255 48
-	ldr	r3, .L80
+	.loc 1 258 48
+	ldr	r3, .L77
 	ldr	r3, [r3, #20]
-	ldr	r2, .L80
+	ldr	r2, .L77
 	orr	r3, r3, #1
 	str	r3, [r2, #20]
-	.loc 1 256 1
+	.loc 1 259 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1456,12 +1388,12 @@ GPIO_IRQHandler:
 	.cfi_restore 7
 	.cfi_def_cfa_offset 0
 	bx	lr
-.L81:
+.L78:
 	.align	2
-.L80:
+.L77:
 	.word	1073822720
 	.cfi_endproc
-.LFE10:
+.LFE9:
 	.size	GPIO_IRQHandler, .-GPIO_IRQHandler
 	.text
 .Letext0:
@@ -1471,15 +1403,15 @@ GPIO_IRQHandler:
 	.file 5 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x845
+	.4byte	0x7b9
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF925
+	.4byte	.LASF958
 	.byte	0xc
-	.4byte	.LASF926
-	.4byte	.LASF927
+	.4byte	.LASF959
+	.4byte	.LASF960
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -1487,9 +1419,9 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF821
+	.4byte	.LASF860
 	.uleb128 0x3
-	.4byte	.LASF824
+	.4byte	.LASF863
 	.byte	0x2
 	.byte	0x2b
 	.byte	0x17
@@ -1497,13 +1429,13 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF822
+	.4byte	.LASF861
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF823
+	.4byte	.LASF862
 	.uleb128 0x3
-	.4byte	.LASF825
+	.4byte	.LASF864
 	.byte	0x2
 	.byte	0x39
 	.byte	0x1c
@@ -1511,13 +1443,13 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF826
+	.4byte	.LASF865
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x5
-	.4byte	.LASF827
+	.4byte	.LASF866
 	.uleb128 0x3
-	.4byte	.LASF828
+	.4byte	.LASF867
 	.byte	0x2
 	.byte	0x4f
 	.byte	0x1b
@@ -1525,15 +1457,15 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF829
+	.4byte	.LASF868
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF830
+	.4byte	.LASF869
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x7
-	.4byte	.LASF831
+	.4byte	.LASF870
 	.uleb128 0x4
 	.byte	0x4
 	.byte	0x5
@@ -1541,21 +1473,21 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF832
+	.4byte	.LASF871
 	.uleb128 0x3
-	.4byte	.LASF833
+	.4byte	.LASF872
 	.byte	0x3
 	.byte	0x18
 	.byte	0x13
 	.4byte	0x30
 	.uleb128 0x3
-	.4byte	.LASF834
+	.4byte	.LASF873
 	.byte	0x3
 	.byte	0x24
 	.byte	0x14
 	.4byte	0x4a
 	.uleb128 0x3
-	.4byte	.LASF835
+	.4byte	.LASF874
 	.byte	0x3
 	.byte	0x30
 	.byte	0x14
@@ -1565,361 +1497,361 @@ GPIO_IRQHandler:
 	.uleb128 0x6
 	.byte	0x90
 	.byte	0x4
-	.2byte	0x12b
+	.2byte	0x156
 	.byte	0x9
 	.4byte	0x2be
 	.uleb128 0x7
 	.ascii	"CR\000"
 	.byte	0x4
-	.2byte	0x12d
+	.2byte	0x159
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF836
+	.4byte	.LASF875
 	.byte	0x4
-	.2byte	0x12e
+	.2byte	0x15a
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x4
 	.uleb128 0x8
-	.4byte	.LASF837
+	.4byte	.LASF876
 	.byte	0x4
-	.2byte	0x12f
+	.2byte	0x15b
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x8
 	.uleb128 0x7
 	.ascii	"CIR\000"
 	.byte	0x4
-	.2byte	0x130
+	.2byte	0x15c
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0xc
 	.uleb128 0x8
-	.4byte	.LASF838
+	.4byte	.LASF877
 	.byte	0x4
-	.2byte	0x131
+	.2byte	0x15d
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x10
 	.uleb128 0x8
-	.4byte	.LASF839
+	.4byte	.LASF878
 	.byte	0x4
-	.2byte	0x132
+	.2byte	0x15e
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x14
 	.uleb128 0x8
-	.4byte	.LASF840
+	.4byte	.LASF879
 	.byte	0x4
-	.2byte	0x133
+	.2byte	0x15f
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x18
 	.uleb128 0x8
-	.4byte	.LASF841
+	.4byte	.LASF880
 	.byte	0x4
-	.2byte	0x134
+	.2byte	0x160
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x1c
 	.uleb128 0x8
-	.4byte	.LASF842
+	.4byte	.LASF881
 	.byte	0x4
-	.2byte	0x135
+	.2byte	0x161
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x20
 	.uleb128 0x8
-	.4byte	.LASF843
+	.4byte	.LASF882
 	.byte	0x4
-	.2byte	0x136
+	.2byte	0x162
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x24
 	.uleb128 0x8
-	.4byte	.LASF844
+	.4byte	.LASF883
 	.byte	0x4
-	.2byte	0x137
+	.2byte	0x163
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x28
 	.uleb128 0x8
-	.4byte	.LASF845
+	.4byte	.LASF884
 	.byte	0x4
-	.2byte	0x138
+	.2byte	0x164
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x2c
 	.uleb128 0x8
-	.4byte	.LASF846
+	.4byte	.LASF885
 	.byte	0x4
-	.2byte	0x139
+	.2byte	0x165
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x30
 	.uleb128 0x8
-	.4byte	.LASF847
+	.4byte	.LASF886
 	.byte	0x4
-	.2byte	0x13a
+	.2byte	0x166
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x34
 	.uleb128 0x8
-	.4byte	.LASF848
+	.4byte	.LASF887
 	.byte	0x4
-	.2byte	0x13b
+	.2byte	0x167
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x38
 	.uleb128 0x8
-	.4byte	.LASF849
+	.4byte	.LASF888
 	.byte	0x4
-	.2byte	0x13c
+	.2byte	0x168
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x3c
 	.uleb128 0x8
-	.4byte	.LASF850
+	.4byte	.LASF889
 	.byte	0x4
-	.2byte	0x13d
+	.2byte	0x169
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x40
 	.uleb128 0x8
-	.4byte	.LASF851
+	.4byte	.LASF890
 	.byte	0x4
-	.2byte	0x13e
+	.2byte	0x16a
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x44
 	.uleb128 0x8
-	.4byte	.LASF852
+	.4byte	.LASF891
 	.byte	0x4
-	.2byte	0x13f
+	.2byte	0x16b
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x48
 	.uleb128 0x8
-	.4byte	.LASF853
+	.4byte	.LASF892
 	.byte	0x4
-	.2byte	0x140
+	.2byte	0x16c
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x4c
 	.uleb128 0x8
-	.4byte	.LASF854
+	.4byte	.LASF893
 	.byte	0x4
-	.2byte	0x141
+	.2byte	0x16d
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x50
 	.uleb128 0x8
-	.4byte	.LASF855
+	.4byte	.LASF894
 	.byte	0x4
-	.2byte	0x142
+	.2byte	0x16e
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x54
 	.uleb128 0x8
-	.4byte	.LASF856
+	.4byte	.LASF895
 	.byte	0x4
-	.2byte	0x143
+	.2byte	0x16f
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x58
 	.uleb128 0x8
-	.4byte	.LASF857
+	.4byte	.LASF896
 	.byte	0x4
-	.2byte	0x144
+	.2byte	0x170
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x5c
 	.uleb128 0x8
-	.4byte	.LASF858
+	.4byte	.LASF897
 	.byte	0x4
-	.2byte	0x145
+	.2byte	0x171
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x60
 	.uleb128 0x8
-	.4byte	.LASF859
+	.4byte	.LASF898
 	.byte	0x4
-	.2byte	0x146
+	.2byte	0x172
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x64
 	.uleb128 0x8
-	.4byte	.LASF860
+	.4byte	.LASF899
 	.byte	0x4
-	.2byte	0x147
+	.2byte	0x173
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x68
 	.uleb128 0x8
-	.4byte	.LASF861
+	.4byte	.LASF900
 	.byte	0x4
-	.2byte	0x148
+	.2byte	0x174
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x6c
 	.uleb128 0x8
-	.4byte	.LASF862
+	.4byte	.LASF901
 	.byte	0x4
-	.2byte	0x149
+	.2byte	0x175
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x70
 	.uleb128 0x7
 	.ascii	"CSR\000"
 	.byte	0x4
-	.2byte	0x14a
+	.2byte	0x176
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x74
 	.uleb128 0x8
-	.4byte	.LASF863
+	.4byte	.LASF902
 	.byte	0x4
-	.2byte	0x14b
+	.2byte	0x177
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x78
 	.uleb128 0x8
-	.4byte	.LASF864
+	.4byte	.LASF903
 	.byte	0x4
-	.2byte	0x14c
+	.2byte	0x178
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x7c
 	.uleb128 0x8
-	.4byte	.LASF865
+	.4byte	.LASF904
 	.byte	0x4
-	.2byte	0x14d
+	.2byte	0x179
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x80
 	.uleb128 0x8
-	.4byte	.LASF866
+	.4byte	.LASF905
 	.byte	0x4
-	.2byte	0x14e
+	.2byte	0x17a
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x84
 	.uleb128 0x8
-	.4byte	.LASF867
+	.4byte	.LASF906
 	.byte	0x4
-	.2byte	0x14f
+	.2byte	0x17b
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x88
 	.uleb128 0x8
-	.4byte	.LASF868
+	.4byte	.LASF907
 	.byte	0x4
-	.2byte	0x150
+	.2byte	0x17c
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x8c
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF869
+	.4byte	.LASF908
 	.byte	0x4
-	.2byte	0x152
+	.2byte	0x17e
 	.byte	0x2
 	.4byte	0xbc
 	.uleb128 0x6
 	.byte	0x18
 	.byte	0x4
-	.2byte	0x16a
+	.2byte	0x196
 	.byte	0x9
 	.4byte	0x329
 	.uleb128 0x7
 	.ascii	"IMR\000"
 	.byte	0x4
-	.2byte	0x16b
+	.2byte	0x197
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0
 	.uleb128 0x7
 	.ascii	"EMR\000"
 	.byte	0x4
-	.2byte	0x16c
+	.2byte	0x198
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x4
 	.uleb128 0x8
-	.4byte	.LASF870
+	.4byte	.LASF909
 	.byte	0x4
-	.2byte	0x16d
+	.2byte	0x199
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF871
+	.4byte	.LASF910
 	.byte	0x4
-	.2byte	0x16e
+	.2byte	0x19a
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0xc
 	.uleb128 0x8
-	.4byte	.LASF872
+	.4byte	.LASF911
 	.byte	0x4
-	.2byte	0x16f
+	.2byte	0x19b
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x10
 	.uleb128 0x7
 	.ascii	"PR\000"
 	.byte	0x4
-	.2byte	0x170
+	.2byte	0x19c
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x14
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF873
+	.4byte	.LASF912
 	.byte	0x4
-	.2byte	0x172
+	.2byte	0x19e
 	.byte	0x2
 	.4byte	0x2cb
 	.uleb128 0x6
 	.byte	0x24
 	.byte	0x4
-	.2byte	0x177
+	.2byte	0x1a3
 	.byte	0x9
 	.4byte	0x387
 	.uleb128 0x8
-	.4byte	.LASF874
+	.4byte	.LASF913
 	.byte	0x4
-	.2byte	0x179
+	.2byte	0x1a5
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0
 	.uleb128 0x7
 	.ascii	"PMC\000"
 	.byte	0x4
-	.2byte	0x17a
+	.2byte	0x1a6
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x4
 	.uleb128 0x8
-	.4byte	.LASF875
+	.4byte	.LASF914
 	.byte	0x4
-	.2byte	0x17b
+	.2byte	0x1a7
 	.byte	0x14
 	.4byte	0x397
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF841
+	.4byte	.LASF880
 	.byte	0x4
-	.2byte	0x17c
+	.2byte	0x1a8
 	.byte	0xd
 	.4byte	0x39c
 	.byte	0x18
 	.uleb128 0x8
-	.4byte	.LASF876
+	.4byte	.LASF915
 	.byte	0x4
-	.2byte	0x17d
+	.2byte	0x1a9
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x20
@@ -1941,21 +1873,21 @@ GPIO_IRQHandler:
 	.byte	0x1
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF877
+	.4byte	.LASF916
 	.byte	0x4
-	.2byte	0x180
+	.2byte	0x1ac
 	.byte	0x2
 	.4byte	0x336
 	.uleb128 0x6
 	.byte	0xc
 	.byte	0x4
-	.2byte	0x184
+	.2byte	0x1b0
 	.byte	0x9
 	.4byte	0x3d2
 	.uleb128 0x8
-	.4byte	.LASF878
+	.4byte	.LASF917
 	.byte	0x4
-	.2byte	0x186
+	.2byte	0x1b2
 	.byte	0x14
 	.4byte	0x3e2
 	.byte	0
@@ -1970,297 +1902,221 @@ GPIO_IRQHandler:
 	.uleb128 0x5
 	.4byte	0x3d2
 	.uleb128 0x9
-	.4byte	.LASF879
+	.4byte	.LASF918
 	.byte	0x4
-	.2byte	0x188
+	.2byte	0x1b4
 	.byte	0x2
 	.4byte	0x3b9
 	.uleb128 0x6
 	.byte	0xc
 	.byte	0x4
-	.2byte	0x18b
+	.2byte	0x1b7
 	.byte	0x9
 	.4byte	0x40d
 	.uleb128 0x8
-	.4byte	.LASF880
+	.4byte	.LASF919
 	.byte	0x4
-	.2byte	0x18d
+	.2byte	0x1b9
 	.byte	0x14
 	.4byte	0x3e2
 	.byte	0
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF881
+	.4byte	.LASF920
 	.byte	0x4
-	.2byte	0x18f
+	.2byte	0x1bb
 	.byte	0x2
 	.4byte	0x3f4
 	.uleb128 0x6
-	.byte	0x5c
-	.byte	0x4
-	.2byte	0x193
-	.byte	0x9
-	.4byte	0x433
-	.uleb128 0x8
-	.4byte	.LASF882
-	.byte	0x4
-	.2byte	0x195
-	.byte	0x14
-	.4byte	0x443
-	.byte	0
-	.byte	0
-	.uleb128 0xa
-	.4byte	0xb7
-	.4byte	0x443
-	.uleb128 0xb
-	.4byte	0x8c
-	.byte	0x16
-	.byte	0
-	.uleb128 0x5
-	.4byte	0x433
-	.uleb128 0x9
-	.4byte	.LASF883
-	.byte	0x4
-	.2byte	0x197
-	.byte	0x2
-	.4byte	0x41a
-	.uleb128 0x6
 	.byte	0x28
 	.byte	0x4
-	.2byte	0x199
+	.2byte	0x1c5
 	.byte	0x9
-	.4byte	0x4ec
+	.4byte	0x4b1
 	.uleb128 0x8
-	.4byte	.LASF884
+	.4byte	.LASF921
 	.byte	0x4
-	.2byte	0x19b
+	.2byte	0x1c7
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF885
+	.4byte	.LASF922
 	.byte	0x4
-	.2byte	0x19c
+	.2byte	0x1c8
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x4
 	.uleb128 0x8
-	.4byte	.LASF886
+	.4byte	.LASF923
 	.byte	0x4
-	.2byte	0x19d
+	.2byte	0x1c9
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF887
+	.4byte	.LASF924
 	.byte	0x4
-	.2byte	0x19e
+	.2byte	0x1ca
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0xc
 	.uleb128 0x7
 	.ascii	"IDR\000"
 	.byte	0x4
-	.2byte	0x19f
+	.2byte	0x1cb
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x10
 	.uleb128 0x7
 	.ascii	"ODR\000"
 	.byte	0x4
-	.2byte	0x1a0
+	.2byte	0x1cc
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x14
 	.uleb128 0x8
-	.4byte	.LASF888
+	.4byte	.LASF925
 	.byte	0x4
-	.2byte	0x1a1
+	.2byte	0x1cd
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x18
 	.uleb128 0x8
-	.4byte	.LASF889
+	.4byte	.LASF926
 	.byte	0x4
-	.2byte	0x1a2
+	.2byte	0x1ce
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x1c
 	.uleb128 0x8
-	.4byte	.LASF890
+	.4byte	.LASF927
 	.byte	0x4
-	.2byte	0x1a3
+	.2byte	0x1cf
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x20
 	.uleb128 0x8
-	.4byte	.LASF891
+	.4byte	.LASF928
 	.byte	0x4
-	.2byte	0x1a4
+	.2byte	0x1d0
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x24
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF892
+	.4byte	.LASF929
 	.byte	0x4
-	.2byte	0x1a6
+	.2byte	0x1d2
 	.byte	0x2
-	.4byte	0x455
+	.4byte	0x41a
 	.uleb128 0xc
 	.byte	0x6
 	.byte	0x5
-	.byte	0x4e
+	.byte	0x4f
 	.byte	0x9
-	.4byte	0x551
+	.4byte	0x516
 	.uleb128 0xd
-	.4byte	.LASF893
-	.byte	0x5
-	.byte	0x50
-	.byte	0xa
-	.4byte	0x93
-	.byte	0
-	.uleb128 0xd
-	.4byte	.LASF894
-	.byte	0x5
-	.byte	0x51
-	.byte	0xa
-	.4byte	0x93
-	.byte	0x1
-	.uleb128 0xd
-	.4byte	.LASF895
+	.4byte	.LASF930
 	.byte	0x5
 	.byte	0x52
 	.byte	0xa
 	.4byte	0x93
-	.byte	0x2
+	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF896
+	.4byte	.LASF931
 	.byte	0x5
 	.byte	0x53
 	.byte	0xa
 	.4byte	0x93
-	.byte	0x3
+	.byte	0x1
 	.uleb128 0xd
-	.4byte	.LASF897
+	.4byte	.LASF932
 	.byte	0x5
 	.byte	0x54
 	.byte	0xa
 	.4byte	0x93
-	.byte	0x4
+	.byte	0x2
 	.uleb128 0xd
-	.4byte	.LASF898
+	.4byte	.LASF933
 	.byte	0x5
 	.byte	0x55
+	.byte	0xa
+	.4byte	0x93
+	.byte	0x3
+	.uleb128 0xd
+	.4byte	.LASF934
+	.byte	0x5
+	.byte	0x56
+	.byte	0xa
+	.4byte	0x93
+	.byte	0x4
+	.uleb128 0xd
+	.4byte	.LASF935
+	.byte	0x5
+	.byte	0x57
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x5
 	.byte	0
 	.uleb128 0x3
-	.4byte	.LASF899
+	.4byte	.LASF936
 	.byte	0x5
-	.byte	0x58
+	.byte	0x5a
 	.byte	0x2
-	.4byte	0x4f9
+	.4byte	0x4be
 	.uleb128 0xc
 	.byte	0xc
 	.byte	0x5
-	.byte	0x5a
-	.byte	0x9
-	.4byte	0x581
-	.uleb128 0xd
-	.4byte	.LASF900
-	.byte	0x5
 	.byte	0x5c
+	.byte	0x9
+	.4byte	0x546
+	.uleb128 0xd
+	.4byte	.LASF937
+	.byte	0x5
+	.byte	0x5e
 	.byte	0x11
-	.4byte	0x581
+	.4byte	0x546
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF901
+	.4byte	.LASF938
 	.byte	0x5
-	.byte	0x5d
+	.byte	0x5f
 	.byte	0x13
-	.4byte	0x551
+	.4byte	0x516
 	.byte	0x4
 	.byte	0
 	.uleb128 0xe
 	.byte	0x4
-	.4byte	0x4ec
+	.4byte	0x4b1
 	.uleb128 0x3
-	.4byte	.LASF902
+	.4byte	.LASF939
 	.byte	0x5
-	.byte	0x5f
+	.byte	0x61
 	.byte	0x2
-	.4byte	0x55d
+	.4byte	0x522
 	.uleb128 0xf
-	.4byte	.LASF903
+	.4byte	.LASF940
 	.byte	0x1
-	.byte	0xfe
+	.2byte	0x101
 	.byte	0x6
-	.4byte	.LFB10
-	.4byte	.LFE10-.LFB10
+	.4byte	.LFB9
+	.4byte	.LFE9-.LFB9
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x5b9
+	.4byte	0x580
 	.uleb128 0x10
-	.4byte	.LASF905
+	.4byte	.LASF942
 	.byte	0x1
-	.byte	0xfe
+	.2byte	0x101
 	.byte	0x1e
 	.4byte	0x93
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
 	.byte	0
-	.uleb128 0xf
-	.4byte	.LASF904
-	.byte	0x1
-	.byte	0xf8
-	.byte	0x6
-	.4byte	.LFB9
-	.4byte	.LFE9-.LFB9
-	.uleb128 0x1
-	.byte	0x9c
-	.4byte	0x60c
-	.uleb128 0x10
-	.4byte	.LASF906
-	.byte	0x1
-	.byte	0xf8
-	.byte	0x25
-	.4byte	0x93
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -17
-	.uleb128 0x10
-	.4byte	.LASF907
-	.byte	0x1
-	.byte	0xf8
-	.byte	0x38
-	.4byte	0x93
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -18
 	.uleb128 0x11
-	.4byte	.LASF908
-	.byte	0x1
-	.byte	0xfa
-	.byte	0xb
-	.4byte	0x93
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -9
-	.uleb128 0x11
-	.4byte	.LASF909
-	.byte	0x1
-	.byte	0xfb
-	.byte	0xb
-	.4byte	0x93
-	.uleb128 0x2
-	.byte	0x91
-	.sleb128 -10
-	.byte	0
-	.uleb128 0xf
-	.4byte	.LASF910
+	.4byte	.LASF941
 	.byte	0x1
 	.byte	0xe5
 	.byte	0x6
@@ -2268,9 +2124,9 @@ GPIO_IRQHandler:
 	.4byte	.LFE8-.LFB8
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x65f
-	.uleb128 0x10
-	.4byte	.LASF906
+	.4byte	0x5d3
+	.uleb128 0x12
+	.4byte	.LASF943
 	.byte	0x1
 	.byte	0xe5
 	.byte	0x26
@@ -2278,8 +2134,8 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -17
-	.uleb128 0x10
-	.4byte	.LASF911
+	.uleb128 0x12
+	.4byte	.LASF944
 	.byte	0x1
 	.byte	0xe5
 	.byte	0x39
@@ -2287,8 +2143,8 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -18
-	.uleb128 0x11
-	.4byte	.LASF912
+	.uleb128 0x13
+	.4byte	.LASF945
 	.byte	0x1
 	.byte	0xe9
 	.byte	0xa
@@ -2296,8 +2152,8 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x11
-	.4byte	.LASF913
+	.uleb128 0x13
+	.4byte	.LASF946
 	.byte	0x1
 	.byte	0xea
 	.byte	0xa
@@ -2306,8 +2162,8 @@ GPIO_IRQHandler:
 	.byte	0x91
 	.sleb128 -10
 	.byte	0
-	.uleb128 0xf
-	.4byte	.LASF914
+	.uleb128 0x11
+	.4byte	.LASF947
 	.byte	0x1
 	.byte	0xdd
 	.byte	0x6
@@ -2315,18 +2171,18 @@ GPIO_IRQHandler:
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x694
-	.uleb128 0x10
-	.4byte	.LASF900
+	.4byte	0x608
+	.uleb128 0x12
+	.4byte	.LASF937
 	.byte	0x1
 	.byte	0xdd
 	.byte	0x2a
-	.4byte	0x581
+	.4byte	0x546
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x10
-	.4byte	.LASF905
+	.uleb128 0x12
+	.4byte	.LASF942
 	.byte	0x1
 	.byte	0xdd
 	.byte	0x3a
@@ -2335,8 +2191,8 @@ GPIO_IRQHandler:
 	.byte	0x91
 	.sleb128 -13
 	.byte	0
-	.uleb128 0xf
-	.4byte	.LASF915
+	.uleb128 0x11
+	.4byte	.LASF948
 	.byte	0x1
 	.byte	0xd7
 	.byte	0x6
@@ -2344,18 +2200,18 @@ GPIO_IRQHandler:
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6c9
-	.uleb128 0x10
-	.4byte	.LASF900
+	.4byte	0x63d
+	.uleb128 0x12
+	.4byte	.LASF937
 	.byte	0x1
 	.byte	0xd7
 	.byte	0x2c
-	.4byte	0x581
+	.4byte	0x546
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x10
-	.4byte	.LASF916
+	.uleb128 0x12
+	.4byte	.LASF949
 	.byte	0x1
 	.byte	0xd7
 	.byte	0x3d
@@ -2364,8 +2220,8 @@ GPIO_IRQHandler:
 	.byte	0x91
 	.sleb128 -14
 	.byte	0
-	.uleb128 0xf
-	.4byte	.LASF917
+	.uleb128 0x11
+	.4byte	.LASF950
 	.byte	0x1
 	.byte	0xd1
 	.byte	0x6
@@ -2373,18 +2229,18 @@ GPIO_IRQHandler:
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x70d
-	.uleb128 0x10
-	.4byte	.LASF900
+	.4byte	0x681
+	.uleb128 0x12
+	.4byte	.LASF937
 	.byte	0x1
 	.byte	0xd1
 	.byte	0x2b
-	.4byte	0x581
+	.4byte	0x546
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x10
-	.4byte	.LASF905
+	.uleb128 0x12
+	.4byte	.LASF942
 	.byte	0x1
 	.byte	0xd1
 	.byte	0x3a
@@ -2392,8 +2248,8 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
-	.uleb128 0x10
-	.4byte	.LASF916
+	.uleb128 0x12
+	.4byte	.LASF949
 	.byte	0x1
 	.byte	0xd1
 	.byte	0x4d
@@ -2402,8 +2258,8 @@ GPIO_IRQHandler:
 	.byte	0x91
 	.sleb128 -14
 	.byte	0
-	.uleb128 0x12
-	.4byte	.LASF919
+	.uleb128 0x14
+	.4byte	.LASF952
 	.byte	0x1
 	.byte	0xc9
 	.byte	0xa
@@ -2412,18 +2268,18 @@ GPIO_IRQHandler:
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x746
-	.uleb128 0x10
-	.4byte	.LASF900
+	.4byte	0x6ba
+	.uleb128 0x12
+	.4byte	.LASF937
 	.byte	0x1
 	.byte	0xc9
 	.byte	0x30
-	.4byte	0x581
+	.4byte	0x546
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x11
-	.4byte	.LASF918
+	.uleb128 0x13
+	.4byte	.LASF951
 	.byte	0x1
 	.byte	0xcb
 	.byte	0xb
@@ -2432,8 +2288,8 @@ GPIO_IRQHandler:
 	.byte	0x91
 	.sleb128 -10
 	.byte	0
-	.uleb128 0x12
-	.4byte	.LASF920
+	.uleb128 0x14
+	.4byte	.LASF953
 	.byte	0x1
 	.byte	0xbf
 	.byte	0x9
@@ -2442,18 +2298,18 @@ GPIO_IRQHandler:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x78e
-	.uleb128 0x10
-	.4byte	.LASF900
+	.4byte	0x702
+	.uleb128 0x12
+	.4byte	.LASF937
 	.byte	0x1
 	.byte	0xbf
 	.byte	0x2e
-	.4byte	0x581
+	.4byte	0x546
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x10
-	.4byte	.LASF905
+	.uleb128 0x12
+	.4byte	.LASF942
 	.byte	0x1
 	.byte	0xbf
 	.byte	0x3e
@@ -2461,8 +2317,8 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -21
-	.uleb128 0x11
-	.4byte	.LASF918
+	.uleb128 0x13
+	.4byte	.LASF951
 	.byte	0x1
 	.byte	0xc2
 	.byte	0x9
@@ -2471,8 +2327,8 @@ GPIO_IRQHandler:
 	.byte	0x91
 	.sleb128 -9
 	.byte	0
-	.uleb128 0xf
-	.4byte	.LASF921
+	.uleb128 0x11
+	.4byte	.LASF954
 	.byte	0x1
 	.byte	0xa5
 	.byte	0x6
@@ -2480,19 +2336,19 @@ GPIO_IRQHandler:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7b4
-	.uleb128 0x10
-	.4byte	.LASF900
+	.4byte	0x728
+	.uleb128 0x12
+	.4byte	.LASF937
 	.byte	0x1
 	.byte	0xa5
 	.byte	0x21
-	.4byte	0x581
+	.4byte	0x546
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.byte	0
-	.uleb128 0xf
-	.4byte	.LASF922
+	.uleb128 0x11
+	.4byte	.LASF955
 	.byte	0x1
 	.byte	0x53
 	.byte	0x6
@@ -2500,21 +2356,21 @@ GPIO_IRQHandler:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x811
-	.uleb128 0x10
-	.4byte	.LASF923
+	.4byte	0x785
+	.uleb128 0x12
+	.4byte	.LASF956
 	.byte	0x1
 	.byte	0x53
 	.byte	0x1f
-	.4byte	0x811
+	.4byte	0x785
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
-	.uleb128 0x13
+	.uleb128 0x15
 	.4byte	.LBB2
 	.4byte	.LBE2-.LBB2
-	.uleb128 0x11
-	.4byte	.LASF912
+	.uleb128 0x13
+	.4byte	.LASF945
 	.byte	0x1
 	.byte	0x7a
 	.byte	0xa
@@ -2522,8 +2378,8 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -9
-	.uleb128 0x11
-	.4byte	.LASF913
+	.uleb128 0x13
+	.4byte	.LASF946
 	.byte	0x1
 	.byte	0x7b
 	.byte	0xa
@@ -2531,8 +2387,8 @@ GPIO_IRQHandler:
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -10
-	.uleb128 0x11
-	.4byte	.LASF924
+	.uleb128 0x13
+	.4byte	.LASF957
 	.byte	0x1
 	.byte	0x7c
 	.byte	0xa
@@ -2544,9 +2400,9 @@ GPIO_IRQHandler:
 	.byte	0
 	.uleb128 0xe
 	.byte	0x4
-	.4byte	0x587
-	.uleb128 0x14
-	.4byte	.LASF928
+	.4byte	0x54c
+	.uleb128 0x16
+	.4byte	.LASF961
 	.byte	0x1
 	.byte	0x20
 	.byte	0x6
@@ -2554,17 +2410,17 @@ GPIO_IRQHandler:
 	.4byte	.LFE0-.LFB0
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x10
-	.4byte	.LASF900
+	.uleb128 0x12
+	.4byte	.LASF937
 	.byte	0x1
 	.byte	0x20
 	.byte	0x2b
-	.4byte	0x581
+	.4byte	0x546
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x10
-	.4byte	.LASF911
+	.uleb128 0x12
+	.4byte	.LASF944
 	.byte	0x1
 	.byte	0x20
 	.byte	0x3b
@@ -2774,7 +2630,7 @@ GPIO_IRQHandler:
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0xb
+	.uleb128 0x5
 	.uleb128 0x39
 	.uleb128 0xb
 	.uleb128 0x27
@@ -2799,7 +2655,7 @@ GPIO_IRQHandler:
 	.uleb128 0x3a
 	.uleb128 0xb
 	.uleb128 0x3b
-	.uleb128 0xb
+	.uleb128 0x5
 	.uleb128 0x39
 	.uleb128 0xb
 	.uleb128 0x49
@@ -2809,6 +2665,50 @@ GPIO_IRQHandler:
 	.byte	0
 	.byte	0
 	.uleb128 0x11
+	.uleb128 0x2e
+	.byte	0x1
+	.uleb128 0x3f
+	.uleb128 0x19
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x39
+	.uleb128 0xb
+	.uleb128 0x27
+	.uleb128 0x19
+	.uleb128 0x11
+	.uleb128 0x1
+	.uleb128 0x12
+	.uleb128 0x6
+	.uleb128 0x40
+	.uleb128 0x18
+	.uleb128 0x2117
+	.uleb128 0x19
+	.uleb128 0x1
+	.uleb128 0x13
+	.byte	0
+	.byte	0
+	.uleb128 0x12
+	.uleb128 0x5
+	.byte	0
+	.uleb128 0x3
+	.uleb128 0xe
+	.uleb128 0x3a
+	.uleb128 0xb
+	.uleb128 0x3b
+	.uleb128 0xb
+	.uleb128 0x39
+	.uleb128 0xb
+	.uleb128 0x49
+	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x18
+	.byte	0
+	.byte	0
+	.uleb128 0x13
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -2825,7 +2725,7 @@ GPIO_IRQHandler:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x14
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -2854,7 +2754,7 @@ GPIO_IRQHandler:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x13
+	.uleb128 0x15
 	.uleb128 0xb
 	.byte	0x1
 	.uleb128 0x11
@@ -2863,7 +2763,7 @@ GPIO_IRQHandler:
 	.uleb128 0x6
 	.byte	0
 	.byte	0
-	.uleb128 0x14
+	.uleb128 0x16
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -2890,7 +2790,7 @@ GPIO_IRQHandler:
 	.byte	0
 	.byte	0
 	.section	.debug_aranges,"",%progbits
-	.4byte	0x6c
+	.4byte	0x64
 	.2byte	0x2
 	.4byte	.Ldebug_info0
 	.byte	0x4
@@ -2917,8 +2817,6 @@ GPIO_IRQHandler:
 	.4byte	.LFE8-.LFB8
 	.4byte	.LFB9
 	.4byte	.LFE9-.LFB9
-	.4byte	.LFB10
-	.4byte	.LFE10-.LFB10
 	.4byte	0
 	.4byte	0
 	.section	.debug_ranges,"",%progbits
@@ -2943,8 +2841,6 @@ GPIO_IRQHandler:
 	.4byte	.LFE8
 	.4byte	.LFB9
 	.4byte	.LFE9
-	.4byte	.LFB10
-	.4byte	.LFE10
 	.4byte	0
 	.4byte	0
 	.section	.debug_macro,"",%progbits
@@ -4354,16 +4250,16 @@ GPIO_IRQHandler:
 	.4byte	.Ldebug_macro8
 	.file 11 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 	.byte	0x3
-	.uleb128 0x1aa
+	.uleb128 0x1d6
 	.uleb128 0xb
 	.byte	0x4
 	.file 12 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 	.byte	0x3
-	.uleb128 0x1ab
+	.uleb128 0x1d7
 	.uleb128 0xc
 	.byte	0x5
 	.uleb128 0x9
-	.4byte	.LASF756
+	.4byte	.LASF790
 	.byte	0x3
 	.uleb128 0xc
 	.uleb128 0x4
@@ -4896,7 +4792,7 @@ GPIO_IRQHandler:
 	.uleb128 0x1c2
 	.4byte	.LASF600
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.stm32f4xx.h.16.12b8f18ea80f8235a9eba88a5db6ae88,comdat
+	.section	.debug_macro,"G",%progbits,wm4.stm32f4xx.h.16.20cf8d8c2394ecd87364a63032a43b10,comdat
 .Ldebug_macro8:
 	.2byte	0x4
 	.byte	0
@@ -5365,213 +5261,330 @@ GPIO_IRQHandler:
 	.byte	0x5
 	.uleb128 0x122
 	.4byte	.LASF755
+	.byte	0x5
+	.uleb128 0x125
+	.4byte	.LASF756
+	.byte	0x5
+	.uleb128 0x126
+	.4byte	.LASF757
+	.byte	0x5
+	.uleb128 0x127
+	.4byte	.LASF758
+	.byte	0x5
+	.uleb128 0x128
+	.4byte	.LASF759
+	.byte	0x5
+	.uleb128 0x129
+	.4byte	.LASF760
+	.byte	0x5
+	.uleb128 0x12a
+	.4byte	.LASF761
+	.byte	0x5
+	.uleb128 0x12b
+	.4byte	.LASF762
+	.byte	0x5
+	.uleb128 0x12c
+	.4byte	.LASF763
+	.byte	0x5
+	.uleb128 0x12d
+	.4byte	.LASF764
+	.byte	0x5
+	.uleb128 0x12e
+	.4byte	.LASF765
+	.byte	0x5
+	.uleb128 0x12f
+	.4byte	.LASF766
+	.byte	0x5
+	.uleb128 0x130
+	.4byte	.LASF767
+	.byte	0x5
+	.uleb128 0x131
+	.4byte	.LASF768
+	.byte	0x5
+	.uleb128 0x132
+	.4byte	.LASF769
+	.byte	0x5
+	.uleb128 0x135
+	.4byte	.LASF770
+	.byte	0x5
+	.uleb128 0x136
+	.4byte	.LASF771
+	.byte	0x5
+	.uleb128 0x137
+	.4byte	.LASF772
+	.byte	0x5
+	.uleb128 0x138
+	.4byte	.LASF773
+	.byte	0x5
+	.uleb128 0x139
+	.4byte	.LASF774
+	.byte	0x5
+	.uleb128 0x13a
+	.4byte	.LASF775
+	.byte	0x5
+	.uleb128 0x13b
+	.4byte	.LASF776
+	.byte	0x5
+	.uleb128 0x13e
+	.4byte	.LASF777
+	.byte	0x5
+	.uleb128 0x13f
+	.4byte	.LASF778
+	.byte	0x5
+	.uleb128 0x140
+	.4byte	.LASF779
+	.byte	0x5
+	.uleb128 0x141
+	.4byte	.LASF780
+	.byte	0x5
+	.uleb128 0x142
+	.4byte	.LASF781
+	.byte	0x5
+	.uleb128 0x143
+	.4byte	.LASF782
+	.byte	0x5
+	.uleb128 0x144
+	.4byte	.LASF783
+	.byte	0x5
+	.uleb128 0x145
+	.4byte	.LASF784
+	.byte	0x5
+	.uleb128 0x146
+	.4byte	.LASF785
+	.byte	0x5
+	.uleb128 0x14a
+	.4byte	.LASF786
+	.byte	0x5
+	.uleb128 0x14b
+	.4byte	.LASF787
+	.byte	0x5
+	.uleb128 0x14c
+	.4byte	.LASF788
+	.byte	0x5
+	.uleb128 0x150
+	.4byte	.LASF789
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.stm32f407xx_spi_driver.h.15.ff3c9097d24b3df43787bbeeee6c04a7,comdat
+	.section	.debug_macro,"G",%progbits,wm4.stm32f407xx_spi_driver.h.16.1711ff5fbd0c23bcaf2249c57205b803,comdat
 .Ldebug_macro9:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0xf
-	.4byte	.LASF757
-	.byte	0x5
 	.uleb128 0x10
-	.4byte	.LASF758
+	.4byte	.LASF791
 	.byte	0x5
 	.uleb128 0x11
-	.4byte	.LASF759
+	.4byte	.LASF792
 	.byte	0x5
 	.uleb128 0x12
-	.4byte	.LASF760
+	.4byte	.LASF793
 	.byte	0x5
 	.uleb128 0x13
-	.4byte	.LASF761
+	.4byte	.LASF794
 	.byte	0x5
 	.uleb128 0x14
-	.4byte	.LASF762
+	.4byte	.LASF795
 	.byte	0x5
 	.uleb128 0x15
-	.4byte	.LASF763
+	.4byte	.LASF796
 	.byte	0x5
 	.uleb128 0x16
-	.4byte	.LASF764
+	.4byte	.LASF797
 	.byte	0x5
-	.uleb128 0x19
-	.4byte	.LASF765
+	.uleb128 0x17
+	.4byte	.LASF798
 	.byte	0x5
 	.uleb128 0x1a
-	.4byte	.LASF766
+	.4byte	.LASF799
 	.byte	0x5
-	.uleb128 0x1d
-	.4byte	.LASF767
+	.uleb128 0x1b
+	.4byte	.LASF800
 	.byte	0x5
 	.uleb128 0x1e
-	.4byte	.LASF768
+	.4byte	.LASF801
 	.byte	0x5
-	.uleb128 0x21
-	.4byte	.LASF769
+	.uleb128 0x1f
+	.4byte	.LASF802
 	.byte	0x5
 	.uleb128 0x22
-	.4byte	.LASF770
+	.4byte	.LASF803
 	.byte	0x5
-	.uleb128 0x29
-	.4byte	.LASF771
+	.uleb128 0x23
+	.4byte	.LASF804
+	.byte	0x5
+	.uleb128 0x26
+	.4byte	.LASF805
+	.byte	0x5
+	.uleb128 0x27
+	.4byte	.LASF806
 	.byte	0x5
 	.uleb128 0x2a
-	.4byte	.LASF772
+	.4byte	.LASF807
+	.byte	0x5
+	.uleb128 0x2b
+	.4byte	.LASF808
+	.byte	0x5
+	.uleb128 0x2e
+	.4byte	.LASF809
+	.byte	0x5
+	.uleb128 0x2f
+	.4byte	.LASF810
+	.byte	0x5
+	.uleb128 0x30
+	.4byte	.LASF811
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.stm32f407xx_GPIO_driver.h.16.eb5f71d7786c54cecc65c9a2eb182857,comdat
+	.section	.debug_macro,"G",%progbits,wm4.stm32f407xx_GPIO_driver.h.17.3c41f4e18d36a52ba38a8daf3c3e11c8,comdat
 .Ldebug_macro10:
 	.2byte	0x4
 	.byte	0
 	.byte	0x5
-	.uleb128 0x10
-	.4byte	.LASF773
-	.byte	0x5
 	.uleb128 0x11
-	.4byte	.LASF774
-	.byte	0x5
-	.uleb128 0x12
-	.4byte	.LASF775
-	.byte	0x5
-	.uleb128 0x13
-	.4byte	.LASF776
-	.byte	0x5
-	.uleb128 0x14
-	.4byte	.LASF777
-	.byte	0x5
-	.uleb128 0x15
-	.4byte	.LASF778
-	.byte	0x5
-	.uleb128 0x16
-	.4byte	.LASF779
-	.byte	0x5
-	.uleb128 0x19
-	.4byte	.LASF780
-	.byte	0x5
-	.uleb128 0x1a
-	.4byte	.LASF781
-	.byte	0x5
-	.uleb128 0x1d
-	.4byte	.LASF782
-	.byte	0x5
-	.uleb128 0x1e
-	.4byte	.LASF783
-	.byte	0x5
-	.uleb128 0x1f
-	.4byte	.LASF784
-	.byte	0x5
-	.uleb128 0x20
-	.4byte	.LASF785
-	.byte	0x5
-	.uleb128 0x23
-	.4byte	.LASF786
-	.byte	0x5
-	.uleb128 0x24
-	.4byte	.LASF787
-	.byte	0x5
-	.uleb128 0x25
-	.4byte	.LASF788
-	.byte	0x5
-	.uleb128 0x28
-	.4byte	.LASF789
-	.byte	0x5
-	.uleb128 0x29
-	.4byte	.LASF790
-	.byte	0x5
-	.uleb128 0x2a
-	.4byte	.LASF791
-	.byte	0x5
-	.uleb128 0x2b
-	.4byte	.LASF792
-	.byte	0x5
-	.uleb128 0x2c
-	.4byte	.LASF793
-	.byte	0x5
-	.uleb128 0x2d
-	.4byte	.LASF794
-	.byte	0x5
-	.uleb128 0x2e
-	.4byte	.LASF795
-	.byte	0x5
-	.uleb128 0x2f
-	.4byte	.LASF796
-	.byte	0x5
-	.uleb128 0x30
-	.4byte	.LASF797
-	.byte	0x5
-	.uleb128 0x31
-	.4byte	.LASF798
-	.byte	0x5
-	.uleb128 0x32
-	.4byte	.LASF799
-	.byte	0x5
-	.uleb128 0x33
-	.4byte	.LASF800
-	.byte	0x5
-	.uleb128 0x34
-	.4byte	.LASF801
-	.byte	0x5
-	.uleb128 0x35
-	.4byte	.LASF802
-	.byte	0x5
-	.uleb128 0x36
-	.4byte	.LASF803
-	.byte	0x5
-	.uleb128 0x37
-	.4byte	.LASF804
-	.byte	0x5
-	.uleb128 0x3a
-	.4byte	.LASF805
-	.byte	0x5
-	.uleb128 0x3b
-	.4byte	.LASF806
-	.byte	0x5
-	.uleb128 0x3c
-	.4byte	.LASF807
-	.byte	0x5
-	.uleb128 0x3d
-	.4byte	.LASF808
-	.byte	0x5
-	.uleb128 0x3e
-	.4byte	.LASF809
-	.byte	0x5
-	.uleb128 0x3f
-	.4byte	.LASF810
-	.byte	0x5
-	.uleb128 0x40
-	.4byte	.LASF811
-	.byte	0x5
-	.uleb128 0x41
 	.4byte	.LASF812
 	.byte	0x5
-	.uleb128 0x42
+	.uleb128 0x12
 	.4byte	.LASF813
 	.byte	0x5
-	.uleb128 0x43
+	.uleb128 0x13
 	.4byte	.LASF814
 	.byte	0x5
-	.uleb128 0x44
+	.uleb128 0x14
 	.4byte	.LASF815
 	.byte	0x5
-	.uleb128 0x45
+	.uleb128 0x15
 	.4byte	.LASF816
 	.byte	0x5
-	.uleb128 0x46
+	.uleb128 0x16
 	.4byte	.LASF817
 	.byte	0x5
-	.uleb128 0x47
+	.uleb128 0x17
 	.4byte	.LASF818
 	.byte	0x5
-	.uleb128 0x48
+	.uleb128 0x1a
 	.4byte	.LASF819
 	.byte	0x5
-	.uleb128 0x49
+	.uleb128 0x1b
 	.4byte	.LASF820
+	.byte	0x5
+	.uleb128 0x1e
+	.4byte	.LASF821
+	.byte	0x5
+	.uleb128 0x1f
+	.4byte	.LASF822
+	.byte	0x5
+	.uleb128 0x20
+	.4byte	.LASF823
+	.byte	0x5
+	.uleb128 0x21
+	.4byte	.LASF824
+	.byte	0x5
+	.uleb128 0x24
+	.4byte	.LASF825
+	.byte	0x5
+	.uleb128 0x25
+	.4byte	.LASF826
+	.byte	0x5
+	.uleb128 0x26
+	.4byte	.LASF827
+	.byte	0x5
+	.uleb128 0x29
+	.4byte	.LASF828
+	.byte	0x5
+	.uleb128 0x2a
+	.4byte	.LASF829
+	.byte	0x5
+	.uleb128 0x2b
+	.4byte	.LASF830
+	.byte	0x5
+	.uleb128 0x2c
+	.4byte	.LASF831
+	.byte	0x5
+	.uleb128 0x2d
+	.4byte	.LASF832
+	.byte	0x5
+	.uleb128 0x2e
+	.4byte	.LASF833
+	.byte	0x5
+	.uleb128 0x2f
+	.4byte	.LASF834
+	.byte	0x5
+	.uleb128 0x30
+	.4byte	.LASF835
+	.byte	0x5
+	.uleb128 0x31
+	.4byte	.LASF836
+	.byte	0x5
+	.uleb128 0x32
+	.4byte	.LASF837
+	.byte	0x5
+	.uleb128 0x33
+	.4byte	.LASF838
+	.byte	0x5
+	.uleb128 0x34
+	.4byte	.LASF839
+	.byte	0x5
+	.uleb128 0x35
+	.4byte	.LASF840
+	.byte	0x5
+	.uleb128 0x36
+	.4byte	.LASF841
+	.byte	0x5
+	.uleb128 0x37
+	.4byte	.LASF842
+	.byte	0x5
+	.uleb128 0x38
+	.4byte	.LASF843
+	.byte	0x5
+	.uleb128 0x3b
+	.4byte	.LASF844
+	.byte	0x5
+	.uleb128 0x3c
+	.4byte	.LASF845
+	.byte	0x5
+	.uleb128 0x3d
+	.4byte	.LASF846
+	.byte	0x5
+	.uleb128 0x3e
+	.4byte	.LASF847
+	.byte	0x5
+	.uleb128 0x3f
+	.4byte	.LASF848
+	.byte	0x5
+	.uleb128 0x40
+	.4byte	.LASF849
+	.byte	0x5
+	.uleb128 0x41
+	.4byte	.LASF850
+	.byte	0x5
+	.uleb128 0x42
+	.4byte	.LASF851
+	.byte	0x5
+	.uleb128 0x43
+	.4byte	.LASF852
+	.byte	0x5
+	.uleb128 0x44
+	.4byte	.LASF853
+	.byte	0x5
+	.uleb128 0x45
+	.4byte	.LASF854
+	.byte	0x5
+	.uleb128 0x46
+	.4byte	.LASF855
+	.byte	0x5
+	.uleb128 0x47
+	.4byte	.LASF856
+	.byte	0x5
+	.uleb128 0x48
+	.4byte	.LASF857
+	.byte	0x5
+	.uleb128 0x49
+	.4byte	.LASF858
+	.byte	0x5
+	.uleb128 0x4a
+	.4byte	.LASF859
 	.byte	0
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF919:
+.LASF952:
 	.ascii	"GPIO_ReadFromInputPort\000"
 .LASF590:
 	.ascii	"WINT_MIN (__WINT_MIN__)\000"
@@ -5593,25 +5606,31 @@ GPIO_IRQHandler:
 	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
 .LASF358:
 	.ascii	"__CHAR_UNSIGNED__ 1\000"
-.LASF875:
+.LASF788:
+	.ascii	"SPI_BSY_FLAG (0x80)\000"
+.LASF914:
 	.ascii	"EXTICR\000"
+.LASF671:
+	.ascii	"RCC ((RCC_RegDef_t*) RCC_BASEADDR)\000"
 .LASF221:
 	.ascii	"__FLT64_HAS_INFINITY__ 1\000"
 .LASF608:
 	.ascii	"SRAM SRAM1_BASEADDR\000"
-.LASF894:
+.LASF931:
 	.ascii	"GPIO_PinMode\000"
+.LASF776:
+	.ascii	"SPI_CR2_TXEIE 7\000"
 .LASF310:
 	.ascii	"__LLACCUM_MIN__ (-0X1P31LLK-0X1P31LLK)\000"
 .LASF330:
 	.ascii	"__UHQ_FBIT__ 16\000"
 .LASF302:
 	.ascii	"__LACCUM_EPSILON__ 0x1P-31LK\000"
-.LASF794:
+.LASF833:
 	.ascii	"GPIO_PIN_5 (5)\000"
 .LASF77:
 	.ascii	"__PTRDIFF_MAX__ 0x7fffffff\000"
-.LASF811:
+.LASF850:
 	.ascii	"GPIO_AF6 (6)\000"
 .LASF546:
 	.ascii	"INT_LEAST8_MIN (-__INT_LEAST8_MAX__ - 1)\000"
@@ -5631,11 +5650,11 @@ GPIO_IRQHandler:
 	.ascii	"__WCHAR_MAX__ 0xffffffffU\000"
 .LASF648:
 	.ascii	"PRIORITY_LVL_4 (0x40)\000"
-.LASF924:
+.LASF957:
 	.ascii	"portCode\000"
 .LASF491:
 	.ascii	"__int20__\000"
-.LASF808:
+.LASF847:
 	.ascii	"GPIO_AF3 (3)\000"
 .LASF18:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
@@ -5647,7 +5666,7 @@ GPIO_IRQHandler:
 	.ascii	"__FRACT_MIN__ (-0.5R-0.5R)\000"
 .LASF602:
 	.ascii	"INC_STM32F4XX_H_ \000"
-.LASF878:
+.LASF917:
 	.ascii	"NVIC_ISER\000"
 .LASF286:
 	.ascii	"__USACCUM_MAX__ 0XFFFFP-8UHK\000"
@@ -5675,8 +5694,6 @@ GPIO_IRQHandler:
 	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
 .LASF198:
 	.ascii	"__FLT32_DECIMAL_DIG__ 9\000"
-.LASF764:
-	.ascii	"RATE_256 (7)\000"
 .LASF178:
 	.ascii	"__LDBL_MIN_EXP__ (-1021)\000"
 .LASF176:
@@ -5719,20 +5736,22 @@ GPIO_IRQHandler:
 	.ascii	"INT8_MAX (__INT8_MAX__)\000"
 .LASF707:
 	.ascii	"GPIOF_PCLK_DI (RCC->AHB1ENR &= ~(1 << 4))\000"
-.LASF765:
+.LASF799:
 	.ascii	"LEADING_EDGE (0)\000"
 .LASF585:
 	.ascii	"PTRDIFF_MAX (__PTRDIFF_MAX__)\000"
-.LASF871:
+.LASF910:
 	.ascii	"FTRS\000"
 .LASF197:
 	.ascii	"__FLT32_MAX_10_EXP__ 38\000"
 .LASF743:
 	.ascii	"IRQ_NO_SPI3 (51)\000"
+.LASF806:
+	.ascii	"SPI_SLAVE (1)\000"
 .LASF246:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
-.LASF909:
-	.ascii	"bitOffset\000"
+.LASF680:
+	.ascii	"GPIOB_PCLK_EN (RCC->AHB1ENR |= (1 << 1))\000"
 .LASF207:
 	.ascii	"__FP_FAST_FMAF32 1\000"
 .LASF138:
@@ -5747,12 +5766,10 @@ GPIO_IRQHandler:
 	.ascii	"__ULFRACT_FBIT__ 32\000"
 .LASF211:
 	.ascii	"__FLT64_MIN_10_EXP__ (-307)\000"
-.LASF807:
+.LASF846:
 	.ascii	"GPIO_AF2 (2)\000"
 .LASF623:
 	.ascii	"GPIOI_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x2000)\000"
-.LASF771:
-	.ascii	"EIGHT_BIT (0)\000"
 .LASF538:
 	.ascii	"__int_fast32_t_defined 1\000"
 .LASF131:
@@ -5769,8 +5786,8 @@ GPIO_IRQHandler:
 	.ascii	"__SFRACT_EPSILON__ 0x1P-7HR\000"
 .LASF2:
 	.ascii	"__STDC_UTF_16__ 1\000"
-.LASF883:
-	.ascii	"NVIC_ipr_RegDef_t\000"
+.LASF734:
+	.ascii	"IRQ_NO_EXTI0 (6)\000"
 .LASF111:
 	.ascii	"__INT32_C(c) c ## L\000"
 .LASF332:
@@ -5779,7 +5796,7 @@ GPIO_IRQHandler:
 	.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
 .LASF424:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
-.LASF898:
+.LASF935:
 	.ascii	"GPIO_PinAltFunMode\000"
 .LASF543:
 	.ascii	"INT8_MIN (-__INT8_MAX__ - 1)\000"
@@ -5789,26 +5806,26 @@ GPIO_IRQHandler:
 	.ascii	"INT_LEAST64_MAX (__INT_LEAST64_MAX__)\000"
 .LASF210:
 	.ascii	"__FLT64_MIN_EXP__ (-1021)\000"
-.LASF788:
+.LASF827:
 	.ascii	"GPIO_PIN_PD (2)\000"
 .LASF86:
 	.ascii	"__PTRDIFF_WIDTH__ 32\000"
-.LASF908:
-	.ascii	"iprReg\000"
 .LASF132:
 	.ascii	"__UINT_FAST8_MAX__ 0xffffffffU\000"
-.LASF756:
+.LASF790:
 	.ascii	"DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ \000"
-.LASF818:
+.LASF857:
 	.ascii	"GPIO_AF13 (13)\000"
 .LASF299:
 	.ascii	"__LACCUM_IBIT__ 32\000"
-.LASF824:
+.LASF863:
 	.ascii	"__uint8_t\000"
 .LASF79:
 	.ascii	"__SCHAR_WIDTH__ 8\000"
 .LASF127:
 	.ascii	"__INT_FAST16_WIDTH__ 32\000"
+.LASF795:
+	.ascii	"DIVISOR_32 (4)\000"
 .LASF657:
 	.ascii	"PRIORITY_LVL_13 (0xd0)\000"
 .LASF411:
@@ -5819,9 +5836,9 @@ GPIO_IRQHandler:
 	.ascii	"__INT64 \"ll\"\000"
 .LASF136:
 	.ascii	"__INTPTR_MAX__ 0x7fffffff\000"
-.LASF855:
+.LASF894:
 	.ascii	"AHB2LPENR\000"
-.LASF887:
+.LASF924:
 	.ascii	"PUPDR\000"
 .LASF133:
 	.ascii	"__UINT_FAST16_MAX__ 0xffffffffU\000"
@@ -5836,10 +5853,12 @@ GPIO_IRQHandler:
 	.ascii	"INOR__ >= ((maj) << 16) + (min))\000"
 .LASF255:
 	.ascii	"__UFRACT_MIN__ 0.0UR\000"
-.LASF874:
+.LASF913:
 	.ascii	"MEMRMP\000"
 .LASF530:
 	.ascii	"_INTPTR_T_DECLARED \000"
+.LASF792:
+	.ascii	"DIVISOR_4 (1)\000"
 .LASF236:
 	.ascii	"__FLT32X_HAS_INFINITY__ 1\000"
 .LASF573:
@@ -5854,10 +5873,10 @@ GPIO_IRQHandler:
 	.ascii	"SPI1_PCLK_DI (RCC->APB2ENR &= ~(1 << 12))\000"
 .LASF294:
 	.ascii	"__UACCUM_IBIT__ 16\000"
-.LASF827:
+.LASF866:
 	.ascii	"long int\000"
-.LASF817:
-	.ascii	"GPIO_AF12 (12)\000"
+.LASF797:
+	.ascii	"DIVISOR_128 (6)\000"
 .LASF130:
 	.ascii	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL\000"
 .LASF229:
@@ -5872,7 +5891,7 @@ GPIO_IRQHandler:
 	.ascii	"__FLT32X_EPSILON__ 2.2204460492503131e-16F32x\000"
 .LASF625:
 	.ascii	"RCC_RESET_REG (AHB1PERIPHERAL_BASEADDR + 0x10)\000"
-.LASF799:
+.LASF838:
 	.ascii	"GPIO_PIN_10 (10)\000"
 .LASF57:
 	.ascii	"__INT_FAST8_TYPE__ int\000"
@@ -5888,15 +5907,13 @@ GPIO_IRQHandler:
 	.ascii	"__GCC_ATOMIC_BOOL_LOCK_FREE 2\000"
 .LASF322:
 	.ascii	"__SQ_FBIT__ 31\000"
-.LASF735:
-	.ascii	"IRQ_NO_EXTI1 (7)\000"
 .LASF421:
 	.ascii	"__ARM_NEON__\000"
 .LASF542:
 	.ascii	"UINTPTR_MAX (__UINTPTR_MAX__)\000"
 .LASF196:
 	.ascii	"__FLT32_MAX_EXP__ 128\000"
-.LASF863:
+.LASF902:
 	.ascii	"RESERVED10\000"
 .LASF37:
 	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
@@ -5904,7 +5921,9 @@ GPIO_IRQHandler:
 	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
 .LASF710:
 	.ascii	"GPIOI_PCLK_DI (RCC->AHB1ENR &= ~(1 << 8))\000"
-.LASF870:
+.LASF758:
+	.ascii	"SPI_CR1_MSTER 2\000"
+.LASF909:
 	.ascii	"RTSR\000"
 .LASF526:
 	.ascii	"_UINT64_T_DECLARED \000"
@@ -5920,7 +5939,7 @@ GPIO_IRQHandler:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
 .LASF17:
 	.ascii	"__SIZEOF_LONG__ 4\000"
-.LASF851:
+.LASF890:
 	.ascii	"APB2ENR\000"
 .LASF21:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
@@ -5928,32 +5947,40 @@ GPIO_IRQHandler:
 	.ascii	"__INT_LEAST32_WIDTH__ 32\000"
 .LASF225:
 	.ascii	"__FLT32X_MIN_EXP__ (-1021)\000"
+.LASF805:
+	.ascii	"SPI_MASTER (0)\000"
 .LASF607:
 	.ascii	"ROM 0x1FFF0000U\000"
-.LASF854:
+.LASF893:
 	.ascii	"AHB1LPENR\000"
 .LASF508:
 	.ascii	"__FAST16 \000"
+.LASF789:
+	.ascii	"SPI_DFF_VALUE (0x400)\000"
 .LASF466:
 	.ascii	"__LARGEFILE_VISIBLE 0\000"
 .LASF449:
 	.ascii	"__NEWLIB__ 4\000"
-.LASF868:
+.LASF907:
 	.ascii	"DCKCFGR\000"
 .LASF674:
 	.ascii	"SPI3 ((SPI_RegDef_t*) SPI3_BASEADDR)\000"
 .LASF352:
 	.ascii	"__UTA_FBIT__ 64\000"
+.LASF809:
+	.ascii	"SPI_CONFIG_HD (1)\000"
+.LASF772:
+	.ascii	"SPI_CR2_SSOE 2\000"
 .LASF151:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF517:
 	.ascii	"_UINT8_T_DECLARED \000"
-.LASF821:
+.LASF860:
 	.ascii	"signed char\000"
-.LASF833:
+.LASF872:
 	.ascii	"uint8_t\000"
-.LASF672:
-	.ascii	"SPI1 ((SPI_RegDef_t* ) SPI1_BASEADDR)\000"
+.LASF706:
+	.ascii	"GPIOE_PCLK_DI (RCC->AHB1ENR &= ~(1 << 4))\000"
 .LASF580:
 	.ascii	"INTMAX_MIN (-INTMAX_MAX - 1)\000"
 .LASF356:
@@ -5972,7 +5999,7 @@ GPIO_IRQHandler:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
 .LASF118:
 	.ascii	"__UINT_LEAST16_MAX__ 0xffff\000"
-.LASF806:
+.LASF845:
 	.ascii	"GPIO_AF1 (1)\000"
 .LASF399:
 	.ascii	"__ARM_ARCH_PROFILE 77\000"
@@ -5982,36 +6009,38 @@ GPIO_IRQHandler:
 	.ascii	"I2C2_PCLK_DI (RCC->APB1ENR &= ~(1 << 22))\000"
 .LASF213:
 	.ascii	"__FLT64_MAX_10_EXP__ 308\000"
-.LASF785:
+.LASF824:
 	.ascii	"GPIO_SPEED_VHIGH (3)\000"
-.LASF800:
-	.ascii	"GPIO_PIN_11 (11)\000"
+.LASF786:
+	.ascii	"SPI_TX_BUFFER_EMPTY (0x2)\000"
 .LASF742:
 	.ascii	"IRQ_NO_SPI2 (36)\000"
 .LASF691:
 	.ascii	"I2C3_PCLK_EN (RCC->APB1ENR |= (1 << 23))\000"
 .LASF63:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
-.LASF844:
+.LASF883:
 	.ascii	"RESERVED2\000"
 .LASF3:
 	.ascii	"__STDC_UTF_32__ 1\000"
-.LASF849:
+.LASF888:
 	.ascii	"RESERVED4\000"
 .LASF234:
 	.ascii	"__FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x\000"
-.LASF853:
+.LASF892:
 	.ascii	"RESERVED6\000"
 .LASF150:
 	.ascii	"__FLT_MAX_10_EXP__ 38\000"
-.LASF860:
+.LASF899:
 	.ascii	"RESERVED8\000"
-.LASF861:
+.LASF900:
 	.ascii	"RESERVED9\000"
 .LASF251:
 	.ascii	"__FRACT_MAX__ 0X7FFFP-15R\000"
 .LASF637:
 	.ascii	"SPI1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3000)\000"
+.LASF770:
+	.ascii	"SPI_CR2_RXDMAEN 0\000"
 .LASF749:
 	.ascii	"GPIO_PIN_SET SET\000"
 .LASF128:
@@ -6024,9 +6053,9 @@ GPIO_IRQHandler:
 	.ascii	"PRIORITY_LVL_1 (0x10)\000"
 .LASF610:
 	.ascii	"APB1PERIPHERAL_BASEADDR PERIPHERAL_BASEADDR\000"
-.LASF814:
+.LASF853:
 	.ascii	"GPIO_AF9 (9)\000"
-.LASF915:
+.LASF948:
 	.ascii	"GPIO_WriteToOutputPort\000"
 .LASF568:
 	.ascii	"INT_FAST8_MAX (__INT_FAST8_MAX__)\000"
@@ -6036,7 +6065,7 @@ GPIO_IRQHandler:
 	.ascii	"__TQ_FBIT__ 127\000"
 .LASF539:
 	.ascii	"__int_fast64_t_defined 1\000"
-.LASF834:
+.LASF873:
 	.ascii	"uint16_t\000"
 .LASF667:
 	.ascii	"GPIOH ((GPIO_RegDef_t*) GPIOH_BASEADDR)\000"
@@ -6044,22 +6073,22 @@ GPIO_IRQHandler:
 	.ascii	"__thumb2__ 1\000"
 .LASF313:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
-.LASF907:
-	.ascii	"IRQPriority\000"
+.LASF615:
+	.ascii	"GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)\000"
 .LASF446:
 	.ascii	"_SYS_FEATURES_H \000"
-.LASF916:
+.LASF949:
 	.ascii	"value\000"
-.LASF845:
+.LASF884:
 	.ascii	"RESERVED3\000"
 .LASF692:
 	.ascii	"SPI1_PCLK_EN (RCC->APB2ENR |= (1 << 12))\000"
 .LASF22:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
-.LASF852:
+.LASF891:
 	.ascii	"RESERVED5\000"
-.LASF375:
-	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
+.LASF653:
+	.ascii	"PRIORITY_LVL_9 (0x90)\000"
 .LASF34:
 	.ascii	"__WCHAR_TYPE__ unsigned int\000"
 .LASF488:
@@ -6072,13 +6101,15 @@ GPIO_IRQHandler:
 	.ascii	"INTMAX_C(x) __INTMAX_C(x)\000"
 .LASF586:
 	.ascii	"PTRDIFF_MIN (-PTRDIFF_MAX - 1)\000"
-.LASF792:
+.LASF831:
 	.ascii	"GPIO_PIN_3 (3)\000"
+.LASF764:
+	.ascii	"SPI_CR1_RX_ONLY 10\000"
 .LASF720:
 	.ascii	"USART2_PCLK_DI (RCC->APB1ENR &= ~(1 << 17))\000"
 .LASF64:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
-.LASF774:
+.LASF813:
 	.ascii	"GPIO_MODE_OUPUT (1)\000"
 .LASF547:
 	.ascii	"INT_LEAST8_MAX (__INT_LEAST8_MAX__)\000"
@@ -6090,6 +6121,8 @@ GPIO_IRQHandler:
 	.ascii	"__HA_FBIT__ 7\000"
 .LASF428:
 	.ascii	"__FDPIC__\000"
+.LASF765:
+	.ascii	"SPI_CR1_DFF 11\000"
 .LASF493:
 	.ascii	"signed +0\000"
 .LASF584:
@@ -6098,13 +6131,13 @@ GPIO_IRQHandler:
 	.ascii	"GPIOD_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0C00)\000"
 .LASF601:
 	.ascii	"_GCC_WRAP_STDINT_H \000"
-.LASF825:
+.LASF864:
 	.ascii	"__uint16_t\000"
-.LASF847:
+.LASF886:
 	.ascii	"AHB2ENR\000"
 .LASF603:
 	.ascii	"__vo volatile\000"
-.LASF899:
+.LASF936:
 	.ascii	"GPIO_PinConfig_t\000"
 .LASF245:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
@@ -6116,7 +6149,7 @@ GPIO_IRQHandler:
 	.ascii	"__UINT8_MAX__ 0xff\000"
 .LASF476:
 	.ascii	"___int16_t_defined 1\000"
-.LASF784:
+.LASF823:
 	.ascii	"GPIO_SPEED_HIGH (2)\000"
 .LASF180:
 	.ascii	"__LDBL_MAX_EXP__ 1024\000"
@@ -6128,7 +6161,7 @@ GPIO_IRQHandler:
 	.ascii	"ENABLE_GREEN_LED (GPIOD->ODR |= (1 << 12))\000"
 .LASF614:
 	.ascii	"AHB3PERIPHERAL_BASEADDR 0xA0000000U\000"
-.LASF857:
+.LASF896:
 	.ascii	"RESERVED7\000"
 .LASF579:
 	.ascii	"INTMAX_MAX (__INTMAX_MAX__)\000"
@@ -6150,8 +6183,6 @@ GPIO_IRQHandler:
 	.ascii	"__FLT_DENORM_MIN__ 1.4012984643248171e-45F\000"
 .LASF511:
 	.ascii	"__LEAST8 \"hh\"\000"
-.LASF671:
-	.ascii	"RCC ((RCC_RegDef_t* ) RCC_BASEADDR)\000"
 .LASF554:
 	.ascii	"UINT_LEAST16_MAX (__UINT_LEAST16_MAX__)\000"
 .LASF121:
@@ -6161,11 +6192,9 @@ GPIO_IRQHandler:
 	.ascii	"->AHB1RSTR &= ~(1 << 0)); } while(0)\000"
 .LASF295:
 	.ascii	"__UACCUM_MIN__ 0.0UK\000"
-.LASF904:
-	.ascii	"GPIO_IRQPriorityConfig\000"
 .LASF155:
 	.ascii	"__FLT_EPSILON__ 1.1920928955078125e-7F\000"
-.LASF917:
+.LASF950:
 	.ascii	"GPIO_WriteToOutputPin\000"
 .LASF33:
 	.ascii	"__PTRDIFF_TYPE__ int\000"
@@ -6179,8 +6208,6 @@ GPIO_IRQHandler:
 	.ascii	"__ARM_FEATURE_MATMUL_INT8\000"
 .LASF559:
 	.ascii	"INT_LEAST32_MAX (__INT_LEAST32_MAX__)\000"
-.LASF760:
-	.ascii	"RATE_16 (3)\000"
 .LASF558:
 	.ascii	"INT_LEAST32_MIN (-__INT_LEAST32_MAX__ - 1)\000"
 .LASF367:
@@ -6195,9 +6222,9 @@ GPIO_IRQHandler:
 	.ascii	"__GCC_ATOMIC_TEST_AND_SET_TRUEVAL 1\000"
 .LASF467:
 	.ascii	"__MISC_VISIBLE 1\000"
-.LASF862:
+.LASF901:
 	.ascii	"BDCR\000"
-.LASF805:
+.LASF844:
 	.ascii	"GPIO_AF0 (0)\000"
 .LASF727:
 	.ascii	"GPIOC_RESET() do{ (RCC->AHB1RSTR |= (1 << 2)); (RCC"
@@ -6208,11 +6235,13 @@ GPIO_IRQHandler:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
 .LASF740:
 	.ascii	"IRQ_NO_EXTI15_10 (40)\000"
+.LASF784:
+	.ascii	"SPI_SR_BSY 7\000"
 .LASF344:
 	.ascii	"__TA_FBIT__ 63\000"
 .LASF659:
 	.ascii	"PRIORITY_LVL_15 (0xf0)\000"
-.LASF911:
+.LASF944:
 	.ascii	"EnorDi\000"
 .LASF540:
 	.ascii	"INTPTR_MIN (-__INTPTR_MAX__ - 1)\000"
@@ -6220,9 +6249,9 @@ GPIO_IRQHandler:
 	.ascii	"GPIOG_PCLK_DI (RCC->AHB1ENR &= ~(1 << 6))\000"
 .LASF429:
 	.ascii	"__ARM_ARCH_EXT_IDIV__ 1\000"
-.LASF790:
+.LASF829:
 	.ascii	"GPIO_PIN_1 (1)\000"
-.LASF782:
+.LASF821:
 	.ascii	"GPIO_SPEED_LOW (0)\000"
 .LASF329:
 	.ascii	"__UQQ_IBIT__ 0\000"
@@ -6232,15 +6261,15 @@ GPIO_IRQHandler:
 	.ascii	"__UINT_LEAST8_MAX__ 0xff\000"
 .LASF649:
 	.ascii	"PRIORITY_LVL_5 (0x50)\000"
-.LASF841:
+.LASF880:
 	.ascii	"RESERVED\000"
-.LASF892:
+.LASF929:
 	.ascii	"GPIO_RegDef_t\000"
 .LASF160:
 	.ascii	"__FP_FAST_FMAF 1\000"
 .LASF583:
 	.ascii	"SIG_ATOMIC_MIN (-__STDINT_EXP(INT_MAX) - 1)\000"
-.LASF813:
+.LASF852:
 	.ascii	"GPIO_AF8 (8)\000"
 .LASF686:
 	.ascii	"GPIOH_PCLK_EN (RCC->AHB1ENR |= (1 << 7))\000"
@@ -6248,6 +6277,8 @@ GPIO_IRQHandler:
 	.ascii	"_INT16_T_DECLARED \000"
 .LASF679:
 	.ascii	"GPIOA_PCLK_EN (RCC->AHB1ENR |= (1 << 0))\000"
+.LASF766:
+	.ascii	"SPI_CR1_CRC_NEXT 12\000"
 .LASF109:
 	.ascii	"__INT_LEAST16_WIDTH__ 16\000"
 .LASF668:
@@ -6263,24 +6294,24 @@ GPIO_IRQHandler:
 	.ascii	"->AHB1RSTR &= ~(1 << 5)); } while(0)\000"
 .LASF247:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
-.LASF877:
+.LASF916:
 	.ascii	"SYSCFG_RegDef_t\000"
-.LASF837:
+.LASF876:
 	.ascii	"CFGR\000"
 .LASF481:
 	.ascii	"___int_least32_t_defined 1\000"
-.LASF772:
-	.ascii	"SIXTEEN_BIT (1)\000"
 .LASF311:
 	.ascii	"__LLACCUM_MAX__ 0X7FFFFFFFFFFFFFFFP-31LLK\000"
 .LASF652:
 	.ascii	"PRIORITY_LVL_8 (0x80)\000"
-.LASF791:
+.LASF830:
 	.ascii	"GPIO_PIN_2 (2)\000"
 .LASF355:
 	.ascii	"__USER_LABEL_PREFIX__ \000"
 .LASF103:
 	.ascii	"__UINT64_MAX__ 0xffffffffffffffffULL\000"
+.LASF811:
+	.ascii	"SPI_SIMPLEX_RX_ONLY (3)\000"
 .LASF102:
 	.ascii	"__UINT32_MAX__ 0xffffffffUL\000"
 .LASF597:
@@ -6291,6 +6322,8 @@ GPIO_IRQHandler:
 	.ascii	"INT_FAST16_MIN (-__INT_FAST16_MAX__ - 1)\000"
 .LASF1:
 	.ascii	"__STDC_VERSION__ 201112L\000"
+.LASF775:
+	.ascii	"SPI_CR2_RXNEIE 6\000"
 .LASF104:
 	.ascii	"__INT_LEAST8_MAX__ 0x7f\000"
 .LASF372:
@@ -6305,6 +6338,8 @@ GPIO_IRQHandler:
 	.ascii	"__ARM_FEATURE_COMPLEX\000"
 .LASF646:
 	.ascii	"PRIORITY_LVL_2 (0x20)\000"
+.LASF773:
+	.ascii	"SPI_CR2_FRF 4\000"
 .LASF501:
 	.ascii	"_INTPTR_EQ_INT \000"
 .LASF397:
@@ -6331,7 +6366,7 @@ GPIO_IRQHandler:
 	.ascii	"__ACCUM_MAX__ 0X7FFFFFFFP-15K\000"
 .LASF96:
 	.ascii	"__INT8_MAX__ 0x7f\000"
-.LASF768:
+.LASF802:
 	.ascii	"IDLE_LOW (0)\000"
 .LASF374:
 	.ascii	"__GCC_HAVE_DWARF2_CFI_ASM 1\000"
@@ -6339,7 +6374,7 @@ GPIO_IRQHandler:
 	.ascii	"___int8_t_defined 1\000"
 .LASF240:
 	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
-.LASF901:
+.LASF938:
 	.ascii	"GPIO_PinConfig\000"
 .LASF341:
 	.ascii	"__SA_IBIT__ 16\000"
@@ -6357,13 +6392,13 @@ GPIO_IRQHandler:
 	.ascii	"__UINT16_TYPE__ short unsigned int\000"
 .LASF456:
 	.ascii	"_POSIX_SOURCE\000"
+.LASF779:
+	.ascii	"SPI_SR_CHSIDE 2\000"
 .LASF616:
 	.ascii	"GPIOB_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0400)\000"
 .LASF673:
 	.ascii	"SPI2 ((SPI_RegDef_t*) SPI2_BASEADDR)\000"
-.LASF763:
-	.ascii	"RATE_128 (6)\000"
-.LASF780:
+.LASF819:
 	.ascii	"GPIO_OP_TYPE_PP (0)\000"
 .LASF142:
 	.ascii	"__FLT_EVAL_METHOD_TS_18661_3__ 0\000"
@@ -6373,10 +6408,10 @@ GPIO_IRQHandler:
 	.ascii	"INT8_C(x) __INT8_C(x)\000"
 .LASF61:
 	.ascii	"__UINT_FAST8_TYPE__ unsigned int\000"
+.LASF780:
+	.ascii	"SPI_SR_UDR 3\000"
 .LASF309:
 	.ascii	"__LLACCUM_IBIT__ 32\000"
-.LASF762:
-	.ascii	"RATE_64 (5)\000"
 .LASF252:
 	.ascii	"__FRACT_EPSILON__ 0x1P-15R\000"
 .LASF98:
@@ -6395,7 +6430,9 @@ GPIO_IRQHandler:
 	.ascii	"_DEFAULT_SOURCE 1\000"
 .LASF192:
 	.ascii	"__FLT32_MANT_DIG__ 24\000"
-.LASF876:
+.LASF796:
+	.ascii	"DIVISOR_64 (5)\000"
+.LASF915:
 	.ascii	"CMPCR\000"
 .LASF123:
 	.ascii	"__UINT64_C(c) c ## ULL\000"
@@ -6407,7 +6444,7 @@ GPIO_IRQHandler:
 	.ascii	"__LDBL_EPSILON__ 2.2204460492503131e-16L\000"
 .LASF364:
 	.ascii	"__GCC_ATOMIC_CHAR16_T_LOCK_FREE 2\000"
-.LASF889:
+.LASF926:
 	.ascii	"LCKR\000"
 .LASF165:
 	.ascii	"__DBL_MAX_EXP__ 1024\000"
@@ -6425,14 +6462,16 @@ GPIO_IRQHandler:
 	.ascii	"__UDQ_IBIT__ 0\000"
 .LASF51:
 	.ascii	"__INT_LEAST32_TYPE__ long int\000"
+.LASF375:
+	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
 .LASF368:
 	.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 2\000"
 .LASF296:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
 .LASF522:
 	.ascii	"_INT32_T_DECLARED \000"
-.LASF769:
-	.ascii	"MASTER_SELECT (1)\000"
+.LASF785:
+	.ascii	"SPI_SR_FRE 8\000"
 .LASF216:
 	.ascii	"__FLT64_NORM_MAX__ 1.7976931348623157e+308F64\000"
 .LASF605:
@@ -6447,6 +6486,8 @@ GPIO_IRQHandler:
 	.ascii	"USART3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4800)\000"
 .LASF188:
 	.ascii	"__LDBL_DENORM_MIN__ 4.9406564584124654e-324L\000"
+.LASF762:
+	.ascii	"SPI_CR1_SSI 8\000"
 .LASF99:
 	.ascii	"__INT64_MAX__ 0x7fffffffffffffffLL\000"
 .LASF381:
@@ -6459,25 +6500,23 @@ GPIO_IRQHandler:
 	.ascii	"USART1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1000)\000"
 .LASF713:
 	.ascii	"I2C3_PCLK_DI (RCC->APB1ENR &= ~(1 << 23))\000"
-.LASF886:
+.LASF923:
 	.ascii	"OSPEEDR\000"
-.LASF836:
+.LASF875:
 	.ascii	"PLLCFGR\000"
-.LASF797:
+.LASF836:
 	.ascii	"GPIO_PIN_8 (8)\000"
 .LASF639:
 	.ascii	"USART6_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1400)\000"
-.LASF882:
-	.ascii	"NVIC_IPR\000"
 .LASF82:
 	.ascii	"__LONG_WIDTH__ 32\000"
 .LASF152:
 	.ascii	"__FLT_MAX__ 3.4028234663852886e+38F\000"
 .LASF293:
 	.ascii	"__UACCUM_FBIT__ 16\000"
-.LASF873:
+.LASF912:
 	.ascii	"EXTI_RegDef_t\000"
-.LASF812:
+.LASF851:
 	.ascii	"GPIO_AF7 (7)\000"
 .LASF257:
 	.ascii	"__UFRACT_EPSILON__ 0x1P-16UR\000"
@@ -6491,25 +6530,25 @@ GPIO_IRQHandler:
 	.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 2\000"
 .LASF305:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
-.LASF828:
+.LASF867:
 	.ascii	"__uint32_t\000"
 .LASF184:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
 .LASF402:
 	.ascii	"__ARM_ARCH 7\000"
-.LASF803:
+.LASF842:
 	.ascii	"GPIO_PIN_14 (14)\000"
 .LASF144:
 	.ascii	"__FLT_RADIX__ 2\000"
-.LASF830:
+.LASF869:
 	.ascii	"long long int\000"
-.LASF897:
+.LASF934:
 	.ascii	"GPIO_PinPuPDcontrol\000"
 .LASF390:
 	.ascii	"__ARM_FEATURE_CMSE\000"
 .LASF557:
 	.ascii	"UINT32_MAX (__UINT32_MAX__)\000"
-.LASF816:
+.LASF855:
 	.ascii	"GPIO_AF11 (11)\000"
 .LASF191:
 	.ascii	"__LDBL_HAS_QUIET_NAN__ 1\000"
@@ -6517,11 +6556,11 @@ GPIO_IRQHandler:
 	.ascii	"__LONG_LONG_WIDTH__ 64\000"
 .LASF753:
 	.ascii	"DISABLE_GREEN_LED (GPIOD->ODR &= ~(1 << 12))\000"
-.LASF895:
+.LASF932:
 	.ascii	"GPIO_PinOPType\000"
-.LASF865:
+.LASF904:
 	.ascii	"SSCGR\000"
-.LASF925:
+.LASF958:
 	.ascii	"GNU C11 10.3.1 20210824 (release) -mcpu=cortex-m4 -"
 	.ascii	"mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -march=ar"
 	.ascii	"mv7e-m+fp -g3 -O0 -std=gnu11 -ffunction-sections -f"
@@ -6529,7 +6568,7 @@ GPIO_IRQHandler:
 	.ascii	"\000"
 .LASF412:
 	.ascii	"__ARM_FP\000"
-.LASF914:
+.LASF947:
 	.ascii	"GPIO_ToggleOutputPin\000"
 .LASF339:
 	.ascii	"__HA_IBIT__ 8\000"
@@ -6547,7 +6586,7 @@ GPIO_IRQHandler:
 	.ascii	"__FLT64_MIN__ 2.2250738585072014e-308F64\000"
 .LASF477:
 	.ascii	"___int32_t_defined 1\000"
-.LASF843:
+.LASF882:
 	.ascii	"APB2RSTR\000"
 .LASF398:
 	.ascii	"__ARM_ARCH_PROFILE\000"
@@ -6570,20 +6609,18 @@ GPIO_IRQHandler:
 	.ascii	"__BSD_VISIBLE 1\000"
 .LASF552:
 	.ascii	"INT_LEAST16_MIN (-__INT_LEAST16_MAX__ - 1)\000"
-.LASF798:
+.LASF837:
 	.ascii	"GPIO_PIN_9 (9)\000"
 .LASF256:
 	.ascii	"__UFRACT_MAX__ 0XFFFFP-16UR\000"
 .LASF482:
 	.ascii	"___int_least64_t_defined 1\000"
-.LASF872:
+.LASF911:
 	.ascii	"SWIER\000"
 .LASF110:
 	.ascii	"__INT_LEAST32_MAX__ 0x7fffffffL\000"
 .LASF239:
 	.ascii	"__SFRACT_IBIT__ 0\000"
-.LASF761:
-	.ascii	"RATE_32 (4)\000"
 .LASF461:
 	.ascii	"_ATFILE_SOURCE 1\000"
 .LASF485:
@@ -6596,13 +6633,13 @@ GPIO_IRQHandler:
 	.ascii	"__FLT32_EPSILON__ 1.1920928955078125e-7F32\000"
 .LASF423:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF859:
+.LASF898:
 	.ascii	"APB2LPENR\000"
 .LASF755:
 	.ascii	"DELAY() (for(int i = 0; i < 250000; i++))\000"
 .LASF468:
 	.ascii	"__POSIX_VISIBLE 200809\000"
-.LASF773:
+.LASF812:
 	.ascii	"GPIO_MODE_INPUT (0)\000"
 .LASF253:
 	.ascii	"__UFRACT_FBIT__ 16\000"
@@ -6613,18 +6650,18 @@ GPIO_IRQHandler:
 	.ascii	"\000"
 .LASF537:
 	.ascii	"__int_fast16_t_defined 1\000"
-.LASF884:
+.LASF921:
 	.ascii	"MODER\000"
 .LASF181:
 	.ascii	"__LDBL_MAX_10_EXP__ 308\000"
-.LASF926:
+.LASF959:
 	.ascii	"../Drivers/Src/stm32f407xx_gpio_driver.c\000"
 .LASF172:
 	.ascii	"__DBL_DENORM_MIN__ ((double)4.9406564584124654e-324"
 	.ascii	"L)\000"
 .LASF562:
 	.ascii	"INT64_MAX (__INT64_MAX__)\000"
-.LASF832:
+.LASF871:
 	.ascii	"unsigned int\000"
 .LASF450:
 	.ascii	"__NEWLIB_MINOR__ 1\000"
@@ -6636,6 +6673,8 @@ GPIO_IRQHandler:
 	.ascii	"UINT32_C(x) __UINT32_C(x)\000"
 .LASF316:
 	.ascii	"__ULLACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULLK\000"
+.LASF763:
+	.ascii	"SPI_CR1_SSM 9\000"
 .LASF284:
 	.ascii	"__USACCUM_IBIT__ 8\000"
 .LASF567:
@@ -6648,19 +6687,21 @@ GPIO_IRQHandler:
 	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
 .LASF24:
 	.ascii	"__CHAR_BIT__ 8\000"
-.LASF923:
+.LASF956:
 	.ascii	"pGPIOHandle\000"
 .LASF141:
 	.ascii	"__FLT_EVAL_METHOD__ 0\000"
 .LASF741:
 	.ascii	"IRQ_NO_SPI1 (35)\000"
+.LASF761:
+	.ascii	"SPI_CR1_LSB_FIRST 7\000"
 .LASF68:
 	.ascii	"__SCHAR_MAX__ 0x7f\000"
 .LASF483:
 	.ascii	"__EXP\000"
 .LASF125:
 	.ascii	"__INT_FAST8_WIDTH__ 32\000"
-.LASF920:
+.LASF953:
 	.ascii	"GPIO_ReadFromInputPin\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_LDREX\000"
@@ -6694,29 +6735,33 @@ GPIO_IRQHandler:
 	.ascii	"__FLOAT_WORD_ORDER__ __ORDER_LITTLE_ENDIAN__\000"
 .LASF45:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
-.LASF879:
+.LASF918:
 	.ascii	"NVIC_EN_RegDef_t\000"
-.LASF869:
+.LASF908:
 	.ascii	"RCC_RegDef_t\000"
 .LASF536:
 	.ascii	"__int_fast8_t_defined 1\000"
-.LASF783:
+.LASF822:
 	.ascii	"GPIO_SPEED_MED (1)\000"
 .LASF433:
 	.ascii	"__ARM_FEATURE_COPROC 15\000"
+.LASF781:
+	.ascii	"SPI_SR_CRCERR 4\000"
+.LASF804:
+	.ascii	"SPI_HW_SSM (0)\000"
 .LASF80:
 	.ascii	"__SHRT_WIDTH__ 16\000"
 .LASF629:
 	.ascii	"SPI2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3800)\000"
 .LASF541:
 	.ascii	"INTPTR_MAX (__INTPTR_MAX__)\000"
-.LASF912:
+.LASF945:
 	.ascii	"temp1\000"
-.LASF913:
+.LASF946:
 	.ascii	"temp2\000"
 .LASF348:
 	.ascii	"__USA_FBIT__ 16\000"
-.LASF858:
+.LASF897:
 	.ascii	"APB1LPENR\000"
 .LASF59:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
@@ -6726,8 +6771,6 @@ GPIO_IRQHandler:
 	.ascii	"UART5_PCLK_EN (RCC->APB1ENR |= (1 << 20))\000"
 .LASF462:
 	.ascii	"__ATFILE_VISIBLE 1\000"
-.LASF759:
-	.ascii	"RATE_8 (2)\000"
 .LASF262:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
 .LASF589:
@@ -6737,7 +6780,7 @@ GPIO_IRQHandler:
 	.ascii	"->AHB1RSTR &= ~(1 << 3)); } while(0)\000"
 .LASF396:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
-.LASF822:
+.LASF861:
 	.ascii	"unsigned char\000"
 .LASF231:
 	.ascii	"__FLT32X_NORM_MAX__ 1.7976931348623157e+308F32x\000"
@@ -6755,15 +6798,17 @@ GPIO_IRQHandler:
 	.ascii	"__ARM_FP16_FORMAT_ALTERNATIVE\000"
 .LASF185:
 	.ascii	"__LDBL_NORM_MAX__ 1.7976931348623157e+308L\000"
-.LASF789:
+.LASF735:
+	.ascii	"IRQ_NO_EXTI1 (7\000"
+.LASF828:
 	.ascii	"GPIO_PIN_0 (0)\000"
 .LASF445:
 	.ascii	"_MACHINE__DEFAULT_TYPES_H \000"
 .LASF25:
 	.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
-.LASF864:
+.LASF903:
 	.ascii	"RESERVED11\000"
-.LASF905:
+.LASF942:
 	.ascii	"pinNumber\000"
 .LASF345:
 	.ascii	"__TA_IBIT__ 64\000"
@@ -6775,17 +6820,21 @@ GPIO_IRQHandler:
 	.ascii	"__ARM_FEATURE_QRDMX\000"
 .LASF609:
 	.ascii	"PERIPHERAL_BASEADDR 0x40000000U\000"
-.LASF840:
+.LASF791:
+	.ascii	"DIVISOR_2 (0)\000"
+.LASF778:
+	.ascii	"SPI_SR_TXE 1\000"
+.LASF879:
 	.ascii	"AHB3RSTR\000"
 .LASF72:
 	.ascii	"__LONG_LONG_MAX__ 0x7fffffffffffffffLL\000"
 .LASF85:
 	.ascii	"__WINT_WIDTH__ 32\000"
-.LASF921:
+.LASF954:
 	.ascii	"GPIO_DeInit\000"
 .LASF492:
 	.ascii	"long\000"
-.LASF820:
+.LASF859:
 	.ascii	"GPIO_AF15 (15)\000"
 .LASF604:
 	.ascii	"FLASH_BASEADDR 0x08000000U\000"
@@ -6803,12 +6852,16 @@ GPIO_IRQHandler:
 	.ascii	"__LFRACT_IBIT__ 0\000"
 .LASF163:
 	.ascii	"__DBL_MIN_EXP__ (-1021)\000"
+.LASF774:
+	.ascii	"SPI_CR2_ERRIE 5\000"
 .LASF189:
 	.ascii	"__LDBL_HAS_DENORM__ 1\000"
 .LASF664:
 	.ascii	"GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)\000"
 .LASF193:
 	.ascii	"__FLT32_DIG__ 6\000"
+.LASF794:
+	.ascii	"DIVISOR_16 (3)\000"
 .LASF678:
 	.ascii	"NVIC_SET_EN ((NVIC_EN_RegDef_t*) NVIC_ISER_BASEADDR"
 	.ascii	")\000"
@@ -6826,21 +6879,23 @@ GPIO_IRQHandler:
 	.ascii	"__SACCUM_FBIT__ 7\000"
 .LASF361:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\000"
-.LASF842:
+.LASF881:
 	.ascii	"APB1RSTR\000"
 .LASF290:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
+.LASF771:
+	.ascii	"SPI_CR2_TXDMAEN 1\000"
 .LASF382:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
-.LASF922:
+.LASF955:
 	.ascii	"GPIO_Init\000"
-.LASF850:
+.LASF889:
 	.ascii	"APB1ENR\000"
 .LASF634:
 	.ascii	"UART4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4c00)\000"
-.LASF819:
+.LASF858:
 	.ascii	"GPIO_AF14 (14)\000"
-.LASF776:
+.LASF815:
 	.ascii	"GPIO_MODE_ANALOG (3)\000"
 .LASF122:
 	.ascii	"__UINT_LEAST64_MAX__ 0xffffffffffffffffULL\000"
@@ -6862,7 +6917,7 @@ GPIO_IRQHandler:
 	.ascii	"__have_longlong64 1\000"
 .LASF153:
 	.ascii	"__FLT_NORM_MAX__ 3.4028234663852886e+38F\000"
-.LASF831:
+.LASF870:
 	.ascii	"long long unsigned int\000"
 .LASF566:
 	.ascii	"UINT_LEAST64_MAX (__UINT_LEAST64_MAX__)\000"
@@ -6882,11 +6937,15 @@ GPIO_IRQHandler:
 	.ascii	"__DQ_FBIT__ 63\000"
 .LASF464:
 	.ascii	"__GNU_VISIBLE 0\000"
+.LASF760:
+	.ascii	"SPI_CR1_SPE 6\000"
 .LASF279:
 	.ascii	"__SACCUM_IBIT__ 8\000"
 .LASF331:
 	.ascii	"__UHQ_IBIT__ 0\000"
-.LASF829:
+.LASF759:
+	.ascii	"SPI_CR1_BAUDRATE 3\000"
+.LASF868:
 	.ascii	"long unsigned int\000"
 .LASF58:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
@@ -6900,6 +6959,8 @@ GPIO_IRQHandler:
 	.ascii	"__ULFRACT_MAX__ 0XFFFFFFFFP-32ULR\000"
 .LASF54:
 	.ascii	"__UINT_LEAST16_TYPE__ short unsigned int\000"
+.LASF783:
+	.ascii	"SPI_SR_OVR 6\000"
 .LASF528:
 	.ascii	"_INTMAX_T_DECLARED \000"
 .LASF301:
@@ -6910,6 +6971,8 @@ GPIO_IRQHandler:
 	.ascii	"I2C1_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5400)\000"
 .LASF224:
 	.ascii	"__FLT32X_DIG__ 15\000"
+.LASF798:
+	.ascii	"DIVISOR_256 (7)\000"
 .LASF336:
 	.ascii	"__UTQ_FBIT__ 128\000"
 .LASF209:
@@ -6924,25 +6987,25 @@ GPIO_IRQHandler:
 	.ascii	"GPIOE_PCLK_EN (RCC->AHB1ENR |= (1 << 4))\000"
 .LASF19:
 	.ascii	"__SIZEOF_SHORT__ 2\000"
-.LASF906:
+.LASF943:
 	.ascii	"IRQNumber\000"
 .LASF531:
 	.ascii	"_UINTPTR_T_DECLARED \000"
-.LASF900:
+.LASF937:
 	.ascii	"pGPIOx\000"
-.LASF891:
+.LASF928:
 	.ascii	"AFRH\000"
 .LASF306:
 	.ascii	"__ULACCUM_MAX__ 0XFFFFFFFFFFFFFFFFP-32ULK\000"
-.LASF786:
+.LASF825:
 	.ascii	"GPIO_NO_PUPD (0)\000"
-.LASF890:
+.LASF927:
 	.ascii	"AFRL\000"
 .LASF675:
 	.ascii	"SPI4 ((SPI_RegDef_t*) SPI4_BASEADDR)\000"
-.LASF793:
+.LASF832:
 	.ascii	"GPIO_PIN_4 (4)\000"
-.LASF810:
+.LASF849:
 	.ascii	"GPIO_AF5 (5)\000"
 .LASF265:
 	.ascii	"__ULFRACT_MIN__ 0.0ULR\000"
@@ -6964,16 +7027,12 @@ GPIO_IRQHandler:
 	.ascii	"I2C3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5c00)\000"
 .LASF525:
 	.ascii	"_INT64_T_DECLARED \000"
-.LASF787:
+.LASF826:
 	.ascii	"GPIO_PIN_PU (1)\000"
-.LASF770:
-	.ascii	"SLAVE_SELECT (0)\000"
-.LASF856:
+.LASF895:
 	.ascii	"AHB3LPENR\000"
-.LASF767:
+.LASF801:
 	.ascii	"IDLE_HIGH (1)\000"
-.LASF706:
-	.ascii	"GPIOE_PCLK_DI (RCC->AHB1ENR &= ~(1 << 4))\000"
 .LASF337:
 	.ascii	"__UTQ_IBIT__ 0\000"
 .LASF650:
@@ -6992,15 +7051,17 @@ GPIO_IRQHandler:
 	.ascii	"__THUMBEL__ 1\000"
 .LASF748:
 	.ascii	"RESET DISABLE\000"
+.LASF803:
+	.ascii	"SPI_SW_SSM (1)\000"
 .LASF379:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
-.LASF804:
+.LASF843:
 	.ascii	"GPIO_PIN_15 (15)\000"
 .LASF319:
 	.ascii	"__QQ_IBIT__ 0\000"
-.LASF778:
+.LASF817:
 	.ascii	"GPIO_MODE_IT_RT (5)\000"
-.LASF885:
+.LASF922:
 	.ascii	"OTYPER\000"
 .LASF598:
 	.ascii	"UINT64_C(x) __UINT64_C(x)\000"
@@ -7020,15 +7081,19 @@ GPIO_IRQHandler:
 	.ascii	"__ARM_FEATURE_NUMERIC_MAXMIN\000"
 .LASF36:
 	.ascii	"__INTMAX_TYPE__ long long int\000"
-.LASF796:
+.LASF787:
+	.ascii	"SPI_RX_BUFFER_EMPTY (0x1)\000"
+.LASF835:
 	.ascii	"GPIO_PIN_7 (7)\000"
 .LASF409:
 	.ascii	"__ARM_ARCH_ISA_THUMB 2\000"
+.LASF793:
+	.ascii	"DIVISOR_8 (2)\000"
 .LASF425:
 	.ascii	"__ARM_ARCH_7EM__ 1\000"
 .LASF417:
 	.ascii	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC\000"
-.LASF846:
+.LASF885:
 	.ascii	"AHB1ENR\000"
 .LASF287:
 	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
@@ -7040,11 +7105,13 @@ GPIO_IRQHandler:
 	.ascii	"UINT_FAST16_MAX (__UINT_FAST16_MAX__)\000"
 .LASF271:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
+.LASF810:
+	.ascii	"SPI_CONFIG_FD (2)\000"
 .LASF560:
 	.ascii	"UINT_LEAST32_MAX (__UINT_LEAST32_MAX__)\000"
 .LASF281:
 	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
-.LASF848:
+.LASF887:
 	.ascii	"AHB3ENR\000"
 .LASF66:
 	.ascii	"__UINTPTR_TYPE__ unsigned int\000"
@@ -7058,7 +7125,7 @@ GPIO_IRQHandler:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF520:
 	.ascii	"_UINT16_T_DECLARED \000"
-.LASF839:
+.LASF878:
 	.ascii	"AHB2RSTR\000"
 .LASF711:
 	.ascii	"I2C1_PCLK_DI (RCC->APB1ENR &= ~(1 << 21))\000"
@@ -7074,8 +7141,10 @@ GPIO_IRQHandler:
 	.ascii	"__int_least32_t_defined 1\000"
 .LASF114:
 	.ascii	"__INT64_C(c) c ## LL\000"
-.LASF902:
+.LASF939:
 	.ascii	"GPIO_Handle_t\000"
+.LASF808:
+	.ascii	"DFF_16BIT (1)\000"
 .LASF723:
 	.ascii	"UART5_PCLK_DI (RCC->APB1ENR &= ~(1 << 20))\000"
 .LASF186:
@@ -7088,13 +7157,13 @@ GPIO_IRQHandler:
 	.ascii	"GPIO_PIN_RESET RESET\000"
 .LASF487:
 	.ascii	"unsigned\000"
-.LASF758:
-	.ascii	"RATE_4 (1)\000"
-.LASF779:
+.LASF672:
+	.ascii	"SPI1 ((SPI_RegDef_t*) SPI1_BASEADDR)\000"
+.LASF818:
 	.ascii	"GPIO_MODE_IT_RFT (6)\000"
-.LASF880:
+.LASF919:
 	.ascii	"NVIC_ICER\000"
-.LASF823:
+.LASF862:
 	.ascii	"short int\000"
 .LASF636:
 	.ascii	"EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)\000"
@@ -7109,10 +7178,12 @@ GPIO_IRQHandler:
 .LASF676:
 	.ascii	"NVIC_Priority_Set ((NVIC_ipr_RegDef_t*) NVIC_IPR_BA"
 	.ascii	"SEADDR)\000"
-.LASF903:
+.LASF940:
 	.ascii	"GPIO_IRQHandler\000"
 .LASF561:
 	.ascii	"INT64_MIN (-__INT64_MAX__ - 1)\000"
+.LASF782:
+	.ascii	"SPI_SR_MODF 5\000"
 .LASF9:
 	.ascii	"__ATOMIC_RELAXED 0\000"
 .LASF432:
@@ -7127,7 +7198,11 @@ GPIO_IRQHandler:
 	.ascii	"PRIORITY_LVL_12 (0xc0)\000"
 .LASF746:
 	.ascii	"DISABLE 0\000"
-.LASF881:
+.LASF767:
+	.ascii	"SPI_CR1_CRC_EN 13\000"
+.LASF807:
+	.ascii	"DFF_8BIT (0)\000"
+.LASF920:
 	.ascii	"NVIC_DI_RegDef_t\000"
 .LASF721:
 	.ascii	"USART3_PCLK_DI (RCC->APB1ENR &= ~(1 << 18))\000"
@@ -7135,6 +7210,8 @@ GPIO_IRQHandler:
 	.ascii	"__USES_INITFINI__ 1\000"
 .LASF592:
 	.ascii	"UINT8_C(x) __UINT8_C(x)\000"
+.LASF777:
+	.ascii	"SPI_SR_RXNE 0\000"
 .LASF620:
 	.ascii	"GPIOF_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1400)\000"
 .LASF167:
@@ -7143,7 +7220,7 @@ GPIO_IRQHandler:
 	.ascii	"__have_long32 1\000"
 .LASF682:
 	.ascii	"GPIOD_PCLK_EN (RCC->AHB1ENR |= (1 << 3))\000"
-.LASF802:
+.LASF841:
 	.ascii	"GPIO_PIN_13 (13)\000"
 .LASF443:
 	.ascii	"INC_STM32F407XX_GPIO_DRIVER_H_ \000"
@@ -7153,9 +7230,9 @@ GPIO_IRQHandler:
 	.ascii	"__INT16_MAX__ 0x7fff\000"
 .LASF363:
 	.ascii	"__GCC_ATOMIC_CHAR_LOCK_FREE 2\000"
-.LASF815:
+.LASF854:
 	.ascii	"GPIO_AF10 (10)\000"
-.LASF809:
+.LASF848:
 	.ascii	"GPIO_AF4 (4)\000"
 .LASF471:
 	.ascii	"__SSP_FORTIFY_LEVEL 0\000"
@@ -7167,7 +7244,7 @@ GPIO_IRQHandler:
 	.ascii	"GPIOC_PCLK_EN (RCC->AHB1ENR |= (1 << 2))\000"
 .LASF318:
 	.ascii	"__QQ_FBIT__ 7\000"
-.LASF775:
+.LASF814:
 	.ascii	"GPIO_MODE_ALTFN (2)\000"
 .LASF726:
 	.ascii	"GPIOB_RESET() do{ (RCC->AHB1RSTR |= (1 << 1)); (RCC"
@@ -7189,7 +7266,7 @@ GPIO_IRQHandler:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
 .LASF385:
 	.ascii	"__ARM_FEATURE_CRC32\000"
-.LASF910:
+.LASF941:
 	.ascii	"GPIO_IRQInterruptConfig\000"
 .LASF277:
 	.ascii	"__ULLFRACT_EPSILON__ 0x1P-64ULLR\000"
@@ -7197,7 +7274,7 @@ GPIO_IRQHandler:
 	.ascii	"__STDC_HOSTED__ 1\000"
 .LASF377:
 	.ascii	"__SIZEOF_WINT_T__ 4\000"
-.LASF893:
+.LASF930:
 	.ascii	"GPIO_PinNumber\000"
 .LASF383:
 	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
@@ -7205,7 +7282,7 @@ GPIO_IRQHandler:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
 .LASF183:
 	.ascii	"__LDBL_DECIMAL_DIG__ 17\000"
-.LASF801:
+.LASF840:
 	.ascii	"GPIO_PIN_12 (12)\000"
 .LASF300:
 	.ascii	"__LACCUM_MIN__ (-0X1P31LK-0X1P31LK)\000"
@@ -7219,7 +7296,9 @@ GPIO_IRQHandler:
 	.ascii	"__ULLACCUM_MIN__ 0.0ULLK\000"
 .LASF129:
 	.ascii	"__INT_FAST32_WIDTH__ 32\000"
-.LASF781:
+.LASF769:
+	.ascii	"SPI_CR1_BIDI_MODE 15\000"
+.LASF820:
 	.ascii	"GPIO_OP_TYPE_OD (1)\000"
 .LASF738:
 	.ascii	"IRQ_NO_EXTI4 (10)\000"
@@ -7229,6 +7308,8 @@ GPIO_IRQHandler:
 	.ascii	"__INT32 \"l\"\000"
 .LASF431:
 	.ascii	"__ARM_ASM_SYNTAX_UNIFIED__ 1\000"
+.LASF856:
+	.ascii	"GPIO_AF12 (12)\000"
 .LASF47:
 	.ascii	"__UINT32_TYPE__ long unsigned int\000"
 .LASF719:
@@ -7247,9 +7328,9 @@ GPIO_IRQHandler:
 	.ascii	"USART2_PCLK_EN (RCC->APB1ENR |= (1 << 17))\000"
 .LASF275:
 	.ascii	"__ULLFRACT_MIN__ 0.0ULLR\000"
-.LASF777:
+.LASF816:
 	.ascii	"GPIO_MODE_IT_FT (4)\000"
-.LASF795:
+.LASF834:
 	.ascii	"GPIO_PIN_6 (6)\000"
 .LASF677:
 	.ascii	"NVIC_CLR_EN ((NVIC_DI_RegDef_t*)NVIC_ICER_BASEADDR)"
@@ -7258,13 +7339,13 @@ GPIO_IRQHandler:
 	.ascii	"_INT8_T_DECLARED \000"
 .LASF16:
 	.ascii	"__SIZEOF_INT__ 4\000"
-.LASF866:
+.LASF905:
 	.ascii	"PLLI2SCFGR\000"
 .LASF269:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
 .LASF594:
 	.ascii	"UINT16_C(x) __UINT16_C(x)\000"
-.LASF835:
+.LASF874:
 	.ascii	"uint32_t\000"
 .LASF484:
 	.ascii	"_SYS__INTSUP_H \000"
@@ -7282,8 +7363,6 @@ GPIO_IRQHandler:
 	.ascii	"__ARM_FP 4\000"
 .LASF457:
 	.ascii	"_POSIX_SOURCE 1\000"
-.LASF734:
-	.ascii	"IRQ_NO_EXTI0 (6)\000"
 .LASF62:
 	.ascii	"__UINT_FAST16_TYPE__ unsigned int\000"
 .LASF731:
@@ -7291,15 +7370,13 @@ GPIO_IRQHandler:
 	.ascii	"->AHB1RSTR &= ~(1 << 6)); } while(0)\000"
 .LASF347:
 	.ascii	"__UHA_IBIT__ 8\000"
-.LASF927:
+.LASF960:
 	.ascii	"C:/Users/shane/Documents/Repo/STM32_Projects/stm32f"
 	.ascii	"4xx_drivers/Debug\000"
 .LASF292:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
 .LASF307:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
-.LASF680:
-	.ascii	"GPIOB_PCLK_EN (RCC->AHB1ENR |= (1 << 1))\000"
 .LASF177:
 	.ascii	"__LDBL_DIG__ 15\000"
 .LASF87:
@@ -7308,9 +7385,9 @@ GPIO_IRQHandler:
 	.ascii	"__FLT32_DENORM_MIN__ 1.4012984643248171e-45F32\000"
 .LASF76:
 	.ascii	"__WINT_MIN__ 0U\000"
-.LASF928:
+.LASF961:
 	.ascii	"GPIO_PeriClockControl\000"
-.LASF867:
+.LASF906:
 	.ascii	"PLLSAICFGR\000"
 .LASF502:
 	.ascii	"_INT32_EQ_LONG \000"
@@ -7332,7 +7409,7 @@ GPIO_IRQHandler:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF641:
 	.ascii	"NVIC_ISER_BASEADDR (0xE000E100)\000"
-.LASF826:
+.LASF865:
 	.ascii	"short unsigned int\000"
 .LASF268:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
@@ -7340,13 +7417,15 @@ GPIO_IRQHandler:
 	.ascii	"__FLT32_HAS_INFINITY__ 1\000"
 .LASF405:
 	.ascii	"__thumb__ 1\000"
+.LASF839:
+	.ascii	"GPIO_PIN_11 (11)\000"
 .LASF410:
 	.ascii	"__ARMEL__ 1\000"
 .LASF320:
 	.ascii	"__HQ_FBIT__ 15\000"
 .LASF643:
 	.ascii	"NVIC_IPR_BASEADDR (0xE000E400)\000"
-.LASF766:
+.LASF800:
 	.ascii	"TRAILING_EDGE (1)\000"
 .LASF78:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
@@ -7362,14 +7441,14 @@ GPIO_IRQHandler:
 	.ascii	"__int_least8_t_defined 1\000"
 .LASF500:
 	.ascii	"long +4\000"
-.LASF838:
+.LASF877:
 	.ascii	"AHB1RSTR\000"
-.LASF615:
-	.ascii	"GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)\000"
 .LASF392:
 	.ascii	"__ARM_FEATURE_LDREX 7\000"
 .LASF444:
 	.ascii	"_STDINT_H \000"
+.LASF756:
+	.ascii	"SPI_CR1_CPHA 0\000"
 .LASF272:
 	.ascii	"__LLFRACT_EPSILON__ 0x1P-63LLR\000"
 .LASF655:
@@ -7387,18 +7466,16 @@ GPIO_IRQHandler:
 	.ascii	"_NEWLIB_VERSION \"4.1.0\"\000"
 .LASF84:
 	.ascii	"__WCHAR_WIDTH__ 32\000"
-.LASF653:
-	.ascii	"PRIORITY_LVL_9 (0x90)\000"
 .LASF699:
 	.ascii	"USART3_PCLK_EN (RCC->APB1ENR |= (1 << 18))\000"
 .LASF108:
 	.ascii	"__INT16_C(c) c\000"
-.LASF757:
-	.ascii	"RATE_2 (0)\000"
-.LASF896:
+.LASF933:
 	.ascii	"GPIO_PinSpeed\000"
 .LASF343:
 	.ascii	"__DA_IBIT__ 32\000"
+.LASF757:
+	.ascii	"SPI_CR1_CPOL 1\000"
 .LASF244:
 	.ascii	"__USFRACT_IBIT__ 0\000"
 .LASF496:
@@ -7413,7 +7490,7 @@ GPIO_IRQHandler:
 	.ascii	"__HQ_IBIT__ 0\000"
 .LASF164:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
-.LASF918:
+.LASF951:
 	.ascii	"data\000"
 .LASF135:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
@@ -7423,7 +7500,9 @@ GPIO_IRQHandler:
 	.ascii	"INT_FAST32_MAX (__INT_FAST32_MAX__)\000"
 .LASF200:
 	.ascii	"__FLT32_NORM_MAX__ 3.4028234663852886e+38F32\000"
-.LASF888:
+.LASF768:
+	.ascii	"SPI_CR1_BIDI_OE 14\000"
+.LASF925:
 	.ascii	"BSRR\000"
 .LASF458:
 	.ascii	"_POSIX_C_SOURCE\000"

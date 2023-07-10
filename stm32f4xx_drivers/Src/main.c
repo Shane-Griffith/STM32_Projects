@@ -26,6 +26,32 @@
 
 int main(void)
 {
+char c[] = "Hello World";
+
+//configure GPIOB 12 - 15 for spi 2 use
+//12 - NSS | 13 - SCLK | 14 - MOSI | 15 - MISO
+GPIO_Handle_t SPI2_MOSI = {0};
+SPI2_MOSI.pGPIOx = GPIOB;
+SPI2_MOSI.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_14;
+SPI2_MOSI.GPIO_PinConfig.GPIO_PinAltFunMode = GPIO_AF5;
+SPI2_MOSI.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
+
+
+
+
+//configure spi2 for testing
+SPI_PeriClockControl(SPI2, ENABLE);
+
+SPI_Handle_t *spi2 = {0};
+
+spi2->pSPIx = SPI2;
+spi2->SPI_Config.SPI_SSM = SPI_MASTER;
+spi2->SPI_Config.SPI_Speed = DIVISOR_256;
+spi2->SPI_Config.SPI_DFF= DFF_8BIT;
+spi2->SPI_Config.SPI_DEVICEMODE =
+spi2->SPI_Config.SPI_SSM = SPI_SW_SSM;
+
+SPI_Init(&spi2);
 
 
 while(1);
