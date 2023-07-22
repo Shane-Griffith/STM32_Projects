@@ -9,6 +9,7 @@
 #define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_
 
 #include <stdint.h>
+#include <stdbool.h>
 #include "stm32f4xx.h"
 
 //@Baud_DIVISOR
@@ -31,25 +32,25 @@
 #define IDLE_LOW			(0)
 
 //@Software_Select
-#define SPI_SW_SSM			(1)
-#define SPI_HW_SSM			(0)
+#define SPI_SW_SSM			(0)
+#define SPI_HW_SSM			(1)
 
-
-#define SPI_MASTER			(0)
-#define SPI_SLAVE			(1)
+//@Device_mode
+#define SPI_MASTER			(1)
+#define SPI_SLAVE			(0)
 
 //@FRAME_FORMAT_SELECT
 #define DFF_8BIT 			(0)
 #define DFF_16BIT			(1)
 
 //@SPI_Bus_Config
-#define SPI_CONFIG_HD			(1)
-#define SPI_CONFIG_FD			(2)
-#define SPI_SIMPLEX_RX_ONLY		(3)
+//Half Duplex / Full Duplex / RX Only
+#define SPI_CONFIG_HD		(1)
+#define SPI_CONFIG_FD		(2)
+#define SPI_SIMPLEX_RX_ONLY	(3)
 
-
-
-
+//useful spi macros
+#define SPI_ENABLE_MASK		(0x20)
 
 
 //doing this to stop whatever is going on down below
@@ -85,17 +86,20 @@ typedef struct
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
 
 //Init & De-Init
-void SPI_Init(SPI_Handle_t* pSPIHandler);
+void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
 void SPI_DeInit(SPI_RegDef_t *pSPIx);
 
 //Send/Receive Data
 void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
+bool get_reg_value(SPI_RegDef_t *pSPIx, uint32_t spi_register, uint8_t bit_definition);
+
 
 //IRQ Config and ISR Handling
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandler(SPI_Handle_t *pHandle);
+void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
 
 #endif /* DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ */

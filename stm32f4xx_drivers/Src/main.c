@@ -19,42 +19,53 @@
 #include <stdint.h>
 #include "stm32f4xx.h"
 #include <stdio.h>
+#include <string.h>
+
+void spi_config(void)
+{
+	SPI_Handle_t SPIx = {0};
+	//configure pin for spi2
+	SPIx.pSPIx = SPI2;
+	SPIx.SPI_Config.BusConfig = SPI_CONFIG_FD;
+	SPIx.SPI_Config.SPI_CPOL = IDLE_LOW;
+	SPIx.SPI_Config.SPI_CPHA = LEADING_EDGE;
+	SPIx.SPI_Config.SPI_DEVICEMODE = SPI_MASTER;
+	SPIx.SPI_Config.SPI_SSM = SPI_SW_SSM;
+	SPIx.SPI_Config.SPI_DFF = DFF_8BIT;
+	SPIx.SPI_Config.SPI_Speed = DIVISOR_2;
+
+	SPI_Init(&SPIx, SPI_RX);
 
 
 
+}
+
+void spi_pin_config(void)
+{
+	//setup MOSI pin
+	GPIO_Handle_t gpiox = {0};
+	gpiox.pGPIOx = GPIOB;
+	gpiox.GPIO_PinConfig.GPIO_PinAltFunMode = GPIO_AF5;
+	gpiox.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
+	gpiox.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_15;
+	gpiox.GPIO_PinConfig.GPIO_PinPuPDcontrol = GPIO_NO_PUPD;
+	gpiox.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
+	gpiox.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_HIGH;
+	GPIO_Init(&gpiox);
+
+	gpiox.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_13;
+	GPIO_Init(&gpiox);
+
+}
 
 
 int main(void)
 {
-char c[] = "Hello World";
+	//data to send
+	char name[] = "Shane Griffith";
 
-//configure GPIOB 12 - 15 for spi 2 use
-//12 - NSS | 13 - SCLK | 14 - MOSI | 15 - MISO
-GPIO_Handle_t SPI2_MOSI = {0};
-SPI2_MOSI.pGPIOx = GPIOB;
-SPI2_MOSI.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_14;
-SPI2_MOSI.GPIO_PinConfig.GPIO_PinAltFunMode = GPIO_AF5;
-SPI2_MOSI.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
+	SPI_SendData(SPI2, name, strlen(name));
 
-
-
-
-//configure spi2 for testing
-SPI_PeriClockControl(SPI2, ENABLE);
-
-SPI_Handle_t *spi2 = {0};
-
-spi2->pSPIx = SPI2;
-spi2->SPI_Config.SPI_SSM = SPI_MASTER;
-spi2->SPI_Config.SPI_Speed = DIVISOR_256;
-spi2->SPI_Config.SPI_DFF= DFF_8BIT;
-spi2->SPI_Config.SPI_DEVICEMODE =
-spi2->SPI_Config.SPI_SSM = SPI_SW_SSM;
-
-SPI_Init(&spi2);
-
-
-while(1);
 
 }
 

@@ -330,10 +330,17 @@
 #define SPI_TX_BUFFER_EMPTY	(0x2)
 #define SPI_RX_BUFFER_EMPTY (0x1)
 #define SPI_BSY_FLAG		(0x80)
+#define SPI_RX				0
+#define SPI_TX				1
+
+//Spi enable/disable macros
+#define SPI_ENABLE(pSPIx)   (pSPIx->CR1 |= (ENABLE << SPI_CR1_SPE))
+#define SPI_DISABLE(pSPIx)  (pSPIx->CR1 |= (DISABLE << SPI_CR1_SPE))
 
 
 //Testing value for SPI CR1
 #define SPI_DFF_VALUE			(0x400)
+#define FULL_REG_MASK			(0xffffffff)
 //-----------------------------Struct Definitions-----------------------------
 
 

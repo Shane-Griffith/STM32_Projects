@@ -1,5 +1,7 @@
 #include <stdint.h>
 #include "stm32f407xx_SPI_driver.h"
+#include "stm32f4xx.h"
+#include <stdbool.h>
 
 
 
@@ -43,57 +45,34 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi){
 			break;
 
 	}
-
-
 }
 
 //Init & De-Init
-void SPI_Init(SPI_Handle_t* pSPIHandler)
+void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t tx_or_rx)
 {
-uint32_t tempReg = 0;
-//configure slave/master for device
-tempReg |= (pSPIHandler->SPI_Config.SPI_DEVICEMODE << SPI_CR1_MSTER);
+	SPI_PeriClockControl(pSPIHandler->pSPIx, ENABLE);
 
-//configure baud rate for SPI peripheral
-tempReg |= (pSPIHandler->SPI_Config.SPI_Speed << SPI_CR1_BAUDRATE);
+	uint32_t tempReg = 0;
+	//configure slave/master for device
+	tempReg |= (pSPIHandler->SPI_Config.SPI_DEVICEMODE << SPI_CR1_MSTER);
 
-//configure slave management
-tempReg |= (pSPIHandler->SPI_Config.SPI_SSM << SPI_CR1_SSM);
+	//configure baud rate for SPI peripheral
+	tempReg |= (pSPIHandler->SPI_Config.SPI_Speed << SPI_CR1_BAUDRATE);
 
-tempReg |= (pSPIHandler->SPI_Config.SPI_CPOL << SPI_CR1_CPOL);
+	//configure slave management
+	tempReg |= (pSPIHandler->SPI_Config.SPI_SSM << SPI_CR1_SSM);
 
-tempReg |= (pSPIHandler->SPI_Config.SPI_CPHA << SPI_CR1_CPHA);
+	tempReg |= (pSPIHandler->SPI_Config.SPI_CPOL << SPI_CR1_CPOL);
 
-//confgiure data frame format.
-//tempReg |= (pSPIHandler->SPI_Config.)
+	tempReg |= (pSPIHandler->SPI_Config.SPI_CPHA << SPI_CR1_CPHA);
 
-//configure bus config
-//Full duplex
-if(pSPIHandler->SPI_Config.BusConfig == SPI_CR1_BIDI_MODE)
-{
-	//clear bidi mode
-	(tempReg &= ~(1 << SPI_CR1_BIDI_MODE));
+	SPI_busConfig(pSPIHandler, tx_or_rx);
 
-}
 
-else if(pSPIHandler->SPI_Config.BusConfig == SPI_CR1_BIDI_OE)
-{
-	//Set the bidi mode bit
-	(tempReg |= (1 << SPI_CR1_BIDI_MODE));
 
-}
-
-else if(pSPIHandler->SPI_Config.BusConfig == SPI_SIMPLEX_RX_ONLY)
-{
-	//set bidi mode bit for half duplex
-	(tempReg |= (1 << SPI_CR1_BIDI_MODE));
-	//set rx only bit
-	(tempReg |= (1 << SPI_CR1_RX_ONLY));
-}
 
 //input settings into the register
 pSPIHandler->pSPIx->SPI_CR1 = tempReg;
-
 
 }
 //Resets given SPI peripheral
@@ -120,31 +99,68 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 }
 
 //Send/Receive Data - This is a blocking call
-void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len){
-
+void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
+{
 	//Check length
-	while(len != 0){
-
-		while(!(pSPIx->SPI_SR & SPI_TX_BUFFER_EMPTY));
-
-
-		if(pSPIx->SPI_CR1 & SPI_CR1_DFF)
-		{//16-bit dff
-			pSPIx->SPI_DR = *((uint16_t*)pTxbuffer);
-			len -= 2;
-			(uint16_t*)pTxbuffer++;
-		}
-		else
-		{
-			//16-bit dff
-			pSPIx->SPI_DR = *(pTxbuffer);
-			len--;
-			pTxbuffer++;
-		}
+	while(len != 0)
+	{
+		//check to make sure pspix_sr is empty before moving forward
+	while(!(pSPIx->SPI_SR & SPI_TX_BUFFER_EMPTY))
+	{
 
 	}
 
+	if(pSPIx->SPI_CR1 & (1 << SPI_CR1_DFF))
+	{
+		pSPIx->SPI_CR1 = *(uint16_t *)pTxbuffer;
+		pTxbuffer += 2;
+		len -= 2;
+	}
+	else if(!(pSPIx->SPI_CR1 & (1 << SPI_CR1_DFF)))
+	{
+		pSPIx->SPI_DR = *pTxbuffer;
+		pTxbuffer++;
+		len--;
+
+	}
 }
+}
+
+//use SPI_RX or SPI_TX for tx_or_rx
+void SPI_busConfig(SPI_Handle_t *pSPIx, uint8_t tx_or_rx)
+{
+	if(pSPIx->SPI_Config.BusConfig == SPI_CONFIG_FD)
+	{	//reset bidimode for 2 line unidirection data
+		pSPIx->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_BIDI_MODE);
+		//ensure bidioe is reset not needed for Full duplex
+		pSPIx->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_BIDI_OE);
+		//reset rx-only bit
+		pSPIx->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_RX_ONLY);
+
+	}
+	else if(pSPIx->SPI_Config.BusConfig == (uint8_t)SPI_CONFIG_HD || pSPIx->SPI_Config.BusConfig == (uint8_t)SPI_SIMPLEX_RX_ONLY)
+	{	//set bidioe bit for 1 line bidirectional data
+		pSPIx->pSPIx->SPI_CR1 |= (SET << SPI_CR1_BIDI_MODE);
+		//rest rx_only not used
+		pSPIx->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_RX_ONLY);
+		//enable tx or rx mode
+		pSPIx->pSPIx->SPI_CR1 |= (tx_or_rx << SPI_CR1_BIDI_OE);
+
+	}
+
+	uint32_t spi_cr1 = 1;
+	get_reg_value(SPI2, sizeof(uint32_t) * spi_cr1, (uint8_t)SPI_CONFIG_HD);
+
+}
+
+bool get_reg_value(SPI_RegDef_t *pSPIx, uint32_t spi_register, uint8_t bit_definition)
+{
+
+		return false;
+
+}
+
+
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 

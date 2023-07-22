@@ -1364,6 +1364,12 @@ typedef __uint_least64_t uint_least64_t;
 #define SPI_TX_BUFFER_EMPTY (0x2)
 #define SPI_RX_BUFFER_EMPTY (0x1)
 #define SPI_BSY_FLAG (0x80)
+#define SPI_RX 0
+#define SPI_TX 1
+
+
+#define SPI_ENABLE(pSPIx) (pSPIx->CR1 |= (ENABLE << SPI_CR1_SPE))
+#define SPI_DISABLE(pSPIx) (pSPIx->CR1 |= (DISABLE << SPI_CR1_SPE))
 
 
 
@@ -1374,7 +1380,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 342 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 348 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 typedef struct
 {
 
@@ -1504,14 +1510,26 @@ typedef struct{
 
 
 # 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
-# 471 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 477 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
 # 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 #define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
 
 
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 1 3 4
+# 29 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
+#define _STDBOOL_H 
+
+
+
+#define bool _Bool
+#define true 1
+#define false 0
+# 52 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
+#define __bool_true_false_are_defined 1
 # 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
+# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 14 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
 
 
 
@@ -1533,22 +1551,29 @@ typedef struct{
 #define IDLE_LOW (0)
 
 
-#define SPI_SW_SSM (1)
-#define SPI_HW_SSM (0)
+#define SPI_SW_SSM (0)
+#define SPI_HW_SSM (1)
 
 
-#define SPI_MASTER (0)
-#define SPI_SLAVE (1)
+#define SPI_MASTER (1)
+#define SPI_SLAVE (0)
 
 
 #define DFF_8BIT (0)
 #define DFF_16BIT (1)
 
 
+
 #define SPI_CONFIG_HD (1)
 #define SPI_CONFIG_FD (2)
 #define SPI_SIMPLEX_RX_ONLY (3)
-# 57 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+
+
+#define SPI_ENABLE_MASK (0x20)
+
+
+
+
 typedef struct
 {
  uint8_t BusConfig;
@@ -1569,11 +1594,11 @@ typedef struct
 
 
 }SPI_Handle_t;
-# 85 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+# 86 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
 
 
-void SPI_Init(SPI_Handle_t* pSPIHandler);
+void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
 void SPI_DeInit(SPI_RegDef_t *pSPIx);
 
 
@@ -1581,11 +1606,18 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 
+# 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+_Bool 
+# 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+    get_reg_value(SPI_RegDef_t *pSPIx, uint32_t spi_register, uint8_t bit_definition);
+
+
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandler(SPI_Handle_t *pHandle);
-# 472 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
+# 478 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h" 2
 
 
@@ -1702,44 +1734,80 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 {
 
 if(EnorDi == 1){
- if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0000))){
+ if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0000)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 0));
- }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0400))){
+ }
+ else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0400)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 1));
- }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0800))){
+ }
+ else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0800)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 2));
- }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0C00))){
+ }
+ else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0C00)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 3));
- }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1000))){
+ }
+ else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1000)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 4));
- }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1400))){
+ }
+ else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1400)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 4));
- }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1800))){
+ }
+ else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1800)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 6));
- }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1C00))){
+ }
+ else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1C00)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 7));
- }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x2000))){
+ }
+ else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x2000)))
+ {
   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR |= (1 << 8));
- }else{
-  if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0000))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 0));
-   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0400))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 1));
-   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0800))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 2));
-   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0C00))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 3));
-   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1000))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 4));
-   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1400))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 4));
-   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1800))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 6));
-   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1C00))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 7));
-   }else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x2000))){
-    (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 8));
-   }
+ }
+ else
+ {
+  if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0000)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 0));
+  }
+  else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0400)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 1));
+  }
+  else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0800)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 2));
+  }
+  else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x0C00)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 3));
+  }
+  else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1000)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 4));
+  }
+  else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1400)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 4));
+  }
+  else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1800)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 6));
+  }
+  else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x1C00)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 7));
+  }
+  else if(pGPIOx == ((GPIO_RegDef_t*) (0x40020000U + 0x2000)))
+  {
+   (((RCC_RegDef_t*) (0x40020000U + 0x3800))->AHB1ENR &= ~(1 << 8));
+  }
  }
 }
 
@@ -1751,6 +1819,8 @@ if(EnorDi == 1){
 
 void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 {
+
+GPIO_PeriClockControl(pGPIOHandle->pGPIOx, 1);
 
 
 
@@ -1915,7 +1985,7 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 
 
 }
-# 257 "../Drivers/Src/stm32f407xx_gpio_driver.c"
+# 295 "../Drivers/Src/stm32f407xx_gpio_driver.c"
 void GPIO_IRQHandler(uint8_t pinNumber){
  ((EXTI_RegDef_t*) (0x40010000U + 0x3c00))->PR |=(0x1 << 0);
 }

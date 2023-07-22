@@ -1355,6 +1355,12 @@ typedef __uint_least64_t uint_least64_t;
 #define SPI_TX_BUFFER_EMPTY (0x2)
 #define SPI_RX_BUFFER_EMPTY (0x1)
 #define SPI_BSY_FLAG (0x80)
+#define SPI_RX 0
+#define SPI_TX 1
+
+
+#define SPI_ENABLE(pSPIx) (pSPIx->CR1 |= (ENABLE << SPI_CR1_SPE))
+#define SPI_DISABLE(pSPIx) (pSPIx->CR1 |= (DISABLE << SPI_CR1_SPE))
 
 
 
@@ -1365,7 +1371,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 342 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 348 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 typedef struct
 {
 
@@ -1610,12 +1616,24 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void GPIO_IRQHandler(uint8_t pinNumber);
-# 471 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 477 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
 # 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 #define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
 
 
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 1 3 4
+# 29 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
+#define _STDBOOL_H 
+
+
+
+#define bool _Bool
+#define true 1
+#define false 0
+# 52 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
+#define __bool_true_false_are_defined 1
+# 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
 
 
 
@@ -1638,22 +1656,29 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 #define IDLE_LOW (0)
 
 
-#define SPI_SW_SSM (1)
-#define SPI_HW_SSM (0)
+#define SPI_SW_SSM (0)
+#define SPI_HW_SSM (1)
 
 
-#define SPI_MASTER (0)
-#define SPI_SLAVE (1)
+#define SPI_MASTER (1)
+#define SPI_SLAVE (0)
 
 
 #define DFF_8BIT (0)
 #define DFF_16BIT (1)
 
 
+
 #define SPI_CONFIG_HD (1)
 #define SPI_CONFIG_FD (2)
 #define SPI_SIMPLEX_RX_ONLY (3)
-# 57 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+
+
+#define SPI_ENABLE_MASK (0x20)
+
+
+
+
 typedef struct
 {
  uint8_t BusConfig;
@@ -1674,11 +1699,11 @@ typedef struct
 
 
 }SPI_Handle_t;
-# 85 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+# 86 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
 
 
-void SPI_Init(SPI_Handle_t* pSPIHandler);
+void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
 void SPI_DeInit(SPI_RegDef_t *pSPIx);
 
 
@@ -1686,11 +1711,18 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 
+# 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+_Bool 
+# 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+    get_reg_value(SPI_RegDef_t *pSPIx, uint32_t spi_register, uint8_t bit_definition);
+
+
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandler(SPI_Handle_t *pHandle);
-# 472 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
+# 478 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 21 "../Src/main.c" 2
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 1 3
 # 27 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
@@ -3894,42 +3926,262 @@ _putchar_unlocked(int _c)
 # 797 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
 
 # 22 "../Src/main.c" 2
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 1 3
 
 
 
 
 
 
-# 27 "../Src/main.c"
+
+#define _STRING_H_ 
+
+
+
+
+
+
+#define __need_size_t 
+#define __need_NULL 
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 1 3 4
+# 155 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef __need_ptrdiff_t
+# 231 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef __need_size_t
+# 340 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef __need_wchar_t
+# 390 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
+#undef NULL
+
+
+
+
+#define NULL ((void *)0)
+
+
+
+
+
+#undef __need_NULL
+
+
+
+
+#define offsetof(TYPE,MEMBER) __builtin_offsetof (TYPE, MEMBER)
+# 18 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 2 3
+
+
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_locale.h" 1 3
+
+
+
+#define _SYS__LOCALE_H 
+
+
+
+
+struct __locale_t;
+typedef struct __locale_t *locale_t;
+# 21 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 2 3
+
+
+
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\strings.h" 1 3
+# 30 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\strings.h" 3
+#define _STRINGS_H_ 
+# 44 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\strings.h" 3
+
+
+int bcmp(const void *, const void *, size_t) __attribute__((__pure__));
+void bcopy(const void *, void *, size_t);
+void bzero(void *, size_t);
+
+
+void explicit_bzero(void *, size_t);
+
+
+int ffs(int) __attribute__((__const__));
+
+
+int ffsl(long) __attribute__((__const__));
+int ffsll(long long) __attribute__((__const__));
+int fls(int) __attribute__((__const__));
+int flsl(long) __attribute__((__const__));
+int flsll(long long) __attribute__((__const__));
+
+
+char *index(const char *, int) __attribute__((__pure__));
+char *rindex(const char *, int) __attribute__((__pure__));
+
+int strcasecmp(const char *, const char *) __attribute__((__pure__));
+int strncasecmp(const char *, const char *, size_t) __attribute__((__pure__));
+
+
+int strcasecmp_l (const char *, const char *, locale_t);
+int strncasecmp_l (const char *, const char *, size_t, locale_t);
+
+
+# 25 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 2 3
+
+
+
+
+void * memchr (const void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void * memcpy (void *restrict, const void *restrict, size_t);
+void * memmove (void *, const void *, size_t);
+void * memset (void *, int, size_t);
+char *strcat (char *restrict, const char *restrict);
+char *strchr (const char *, int);
+int strcmp (const char *, const char *);
+int strcoll (const char *, const char *);
+char *strcpy (char *restrict, const char *restrict);
+size_t strcspn (const char *, const char *);
+char *strerror (int);
+size_t strlen (const char *);
+char *strncat (char *restrict, const char *restrict, size_t);
+int strncmp (const char *, const char *, size_t);
+char *strncpy (char *restrict, const char *restrict, size_t);
+char *strpbrk (const char *, const char *);
+char *strrchr (const char *, int);
+size_t strspn (const char *, const char *);
+char *strstr (const char *, const char *);
+
+char *strtok (char *restrict, const char *restrict);
+
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+
+int strcoll_l (const char *, const char *, locale_t);
+char *strerror_l (int, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+
+
+int timingsafe_bcmp (const void *, const void *, size_t);
+int timingsafe_memcmp (const void *, const void *, size_t);
+
+
+void * memccpy (void *restrict, const void *restrict, int, size_t);
+# 76 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 3
+char *stpcpy (char *restrict, const char *restrict);
+char *stpncpy (char *restrict, const char *restrict, size_t);
+
+
+
+
+
+
+char *strdup (const char *) __attribute__((__malloc__)) __attribute__((__warn_unused_result__));
+
+char *_strdup_r (struct _reent *, const char *);
+
+char *strndup (const char *, size_t) __attribute__((__malloc__)) __attribute__((__warn_unused_result__));
+
+char *_strndup_r (struct _reent *, const char *, size_t);
+# 100 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 3
+int strerror_r (int, char *, size_t)
+
+             __asm__ ("" "__xpg_strerror_r")
+
+  ;
+
+
+
+
+
+
+
+char * _strerror_r (struct _reent *, int, int, int *);
+
+
+size_t strlcat (char *, const char *, size_t);
+size_t strlcpy (char *, const char *, size_t);
+
+
+size_t strnlen (const char *, size_t);
+
+
+char *strsep (char **, const char *);
+
+
+char *strnstr(const char *, const char *, size_t) __attribute__((__pure__));
+
+
+
+char *strlwr (char *);
+char *strupr (char *);
+
+
+
+char *strsignal (int __signo);
+# 177 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 3
+#define strcmpi strcasecmp
+
+
+#define stricmp strcasecmp
+
+
+#define strncmpi strncasecmp
+
+
+#define strnicmp strncasecmp
+
+
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\string.h" 1 3
+# 190 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 2 3
+
+
+# 23 "../Src/main.c" 2
+
+
+# 24 "../Src/main.c"
+void spi_config(void)
+{
+ SPI_Handle_t SPIx = {0};
+
+ SPIx.pSPIx = ((SPI_RegDef_t*) (0x40000000U + 0x3800));
+ SPIx.SPI_Config.BusConfig = (2);
+ SPIx.SPI_Config.SPI_CPOL = (0);
+ SPIx.SPI_Config.SPI_CPHA = (0);
+ SPIx.SPI_Config.SPI_DEVICEMODE = (1);
+ SPIx.SPI_Config.SPI_SSM = (0);
+ SPIx.SPI_Config.SPI_DFF = (0);
+ SPIx.SPI_Config.SPI_Speed = (0);
+
+ SPI_Init(&SPIx, 0);
+
+
+
+}
+
+void spi_pin_config(void)
+{
+
+ GPIO_Handle_t gpiox = {0};
+ gpiox.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0400));
+ gpiox.GPIO_PinConfig.GPIO_PinAltFunMode = (5);
+ gpiox.GPIO_PinConfig.GPIO_PinMode = (1);
+ gpiox.GPIO_PinConfig.GPIO_PinNumber = (15);
+ gpiox.GPIO_PinConfig.GPIO_PinPuPDcontrol = (0);
+ gpiox.GPIO_PinConfig.GPIO_PinOPType = (0);
+ gpiox.GPIO_PinConfig.GPIO_PinSpeed = (2);
+ GPIO_Init(&gpiox);
+
+ gpiox.GPIO_PinConfig.GPIO_PinNumber = (13);
+ GPIO_Init(&gpiox);
+
+}
+
+
 int main(void)
 {
-char c[] = "Hello World";
 
+ char name[] = "Shane Griffith";
 
-GPIO_Handle_t SPI2_MOSI = {0};
-SPI2_MOSI.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0400));
-SPI2_MOSI.GPIO_PinConfig.GPIO_PinNumber = (12);
-SPI2_MOSI.GPIO_PinConfig.GPIO_PinAltFunMode = (5);
-SPI2_MOSI.GPIO_PinConfig.GPIO_PinMode = (1);
+ SPI_SendData(((SPI_RegDef_t*) (0x40000000U + 0x3800)), name, strlen(name));
 
-
-
-
-
-SPI_PeriClockControl(((SPI_RegDef_t*) (0x40000000U + 0x3800)), 1);
-
-SPI_Handle_t *spi2 = {0};
-
-spi2->pSPIx = ((SPI_RegDef_t*) (0x40000000U + 0x3800));
-spi2->SPI_Config.SPI_SSM = (0);
-spi2->SPI_Config.SPI_Speed = (7);
-spi2->SPI_Config.SPI_DFF= (0);
-spi2->SPI_Config.SPI_DEVICEMODE =
-spi2->SPI_Config.SPI_SSM = (1);
-
-SPI_Init(&spi2);
-
-
-while(1);
 
 }
