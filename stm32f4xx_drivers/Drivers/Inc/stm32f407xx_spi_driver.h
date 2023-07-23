@@ -93,7 +93,7 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx);
 void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
-bool get_reg_value(SPI_RegDef_t *pSPIx, uint32_t spi_register, uint8_t bit_definition);
+bool get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t register_bit);
 
 
 //IRQ Config and ISR Handling

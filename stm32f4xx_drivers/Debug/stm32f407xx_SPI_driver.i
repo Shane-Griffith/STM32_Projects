@@ -1,4 +1,4 @@
-# 1 "../Drivers/Src/stm32f407xx_spi_driver.c"
+# 1 "../Drivers/Src/stm32f407xx_SPI_driver.c"
 # 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Debug//"
 # 1 "<built-in>"
 #define __STDC__ 1
@@ -475,7 +475,7 @@
 #define __ELF__ 1
 # 1 "<command-line>"
 #define __USES_INITFINI__ 1
-# 1 "../Drivers/Src/stm32f407xx_spi_driver.c"
+# 1 "../Drivers/Src/stm32f407xx_SPI_driver.c"
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 1 3 4
 # 9 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 3 4
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 1 3 4
@@ -1069,7 +1069,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 2 "../Drivers/Src/stm32f407xx_spi_driver.c" 2
+# 2 "../Drivers/Src/stm32f407xx_SPI_driver.c" 2
 # 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 1
 # 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
 #define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
@@ -1381,13 +1381,14 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define SPI_DFF_VALUE (0x400)
+#define FULL_REG_MASK (0xffffffff)
 
 
 
 
 
 
-# 348 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 349 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 typedef struct
 {
 
@@ -1632,9 +1633,9 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void GPIO_IRQHandler(uint8_t pinNumber);
-# 477 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
 # 478 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
+# 479 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 14 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 2
 
 
@@ -1715,7 +1716,7 @@ void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 # 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 3 4
 _Bool 
 # 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
-    get_reg_value(SPI_RegDef_t *pSPIx, uint32_t spi_register, uint8_t bit_definition);
+    get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t register_bit);
 
 
 
@@ -1723,10 +1724,21 @@ void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandler(SPI_Handle_t *pHandle);
 void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
-# 3 "../Drivers/Src/stm32f407xx_spi_driver.c" 2
+# 3 "../Drivers/Src/stm32f407xx_SPI_driver.c" 2
 # 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 4 "../Drivers/Src/stm32f407xx_spi_driver.c" 2
-# 15 "../Drivers/Src/stm32f407xx_spi_driver.c"
+# 4 "../Drivers/Src/stm32f407xx_SPI_driver.c" 2
+
+
+#define SPI_CR1 1
+#define SPI_CR2 2
+#define SPI_SR 3
+#define SPI_DR 4
+#define SPI_CRCPR 5
+#define SPI_RXCRCR 6
+#define SPI_TXCRCR 7
+#define SPI_IS2CFGR 8
+#define SPI_IS2PR 9
+# 23 "../Drivers/Src/stm32f407xx_SPI_driver.c"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi){
  switch(enordi){
  case 1:
@@ -1763,7 +1775,7 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi){
 }
 
 
-void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t tx_or_rx)
+void SPI_Init(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
 {
  SPI_PeriClockControl(pSPIHandler->pSPIx, 1);
 
@@ -1785,9 +1797,7 @@ void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t tx_or_rx)
 
 
 
-
-
-pSPIHandler->pSPIx->SPI_CR1 = tempReg;
+ pSPIHandler->pSPIx->1 = tempReg;
 
 }
 
@@ -1814,72 +1824,57 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 }
 
 
-void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
+void SPI_SendData(SPI_RegDef_t *pSPIHandler, uint8_t *pTxbuffer, uint32_t len)
 {
 
- while(len != 0)
+ while(len > 0)
  {
 
- while(!(pSPIx->SPI_SR & (0x2)))
+ while(!(pSPIHandler->3 & (1 << 1)))
  {
 
  }
 
- if(pSPIx->SPI_CR1 & (1 << 11))
+ if(get_reg_value(pSPIHandler->pSPIx, 1, 11))
  {
-  pSPIx->SPI_CR1 = *(uint16_t *)pTxbuffer;
+  pSPIHandler->pSPIx->4 = *(uint16_t *)pTxbuffer;
   pTxbuffer += 2;
   len -= 2;
  }
- else if(!(pSPIx->SPI_CR1 & (1 << 11)))
+ else if(!(pSPIHandler->1 & (1 << 11)))
  {
-  pSPIx->SPI_DR = *pTxbuffer;
+  pSPIHandler->4 = *pTxbuffer;
   pTxbuffer++;
   len--;
 
  }
 }
 }
+# 161 "../Drivers/Src/stm32f407xx_SPI_driver.c"
 
-
-void SPI_busConfig(SPI_Handle_t *pSPIx, uint8_t tx_or_rx)
-{
- if(pSPIx->SPI_Config.BusConfig == (2))
- {
-  pSPIx->pSPIx->SPI_CR1 |= (0 << 15);
-
-  pSPIx->pSPIx->SPI_CR1 |= (0 << 14);
-
-  pSPIx->pSPIx->SPI_CR1 |= (0 << 10);
-
- }
- else if(pSPIx->SPI_Config.BusConfig == (uint8_t)(1) || pSPIx->SPI_Config.BusConfig == (uint8_t)(3))
- {
-  pSPIx->pSPIx->SPI_CR1 |= (1 << 15);
-
-  pSPIx->pSPIx->SPI_CR1 |= (0 << 10);
-
-  pSPIx->pSPIx->SPI_CR1 |= (tx_or_rx << 14);
-
- }
-
- uint32_t spi_cr1 = 1;
- get_reg_value(((SPI_RegDef_t*) (0x40000000U + 0x3800)), sizeof(uint32_t) * spi_cr1, (uint8_t)(1));
-
-}
-
-
-# 156 "../Drivers/Src/stm32f407xx_spi_driver.c" 3 4
+# 161 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
 _Bool 
-# 156 "../Drivers/Src/stm32f407xx_spi_driver.c"
-    get_reg_value(SPI_RegDef_t *pSPIx, uint32_t spi_register, uint8_t bit_definition)
+# 161 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+    get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t register_bit)
 {
+ uint32_t result = ((*address + (sizeof(uint32_t) * spi_register)) & (0xffffffff));
 
+ if(result)
+ {
   return 
-# 159 "../Drivers/Src/stm32f407xx_spi_driver.c" 3 4
+# 167 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+        1
+# 167 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+            ;
+ }
+ else
+ {
+  return 
+# 171 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
         0
-# 159 "../Drivers/Src/stm32f407xx_spi_driver.c"
+# 171 "../Drivers/Src/stm32f407xx_SPI_driver.c"
              ;
+ }
 
 }
 

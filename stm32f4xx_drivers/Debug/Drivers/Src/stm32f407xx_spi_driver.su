@@ -1,6 +1,0 @@
-../Drivers/Src/stm32f407xx_spi_driver.c:15:6:SPI_PeriClockControl	16	static
-../Drivers/Src/stm32f407xx_spi_driver.c:51:6:SPI_Init	24	static
-../Drivers/Src/stm32f407xx_spi_driver.c:79:6:SPI_DeInit	16	static
-../Drivers/Src/stm32f407xx_spi_driver.c:102:6:SPI_SendData	24	static
-../Drivers/Src/stm32f407xx_spi_driver.c:130:6:SPI_busConfig	24	static
-../Drivers/Src/stm32f407xx_spi_driver.c:156:5:get_reg_value	24	static
