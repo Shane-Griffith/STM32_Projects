@@ -64,7 +64,10 @@ int main(void)
 	//data to send
 	char name[] = "Shane Griffith";
 
-	SPI_SendData(SPI2, name, strlen(name));
+	spi_config();
+	spi_pin_config();
+
+	SPI_SendData(SPI2, (uint8_t*)name, sizeof(name));
 
 
 }

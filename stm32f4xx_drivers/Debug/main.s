@@ -197,18 +197,18 @@ main:
 	adds	r4, r4, #2
 	lsrs	r3, r3, #16
 	strb	r3, [r4]
-	.loc 1 67 63
-	mov	r3, r7
-	mov	r0, r3
-	bl	strlen
-	mov	r2, r0
 	.loc 1 67 2
+	bl	spi_config
+	.loc 1 68 2
+	bl	spi_pin_config
+	.loc 1 70 2
 	mov	r3, r7
+	movs	r2, #15
 	mov	r1, r3
 	ldr	r0, .L9+4
 	bl	SPI_SendData
 	movs	r3, #0
-	.loc 1 70 1
+	.loc 1 73 1
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 12
@@ -228,22 +228,20 @@ main:
 .Letext0:
 	.file 2 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h"
 	.file 3 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_stdint.h"
-	.file 4 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
-	.file 5 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
-	.file 6 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
-	.file 7 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h"
-	.file 8 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h"
+	.file 4 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+	.file 5 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+	.file 6 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x43e
+	.4byte	0x411
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF1393
+	.4byte	.LASF1392
 	.byte	0xc
+	.4byte	.LASF1393
 	.4byte	.LASF1394
-	.4byte	.LASF1395
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -657,79 +655,58 @@ main:
 	.byte	0x4d
 	.byte	0x2
 	.4byte	0x2f7
-	.uleb128 0x3
-	.4byte	.LASF1385
-	.byte	0x7
-	.byte	0xd1
-	.byte	0x16
-	.4byte	0x80
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x4
-	.4byte	.LASF1386
+	.4byte	.LASF1385
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
 	.4byte	.LASF487
 	.uleb128 0xd
-	.4byte	0x340
-	.uleb128 0xc
-	.byte	0x4
-	.4byte	0x347
-	.uleb128 0xe
-	.4byte	.LASF1387
+	.4byte	.LASF1386
 	.byte	0x6
 	.byte	0x5d
 	.byte	0x6
-	.4byte	0x36e
-	.uleb128 0xf
+	.4byte	0x357
+	.uleb128 0xe
 	.4byte	0x31b
-	.uleb128 0xf
-	.4byte	0x36e
-	.uleb128 0xf
+	.uleb128 0xe
+	.4byte	0x357
+	.uleb128 0xe
 	.4byte	0x93
 	.byte	0
 	.uleb128 0xc
 	.byte	0x4
 	.4byte	0x87
-	.uleb128 0x10
-	.4byte	.LASF1396
-	.byte	0x8
-	.byte	0x29
-	.byte	0x8
-	.4byte	0x32d
-	.4byte	0x38a
-	.uleb128 0xf
-	.4byte	0x34c
-	.byte	0
-	.uleb128 0xe
-	.4byte	.LASF1388
+	.uleb128 0xd
+	.4byte	.LASF1387
 	.byte	0x5
 	.byte	0x70
 	.byte	0x6
-	.4byte	0x39c
-	.uleb128 0xf
-	.4byte	0x39c
+	.4byte	0x36f
+	.uleb128 0xe
+	.4byte	0x36f
 	.byte	0
 	.uleb128 0xc
 	.byte	0x4
 	.4byte	0x27a
-	.uleb128 0xe
-	.4byte	.LASF1389
+	.uleb128 0xd
+	.4byte	.LASF1388
 	.byte	0x6
 	.byte	0x59
 	.byte	0x6
-	.4byte	0x3b9
-	.uleb128 0xf
-	.4byte	0x3b9
-	.uleb128 0xf
+	.4byte	0x38c
+	.uleb128 0xe
+	.4byte	0x38c
+	.uleb128 0xe
 	.4byte	0x87
 	.byte	0
 	.uleb128 0xc
 	.byte	0x4
 	.4byte	0x321
-	.uleb128 0x11
-	.4byte	.LASF1397
+	.uleb128 0xf
+	.4byte	.LASF1395
 	.byte	0x1
 	.byte	0x3e
 	.byte	0x5
@@ -738,26 +715,26 @@ main:
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x3e9
-	.uleb128 0x12
-	.4byte	.LASF1390
+	.4byte	0x3bc
+	.uleb128 0x10
+	.4byte	.LASF1389
 	.byte	0x1
 	.byte	0x41
 	.byte	0x7
-	.4byte	0x3e9
+	.4byte	0x3bc
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -32
 	.byte	0
-	.uleb128 0x13
-	.4byte	0x340
-	.4byte	0x3f9
-	.uleb128 0x14
+	.uleb128 0x11
+	.4byte	0x334
+	.4byte	0x3cc
+	.uleb128 0x12
 	.4byte	0x80
 	.byte	0xe
 	.byte	0
-	.uleb128 0x15
-	.4byte	.LASF1398
+	.uleb128 0x13
+	.4byte	.LASF1396
 	.byte	0x1
 	.byte	0x2b
 	.byte	0x6
@@ -765,9 +742,9 @@ main:
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x41f
-	.uleb128 0x12
-	.4byte	.LASF1391
+	.4byte	0x3f2
+	.uleb128 0x10
+	.4byte	.LASF1390
 	.byte	0x1
 	.byte	0x2e
 	.byte	0x10
@@ -776,8 +753,8 @@ main:
 	.byte	0x91
 	.sleb128 -20
 	.byte	0
-	.uleb128 0x16
-	.4byte	.LASF1399
+	.uleb128 0x14
+	.4byte	.LASF1397
 	.byte	0x1
 	.byte	0x18
 	.byte	0x6
@@ -785,8 +762,8 @@ main:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.uleb128 0x12
-	.4byte	.LASF1392
+	.uleb128 0x10
+	.4byte	.LASF1391
 	.byte	0x1
 	.byte	0x1a
 	.byte	0xf
@@ -969,13 +946,6 @@ main:
 	.byte	0
 	.byte	0
 	.uleb128 0xd
-	.uleb128 0x26
-	.byte	0
-	.uleb128 0x49
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0xe
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -996,37 +966,14 @@ main:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0xf
+	.uleb128 0xe
 	.uleb128 0x5
 	.byte	0
 	.uleb128 0x49
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x10
-	.uleb128 0x2e
-	.byte	0x1
-	.uleb128 0x3f
-	.uleb128 0x19
-	.uleb128 0x3
-	.uleb128 0xe
-	.uleb128 0x3a
-	.uleb128 0xb
-	.uleb128 0x3b
-	.uleb128 0xb
-	.uleb128 0x39
-	.uleb128 0xb
-	.uleb128 0x27
-	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
-	.uleb128 0x3c
-	.uleb128 0x19
-	.uleb128 0x1
-	.uleb128 0x13
-	.byte	0
-	.byte	0
-	.uleb128 0x11
+	.uleb128 0xf
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1055,7 +1002,7 @@ main:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x12
+	.uleb128 0x10
 	.uleb128 0x34
 	.byte	0
 	.uleb128 0x3
@@ -1072,7 +1019,7 @@ main:
 	.uleb128 0x18
 	.byte	0
 	.byte	0
-	.uleb128 0x13
+	.uleb128 0x11
 	.uleb128 0x1
 	.byte	0x1
 	.uleb128 0x49
@@ -1081,7 +1028,7 @@ main:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x14
+	.uleb128 0x12
 	.uleb128 0x21
 	.byte	0
 	.uleb128 0x49
@@ -1090,7 +1037,7 @@ main:
 	.uleb128 0xb
 	.byte	0
 	.byte	0
-	.uleb128 0x15
+	.uleb128 0x13
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -1117,7 +1064,7 @@ main:
 	.uleb128 0x13
 	.byte	0
 	.byte	0
-	.uleb128 0x16
+	.uleb128 0x14
 	.uleb128 0x2e
 	.byte	0x1
 	.uleb128 0x3f
@@ -2506,14 +2453,14 @@ main:
 	.byte	0x5
 	.uleb128 0x1
 	.4byte	.LASF442
-	.file 9 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h"
+	.file 7 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h"
 	.byte	0x3
 	.uleb128 0x13
-	.uleb128 0x9
-	.file 10 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h"
+	.uleb128 0x7
+	.file 8 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h"
 	.byte	0x3
 	.uleb128 0x9
-	.uleb128 0xa
+	.uleb128 0x8
 	.byte	0x5
 	.uleb128 0xa
 	.4byte	.LASF443
@@ -2523,17 +2470,17 @@ main:
 	.byte	0x5
 	.uleb128 0x6
 	.4byte	.LASF444
-	.file 11 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h"
+	.file 9 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\features.h"
 	.byte	0x3
 	.uleb128 0x8
-	.uleb128 0xb
+	.uleb128 0x9
 	.byte	0x5
 	.uleb128 0x16
 	.4byte	.LASF445
-	.file 12 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\_newlib_version.h"
+	.file 10 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\_newlib_version.h"
 	.byte	0x3
 	.uleb128 0x1c
-	.uleb128 0xc
+	.uleb128 0xa
 	.byte	0x7
 	.4byte	.Ldebug_macro2
 	.byte	0x4
@@ -2543,10 +2490,10 @@ main:
 	.byte	0x7
 	.4byte	.Ldebug_macro4
 	.byte	0x4
-	.file 13 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h"
+	.file 11 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_intsup.h"
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0xd
+	.uleb128 0xb
 	.byte	0x7
 	.4byte	.Ldebug_macro5
 	.byte	0x4
@@ -2587,10 +2534,10 @@ main:
 	.byte	0x5
 	.uleb128 0x9
 	.4byte	.LASF843
-	.file 14 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h"
+	.file 12 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h"
 	.byte	0x3
 	.uleb128 0xc
-	.uleb128 0xe
+	.uleb128 0xc
 	.byte	0x7
 	.4byte	.Ldebug_macro10
 	.byte	0x4
@@ -2598,38 +2545,38 @@ main:
 	.4byte	.Ldebug_macro11
 	.byte	0x4
 	.byte	0x4
-	.file 15 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h"
+	.file 13 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h"
 	.byte	0x3
 	.uleb128 0x15
-	.uleb128 0xf
+	.uleb128 0xd
 	.byte	0x5
 	.uleb128 0x1b
 	.4byte	.LASF871
-	.file 16 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\_ansi.h"
+	.file 14 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\_ansi.h"
 	.byte	0x3
 	.uleb128 0x1d
-	.uleb128 0x10
+	.uleb128 0xe
 	.byte	0x5
 	.uleb128 0x8
 	.4byte	.LASF872
-	.file 17 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\newlib-nano\\newlib.h"
+	.file 15 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\newlib-nano\\newlib.h"
 	.byte	0x3
 	.uleb128 0xa
-	.uleb128 0x11
+	.uleb128 0xf
 	.byte	0x7
 	.4byte	.Ldebug_macro12
 	.byte	0x4
-	.file 18 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\config.h"
+	.file 16 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\config.h"
 	.byte	0x3
 	.uleb128 0xb
-	.uleb128 0x12
+	.uleb128 0x10
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF886
-	.file 19 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\ieeefp.h"
+	.file 17 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\ieeefp.h"
 	.byte	0x3
 	.uleb128 0x4
-	.uleb128 0x13
+	.uleb128 0x11
 	.byte	0x7
 	.4byte	.Ldebug_macro13
 	.byte	0x4
@@ -2641,16 +2588,17 @@ main:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro16
-	.file 20 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\cdefs.h"
+	.file 18 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\cdefs.h"
 	.byte	0x3
 	.uleb128 0x23
-	.uleb128 0x14
+	.uleb128 0x12
 	.byte	0x5
 	.uleb128 0x2b
 	.4byte	.LASF910
+	.file 19 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h"
 	.byte	0x3
 	.uleb128 0x2f
-	.uleb128 0x7
+	.uleb128 0x13
 	.byte	0x7
 	.4byte	.Ldebug_macro17
 	.byte	0x4
@@ -2659,54 +2607,54 @@ main:
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0x24
-	.uleb128 0x7
+	.uleb128 0x13
 	.byte	0x7
 	.4byte	.Ldebug_macro19
 	.byte	0x4
 	.byte	0x5
 	.uleb128 0x27
 	.4byte	.LASF1086
-	.file 21 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdarg.h"
+	.file 20 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdarg.h"
 	.byte	0x3
 	.uleb128 0x28
-	.uleb128 0x15
+	.uleb128 0x14
 	.byte	0x7
 	.4byte	.Ldebug_macro20
 	.byte	0x4
 	.byte	0x5
 	.uleb128 0x2f
 	.4byte	.LASF1089
-	.file 22 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h"
+	.file 21 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\reent.h"
 	.byte	0x3
 	.uleb128 0x3c
-	.uleb128 0x16
+	.uleb128 0x15
 	.byte	0x5
 	.uleb128 0xb
 	.4byte	.LASF1090
 	.byte	0x3
 	.uleb128 0xd
-	.uleb128 0x10
+	.uleb128 0xe
 	.byte	0x4
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0x7
+	.uleb128 0x13
 	.byte	0x4
-	.file 23 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_types.h"
+	.file 22 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_types.h"
 	.byte	0x3
 	.uleb128 0xf
-	.uleb128 0x17
+	.uleb128 0x16
 	.byte	0x7
 	.4byte	.Ldebug_macro21
 	.byte	0x3
 	.uleb128 0x18
-	.uleb128 0x7
+	.uleb128 0x13
 	.byte	0x7
 	.4byte	.Ldebug_macro22
 	.byte	0x4
-	.file 24 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_types.h"
+	.file 23 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_types.h"
 	.byte	0x3
 	.uleb128 0x1b
-	.uleb128 0x18
+	.uleb128 0x17
 	.byte	0x5
 	.uleb128 0x6
 	.4byte	.LASF1095
@@ -2716,81 +2664,81 @@ main:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro24
-	.file 25 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\lock.h"
+	.file 24 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\lock.h"
 	.byte	0x3
 	.uleb128 0x22
-	.uleb128 0x19
+	.uleb128 0x18
 	.byte	0x7
 	.4byte	.Ldebug_macro25
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro26
-	.file 26 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h"
+	.file 25 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\assert.h"
 	.byte	0x3
 	.uleb128 0x1f7
-	.uleb128 0x1a
+	.uleb128 0x19
 	.byte	0x7
 	.4byte	.Ldebug_macro27
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro28
 	.byte	0x4
-	.file 27 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\types.h"
+	.file 26 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\types.h"
 	.byte	0x3
 	.uleb128 0x3d
-	.uleb128 0x1b
+	.uleb128 0x1a
 	.byte	0x7
 	.4byte	.Ldebug_macro29
-	.file 28 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\endian.h"
+	.file 27 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\endian.h"
 	.byte	0x3
 	.uleb128 0x31
-	.uleb128 0x1c
+	.uleb128 0x1b
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF1182
-	.file 29 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_endian.h"
+	.file 28 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_endian.h"
 	.byte	0x3
 	.uleb128 0x6
-	.uleb128 0x1d
+	.uleb128 0x1c
 	.byte	0x7
 	.4byte	.Ldebug_macro30
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro31
 	.byte	0x4
-	.file 30 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\select.h"
+	.file 29 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\select.h"
 	.byte	0x3
 	.uleb128 0x32
-	.uleb128 0x1e
+	.uleb128 0x1d
 	.byte	0x5
 	.uleb128 0x2
 	.4byte	.LASF1200
-	.file 31 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_sigset.h"
+	.file 30 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_sigset.h"
 	.byte	0x3
 	.uleb128 0xe
-	.uleb128 0x1f
+	.uleb128 0x1e
 	.byte	0x5
 	.uleb128 0x27
 	.4byte	.LASF1201
 	.byte	0x4
-	.file 32 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_timeval.h"
+	.file 31 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_timeval.h"
 	.byte	0x3
 	.uleb128 0xf
-	.uleb128 0x20
+	.uleb128 0x1f
 	.byte	0x7
 	.4byte	.Ldebug_macro32
 	.byte	0x4
-	.file 33 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\timespec.h"
+	.file 32 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\timespec.h"
 	.byte	0x3
 	.uleb128 0x10
-	.uleb128 0x21
+	.uleb128 0x20
 	.byte	0x5
 	.uleb128 0x23
 	.4byte	.LASF1207
-	.file 34 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_timespec.h"
+	.file 33 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_timespec.h"
 	.byte	0x3
 	.uleb128 0x26
-	.uleb128 0x22
+	.uleb128 0x21
 	.byte	0x5
 	.uleb128 0x25
 	.4byte	.LASF1208
@@ -2803,27 +2751,27 @@ main:
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro35
-	.file 35 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_pthreadtypes.h"
+	.file 34 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\_pthreadtypes.h"
 	.byte	0x3
 	.uleb128 0xdf
-	.uleb128 0x23
+	.uleb128 0x22
 	.byte	0x5
 	.uleb128 0x13
 	.4byte	.LASF1256
-	.file 36 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\sched.h"
+	.file 35 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\sched.h"
 	.byte	0x3
 	.uleb128 0x17
-	.uleb128 0x24
+	.uleb128 0x23
 	.byte	0x7
 	.4byte	.Ldebug_macro36
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro37
 	.byte	0x4
-	.file 37 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\types.h"
+	.file 36 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\types.h"
 	.byte	0x3
 	.uleb128 0xe0
-	.uleb128 0x25
+	.uleb128 0x24
 	.byte	0x4
 	.byte	0x6
 	.uleb128 0xe4
@@ -2832,24 +2780,25 @@ main:
 	.byte	0x5
 	.uleb128 0x43
 	.4byte	.LASF1271
-	.file 38 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\stdio.h"
+	.file 37 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\sys\\stdio.h"
 	.byte	0x3
 	.uleb128 0x4f
-	.uleb128 0x26
+	.uleb128 0x25
 	.byte	0x7
 	.4byte	.Ldebug_macro38
 	.byte	0x4
 	.byte	0x7
 	.4byte	.Ldebug_macro39
 	.byte	0x4
+	.file 38 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h"
 	.byte	0x3
 	.uleb128 0x16
-	.uleb128 0x8
+	.uleb128 0x26
 	.byte	0x7
 	.4byte	.Ldebug_macro40
 	.byte	0x3
 	.uleb128 0x11
-	.uleb128 0x7
+	.uleb128 0x13
 	.byte	0x7
 	.4byte	.Ldebug_macro41
 	.byte	0x4
@@ -5808,8 +5757,8 @@ main:
 	.ascii	"__GCC_ATOMIC_WCHAR_T_LOCK_FREE 2\000"
 .LASF358:
 	.ascii	"__CHAR_UNSIGNED__ 1\000"
-.LASF1385:
-	.ascii	"size_t\000"
+.LASF787:
+	.ascii	"SPI_BSY_FLAG (0x80)\000"
 .LASF1185:
 	.ascii	"_PDP_ENDIAN 3412\000"
 .LASF238:
@@ -5916,7 +5865,7 @@ main:
 	.ascii	"__INT8_TYPE__ signed char\000"
 .LASF201:
 	.ascii	"__FLT32_MIN__ 1.1754943508222875e-38F32\000"
-.LASF1391:
+.LASF1390:
 	.ascii	"gpiox\000"
 .LASF285:
 	.ascii	"__USACCUM_MIN__ 0.0UHK\000"
@@ -6298,7 +6247,7 @@ main:
 	.ascii	"__FLT32_MAX_EXP__ 128\000"
 .LASF1190:
 	.ascii	"BIG_ENDIAN _BIG_ENDIAN\000"
-.LASF1397:
+.LASF1395:
 	.ascii	"main\000"
 .LASF424:
 	.ascii	"__THUMB_INTERWORK__ 1\000"
@@ -6642,7 +6591,7 @@ main:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
 .LASF983:
 	.ascii	"__used __attribute__((__used__))\000"
-.LASF1387:
+.LASF1386:
 	.ascii	"SPI_SendData\000"
 .LASF422:
 	.ascii	"__ARM_NEON\000"
@@ -6833,6 +6782,9 @@ main:
 	.ascii	"__offsetof(type,field) offsetof(type, field)\000"
 .LASF329:
 	.ascii	"__UQQ_IBIT__ 0\000"
+.LASF1394:
+	.ascii	"D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx"
+	.ascii	"_drivers/Debug\000"
 .LASF149:
 	.ascii	"__FLT_MAX_EXP__ 128\000"
 .LASF949:
@@ -7287,7 +7239,7 @@ main:
 	.ascii	"WINT_MAX (__WINT_MAX__)\000"
 .LASF858:
 	.ascii	"TRAILING_EDGE (1)\000"
-.LASF1393:
+.LASF1392:
 	.ascii	"GNU C11 10.3.1 20210824 (release) -mcpu=cortex-m4 -"
 	.ascii	"mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -march=ar"
 	.ascii	"mv7e-m+fp -g3 -O0 -std=gnu11 -ffunction-sections -f"
@@ -7409,7 +7361,7 @@ main:
 	.ascii	"_NOTHROW \000"
 .LASF1316:
 	.ascii	"__sfeof(p) ((int)(((p)->_flags & __SEOF) != 0))\000"
-.LASF1389:
+.LASF1388:
 	.ascii	"SPI_Init\000"
 .LASF872:
 	.ascii	"_ANSIDECL_H_ \000"
@@ -7454,7 +7406,7 @@ main:
 	.ascii	"SPI_TXCRCR\000"
 .LASF449:
 	.ascii	"__NEWLIB_MINOR__ 1\000"
-.LASF1392:
+.LASF1391:
 	.ascii	"SPIx\000"
 .LASF147:
 	.ascii	"__FLT_MIN_EXP__ (-125)\000"
@@ -7695,7 +7647,7 @@ main:
 	.ascii	"_CLOCK_T_DECLARED \000"
 .LASF671:
 	.ascii	"SPI1 ((SPI_RegDef_t*) SPI1_BASEADDR)\000"
-.LASF1386:
+.LASF1385:
 	.ascii	"long double\000"
 .LASF491:
 	.ascii	"long\000"
@@ -7780,7 +7732,7 @@ main:
 	.ascii	"__GNUC_VA_LIST_COMPATIBILITY 1\000"
 .LASF382:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
-.LASF1388:
+.LASF1387:
 	.ascii	"GPIO_Init\000"
 .LASF51:
 	.ascii	"__INT_LEAST32_TYPE__ long int\000"
@@ -7911,7 +7863,7 @@ main:
 	.ascii	"GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)\000"
 .LASF472:
 	.ascii	"__have_longlong64 1\000"
-.LASF1394:
+.LASF1393:
 	.ascii	"../Src/main.c\000"
 .LASF1285:
 	.ascii	"__SOPT 0x0400\000"
@@ -8058,7 +8010,7 @@ main:
 	.ascii	"__USQ_IBIT__ 0\000"
 .LASF6:
 	.ascii	"__GNUC_MINOR__ 3\000"
-.LASF1398:
+.LASF1396:
 	.ascii	"spi_pin_config\000"
 .LASF55:
 	.ascii	"__UINT_LEAST32_TYPE__ long unsigned int\000"
@@ -8104,8 +8056,6 @@ main:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
 .LASF868:
 	.ascii	"SPI_CONFIG_FD (2)\000"
-.LASF383:
-	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
 .LASF559:
 	.ascii	"UINT_LEAST32_MAX (__UINT_LEAST32_MAX__)\000"
 .LASF1026:
@@ -8140,7 +8090,7 @@ main:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
 .LASF714:
 	.ascii	"SPI4_PCLK_DI (RCC->APB2ENR &= ~(1 << 13))\000"
-.LASF1390:
+.LASF1389:
 	.ascii	"name\000"
 .LASF952:
 	.ascii	"__GNUCLIKE___OFFSETOF 1\000"
@@ -8229,8 +8179,6 @@ main:
 	.ascii	"_ATTRIBUTE(attrs) __attribute__ (attrs)\000"
 .LASF432:
 	.ascii	"__ARM_FEATURE_COPROC\000"
-.LASF787:
-	.ascii	"SPI_BSY_FLAG (0x80)\000"
 .LASF1176:
 	.ascii	"__ATTRIBUTE_IMPURE_PTR__ \000"
 .LASF174:
@@ -8305,7 +8253,7 @@ main:
 	.ascii	"_REENT_CHECK_RAND48(var) _REENT_CHECK(var, _r48, st"
 	.ascii	"ruct _rand48 *, sizeof *((var)->_r48), _REENT_INIT_"
 	.ascii	"RAND48((var)))\000"
-.LASF1399:
+.LASF1397:
 	.ascii	"spi_config\000"
 .LASF1168:
 	.ascii	"_REENT_MBSRTOWCS_STATE(ptr) ((ptr)->_misc->_mbsrtow"
@@ -8351,8 +8299,8 @@ main:
 	.ascii	"GPIO_PinNumber\000"
 .LASF928:
 	.ascii	"__need_size_t\000"
-.LASF1396:
-	.ascii	"strlen\000"
+.LASF383:
+	.ascii	"__ARM_FEATURE_UNALIGNED 1\000"
 .LASF0:
 	.ascii	"__STDC__ 1\000"
 .LASF183:
@@ -8485,9 +8433,8 @@ main:
 	.ascii	"__UHA_IBIT__ 8\000"
 .LASF1037:
 	.ascii	"__lock_annotate(x) \000"
-.LASF1395:
-	.ascii	"C:/Users/shane/Documents/Repo/STM32_Projects/stm32f"
-	.ascii	"4xx_drivers/Debug\000"
+.LASF1092:
+	.ascii	"__need_wint_t \000"
 .LASF292:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
 .LASF307:
@@ -8575,8 +8522,6 @@ main:
 	.ascii	"_SUPPORTS_ERREXCEPT \000"
 .LASF78:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
-.LASF1092:
-	.ascii	"__need_wint_t \000"
 .LASF1020:
 	.ascii	"__sym_compat(sym,impl,verid) __asm__(\".symver \" #"
 	.ascii	"impl \", \" #sym \"@\" #verid)\000"

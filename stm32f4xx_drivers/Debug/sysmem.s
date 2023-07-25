@@ -4097,6 +4097,9 @@ _sbrk:
 	.ascii	" (0)\000"
 .LASF700:
 	.ascii	"ENOMSG 35\000"
+.LASF895:
+	.ascii	"D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx"
+	.ascii	"_drivers/Debug\000"
 .LASF94:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF822:
@@ -5173,9 +5176,8 @@ _sbrk:
 	.ascii	")\000"
 .LASF356:
 	.ascii	"__GNUC_STDC_INLINE__ 1\000"
-.LASF895:
-	.ascii	"C:/Users/shane/Documents/Repo/STM32_Projects/stm32f"
-	.ascii	"4xx_drivers/Debug\000"
+.LASF563:
+	.ascii	"__need_wint_t \000"
 .LASF292:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
 .LASF307:
@@ -5222,8 +5224,6 @@ _sbrk:
 	.ascii	"ENODEV 19\000"
 .LASF78:
 	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
-.LASF563:
-	.ascii	"__need_wint_t \000"
 .LASF775:
 	.ascii	"__INT64 \"ll\"\000"
 .LASF703:
