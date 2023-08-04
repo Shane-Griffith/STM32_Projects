@@ -187,6 +187,20 @@ bool get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bi
 
 }
 
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t en_or_di)
+{
+	if(en_or_di == ENABLE)
+	{
+		pSPIx->SPI_CR2 |= (ENABLE << SPI_CR2_SSOE);
+
+	}
+	else if (en_or_di == DISABLE)
+	{
+		pSPIx->SPI_CR2 |= (DISABLE << SPI_CR2_SSOE);
+
+	}
+}
+
 
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 

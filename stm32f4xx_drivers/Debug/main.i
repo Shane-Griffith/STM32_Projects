@@ -1571,9 +1571,6 @@ typedef struct{
 #define GPIO_AF14 (14)
 #define GPIO_AF15 (15)
 
-
-
-
 typedef struct
 {
 
@@ -1593,7 +1590,7 @@ typedef struct{
  GPIO_PinConfig_t GPIO_PinConfig;
 
 }GPIO_Handle_t;
-# 107 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+# 104 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
 
@@ -1657,8 +1654,8 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 #define IDLE_LOW (0)
 
 
-#define SPI_SW_SSM (0)
-#define SPI_HW_SSM (1)
+#define SPI_SW_SSM (1)
+#define SPI_HW_SSM (0)
 
 
 #define SPI_MASTER (1)
@@ -1717,6 +1714,7 @@ _Bool
 # 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
     get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
 
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
@@ -4150,7 +4148,9 @@ void spi_config(void)
  SPIx.SPI_Config.SPI_DEVICEMODE = (1);
  SPIx.SPI_Config.SPI_SSM = (0);
  SPIx.SPI_Config.SPI_DFF = (0);
- SPIx.SPI_Config.SPI_Speed = (0);
+ SPIx.SPI_Config.SPI_Speed = (2);
+ SPI_SSOEConfig(SPIx.pSPIx, 1);
+
 
  SPI_Init(&SPIx, 0);
 
@@ -4174,6 +4174,29 @@ void spi_pin_config(void)
  gpiox.GPIO_PinConfig.GPIO_PinNumber = (13);
  GPIO_Init(&gpiox);
 
+
+ gpiox.GPIO_PinConfig.GPIO_PinNumber = (12);
+ GPIO_Init(&gpiox);
+
+}
+
+void user_button(void)
+{
+ GPIO_Handle_t pGPIOx = {0};
+
+ pGPIOx.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0000));
+
+ pGPIOx.GPIO_PinConfig.GPIO_PinMode = (0);
+ pGPIOx.GPIO_PinConfig.GPIO_PinNumber = (0);
+ pGPIOx.GPIO_PinConfig.GPIO_PinOPType = (0);
+ pGPIOx.GPIO_PinConfig.GPIO_PinSpeed = (0);
+
+ GPIO_Init(&pGPIOx);
+}
+
+void user_button_interrupt(void)
+{
+ GPIO_IRQPriorityConfig((6), (0x00));
 }
 
 
@@ -4184,8 +4207,10 @@ int main(void)
 
  spi_config();
  spi_pin_config();
-
  SPI_SendData(((SPI_RegDef_t*) (0x40000000U + 0x3800)), (uint8_t*)name, sizeof(name));
+ user_button();
+
+ while(1);
 
 
 }

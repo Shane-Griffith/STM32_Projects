@@ -1552,8 +1552,8 @@ typedef struct{
 #define IDLE_LOW (0)
 
 
-#define SPI_SW_SSM (0)
-#define SPI_HW_SSM (1)
+#define SPI_SW_SSM (1)
+#define SPI_HW_SSM (0)
 
 
 #define SPI_MASTER (1)
@@ -1612,6 +1612,7 @@ _Bool
 # 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
     get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
 
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
@@ -1683,9 +1684,6 @@ void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
 #define GPIO_AF14 (14)
 #define GPIO_AF15 (15)
 
-
-
-
 typedef struct
 {
 
@@ -1705,7 +1703,7 @@ typedef struct{
  GPIO_PinConfig_t GPIO_PinConfig;
 
 }GPIO_Handle_t;
-# 107 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h"
+# 104 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h"
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
 
@@ -1813,7 +1811,6 @@ if(EnorDi == 1){
 }
 
 }
-
 
 
 
@@ -1976,17 +1973,20 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
  if(EnorDi == 1)
  {
   ((NVIC_EN_RegDef_t*) (0xE000E100))->NVIC_ISER[temp1] |= (0x1 << temp2);
-
  }
  else
  {
   ((NVIC_DI_RegDef_t*)(0XE000E180))->NVIC_ICER[temp1] |= (0x1 << temp2);
-
  }
-
-
 }
-# 295 "../Drivers/Src/stm32f407xx_gpio_driver.c"
+
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority)
+{
+
+  uint8_t iprReg = IRQNumber / 4;
+  uint8_t bitOffset = ((IRQNumber % 4) * 8);
+  ((NVIC_ipr_RegDef_t*) (0xE000E400))->NVIC_IPR[iprReg] |= (IRQNumber << bitOffset);
+}
 void GPIO_IRQHandler(uint8_t pinNumber){
  ((EXTI_RegDef_t*) (0x40010000U + 0x3c00))->PR |=(0x1 << 0);
 }

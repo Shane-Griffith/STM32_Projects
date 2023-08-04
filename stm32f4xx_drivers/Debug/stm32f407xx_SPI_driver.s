@@ -691,6 +691,67 @@ get_reg_value:
 	.cfi_endproc
 .LFE5:
 	.size	get_reg_value, .-get_reg_value
+	.section	.text.SPI_SSOEConfig,"ax",%progbits
+	.align	1
+	.global	SPI_SSOEConfig
+	.syntax unified
+	.thumb
+	.thumb_func
+	.type	SPI_SSOEConfig, %function
+SPI_SSOEConfig:
+.LFB6:
+	.loc 1 191 1
+	.cfi_startproc
+	@ args = 0, pretend = 0, frame = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	push	{r7}
+	.cfi_def_cfa_offset 4
+	.cfi_offset 7, -4
+	sub	sp, sp, #12
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r3, r1
+	strb	r3, [r7, #3]
+	.loc 1 192 4
+	ldrb	r3, [r7, #3]	@ zero_extendqisi2
+	cmp	r3, #1
+	bne	.L42
+	.loc 1 194 18
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3, #4]
+	orr	r2, r3, #4
+	ldr	r3, [r7, #4]
+	str	r2, [r3, #4]
+	.loc 1 202 1
+	b	.L44
+.L42:
+	.loc 1 197 10
+	ldrb	r3, [r7, #3]	@ zero_extendqisi2
+	cmp	r3, #0
+	bne	.L44
+	.loc 1 199 18
+	ldr	r3, [r7, #4]
+	ldr	r2, [r3, #4]
+	ldr	r3, [r7, #4]
+	str	r2, [r3, #4]
+.L44:
+	.loc 1 202 1
+	nop
+	adds	r7, r7, #12
+	.cfi_def_cfa_offset 4
+	mov	sp, r7
+	.cfi_def_cfa_register 13
+	@ sp needed
+	ldr	r7, [sp], #4
+	.cfi_restore 7
+	.cfi_def_cfa_offset 0
+	bx	lr
+	.cfi_endproc
+.LFE6:
+	.size	SPI_SSOEConfig, .-SPI_SSOEConfig
 	.text
 .Letext0:
 	.file 2 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h"
@@ -699,15 +760,15 @@ get_reg_value:
 	.file 5 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x588
+	.4byte	0x5bd
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF963
-	.byte	0xc
-	.4byte	.LASF964
 	.4byte	.LASF965
+	.byte	0xc
+	.4byte	.LASF966
+	.4byte	.LASF967
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -1231,27 +1292,56 @@ get_reg_value:
 	.byte	0x2
 	.4byte	0x3e0
 	.uleb128 0xd
-	.4byte	.LASF966
+	.4byte	.LASF956
 	.byte	0x1
-	.byte	0xa9
-	.byte	0x5
-	.4byte	0x45e
-	.4byte	.LFB5
-	.4byte	.LFE5-.LFB5
+	.byte	0xbe
+	.byte	0x6
+	.4byte	.LFB6
+	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x45e
+	.4byte	0x44b
 	.uleb128 0xe
-	.4byte	.LASF951
+	.4byte	.LASF948
 	.byte	0x1
-	.byte	0xa9
-	.byte	0x1d
-	.4byte	0x465
+	.byte	0xbe
+	.byte	0x23
+	.4byte	0x404
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
+	.4byte	.LASF951
+	.byte	0x1
+	.byte	0xbe
+	.byte	0x32
+	.4byte	0x93
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -13
+	.byte	0
+	.uleb128 0xf
+	.4byte	.LASF968
+	.byte	0x1
+	.byte	0xa9
+	.byte	0x5
+	.4byte	0x493
+	.4byte	.LFB5
+	.4byte	.LFE5-.LFB5
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x493
+	.uleb128 0xe
 	.4byte	.LASF952
+	.byte	0x1
+	.byte	0xa9
+	.byte	0x1d
+	.4byte	0x49a
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0xe
+	.4byte	.LASF953
 	.byte	0x1
 	.byte	0xa9
 	.byte	0x2f
@@ -1260,7 +1350,7 @@ get_reg_value:
 	.byte	0x91
 	.sleb128 -16
 	.uleb128 0xe
-	.4byte	.LASF953
+	.4byte	.LASF954
 	.byte	0x1
 	.byte	0xa9
 	.byte	0x45
@@ -1272,11 +1362,11 @@ get_reg_value:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x2
-	.4byte	.LASF954
+	.4byte	.LASF955
 	.uleb128 0xc
 	.byte	0x4
 	.4byte	0xab
-	.uleb128 0xf
+	.uleb128 0xd
 	.4byte	.LASF957
 	.byte	0x1
 	.byte	0x90
@@ -1285,18 +1375,18 @@ get_reg_value:
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x4a0
+	.4byte	0x4d5
 	.uleb128 0xe
-	.4byte	.LASF955
+	.4byte	.LASF958
 	.byte	0x1
 	.byte	0x90
 	.byte	0x22
-	.4byte	0x4a0
+	.4byte	0x4d5
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
-	.4byte	.LASF956
+	.4byte	.LASF959
 	.byte	0x1
 	.byte	0x90
 	.byte	0x37
@@ -1309,7 +1399,7 @@ get_reg_value:
 	.byte	0x4
 	.4byte	0x40a
 	.uleb128 0x10
-	.4byte	.LASF958
+	.4byte	.LASF960
 	.byte	0x1
 	.byte	0x6d
 	.byte	0x6
@@ -1317,7 +1407,7 @@ get_reg_value:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x4ea
+	.4byte	0x51f
 	.uleb128 0xe
 	.4byte	.LASF948
 	.byte	0x1
@@ -1328,11 +1418,11 @@ get_reg_value:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
-	.4byte	.LASF959
+	.4byte	.LASF961
 	.byte	0x1
 	.byte	0x6d
 	.byte	0x31
-	.4byte	0x4ea
+	.4byte	0x51f
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -1349,8 +1439,8 @@ get_reg_value:
 	.uleb128 0xc
 	.byte	0x4
 	.4byte	0x93
-	.uleb128 0xf
-	.4byte	.LASF960
+	.uleb128 0xd
+	.4byte	.LASF962
 	.byte	0x1
 	.byte	0x56
 	.byte	0x6
@@ -1358,7 +1448,7 @@ get_reg_value:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x516
+	.4byte	0x54b
 	.uleb128 0xe
 	.4byte	.LASF948
 	.byte	0x1
@@ -1370,7 +1460,7 @@ get_reg_value:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x10
-	.4byte	.LASF961
+	.4byte	.LASF963
 	.byte	0x1
 	.byte	0x3c
 	.byte	0x6
@@ -1378,18 +1468,18 @@ get_reg_value:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x55a
+	.4byte	0x58f
 	.uleb128 0xe
-	.4byte	.LASF955
+	.4byte	.LASF958
 	.byte	0x1
 	.byte	0x3c
 	.byte	0x1d
-	.4byte	0x4a0
+	.4byte	0x4d5
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
 	.uleb128 0xe
-	.4byte	.LASF956
+	.4byte	.LASF959
 	.byte	0x1
 	.byte	0x3c
 	.byte	0x32
@@ -1398,7 +1488,7 @@ get_reg_value:
 	.byte	0x91
 	.sleb128 -21
 	.uleb128 0x12
-	.4byte	.LASF967
+	.4byte	.LASF969
 	.byte	0x1
 	.byte	0x40
 	.byte	0xb
@@ -1408,7 +1498,7 @@ get_reg_value:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF968
+	.4byte	.LASF970
 	.byte	0x1
 	.byte	0x18
 	.byte	0x6
@@ -1426,7 +1516,7 @@ get_reg_value:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
-	.4byte	.LASF962
+	.4byte	.LASF964
 	.byte	0x1
 	.byte	0x18
 	.byte	0x38
@@ -1623,8 +1713,6 @@ get_reg_value:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0x19
-	.uleb128 0x49
-	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -1669,6 +1757,8 @@ get_reg_value:
 	.uleb128 0xb
 	.uleb128 0x27
 	.uleb128 0x19
+	.uleb128 0x49
+	.uleb128 0x13
 	.uleb128 0x11
 	.uleb128 0x1
 	.uleb128 0x12
@@ -1769,7 +1859,7 @@ get_reg_value:
 	.byte	0
 	.byte	0
 	.section	.debug_aranges,"",%progbits
-	.4byte	0x44
+	.4byte	0x4c
 	.2byte	0x2
 	.4byte	.Ldebug_info0
 	.byte	0x4
@@ -1788,6 +1878,8 @@ get_reg_value:
 	.4byte	.LFE4-.LFB4
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
+	.4byte	.LFB6
+	.4byte	.LFE6-.LFB6
 	.4byte	0
 	.4byte	0
 	.section	.debug_ranges,"",%progbits
@@ -1804,6 +1896,8 @@ get_reg_value:
 	.4byte	.LFE4
 	.4byte	.LFB5
 	.4byte	.LFE5
+	.4byte	.LFB6
+	.4byte	.LFE6
 	.4byte	0
 	.4byte	0
 	.section	.debug_macro,"",%progbits
@@ -4549,7 +4643,7 @@ get_reg_value:
 	.uleb128 0x4a
 	.4byte	.LASF848
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.stm32f407xx_SPI_driver.h.17.8c29330b69b5e8a8bf6004bfc1968079,comdat
+	.section	.debug_macro,"G",%progbits,wm4.stm32f407xx_SPI_driver.h.17.630c22b6ec73290cc1b69e04b8b5e98e,comdat
 .Ldebug_macro11:
 	.2byte	0x4
 	.byte	0
@@ -4653,7 +4747,7 @@ get_reg_value:
 	.ascii	"RCC ((RCC_RegDef_t*) RCC_BASEADDR)\000"
 .LASF221:
 	.ascii	"__FLT64_HAS_INFINITY__ 1\000"
-.LASF960:
+.LASF962:
 	.ascii	"SPI_DeInit\000"
 .LASF781:
 	.ascii	"SPI_CR2_TXEIE 7\000"
@@ -4745,7 +4839,7 @@ get_reg_value:
 	.ascii	"__FLT64_MAX__ 1.7976931348623157e+308F64\000"
 .LASF709:
 	.ascii	"GPIOC_PCLK_DI (RCC->AHB1ENR &= ~(1 << 2))\000"
-.LASF959:
+.LASF961:
 	.ascii	"pTxbuffer\000"
 .LASF502:
 	.ascii	"__INT8 \"hh\"\000"
@@ -5040,6 +5134,8 @@ get_reg_value:
 	.ascii	"__GCC_ATOMIC_CHAR32_T_LOCK_FREE 2\000"
 .LASF118:
 	.ascii	"__UINT_LEAST16_MAX__ 0xffff\000"
+.LASF78:
+	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
 .LASF834:
 	.ascii	"GPIO_AF1 (1)\000"
 .LASF399:
@@ -5114,9 +5210,9 @@ get_reg_value:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF944:
 	.ascii	"SPI_CPOL\000"
-.LASF954:
+.LASF955:
 	.ascii	"_Bool\000"
-.LASF966:
+.LASF968:
 	.ascii	"get_reg_value\000"
 .LASF620:
 	.ascii	"GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)\000"
@@ -5154,7 +5250,7 @@ get_reg_value:
 	.ascii	"USART2_PCLK_DI (RCC->APB1ENR &= ~(1 << 17))\000"
 .LASF64:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
-.LASF964:
+.LASF966:
 	.ascii	"../Drivers/Src/stm32f407xx_SPI_driver.c\000"
 .LASF802:
 	.ascii	"GPIO_MODE_OUPUT (1)\000"
@@ -5172,8 +5268,6 @@ get_reg_value:
 	.ascii	"signed +0\000"
 .LASF583:
 	.ascii	"SIG_ATOMIC_MAX (__STDINT_EXP(INT_MAX))\000"
-.LASF353:
-	.ascii	"__UTA_IBIT__ 64\000"
 .LASF623:
 	.ascii	"GPIOD_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0C00)\000"
 .LASF600:
@@ -5186,7 +5280,7 @@ get_reg_value:
 	.ascii	"__vo volatile\000"
 .LASF245:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
-.LASF958:
+.LASF960:
 	.ascii	"SPI_SendData\000"
 .LASF422:
 	.ascii	"__ARM_NEON\000"
@@ -5208,6 +5302,8 @@ get_reg_value:
 	.ascii	"ENABLE_GREEN_LED (GPIOD->ODR |= (1 << 12))\000"
 .LASF619:
 	.ascii	"AHB3PERIPHERAL_BASEADDR 0xA0000000U\000"
+.LASF951:
+	.ascii	"en_or_di\000"
 .LASF916:
 	.ascii	"RESERVED7\000"
 .LASF578:
@@ -5309,7 +5405,7 @@ get_reg_value:
 	.ascii	"bool _Bool\000"
 .LASF329:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF965:
+.LASF967:
 	.ascii	"D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx"
 	.ascii	"_drivers/Debug\000"
 .LASF149:
@@ -5381,7 +5477,7 @@ get_reg_value:
 	.ascii	"SPI_CR2_RXNEIE 6\000"
 .LASF104:
 	.ascii	"__INT_LEAST8_MAX__ 0x7f\000"
-.LASF952:
+.LASF953:
 	.ascii	"spi_register\000"
 .LASF380:
 	.ascii	"__ARM_FEATURE_QBIT 1\000"
@@ -5463,7 +5559,7 @@ get_reg_value:
 	.ascii	"GPIO_OP_TYPE_PP (0)\000"
 .LASF142:
 	.ascii	"__FLT_EVAL_METHOD_TS_18661_3__ 0\000"
-.LASF951:
+.LASF952:
 	.ascii	"address\000"
 .LASF498:
 	.ascii	"int +2\000"
@@ -5620,7 +5716,7 @@ get_reg_value:
 	.ascii	"WINT_MAX (__WINT_MAX__)\000"
 .LASF924:
 	.ascii	"SSCGR\000"
-.LASF963:
+.LASF965:
 	.ascii	"GNU C11 10.3.1 20210824 (release) -mcpu=cortex-m4 -"
 	.ascii	"mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -march=ar"
 	.ascii	"mv7e-m+fp -g3 -O0 -std=gnu11 -ffunction-sections -f"
@@ -5694,11 +5790,11 @@ get_reg_value:
 	.ascii	"__FLT32_EPSILON__ 1.1920928955078125e-7F32\000"
 .LASF423:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF962:
+.LASF964:
 	.ascii	"enordi\000"
 .LASF918:
 	.ascii	"APB2LPENR\000"
-.LASF961:
+.LASF963:
 	.ascii	"SPI_Init\000"
 .LASF467:
 	.ascii	"__POSIX_VISIBLE 200809\000"
@@ -5779,6 +5875,8 @@ get_reg_value:
 	.ascii	"__GCC_IEC_559 0\000"
 .LASF622:
 	.ascii	"GPIOC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0800)\000"
+.LASF670:
+	.ascii	"GPIOF ((GPIO_RegDef_t*) GPIOF_BASEADDR)\000"
 .LASF494:
 	.ascii	"char +0\000"
 .LASF261:
@@ -5865,8 +5963,6 @@ get_reg_value:
 	.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
 .LASF923:
 	.ascii	"RESERVED11\000"
-.LASF862:
-	.ascii	"SPI_HW_SSM (1)\000"
 .LASF345:
 	.ascii	"__TA_IBIT__ 64\000"
 .LASF513:
@@ -5976,8 +6072,6 @@ get_reg_value:
 	.ascii	"__FLT_MIN_10_EXP__ (-37)\000"
 .LASF304:
 	.ascii	"__ULACCUM_IBIT__ 32\000"
-.LASF861:
-	.ascii	"SPI_SW_SSM (0)\000"
 .LASF69:
 	.ascii	"__SHRT_MAX__ 0x7fff\000"
 .LASF568:
@@ -6034,7 +6128,7 @@ get_reg_value:
 	.ascii	"GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)\000"
 .LASF472:
 	.ascii	"__have_longlong64 1\000"
-.LASF955:
+.LASF958:
 	.ascii	"pSPIHandler\000"
 .LASF688:
 	.ascii	"GPIOE_PCLK_EN (RCC->AHB1ENR |= (1 << 4))\000"
@@ -6106,6 +6200,8 @@ get_reg_value:
 	.ascii	"__THUMBEL__ 1\000"
 .LASF753:
 	.ascii	"RESET DISABLE\000"
+.LASF861:
+	.ascii	"SPI_SW_SSM (1)\000"
 .LASF379:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
 .LASF832:
@@ -6144,7 +6240,7 @@ get_reg_value:
 	.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 2\000"
 .LASF851:
 	.ascii	"DIVISOR_8 (2)\000"
-.LASF956:
+.LASF959:
 	.ascii	"tx_or_rx\000"
 .LASF425:
 	.ascii	"__ARM_ARCH_7EM__ 1\000"
@@ -6216,7 +6312,7 @@ get_reg_value:
 	.ascii	"GPIO_MODE_IT_RFT (6)\000"
 .LASF882:
 	.ascii	"short int\000"
-.LASF968:
+.LASF970:
 	.ascii	"SPI_PeriClockControl\000"
 .LASF641:
 	.ascii	"EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)\000"
@@ -6311,8 +6407,8 @@ get_reg_value:
 	.ascii	"->AHB1RSTR &= ~(1 << 4)); } while(0)\000"
 .LASF452:
 	.ascii	"__GNUC_PREREQ__(ma,mi) __GNUC_PREREQ(ma, mi)\000"
-.LASF670:
-	.ascii	"GPIOF ((GPIO_RegDef_t*) GPIOF_BASEADDR)\000"
+.LASF353:
+	.ascii	"__UTA_IBIT__ 64\000"
 .LASF314:
 	.ascii	"__ULLACCUM_IBIT__ 32\000"
 .LASF385:
@@ -6471,10 +6567,12 @@ get_reg_value:
 	.ascii	"__thumb__ 1\000"
 .LASF828:
 	.ascii	"GPIO_PIN_11 (11)\000"
-.LASF967:
+.LASF969:
 	.ascii	"tempReg\000"
 .LASF410:
 	.ascii	"__ARMEL__ 1\000"
+.LASF862:
+	.ascii	"SPI_HW_SSM (0)\000"
 .LASF320:
 	.ascii	"__HQ_FBIT__ 15\000"
 .LASF606:
@@ -6485,11 +6583,11 @@ get_reg_value:
 	.ascii	"SPI_MASTER (1)\000"
 .LASF858:
 	.ascii	"TRAILING_EDGE (1)\000"
-.LASF78:
-	.ascii	"__SIZE_MAX__ 0xffffffffU\000"
+.LASF956:
+	.ascii	"SPI_SSOEConfig\000"
 .LASF727:
 	.ascii	"UART4_PCLK_DI (RCC->APB1ENR &= ~(1 << 19))\000"
-.LASF953:
+.LASF954:
 	.ascii	"register_bit\000"
 .LASF401:
 	.ascii	"__ARM_ARCH\000"

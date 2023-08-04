@@ -1587,9 +1587,6 @@ typedef struct{
 #define GPIO_AF14 (14)
 #define GPIO_AF15 (15)
 
-
-
-
 typedef struct
 {
 
@@ -1609,7 +1606,7 @@ typedef struct{
  GPIO_PinConfig_t GPIO_PinConfig;
 
 }GPIO_Handle_t;
-# 107 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+# 104 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
 
@@ -1658,8 +1655,8 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 #define IDLE_LOW (0)
 
 
-#define SPI_SW_SSM (0)
-#define SPI_HW_SSM (1)
+#define SPI_SW_SSM (1)
+#define SPI_HW_SSM (0)
 
 
 #define SPI_MASTER (1)
@@ -1718,6 +1715,7 @@ _Bool
 # 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
     get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
 
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
@@ -1915,6 +1913,20 @@ _Bool
 
 
 
+}
+
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t en_or_di)
+{
+ if(en_or_di == 1)
+ {
+  pSPIx->SPI_CR2 |= (1 << 2);
+
+ }
+ else if (en_or_di == 0)
+ {
+  pSPIx->SPI_CR2 |= (0 << 2);
+
+ }
 }
 
 
