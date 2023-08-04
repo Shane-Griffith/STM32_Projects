@@ -1,5 +1,5 @@
 # 1 "../Drivers/Src/stm32f407xx_gpio_driver.c"
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Debug//"
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Debug//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 201112L
@@ -482,8 +482,8 @@
 
 
 
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h" 1
-# 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h"
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h" 1
+# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h"
 #define INC_STM32F407XX_GPIO_DRIVER_H_ 
 
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 1 3 4
@@ -1079,9 +1079,9 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
-# 12 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h" 2
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 16 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 12 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 16 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define INC_STM32F4XX_H_ 
 
 
@@ -1095,14 +1095,14 @@ typedef __uint_least64_t uint_least64_t;
 #define SRAM2_BASEADDR 0x2001C000U
 #define ROM 0x1FFF0000U
 #define SRAM SRAM1_BASEADDR
-# 37 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 37 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define PERIPHERAL_BASEADDR 0x40000000U
 #define APB1PERIPHERAL_BASEADDR PERIPHERAL_BASEADDR
 #define APB2PERIPHERAL_BASEADDR 0x40010000U
 #define AHB1PERIPHERAL_BASEADDR 0x40020000U
 #define AHB2PERIPHERAL_BASEADDR 0x50000000U
 #define AHB3PERIPHERAL_BASEADDR 0xA0000000U
-# 51 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 51 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)
 #define GPIOB_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0400)
 #define GPIOC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0800)
@@ -1233,7 +1233,7 @@ typedef __uint_least64_t uint_least64_t;
 #define USART3_PCLK_EN (RCC->APB1ENR |= (1 << 18))
 #define UART4_PCLK_EN (RCC->APB1ENR |= (1 << 19))
 #define UART5_PCLK_EN (RCC->APB1ENR |= (1 << 20))
-# 191 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 191 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define GPIOA_PCLK_DI (RCC->AHB1ENR &= ~(1 << 0))
 #define GPIOB_PCLK_DI (RCC->AHB1ENR &= ~(1 << 1))
 #define GPIOC_PCLK_DI (RCC->AHB1ENR &= ~(1 << 2))
@@ -1295,7 +1295,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define GPIO_BASEADDR_TO_CODE(x) ((x == GPIOA)? 0 : (x == GPIOB) ? 1 : (x == GPIOC) ? 2 : (x == GPIOD) ? 3 : (x == GPIOE) ? 4 : (x == GPIOF) ? 5 : (x == GPIOG) ? 6 : (x == GPIOH) ? 7 : (x == GPIOI) ? 8 : 0)
-# 265 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 265 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define IRQ_NO_EXTI0 (6)
 #define IRQ_NO_EXTI1 (7
 #define IRQ_NO_EXTI2 (8)
@@ -1381,7 +1381,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 349 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 349 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 typedef struct
 {
 
@@ -1510,10 +1510,10 @@ typedef struct{
 
 
 
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
-# 478 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
-# 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
+# 478 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
+# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 #define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
 
 
@@ -1528,9 +1528,9 @@ typedef struct{
 #define false 0
 # 52 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 14 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
+# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 14 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
 
 
 
@@ -1552,8 +1552,8 @@ typedef struct{
 #define IDLE_LOW (0)
 
 
-#define SPI_SW_SSM (0)
-#define SPI_HW_SSM (1)
+#define SPI_SW_SSM (1)
+#define SPI_HW_SSM (0)
 
 
 #define SPI_MASTER (1)
@@ -1595,7 +1595,7 @@ typedef struct
 
 
 }SPI_Handle_t;
-# 86 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+# 86 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
 
 
@@ -1607,19 +1607,20 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 
-# 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+# 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
 _Bool 
-# 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
-    get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t register_bit);
+# 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+    get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
 
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandler(SPI_Handle_t *pHandle);
 void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
-# 479 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
-# 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h" 2
+# 479 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h" 2
 
 
 
@@ -1683,9 +1684,6 @@ void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
 #define GPIO_AF14 (14)
 #define GPIO_AF15 (15)
 
-
-
-
 typedef struct
 {
 
@@ -1705,7 +1703,7 @@ typedef struct{
  GPIO_PinConfig_t GPIO_PinConfig;
 
 }GPIO_Handle_t;
-# 107 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h"
+# 104 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h"
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
 
@@ -1813,7 +1811,6 @@ if(EnorDi == 1){
 }
 
 }
-
 
 
 
@@ -1976,17 +1973,20 @@ void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
  if(EnorDi == 1)
  {
   ((NVIC_EN_RegDef_t*) (0xE000E100))->NVIC_ISER[temp1] |= (0x1 << temp2);
-
  }
  else
  {
   ((NVIC_DI_RegDef_t*)(0XE000E180))->NVIC_ICER[temp1] |= (0x1 << temp2);
-
  }
-
-
 }
-# 295 "../Drivers/Src/stm32f407xx_gpio_driver.c"
+
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority)
+{
+
+  uint8_t iprReg = IRQNumber / 4;
+  uint8_t bitOffset = ((IRQNumber % 4) * 8);
+  ((NVIC_ipr_RegDef_t*) (0xE000E400))->NVIC_IPR[iprReg] |= (IRQNumber << bitOffset);
+}
 void GPIO_IRQHandler(uint8_t pinNumber){
  ((EXTI_RegDef_t*) (0x40010000U + 0x3c00))->PR |=(0x1 << 0);
 }

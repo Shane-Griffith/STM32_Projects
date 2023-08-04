@@ -1,5 +1,5 @@
 # 1 "../Drivers/Src/stm32f407xx_SPI_driver.c"
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Debug//"
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Debug//"
 # 1 "<built-in>"
 #define __STDC__ 1
 #define __STDC_VERSION__ 201112L
@@ -1070,8 +1070,8 @@ typedef __uint_least64_t uint_least64_t;
 
 #define _GCC_WRAP_STDINT_H 
 # 2 "../Drivers/Src/stm32f407xx_SPI_driver.c" 2
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 1
-# 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 1
+# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
 #define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
 
 
@@ -1086,9 +1086,9 @@ typedef __uint_least64_t uint_least64_t;
 #define false 0
 # 52 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
 #define __bool_true_false_are_defined 1
-# 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 2
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 16 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 16 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define INC_STM32F4XX_H_ 
 
 
@@ -1102,14 +1102,14 @@ typedef __uint_least64_t uint_least64_t;
 #define SRAM2_BASEADDR 0x2001C000U
 #define ROM 0x1FFF0000U
 #define SRAM SRAM1_BASEADDR
-# 37 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 37 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define PERIPHERAL_BASEADDR 0x40000000U
 #define APB1PERIPHERAL_BASEADDR PERIPHERAL_BASEADDR
 #define APB2PERIPHERAL_BASEADDR 0x40010000U
 #define AHB1PERIPHERAL_BASEADDR 0x40020000U
 #define AHB2PERIPHERAL_BASEADDR 0x50000000U
 #define AHB3PERIPHERAL_BASEADDR 0xA0000000U
-# 51 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 51 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)
 #define GPIOB_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0400)
 #define GPIOC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0800)
@@ -1240,7 +1240,7 @@ typedef __uint_least64_t uint_least64_t;
 #define USART3_PCLK_EN (RCC->APB1ENR |= (1 << 18))
 #define UART4_PCLK_EN (RCC->APB1ENR |= (1 << 19))
 #define UART5_PCLK_EN (RCC->APB1ENR |= (1 << 20))
-# 191 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 191 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define GPIOA_PCLK_DI (RCC->AHB1ENR &= ~(1 << 0))
 #define GPIOB_PCLK_DI (RCC->AHB1ENR &= ~(1 << 1))
 #define GPIOC_PCLK_DI (RCC->AHB1ENR &= ~(1 << 2))
@@ -1302,7 +1302,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define GPIO_BASEADDR_TO_CODE(x) ((x == GPIOA)? 0 : (x == GPIOB) ? 1 : (x == GPIOC) ? 2 : (x == GPIOD) ? 3 : (x == GPIOE) ? 4 : (x == GPIOF) ? 5 : (x == GPIOG) ? 6 : (x == GPIOH) ? 7 : (x == GPIOI) ? 8 : 0)
-# 265 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 265 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 #define IRQ_NO_EXTI0 (6)
 #define IRQ_NO_EXTI1 (7
 #define IRQ_NO_EXTI2 (8)
@@ -1388,7 +1388,7 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
-# 349 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+# 349 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
 typedef struct
 {
 
@@ -1517,13 +1517,13 @@ typedef struct{
 
 
 
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
-# 9 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
+# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 #define INC_STM32F407XX_GPIO_DRIVER_H_ 
 
 
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 13 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
 
 
 
@@ -1587,9 +1587,6 @@ typedef struct{
 #define GPIO_AF14 (14)
 #define GPIO_AF15 (15)
 
-
-
-
 typedef struct
 {
 
@@ -1609,7 +1606,7 @@ typedef struct{
  GPIO_PinConfig_t GPIO_PinConfig;
 
 }GPIO_Handle_t;
-# 107 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+# 104 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
 void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
 
 
@@ -1633,10 +1630,10 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void GPIO_IRQHandler(uint8_t pinNumber);
-# 478 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
-# 479 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
-# 14 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 2
+# 478 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
+# 479 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 14 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 2
 
 
 
@@ -1658,8 +1655,8 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 #define IDLE_LOW (0)
 
 
-#define SPI_SW_SSM (0)
-#define SPI_HW_SSM (1)
+#define SPI_SW_SSM (1)
+#define SPI_HW_SSM (0)
 
 
 #define SPI_MASTER (1)
@@ -1701,7 +1698,7 @@ typedef struct
 
 
 }SPI_Handle_t;
-# 86 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
+# 86 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
 
 
@@ -1713,11 +1710,12 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 
-# 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 3 4
+# 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 3 4
 _Bool 
-# 96 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
-    get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t register_bit);
+# 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
+    get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
 
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
@@ -1725,20 +1723,20 @@ void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandler(SPI_Handle_t *pHandle);
 void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
 # 3 "../Drivers/Src/stm32f407xx_SPI_driver.c" 2
-# 1 "C:/Users/shane/Documents/Repo/STM32_Projects/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
 # 4 "../Drivers/Src/stm32f407xx_SPI_driver.c" 2
 
 
-#define SPI_CR1 1
-#define SPI_CR2 2
-#define SPI_SR 3
-#define SPI_DR 4
-#define SPI_CRCPR 5
-#define SPI_RXCRCR 6
-#define SPI_TXCRCR 7
-#define SPI_IS2CFGR 8
-#define SPI_IS2PR 9
-# 23 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+#define SPI_CR1_POSITION 0
+#define SPI_CR2_POSITION 1
+#define SPI_SR_POSITION 2
+#define SPI_DR_POSITION 3
+#define SPI_CRCPR_POSITION 4
+#define SPI_RXCRCR_POSITION 5
+#define SPI_TXCRCR_POSITION 6
+#define SPI_IS2CFGR_POSITION 7
+#define SPI_IS2PR_POSITION 8
+# 24 "../Drivers/Src/stm32f407xx_SPI_driver.c"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi){
  switch(enordi){
  case 1:
@@ -1797,7 +1795,7 @@ void SPI_Init(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
 
 
 
- pSPIHandler->pSPIx->1 = tempReg;
+ pSPIHandler->pSPIx->SPI_CR1 = tempReg;
 
 }
 
@@ -1824,58 +1822,111 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 }
 
 
-void SPI_SendData(SPI_RegDef_t *pSPIHandler, uint8_t *pTxbuffer, uint32_t len)
+void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
 {
+ if(!(((RCC_RegDef_t*) (0x40020000U + 0x3800))->APB1ENR & (1 << 14)))
+ {
+  SPI_PeriClockControl(pSPIx, 1);
+ }
 
+
+ while(!get_reg_value((uint32_t*)pSPIx, 2, 1))
+ {
+
+ }
  while(len > 0)
  {
 
- while(!(pSPIHandler->3 & (1 << 1)))
- {
+
+  if(pSPIx->SPI_CR1 & (1 << 11))
+  {
+   pSPIx->SPI_DR = *(uint32_t*)pTxbuffer;
+   len -= 2;
+   (uint16_t*)pTxbuffer++;
+  }
+  else if(!(pSPIx->SPI_CR1 & (1 << 11)))
+  {
+   pSPIx->SPI_DR = *pTxbuffer;
+   len--;
+   pTxbuffer++;
+  }
 
  }
 
- if(get_reg_value(pSPIHandler->pSPIx, 1, 11))
- {
-  pSPIHandler->pSPIx->4 = *(uint16_t *)pTxbuffer;
-  pTxbuffer += 2;
-  len -= 2;
- }
- else if(!(pSPIHandler->1 & (1 << 11)))
- {
-  pSPIHandler->4 = *pTxbuffer;
-  pTxbuffer++;
-  len--;
-
- }
+ SPI_PeriClockControl(pSPIx, 0);
 }
-}
-# 161 "../Drivers/Src/stm32f407xx_SPI_driver.c"
 
-# 161 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
-_Bool 
-# 161 "../Drivers/Src/stm32f407xx_SPI_driver.c"
-    get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t register_bit)
+
+void SPI_busConfig(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
 {
- uint32_t result = ((*address + (sizeof(uint32_t) * spi_register)) & (0xffffffff));
+ if(pSPIHandler->SPI_Config.BusConfig == (2))
+ {
+  pSPIHandler->pSPIx->SPI_CR1 |= (0 << 15);
 
- if(result)
+  pSPIHandler->pSPIx->SPI_CR1 |= (0 << 14);
+
+  pSPIHandler->pSPIx->SPI_CR1 |= (0 << 10);
+
+ }
+ else if(pSPIHandler->SPI_Config.BusConfig == (uint8_t)(1) || pSPIHandler->SPI_Config.BusConfig == (uint8_t)(3))
+ {
+  pSPIHandler->pSPIx->SPI_CR1 |= (1 << 15);
+
+  pSPIHandler->pSPIx->SPI_CR1 |= (0 << 10);
+
+  pSPIHandler->pSPIx->SPI_CR1 |= (1 << 14);
+
+ }
+
+
+
+}
+
+
+# 169 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+_Bool 
+# 169 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+    get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit)
+{
+
+ if(register_bit > 8)
+ {
+  return 0;
+ }
+
+ if(*(address + (sizeof(uint32_t) * spi_register)) & (1 << register_bit))
  {
   return 
-# 167 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 179 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
         1
-# 167 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 179 "../Drivers/Src/stm32f407xx_SPI_driver.c"
             ;
  }
  else
  {
   return 
-# 171 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 183 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
         0
-# 171 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 183 "../Drivers/Src/stm32f407xx_SPI_driver.c"
              ;
  }
 
+
+
+}
+
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t en_or_di)
+{
+ if(en_or_di == 1)
+ {
+  pSPIx->SPI_CR2 |= (1 << 2);
+
+ }
+ else if (en_or_di == 0)
+ {
+  pSPIx->SPI_CR2 |= (0 << 2);
+
+ }
 }
 
 

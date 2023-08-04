@@ -73,9 +73,6 @@
 #define GPIO_AF14		(14)
 #define GPIO_AF15		(15)
 
-
-
-
 typedef struct
 {
 

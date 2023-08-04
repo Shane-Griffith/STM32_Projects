@@ -32,8 +32,8 @@
 #define IDLE_LOW			(0)
 
 //@Software_Select
-#define SPI_SW_SSM			(0)
-#define SPI_HW_SSM			(1)
+#define SPI_SW_SSM			(1)
+#define SPI_HW_SSM			(0)
 
 //@Device_mode
 #define SPI_MASTER			(1)
@@ -93,8 +93,9 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx);
 void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
-bool get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t register_bit);
+bool get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
 
 //IRQ Config and ISR Handling
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);

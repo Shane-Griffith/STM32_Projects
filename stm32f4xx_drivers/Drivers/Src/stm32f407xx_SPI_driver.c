@@ -3,15 +3,16 @@
 #include "stm32f4xx.h"
 #include <stdbool.h>
 
-#define SPI_CR1 1
-#define SPI_CR2 2
-#define SPI_SR 	3
-#define SPI_DR  4
-#define SPI_CRCPR 5
-#define SPI_RXCRCR 6
-#define SPI_TXCRCR 7
-#define SPI_IS2CFGR 8
-#define SPI_IS2PR 9
+#define SPI_CR1_POSITION 0
+#define SPI_CR2_POSITION 1
+#define SPI_SR_POSITION 	2
+#define SPI_DR_POSITION  3
+#define SPI_CRCPR_POSITION 4
+#define SPI_RXCRCR_POSITION 5
+#define SPI_TXCRCR_POSITION 6
+#define SPI_IS2CFGR_POSITION 7
+#define SPI_IS2PR_POSITION 8
+
 
 /*=================================APIs Supported for this Driver=================================
  *
@@ -105,64 +106,75 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 }
 
 //Send/Receive Data - This is a blocking call
-void  SPI_SendData(SPI_RegDef_t *pSPIHandler, uint8_t *pTxbuffer, uint32_t len)
+void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
 {
-	//Check length
+	if(!(RCC->APB1ENR & (ENABLE << 14)))
+	{
+		SPI_PeriClockControl(pSPIx, ENABLE);
+	}
+
+
+	while(!get_reg_value((uint32_t*)pSPIx, SPI_SR_POSITION, SPI_SR_TXE))
+	{
+
+	}
 	while(len > 0)
 	{
-		//check to make sure pspix_sr is empty before moving forward
-	while(!(pSPIHandler->SPI_SR & (1 << SPI_SR_TXE)))
-	{
+
+		//dff set to 16 bit
+		if(pSPIx->SPI_CR1 & (SET  << SPI_CR1_DFF))
+		{
+			pSPIx->SPI_DR = *(uint32_t*)pTxbuffer;
+			len -= 2;
+			(uint16_t*)pTxbuffer++;
+		}//dff set to 8 bit
+		else if(!(pSPIx->SPI_CR1 & (SET << SPI_CR1_DFF)))
+		{
+			pSPIx->SPI_DR = *pTxbuffer;
+			len--;
+			pTxbuffer++;
+		}
 
 	}
 
-	if(get_reg_value(pSPIHandler->pSPIx, SPI_CR1, SPI_CR1_DFF))
-	{
-		pSPIHandler->pSPIx->SPI_DR = *(uint16_t *)pTxbuffer;
-		pTxbuffer += 2;
-		len -= 2;
-	}
-	else if(!(pSPIHandler->SPI_CR1 & (1 << SPI_CR1_DFF)))
-	{
-		pSPIHandler->SPI_DR = *pTxbuffer;
-		pTxbuffer++;
-		len--;
-
-	}
-}
+	SPI_PeriClockControl(pSPIx, DISABLE);
 }
 
-////use SPI_RX or SPI_TX for tx_or_rx
-//void SPI_busConfig(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
-//{
-//	if(pSPIHandler->SPI_Config.BusConfig == SPI_CONFIG_FD)
-//	{	//reset bidimode for 2 line unidirection data
-//		pSPIHandler->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_BIDI_MODE);
-//		//ensure bidioe is reset not needed for Full duplex
-//		pSPIHandler->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_BIDI_OE);
-//		//reset rx-only bit
-//		pSPIHandler->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_RX_ONLY);
-//
-//	}
-//	else if(pSPIHandler->SPI_Config.BusConfig == (uint8_t)SPI_CONFIG_HD || pSPIHandler->SPI_Config.BusConfig == (uint8_t)SPI_SIMPLEX_RX_ONLY)
-//	{	//set bidioe bit for 1 line bidirectional data
-//		pSPIHandler->SPI_CR1 |= (SET << SPI_CR1_BIDI_MODE);
-//		//rest rx_only not used
-//		pSPIHandler->SPI_CR1 |= (RESET << SPI_CR1_RX_ONLY);
-//		//enable tx or rx mode
-//		pSPIHandler->pSPIx
-//
-//	}
-//
-//
-//
-//}
-
-bool get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t register_bit)
+//use SPI_RX or SPI_TX for tx_or_rx
+void SPI_busConfig(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
 {
-	uint32_t result = ((*address + (sizeof(uint32_t) * spi_register)) & FULL_REG_MASK);
+	if(pSPIHandler->SPI_Config.BusConfig == SPI_CONFIG_FD)
+	{	//reset bidimode for 2 line unidirection data
+		pSPIHandler->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_BIDI_MODE);
+		//ensure bidioe is reset not needed for Full duplex
+		pSPIHandler->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_BIDI_OE);
+		//reset rx-only bit
+		pSPIHandler->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_RX_ONLY);
 
-	if(result)
+	}
+	else if(pSPIHandler->SPI_Config.BusConfig == (uint8_t)SPI_CONFIG_HD || pSPIHandler->SPI_Config.BusConfig == (uint8_t)SPI_SIMPLEX_RX_ONLY)
+	{	//set bidioe bit for 1 line bidirectional data
+		pSPIHandler->pSPIx->SPI_CR1 |= (SET << SPI_CR1_BIDI_MODE);
+		//rest rx_only not used
+		pSPIHandler->pSPIx->SPI_CR1 |= (RESET << SPI_CR1_RX_ONLY);
+		//enable tx or rx mode
+		pSPIHandler->pSPIx->SPI_CR1 |= (SET << SPI_CR1_BIDI_OE);
+
+	}
+
+
+
+}
+
+bool get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit)
+{
+
+	if(register_bit > SPI_IS2PR_POSITION)
+	{
+		return 0;
+	}
+
+	if(*(address + (sizeof(uint32_t) * spi_register)) & (1 << register_bit))
 	{
 		return true;
 	}
@@ -171,6 +183,22 @@ bool get_reg_value(SPI_RegDef_t *address, uint32_t spi_register, uint8_t registe
 		return false;
 	}
 
+
+
+}
+
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t en_or_di)
+{
+	if(en_or_di == ENABLE)
+	{
+		pSPIx->SPI_CR2 |= (ENABLE << SPI_CR2_SSOE);
+
+	}
+	else if (en_or_di == DISABLE)
+	{
+		pSPIx->SPI_CR2 |= (DISABLE << SPI_CR2_SSOE);
+
+	}
 }
 
 

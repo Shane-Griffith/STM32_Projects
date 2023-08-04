@@ -37,9 +37,9 @@
 									<listOptionValue builtIn="false" value="-save-temps"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths.105588375" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;C:\Users\shane\Documents\Repo\STM32_Projects\stm32f4xx_drivers\Src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\shane\Documents\Repo\STM32_Projects\stm32f4xx_drivers\Drivers\Src&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\shane\Documents\Repo\STM32_Projects\stm32f4xx_drivers\Drivers\Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Drivers\Src&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Drivers\Inc&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1471962653" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
