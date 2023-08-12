@@ -17,10 +17,18 @@
  */
 
 #include <stdint.h>
-#include "stm32f4xx.h"
 #include <stdio.h>
 #include <string.h>
+#include "stm32f4xx.h"
+#include "stm32f407xx_spi_driver.h"
+#include "stm32f407xx_gpio_driver.h"
 
+RCC_RegDef_t* rcc_inst = (RCC_RegDef_t*) RCC_BASEADDR;
+
+void delay(void)
+{
+	for(int i = 0; i < 500000; i++);
+}
 void spi_config(void)
 {
 	SPI_Handle_t SPIx = {0};
@@ -33,13 +41,9 @@ void spi_config(void)
 	SPIx.SPI_Config.SPI_SSM = SPI_HW_SSM;
 	SPIx.SPI_Config.SPI_DFF = DFF_8BIT;
 	SPIx.SPI_Config.SPI_Speed = DIVISOR_8;
-	SPI_SSOEConfig(SPIx.pSPIx, ENABLE);
-
 
 	SPI_Init(&SPIx, SPI_RX);
-
-
-
+	SPI_busConfig(&SPIx, SPI_TX);
 }
 
 void spi_pin_config(void)
@@ -48,7 +52,7 @@ void spi_pin_config(void)
 	GPIO_Handle_t gpiox = {0};
 	gpiox.pGPIOx = GPIOB;
 	gpiox.GPIO_PinConfig.GPIO_PinAltFunMode = GPIO_AF5;
-	gpiox.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUPUT;
+	gpiox.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTFN;
 	gpiox.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_15;
 	gpiox.GPIO_PinConfig.GPIO_PinPuPDcontrol = GPIO_NO_PUPD;
 	gpiox.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
@@ -78,33 +82,25 @@ void user_button(void)
 	GPIO_Init(&pGPIOx);
 }
 
-void user_button_interrupt(void)
-{
-	GPIO_IRQPriorityConfig(IRQ_NO_EXTI0, PRIORITY_LVL_0);
-}
 
 
 int main(void)
 {
 	//data to send
-	char name[] = "Shane Griffith";
+
 
 	spi_config();
 	spi_pin_config();
-	SPI_SendData(SPI2, (uint8_t*)name, sizeof(name));
 	user_button();
 
+	SPI_SSOEConfig(SPI2, ENABLE);
 	while(1)
 	{
-		if(GPIOA->IDR & (ENABLE << pgio_GPIO_PIN_0))
-		{
+		rcc_inst->AHB1ENR |= (1 << 15);
+		SPI1_PCLK_EN;
 
-		}
+
 	}
 
 
 }
-
-
-
-

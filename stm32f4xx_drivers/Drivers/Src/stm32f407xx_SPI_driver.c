@@ -13,7 +13,6 @@
 #define SPI_IS2CFGR_POSITION 7
 #define SPI_IS2PR_POSITION 8
 
-
 /*=================================APIs Supported for this Driver=================================
  *
  *
@@ -21,7 +20,8 @@
  */
 
 //Peripheral Clock Setup
-void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi){
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi)
+{
 	switch(enordi){
 	case 1:
 		if(pSPIx == SPI1){
@@ -52,7 +52,6 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi){
 			break;
 		}default:
 			break;
-
 	}
 }
 
@@ -88,19 +87,19 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 
 	if(pSPIx == SPI1)
 	{
-		(RCC->APB2RSTR |= (1 << 12));
+		(rcc_inst->APB2RSTR |= (1 << 12));
 	}
 	if(pSPIx == SPI4)
 	{
-		RCC->APB2RSTR |= (1 << 13);
+		rcc_inst->APB2RSTR |= (1 << 13);
 	}
 	if(pSPIx == SPI2)
 	{
-		RCC->APB1RSTR |= (1 << 14);
+		rcc_inst->APB1RSTR |= (1 << 14);
 	}
 	if(pSPIx == SPI3)
 	{
-		RCC->APB1RSTR |= (1 << 15);
+		rcc_inst->APB1RSTR |= (1 << 15);
 	}
 
 }
@@ -108,11 +107,7 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 //Send/Receive Data - This is a blocking call
 void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
 {
-	if(!(RCC->APB1ENR & (ENABLE << 14)))
-	{
-		SPI_PeriClockControl(pSPIx, ENABLE);
-	}
-
+	spi_enable_spe(pSPIx, ENABLE);
 
 	while(!get_reg_value((uint32_t*)pSPIx, SPI_SR_POSITION, SPI_SR_TXE))
 	{
@@ -120,7 +115,6 @@ void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
 	}
 	while(len > 0)
 	{
-
 		//dff set to 16 bit
 		if(pSPIx->SPI_CR1 & (SET  << SPI_CR1_DFF))
 		{
@@ -134,10 +128,19 @@ void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
 			len--;
 			pTxbuffer++;
 		}
+	}
+	//wait until tx buffer is empty
+	while(!(pSPIx->SPI_SR &  (ENABLE << SPI_SR_TXE)))
+	{
 
 	}
+	//wait for busy flag to clear
+	while(pSPIx->SPI_SR & (ENABLE << SPI_SR_BSY))
+	{
 
-	SPI_PeriClockControl(pSPIx, DISABLE);
+	}
+	//then disable spe
+	spi_enable_spe(pSPIx, DISABLE);
 }
 
 //use SPI_RX or SPI_TX for tx_or_rx
@@ -161,9 +164,6 @@ void SPI_busConfig(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
 		pSPIHandler->pSPIx->SPI_CR1 |= (SET << SPI_CR1_BIDI_OE);
 
 	}
-
-
-
 }
 
 bool get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit)
@@ -182,25 +182,34 @@ bool get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bi
 	{
 		return false;
 	}
-
-
-
 }
 
-void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t en_or_di)
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, bool enable)
 {
-	if(en_or_di == ENABLE)
+	if(enable)
 	{
 		pSPIx->SPI_CR2 |= (ENABLE << SPI_CR2_SSOE);
 
 	}
-	else if (en_or_di == DISABLE)
+	else
 	{
 		pSPIx->SPI_CR2 |= (DISABLE << SPI_CR2_SSOE);
 
 	}
 }
 
+void spi_enable_spe(SPI_RegDef_t *spix,  bool enable)
+{
+	if(enable)
+	{
+		spix->SPI_CR1 |= (ENABLE << SPI_CR1_SPE);
+	}
+	else
+	{
+		spix->SPI_CR1 &= ~(ENABLE << SPI_CR1_SPE);
+	}
+
+}
 
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 

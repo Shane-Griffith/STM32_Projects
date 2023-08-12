@@ -1,0 +1,2 @@
+stm32f4xx_usart.c:19:6:usart_peri_ctrl	8
+stm32f4xx_usart.c:51:6:usart_init	2

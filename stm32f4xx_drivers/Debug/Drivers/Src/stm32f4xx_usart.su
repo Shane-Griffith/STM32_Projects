@@ -1,0 +1,2 @@
+../Drivers/Src/stm32f4xx_usart.c:19:6:usart_peri_ctrl	16	static
+../Drivers/Src/stm32f4xx_usart.c:51:6:usart_init	16	static
