@@ -1312,7 +1312,7 @@ typedef __uint_least64_t uint_least64_t;
 #define DISABLE_RED_LED (GPIOD->ODR &= ~(1 << 14))
 
 
-#define DELAY() (for(int i = 0; i < 250000; i++))
+#define DELAY ((for(int i = 0; i < 500000; i++)))
 
 
 #define SPI_CR1_CPHA 0
@@ -1676,7 +1676,6 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 
 
 
-
 typedef struct
 {
  uint8_t BusConfig;
@@ -1689,7 +1688,6 @@ typedef struct
 
 }SPI_Config_t;
 
-
 typedef struct
 {
  SPI_RegDef_t *pSPIx;
@@ -1697,8 +1695,15 @@ typedef struct
 
 
 }SPI_Handle_t;
-# 86 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+# 84 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
+
+
+void spi_enable_spe(SPI_RegDef_t *spix, 
+# 87 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+                                       _Bool 
+# 87 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+                                            enable);
 
 
 void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
@@ -1709,12 +1714,16 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 
-# 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+# 97 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
 _Bool 
-# 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+# 97 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
     get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
-void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, 
+# 99 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+                                        _Bool 
+# 99 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+                                             enable);
 
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
@@ -4136,7 +4145,12 @@ char *strsignal (int __signo);
 # 23 "../Src/main.c" 2
 
 
-# 24 "../Src/main.c"
+
+# 25 "../Src/main.c"
+void delay(void)
+{
+ for(int i = 0; i < 500000; i++);
+}
 void spi_config(void)
 {
  SPI_Handle_t SPIx = {0};
@@ -4149,13 +4163,9 @@ void spi_config(void)
  SPIx.SPI_Config.SPI_SSM = (0);
  SPIx.SPI_Config.SPI_DFF = (0);
  SPIx.SPI_Config.SPI_Speed = (2);
- SPI_SSOEConfig(SPIx.pSPIx, 1);
-
 
  SPI_Init(&SPIx, 0);
-
-
-
+ SPI_busConfig(&SPIx, 1);
 }
 
 void spi_pin_config(void)
@@ -4164,7 +4174,7 @@ void spi_pin_config(void)
  GPIO_Handle_t gpiox = {0};
  gpiox.pGPIOx = ((GPIO_RegDef_t*) (0x40020000U + 0x0400));
  gpiox.GPIO_PinConfig.GPIO_PinAltFunMode = (5);
- gpiox.GPIO_PinConfig.GPIO_PinMode = (1);
+ gpiox.GPIO_PinConfig.GPIO_PinMode = (2);
  gpiox.GPIO_PinConfig.GPIO_PinNumber = (15);
  gpiox.GPIO_PinConfig.GPIO_PinPuPDcontrol = (0);
  gpiox.GPIO_PinConfig.GPIO_PinOPType = (0);
@@ -4207,10 +4217,22 @@ int main(void)
 
  spi_config();
  spi_pin_config();
- SPI_SendData(((SPI_RegDef_t*) (0x40000000U + 0x3800)), (uint8_t*)name, sizeof(name));
  user_button();
 
- while(1);
+ SPI_SSOEConfig(((SPI_RegDef_t*) (0x40000000U + 0x3800)), 1);
+ while(1)
+ {
+  while(!(((GPIO_RegDef_t*) (0x40020000U + 0x0000))->IDR & (1 << (0))))
+  {
+
+  }
+
+  delay();
+
+  SPI_SendData(((SPI_RegDef_t*) (0x40000000U + 0x3800)), (uint8_t*)name, sizeof(name));
+
+
+ }
 
 
 }

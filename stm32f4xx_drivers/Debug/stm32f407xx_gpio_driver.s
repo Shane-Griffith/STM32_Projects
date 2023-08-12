@@ -693,108 +693,108 @@ GPIO_Init:
 	.loc 1 176 3
 	cmp	r3, #2
 	bne	.L47
-	.loc 1 177 32
+	.loc 1 178 32
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #4]	@ zero_extendqisi2
-	.loc 1 177 4
+	.loc 1 178 4
 	cmp	r3, #7
 	bls	.L48
-	.loc 1 178 14
+	.loc 1 180 14
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 178 29
+	.loc 1 180 29
 	ldr	r2, [r3, #36]
-	.loc 1 178 60
+	.loc 1 180 60
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #9]	@ zero_extendqisi2
 	mov	r1, r3
-	.loc 1 179 38
+	.loc 1 181 38
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #4]	@ zero_extendqisi2
-	.loc 1 179 54
+	.loc 1 181 54
 	and	r3, r3, #7
-	.loc 1 179 8
+	.loc 1 181 8
 	lsls	r3, r3, #2
-	.loc 1 178 80
+	.loc 1 180 80
 	lsl	r3, r1, r3
 	mov	r1, r3
-	.loc 1 178 14
+	.loc 1 180 14
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 178 29
+	.loc 1 180 29
 	orrs	r2, r2, r1
 	str	r2, [r3, #36]
 	b	.L47
 .L48:
-	.loc 1 182 14
+	.loc 1 185 14
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 182 29
+	.loc 1 185 29
 	ldr	r2, [r3, #32]
-	.loc 1 182 60
+	.loc 1 185 60
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #9]	@ zero_extendqisi2
 	mov	r1, r3
-	.loc 1 183 39
+	.loc 1 186 39
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #4]	@ zero_extendqisi2
-	.loc 1 183 10
+	.loc 1 186 10
 	lsls	r3, r3, #2
-	.loc 1 182 80
+	.loc 1 185 80
 	lsl	r3, r1, r3
 	mov	r1, r3
-	.loc 1 182 14
+	.loc 1 185 14
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 182 29
+	.loc 1 185 29
 	orrs	r2, r2, r1
 	str	r2, [r3, #32]
 .L47:
-	.loc 1 192 13
+	.loc 1 190 13
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 192 30
+	.loc 1 190 30
 	ldr	r2, [r3, #4]
-	.loc 1 192 61
+	.loc 1 190 61
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #6]	@ zero_extendqisi2
 	mov	r1, r3
-	.loc 1 192 108
+	.loc 1 190 108
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #4]	@ zero_extendqisi2
-	.loc 1 192 77
+	.loc 1 190 77
 	lsl	r3, r1, r3
 	mov	r1, r3
-	.loc 1 192 13
+	.loc 1 190 13
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 192 30
+	.loc 1 190 30
 	orrs	r2, r2, r1
 	str	r2, [r3, #4]
-	.loc 1 196 13
+	.loc 1 193 13
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 196 29
+	.loc 1 193 29
 	ldr	r2, [r3, #12]
-	.loc 1 196 60
+	.loc 1 193 60
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #8]	@ zero_extendqisi2
 	mov	r1, r3
-	.loc 1 197 35
+	.loc 1 194 35
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #4]	@ zero_extendqisi2
-	.loc 1 197 6
+	.loc 1 194 6
 	lsls	r3, r3, #1
-	.loc 1 196 82
+	.loc 1 193 82
 	lsl	r3, r1, r3
 	mov	r1, r3
-	.loc 1 196 13
+	.loc 1 193 13
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 196 29
+	.loc 1 193 29
 	orrs	r2, r2, r1
 	str	r2, [r3, #12]
-	.loc 1 201 1
+	.loc 1 198 1
 	nop
 	adds	r7, r7, #16
 	.cfi_def_cfa_offset 8
@@ -829,7 +829,7 @@ GPIO_Init:
 	.type	GPIO_DeInit, %function
 GPIO_DeInit:
 .LFB2:
-	.loc 1 203 1
+	.loc 1 200 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -842,165 +842,165 @@ GPIO_DeInit:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 205 4
+	.loc 1 202 4
 	ldr	r3, [r7, #4]
 	ldr	r2, .L61
 	cmp	r3, r2
 	bne	.L52
-	.loc 1 206 59
+	.loc 1 203 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #1
 	str	r3, [r2, #16]
-	.loc 1 206 125
+	.loc 1 203 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	bic	r3, r3, #1
 	str	r3, [r2, #16]
-	.loc 1 224 1
+	.loc 1 221 1
 	b	.L60
 .L52:
-	.loc 1 207 11
+	.loc 1 204 11
 	ldr	r3, [r7, #4]
 	ldr	r2, .L61+8
 	cmp	r3, r2
 	bne	.L54
-	.loc 1 208 59
+	.loc 1 205 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #2
 	str	r3, [r2, #16]
-	.loc 1 208 125
+	.loc 1 205 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	bic	r3, r3, #2
 	str	r3, [r2, #16]
-	.loc 1 224 1
+	.loc 1 221 1
 	b	.L60
 .L54:
-	.loc 1 209 11
+	.loc 1 206 11
 	ldr	r3, [r7, #4]
 	ldr	r2, .L61+12
 	cmp	r3, r2
 	bne	.L55
-	.loc 1 210 59
+	.loc 1 207 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #4
 	str	r3, [r2, #16]
-	.loc 1 210 125
+	.loc 1 207 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	bic	r3, r3, #4
 	str	r3, [r2, #16]
-	.loc 1 224 1
+	.loc 1 221 1
 	b	.L60
 .L55:
-	.loc 1 211 11
+	.loc 1 208 11
 	ldr	r3, [r7, #4]
 	ldr	r2, .L61+16
 	cmp	r3, r2
 	bne	.L56
-	.loc 1 212 59
+	.loc 1 209 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #8
 	str	r3, [r2, #16]
-	.loc 1 212 125
+	.loc 1 209 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	bic	r3, r3, #8
 	str	r3, [r2, #16]
-	.loc 1 224 1
+	.loc 1 221 1
 	b	.L60
 .L56:
-	.loc 1 213 11
+	.loc 1 210 11
 	ldr	r3, [r7, #4]
 	ldr	r2, .L61+20
 	cmp	r3, r2
 	bne	.L57
-	.loc 1 214 59
+	.loc 1 211 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #16
 	str	r3, [r2, #16]
-	.loc 1 214 125
+	.loc 1 211 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	bic	r3, r3, #16
 	str	r3, [r2, #16]
-	.loc 1 224 1
+	.loc 1 221 1
 	b	.L60
 .L57:
-	.loc 1 215 11
+	.loc 1 212 11
 	ldr	r3, [r7, #4]
 	ldr	r2, .L61+24
 	cmp	r3, r2
 	bne	.L58
-	.loc 1 216 59
+	.loc 1 213 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #32
 	str	r3, [r2, #16]
-	.loc 1 216 125
+	.loc 1 213 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	bic	r3, r3, #32
 	str	r3, [r2, #16]
-	.loc 1 224 1
+	.loc 1 221 1
 	b	.L60
 .L58:
-	.loc 1 217 11
+	.loc 1 214 11
 	ldr	r3, [r7, #4]
 	ldr	r2, .L61+28
 	cmp	r3, r2
 	bne	.L59
-	.loc 1 218 59
+	.loc 1 215 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #64
 	str	r3, [r2, #16]
-	.loc 1 218 125
+	.loc 1 215 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	bic	r3, r3, #64
 	str	r3, [r2, #16]
-	.loc 1 224 1
+	.loc 1 221 1
 	b	.L60
 .L59:
-	.loc 1 219 11
+	.loc 1 216 11
 	ldr	r3, [r7, #4]
 	ldr	r2, .L61+32
 	cmp	r3, r2
 	bne	.L60
-	.loc 1 220 59
+	.loc 1 217 59
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	orr	r3, r3, #128
 	str	r3, [r2, #16]
-	.loc 1 220 125
+	.loc 1 217 125
 	ldr	r3, .L61+4
 	ldr	r3, [r3, #16]
 	ldr	r2, .L61+4
 	bic	r3, r3, #128
 	str	r3, [r2, #16]
 .L60:
-	.loc 1 224 1
+	.loc 1 221 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1035,7 +1035,7 @@ GPIO_DeInit:
 	.type	GPIO_ReadFromInputPin, %function
 GPIO_ReadFromInputPin:
 .LFB3:
-	.loc 1 229 1
+	.loc 1 226 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1050,20 +1050,20 @@ GPIO_ReadFromInputPin:
 	str	r0, [r7, #4]
 	mov	r3, r1
 	strb	r3, [r7, #3]
-	.loc 1 231 23
+	.loc 1 228 23
 	ldr	r3, [r7, #4]
 	ldr	r2, [r3, #16]
-	.loc 1 231 29
+	.loc 1 228 29
 	ldrb	r3, [r7, #3]	@ zero_extendqisi2
 	lsr	r3, r2, r3
-	.loc 1 231 43
+	.loc 1 228 43
 	uxtb	r3, r3
-	.loc 1 231 9
+	.loc 1 228 9
 	and	r3, r3, #1
 	strb	r3, [r7, #15]
-	.loc 1 234 8
+	.loc 1 231 8
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
-	.loc 1 235 1
+	.loc 1 232 1
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -1086,7 +1086,7 @@ GPIO_ReadFromInputPin:
 	.type	GPIO_ReadFromInputPort, %function
 GPIO_ReadFromInputPort:
 .LFB4:
-	.loc 1 239 1
+	.loc 1 236 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1099,14 +1099,14 @@ GPIO_ReadFromInputPort:
 	add	r7, sp, #0
 	.cfi_def_cfa_register 7
 	str	r0, [r7, #4]
-	.loc 1 240 25
+	.loc 1 237 25
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #16]
-	.loc 1 240 11
+	.loc 1 237 11
 	strh	r3, [r7, #14]	@ movhi
-	.loc 1 242 9
+	.loc 1 239 9
 	ldrh	r3, [r7, #14]
-	.loc 1 243 1
+	.loc 1 240 1
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -1129,7 +1129,7 @@ GPIO_ReadFromInputPort:
 	.type	GPIO_WriteToOutputPin, %function
 GPIO_WriteToOutputPin:
 .LFB5:
-	.loc 1 247 1
+	.loc 1 244 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1146,18 +1146,18 @@ GPIO_WriteToOutputPin:
 	strb	r3, [r7, #3]
 	mov	r3, r2
 	strb	r3, [r7, #2]
-	.loc 1 248 14
+	.loc 1 245 14
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #20]
-	.loc 1 248 24
+	.loc 1 245 24
 	ldrb	r1, [r7, #2]	@ zero_extendqisi2
 	ldrb	r2, [r7, #3]	@ zero_extendqisi2
 	lsl	r2, r1, r2
-	.loc 1 248 14
+	.loc 1 245 14
 	orrs	r2, r2, r3
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #20]
-	.loc 1 249 1
+	.loc 1 246 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1180,7 +1180,7 @@ GPIO_WriteToOutputPin:
 	.type	GPIO_WriteToOutputPort, %function
 GPIO_WriteToOutputPort:
 .LFB6:
-	.loc 1 253 1
+	.loc 1 250 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1195,11 +1195,11 @@ GPIO_WriteToOutputPort:
 	str	r0, [r7, #4]
 	mov	r3, r1
 	strh	r3, [r7, #2]	@ movhi
-	.loc 1 254 14
+	.loc 1 251 14
 	ldrh	r2, [r7, #2]
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #20]
-	.loc 1 255 1
+	.loc 1 252 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1222,7 +1222,7 @@ GPIO_WriteToOutputPort:
 	.type	GPIO_ToggleOutputPin, %function
 GPIO_ToggleOutputPin:
 .LFB7:
-	.loc 1 259 1
+	.loc 1 256 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1237,18 +1237,18 @@ GPIO_ToggleOutputPin:
 	str	r0, [r7, #4]
 	mov	r3, r1
 	strb	r3, [r7, #3]
-	.loc 1 260 14
+	.loc 1 257 14
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #20]
-	.loc 1 260 20
+	.loc 1 257 20
 	ldrb	r2, [r7, #3]	@ zero_extendqisi2
 	movs	r1, #1
 	lsl	r2, r1, r2
-	.loc 1 260 14
+	.loc 1 257 14
 	eors	r2, r2, r3
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #20]
-	.loc 1 261 1
+	.loc 1 258 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1271,7 +1271,7 @@ GPIO_ToggleOutputPin:
 	.type	GPIO_IRQInterruptConfig, %function
 GPIO_IRQInterruptConfig:
 .LFB8:
-	.loc 1 267 1
+	.loc 1 264 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1288,51 +1288,51 @@ GPIO_IRQInterruptConfig:
 	strb	r3, [r7, #7]
 	mov	r3, r2
 	strb	r3, [r7, #6]
-	.loc 1 270 10
+	.loc 1 267 10
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	lsrs	r3, r3, #5
 	strb	r3, [r7, #15]
-	.loc 1 271 10
+	.loc 1 268 10
 	ldrb	r3, [r7, #7]
 	and	r3, r3, #31
 	strb	r3, [r7, #14]
-	.loc 1 273 4
+	.loc 1 270 4
 	ldrb	r3, [r7, #6]	@ zero_extendqisi2
 	cmp	r3, #1
 	bne	.L71
-	.loc 1 275 56
+	.loc 1 272 56
 	ldr	r2, .L74
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	ldr	r2, [r2, r3, lsl #2]
-	.loc 1 275 64
+	.loc 1 272 64
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2
 	movs	r1, #1
 	lsl	r3, r1, r3
 	mov	r0, r3
-	.loc 1 275 56
+	.loc 1 272 56
 	ldr	r1, .L74
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	orrs	r2, r2, r0
 	str	r2, [r1, r3, lsl #2]
-	.loc 1 281 1
+	.loc 1 278 1
 	b	.L73
 .L71:
-	.loc 1 279 55
+	.loc 1 276 55
 	ldr	r2, .L74+4
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	ldr	r2, [r2, r3, lsl #2]
-	.loc 1 279 63
+	.loc 1 276 63
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2
 	movs	r1, #1
 	lsl	r3, r1, r3
 	mov	r0, r3
-	.loc 1 279 55
+	.loc 1 276 55
 	ldr	r1, .L74+4
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	orrs	r2, r2, r0
 	str	r2, [r1, r3, lsl #2]
 .L73:
-	.loc 1 281 1
+	.loc 1 278 1
 	nop
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -1360,7 +1360,7 @@ GPIO_IRQInterruptConfig:
 	.type	GPIO_IRQPriorityConfig, %function
 GPIO_IRQPriorityConfig:
 .LFB9:
-	.loc 1 284 1
+	.loc 1 281 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1377,31 +1377,31 @@ GPIO_IRQPriorityConfig:
 	strb	r3, [r7, #7]
 	mov	r3, r2
 	strb	r3, [r7, #6]
-	.loc 1 286 11
+	.loc 1 283 11
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	lsrs	r3, r3, #2
 	strb	r3, [r7, #15]
-	.loc 1 287 11
+	.loc 1 284 11
 	ldrb	r3, [r7, #7]
 	and	r3, r3, #3
 	uxtb	r3, r3
 	lsls	r3, r3, #3
 	strb	r3, [r7, #14]
-	.loc 1 288 57
+	.loc 1 285 57
 	ldr	r2, .L77
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	ldr	r2, [r2, r3, lsl #2]
-	.loc 1 288 71
+	.loc 1 285 71
 	ldrb	r1, [r7, #7]	@ zero_extendqisi2
 	ldrb	r3, [r7, #14]	@ zero_extendqisi2
 	lsl	r3, r1, r3
 	mov	r0, r3
-	.loc 1 288 57
+	.loc 1 285 57
 	ldr	r1, .L77
 	ldrb	r3, [r7, #15]	@ zero_extendqisi2
 	orrs	r2, r2, r0
 	str	r2, [r1, r3, lsl #2]
-	.loc 1 289 1
+	.loc 1 286 1
 	nop
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -1428,7 +1428,7 @@ GPIO_IRQPriorityConfig:
 	.type	GPIO_IRQHandler, %function
 GPIO_IRQHandler:
 .LFB10:
-	.loc 1 290 40
+	.loc 1 287 40
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -1442,13 +1442,13 @@ GPIO_IRQHandler:
 	.cfi_def_cfa_register 7
 	mov	r3, r0
 	strb	r3, [r7, #7]
-	.loc 1 291 48
+	.loc 1 288 48
 	ldr	r3, .L80
 	ldr	r3, [r3, #20]
 	ldr	r2, .L80
 	orr	r3, r3, #1
 	str	r3, [r2, #20]
-	.loc 1 292 1
+	.loc 1 289 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -1474,7 +1474,7 @@ GPIO_IRQHandler:
 	.file 5 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_GPIO_driver.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x854
+	.4byte	0x851
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -2198,7 +2198,7 @@ GPIO_IRQHandler:
 	.uleb128 0xf
 	.4byte	.LASF953
 	.byte	0x1
-	.2byte	0x122
+	.2byte	0x11f
 	.byte	0x6
 	.4byte	.LFB10
 	.4byte	.LFE10-.LFB10
@@ -2208,7 +2208,7 @@ GPIO_IRQHandler:
 	.uleb128 0x10
 	.4byte	.LASF955
 	.byte	0x1
-	.2byte	0x122
+	.2byte	0x11f
 	.byte	0x1e
 	.4byte	0x93
 	.uleb128 0x2
@@ -2218,7 +2218,7 @@ GPIO_IRQHandler:
 	.uleb128 0xf
 	.4byte	.LASF954
 	.byte	0x1
-	.2byte	0x11b
+	.2byte	0x118
 	.byte	0x6
 	.4byte	.LFB9
 	.4byte	.LFE9-.LFB9
@@ -2228,7 +2228,7 @@ GPIO_IRQHandler:
 	.uleb128 0x10
 	.4byte	.LASF956
 	.byte	0x1
-	.2byte	0x11b
+	.2byte	0x118
 	.byte	0x25
 	.4byte	0x93
 	.uleb128 0x2
@@ -2237,7 +2237,7 @@ GPIO_IRQHandler:
 	.uleb128 0x10
 	.4byte	.LASF957
 	.byte	0x1
-	.2byte	0x11b
+	.2byte	0x118
 	.byte	0x38
 	.4byte	0x93
 	.uleb128 0x2
@@ -2246,7 +2246,7 @@ GPIO_IRQHandler:
 	.uleb128 0x11
 	.4byte	.LASF958
 	.byte	0x1
-	.2byte	0x11e
+	.2byte	0x11b
 	.byte	0xb
 	.4byte	0x93
 	.uleb128 0x2
@@ -2255,7 +2255,7 @@ GPIO_IRQHandler:
 	.uleb128 0x11
 	.4byte	.LASF959
 	.byte	0x1
-	.2byte	0x11f
+	.2byte	0x11c
 	.byte	0xb
 	.4byte	0x93
 	.uleb128 0x2
@@ -2265,7 +2265,7 @@ GPIO_IRQHandler:
 	.uleb128 0xf
 	.4byte	.LASF960
 	.byte	0x1
-	.2byte	0x10a
+	.2byte	0x107
 	.byte	0x6
 	.4byte	.LFB8
 	.4byte	.LFE8-.LFB8
@@ -2275,7 +2275,7 @@ GPIO_IRQHandler:
 	.uleb128 0x10
 	.4byte	.LASF956
 	.byte	0x1
-	.2byte	0x10a
+	.2byte	0x107
 	.byte	0x26
 	.4byte	0x93
 	.uleb128 0x2
@@ -2284,7 +2284,7 @@ GPIO_IRQHandler:
 	.uleb128 0x10
 	.4byte	.LASF961
 	.byte	0x1
-	.2byte	0x10a
+	.2byte	0x107
 	.byte	0x39
 	.4byte	0x93
 	.uleb128 0x2
@@ -2293,7 +2293,7 @@ GPIO_IRQHandler:
 	.uleb128 0x11
 	.4byte	.LASF962
 	.byte	0x1
-	.2byte	0x10e
+	.2byte	0x10b
 	.byte	0xa
 	.4byte	0x93
 	.uleb128 0x2
@@ -2302,36 +2302,36 @@ GPIO_IRQHandler:
 	.uleb128 0x11
 	.4byte	.LASF963
 	.byte	0x1
-	.2byte	0x10f
+	.2byte	0x10c
 	.byte	0xa
 	.4byte	0x93
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -10
 	.byte	0
-	.uleb128 0xf
+	.uleb128 0x12
 	.4byte	.LASF964
 	.byte	0x1
-	.2byte	0x102
+	.byte	0xff
 	.byte	0x6
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6a3
-	.uleb128 0x10
+	.4byte	0x6a0
+	.uleb128 0x13
 	.4byte	.LASF950
 	.byte	0x1
-	.2byte	0x102
+	.byte	0xff
 	.byte	0x2a
 	.4byte	0x581
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
-	.uleb128 0x10
+	.uleb128 0x13
 	.4byte	.LASF955
 	.byte	0x1
-	.2byte	0x102
+	.byte	0xff
 	.byte	0x3a
 	.4byte	0x93
 	.uleb128 0x2
@@ -2341,17 +2341,17 @@ GPIO_IRQHandler:
 	.uleb128 0x12
 	.4byte	.LASF965
 	.byte	0x1
-	.byte	0xfc
+	.byte	0xf9
 	.byte	0x6
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x6d8
+	.4byte	0x6d5
 	.uleb128 0x13
 	.4byte	.LASF950
 	.byte	0x1
-	.byte	0xfc
+	.byte	0xf9
 	.byte	0x2c
 	.4byte	0x581
 	.uleb128 0x2
@@ -2360,7 +2360,7 @@ GPIO_IRQHandler:
 	.uleb128 0x13
 	.4byte	.LASF966
 	.byte	0x1
-	.byte	0xfc
+	.byte	0xf9
 	.byte	0x3d
 	.4byte	0x9f
 	.uleb128 0x2
@@ -2370,17 +2370,17 @@ GPIO_IRQHandler:
 	.uleb128 0x12
 	.4byte	.LASF967
 	.byte	0x1
-	.byte	0xf6
+	.byte	0xf3
 	.byte	0x6
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x71c
+	.4byte	0x719
 	.uleb128 0x13
 	.4byte	.LASF950
 	.byte	0x1
-	.byte	0xf6
+	.byte	0xf3
 	.byte	0x2b
 	.4byte	0x581
 	.uleb128 0x2
@@ -2389,7 +2389,7 @@ GPIO_IRQHandler:
 	.uleb128 0x13
 	.4byte	.LASF955
 	.byte	0x1
-	.byte	0xf6
+	.byte	0xf3
 	.byte	0x3a
 	.4byte	0x93
 	.uleb128 0x2
@@ -2398,7 +2398,7 @@ GPIO_IRQHandler:
 	.uleb128 0x13
 	.4byte	.LASF966
 	.byte	0x1
-	.byte	0xf6
+	.byte	0xf3
 	.byte	0x4d
 	.4byte	0x93
 	.uleb128 0x2
@@ -2408,18 +2408,18 @@ GPIO_IRQHandler:
 	.uleb128 0x14
 	.4byte	.LASF969
 	.byte	0x1
-	.byte	0xee
+	.byte	0xeb
 	.byte	0xa
 	.4byte	0x9f
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x755
+	.4byte	0x752
 	.uleb128 0x13
 	.4byte	.LASF950
 	.byte	0x1
-	.byte	0xee
+	.byte	0xeb
 	.byte	0x30
 	.4byte	0x581
 	.uleb128 0x2
@@ -2428,7 +2428,7 @@ GPIO_IRQHandler:
 	.uleb128 0x15
 	.4byte	.LASF968
 	.byte	0x1
-	.byte	0xf0
+	.byte	0xed
 	.byte	0xb
 	.4byte	0x9f
 	.uleb128 0x2
@@ -2438,18 +2438,18 @@ GPIO_IRQHandler:
 	.uleb128 0x14
 	.4byte	.LASF970
 	.byte	0x1
-	.byte	0xe4
+	.byte	0xe1
 	.byte	0x9
 	.4byte	0x93
 	.4byte	.LFB3
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x79d
+	.4byte	0x79a
 	.uleb128 0x13
 	.4byte	.LASF950
 	.byte	0x1
-	.byte	0xe4
+	.byte	0xe1
 	.byte	0x2e
 	.4byte	0x581
 	.uleb128 0x2
@@ -2458,7 +2458,7 @@ GPIO_IRQHandler:
 	.uleb128 0x13
 	.4byte	.LASF955
 	.byte	0x1
-	.byte	0xe4
+	.byte	0xe1
 	.byte	0x3e
 	.4byte	0x93
 	.uleb128 0x2
@@ -2467,7 +2467,7 @@ GPIO_IRQHandler:
 	.uleb128 0x15
 	.4byte	.LASF968
 	.byte	0x1
-	.byte	0xe7
+	.byte	0xe4
 	.byte	0x9
 	.4byte	0x93
 	.uleb128 0x2
@@ -2477,17 +2477,17 @@ GPIO_IRQHandler:
 	.uleb128 0x12
 	.4byte	.LASF971
 	.byte	0x1
-	.byte	0xca
+	.byte	0xc7
 	.byte	0x6
 	.4byte	.LFB2
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x7c3
+	.4byte	0x7c0
 	.uleb128 0x13
 	.4byte	.LASF950
 	.byte	0x1
-	.byte	0xca
+	.byte	0xc7
 	.byte	0x21
 	.4byte	0x581
 	.uleb128 0x2
@@ -2503,13 +2503,13 @@ GPIO_IRQHandler:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x820
+	.4byte	0x81d
 	.uleb128 0x13
 	.4byte	.LASF973
 	.byte	0x1
 	.byte	0x76
 	.byte	0x1f
-	.4byte	0x820
+	.4byte	0x81d
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
@@ -4994,7 +4994,7 @@ GPIO_IRQHandler:
 	.uleb128 0x1c2
 	.4byte	.LASF600
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.stm32f4xx.h.16.c40319f881765d1e9de61ca17379df2d,comdat
+	.section	.debug_macro,"G",%progbits,wm4.stm32f4xx.h.16.868400a28c05fb524ecab19eab8f8d08,comdat
 .Ldebug_macro8:
 	.2byte	0x4
 	.byte	0
@@ -6600,6 +6600,8 @@ GPIO_IRQHandler:
 	.ascii	"__FLT32X_MAX_EXP__ 1024\000"
 .LASF684:
 	.ascii	"GPIOF_PCLK_EN (RCC->AHB1ENR |= (1 << 4))\000"
+.LASF755:
+	.ascii	"DELAY ((for(int i = 0; i < 500000; i++)))\000"
 .LASF120:
 	.ascii	"__UINT_LEAST32_MAX__ 0xffffffffUL\000"
 .LASF687:
@@ -6892,8 +6894,6 @@ GPIO_IRQHandler:
 	.ascii	"__ARM_NEON_FP\000"
 .LASF909:
 	.ascii	"APB2LPENR\000"
-.LASF755:
-	.ascii	"DELAY() (for(int i = 0; i < 250000; i++))\000"
 .LASF468:
 	.ascii	"__POSIX_VISIBLE 200809\000"
 .LASF823:
