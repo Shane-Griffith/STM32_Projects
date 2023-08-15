@@ -404,94 +404,107 @@ SPI_SendData:
 	str	r0, [r7, #12]
 	str	r1, [r7, #8]
 	str	r2, [r7, #4]
-	.loc 1 111 47
-	ldr	r3, .L30
-	ldr	r3, [r3, #64]
-	.loc 1 111 57
-	and	r3, r3, #16384
-	.loc 1 111 4
-	cmp	r3, #0
-	bne	.L29
-	.loc 1 113 3
+	.loc 1 111 2
 	movs	r1, #1
 	ldr	r0, [r7, #12]
-	bl	SPI_PeriClockControl
-.L29:
-	.loc 1 117 7
+	bl	spi_enable_spe
+	.loc 1 113 7
 	nop
-.L25:
-	.loc 1 117 9 discriminator 1
+.L24:
+	.loc 1 113 9 discriminator 1
 	movs	r2, #1
 	movs	r1, #2
 	ldr	r0, [r7, #12]
 	bl	get_reg_value
 	mov	r3, r0
-	.loc 1 117 8 discriminator 1
+	.loc 1 113 8 discriminator 1
 	eor	r3, r3, #1
 	uxtb	r3, r3
-	.loc 1 117 7 discriminator 1
+	.loc 1 113 7 discriminator 1
 	cmp	r3, #0
-	bne	.L25
-	.loc 1 121 7
-	b	.L26
-.L28:
-	.loc 1 125 11
+	bne	.L24
+	.loc 1 117 7
+	b	.L25
+.L27:
+	.loc 1 120 11
 	ldr	r3, [r7, #12]
 	ldr	r3, [r3]
-	.loc 1 125 21
+	.loc 1 120 21
 	and	r3, r3, #2048
-	.loc 1 125 5
+	.loc 1 120 5
 	cmp	r3, #0
-	beq	.L27
-	.loc 1 127 20
+	beq	.L26
+	.loc 1 122 20
 	ldr	r3, [r7, #8]
 	ldr	r2, [r3]
-	.loc 1 127 18
+	.loc 1 122 18
 	ldr	r3, [r7, #12]
 	str	r2, [r3, #12]
-	.loc 1 128 8
+	.loc 1 123 8
 	ldr	r3, [r7, #4]
 	subs	r3, r3, #2
 	str	r3, [r7, #4]
-	.loc 1 129 4
+	.loc 1 124 4
 	ldr	r3, [r7, #8]
 	adds	r3, r3, #1
 	str	r3, [r7, #8]
-	b	.L26
-.L27:
-	.loc 1 131 18
+	b	.L25
+.L26:
+	.loc 1 126 18
 	ldr	r3, [r7, #12]
 	ldr	r3, [r3]
-	.loc 1 131 28
+	.loc 1 126 28
 	and	r3, r3, #2048
-	.loc 1 131 10
+	.loc 1 126 10
 	cmp	r3, #0
-	bne	.L26
-	.loc 1 133 20
+	bne	.L25
+	.loc 1 128 20
 	ldr	r3, [r7, #8]
 	ldrb	r3, [r3]	@ zero_extendqisi2
 	mov	r2, r3
-	.loc 1 133 18
+	.loc 1 128 18
 	ldr	r3, [r7, #12]
 	str	r2, [r3, #12]
-	.loc 1 134 7
+	.loc 1 129 7
 	ldr	r3, [r7, #4]
 	subs	r3, r3, #1
 	str	r3, [r7, #4]
-	.loc 1 135 13
+	.loc 1 130 13
 	ldr	r3, [r7, #8]
 	adds	r3, r3, #1
 	str	r3, [r7, #8]
-.L26:
-	.loc 1 121 7
+.L25:
+	.loc 1 117 7
 	ldr	r3, [r7, #4]
 	cmp	r3, #0
-	bne	.L28
-	.loc 1 140 2
+	bne	.L27
+	.loc 1 134 7
+	nop
+.L28:
+	.loc 1 134 15 discriminator 1
+	ldr	r3, [r7, #12]
+	ldr	r3, [r3, #8]
+	.loc 1 134 24 discriminator 1
+	and	r3, r3, #2
+	.loc 1 134 7 discriminator 1
+	cmp	r3, #0
+	beq	.L28
+	.loc 1 139 7
+	nop
+.L29:
+	.loc 1 139 13 discriminator 1
+	ldr	r3, [r7, #12]
+	ldr	r3, [r3, #8]
+	.loc 1 139 22 discriminator 1
+	and	r3, r3, #128
+	.loc 1 139 7 discriminator 1
+	cmp	r3, #0
+	bne	.L29
+	.loc 1 144 2
 	movs	r1, #0
 	ldr	r0, [r7, #12]
-	bl	SPI_PeriClockControl
-	.loc 1 141 1
+	bl	spi_enable_spe
+	.loc 1 145 1
 	nop
 	adds	r7, r7, #16
 	.cfi_def_cfa_offset 8
@@ -499,10 +512,6 @@ SPI_SendData:
 	.cfi_def_cfa_register 13
 	@ sp needed
 	pop	{r7, pc}
-.L31:
-	.align	2
-.L30:
-	.word	1073887232
 	.cfi_endproc
 .LFE3:
 	.size	SPI_SendData, .-SPI_SendData
@@ -515,7 +524,7 @@ SPI_SendData:
 	.type	SPI_busConfig, %function
 SPI_busConfig:
 .LFB4:
-	.loc 1 145 1
+	.loc 1 149 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -530,28 +539,12 @@ SPI_busConfig:
 	str	r0, [r7, #4]
 	mov	r3, r1
 	strb	r3, [r7, #3]
-	.loc 1 146 28
+	.loc 1 150 28
 	ldr	r3, [r7, #4]
 	ldrb	r3, [r3, #4]	@ zero_extendqisi2
-	.loc 1 146 4
+	.loc 1 150 4
 	cmp	r3, #2
-	bne	.L33
-	.loc 1 148 14
-	ldr	r3, [r7, #4]
-	ldr	r2, [r3]
-	ldr	r3, [r7, #4]
-	ldr	r3, [r3]
-	.loc 1 148 31
-	ldr	r2, [r2]
-	str	r2, [r3]
-	.loc 1 150 14
-	ldr	r3, [r7, #4]
-	ldr	r2, [r3]
-	ldr	r3, [r7, #4]
-	ldr	r3, [r3]
-	.loc 1 150 31
-	ldr	r2, [r2]
-	str	r2, [r3]
+	bne	.L31
 	.loc 1 152 14
 	ldr	r3, [r7, #4]
 	ldr	r2, [r3]
@@ -560,41 +553,38 @@ SPI_busConfig:
 	.loc 1 152 31
 	ldr	r2, [r2]
 	str	r2, [r3]
-	.loc 1 167 1
-	b	.L36
-.L33:
-	.loc 1 155 33
-	ldr	r3, [r7, #4]
-	ldrb	r3, [r3, #4]	@ zero_extendqisi2
-	.loc 1 155 9
-	cmp	r3, #1
-	beq	.L35
-	.loc 1 155 86 discriminator 1
-	ldr	r3, [r7, #4]
-	ldrb	r3, [r3, #4]	@ zero_extendqisi2
-	.loc 1 155 60 discriminator 1
-	cmp	r3, #3
-	bne	.L36
-.L35:
-	.loc 1 157 14
-	ldr	r3, [r7, #4]
-	ldr	r3, [r3]
-	.loc 1 157 31
-	ldr	r2, [r3]
-	.loc 1 157 14
-	ldr	r3, [r7, #4]
-	ldr	r3, [r3]
-	.loc 1 157 31
-	orr	r2, r2, #32768
-	str	r2, [r3]
-	.loc 1 159 14
+	.loc 1 154 14
 	ldr	r3, [r7, #4]
 	ldr	r2, [r3]
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
-	.loc 1 159 31
+	.loc 1 154 31
 	ldr	r2, [r2]
 	str	r2, [r3]
+	.loc 1 156 14
+	ldr	r3, [r7, #4]
+	ldr	r2, [r3]
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3]
+	.loc 1 156 31
+	ldr	r2, [r2]
+	str	r2, [r3]
+	.loc 1 168 1
+	b	.L34
+.L31:
+	.loc 1 159 33
+	ldr	r3, [r7, #4]
+	ldrb	r3, [r3, #4]	@ zero_extendqisi2
+	.loc 1 159 9
+	cmp	r3, #1
+	beq	.L33
+	.loc 1 159 86 discriminator 1
+	ldr	r3, [r7, #4]
+	ldrb	r3, [r3, #4]	@ zero_extendqisi2
+	.loc 1 159 60 discriminator 1
+	cmp	r3, #3
+	bne	.L34
+.L33:
 	.loc 1 161 14
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
@@ -604,10 +594,29 @@ SPI_busConfig:
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
 	.loc 1 161 31
+	orr	r2, r2, #32768
+	str	r2, [r3]
+	.loc 1 163 14
+	ldr	r3, [r7, #4]
+	ldr	r2, [r3]
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3]
+	.loc 1 163 31
+	ldr	r2, [r2]
+	str	r2, [r3]
+	.loc 1 165 14
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3]
+	.loc 1 165 31
+	ldr	r2, [r3]
+	.loc 1 165 14
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3]
+	.loc 1 165 31
 	orr	r2, r2, #16384
 	str	r2, [r3]
-.L36:
-	.loc 1 167 1
+.L34:
+	.loc 1 168 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -630,7 +639,7 @@ SPI_busConfig:
 	.type	get_reg_value, %function
 get_reg_value:
 .LFB5:
-	.loc 1 170 1
+	.loc 1 171 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 16
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -646,38 +655,38 @@ get_reg_value:
 	str	r1, [r7, #8]
 	mov	r3, r2
 	strb	r3, [r7, #7]
-	.loc 1 172 4
+	.loc 1 173 4
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	cmp	r3, #8
-	bls	.L38
-	.loc 1 174 10
+	bls	.L36
+	.loc 1 175 10
 	movs	r3, #0
-	b	.L39
-.L38:
-	.loc 1 177 15
+	b	.L37
+.L36:
+	.loc 1 178 15
 	ldr	r3, [r7, #8]
 	lsls	r3, r3, #4
 	ldr	r2, [r7, #12]
 	add	r3, r3, r2
-	.loc 1 177 5
+	.loc 1 178 5
 	ldr	r3, [r3]
-	.loc 1 177 57
+	.loc 1 178 57
 	ldrb	r2, [r7, #7]	@ zero_extendqisi2
 	movs	r1, #1
 	lsl	r2, r1, r2
-	.loc 1 177 52
+	.loc 1 178 52
 	ands	r3, r3, r2
-	.loc 1 177 4
+	.loc 1 178 4
 	cmp	r3, #0
-	beq	.L40
-	.loc 1 179 9
+	beq	.L38
+	.loc 1 180 9
 	movs	r3, #1
-	b	.L39
-.L40:
-	.loc 1 183 9
+	b	.L37
+.L38:
+	.loc 1 184 9
 	movs	r3, #0
-.L39:
-	.loc 1 188 1
+.L37:
+	.loc 1 186 1
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -700,7 +709,7 @@ get_reg_value:
 	.type	SPI_SSOEConfig, %function
 SPI_SSOEConfig:
 .LFB6:
-	.loc 1 191 1
+	.loc 1 189 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -715,30 +724,26 @@ SPI_SSOEConfig:
 	str	r0, [r7, #4]
 	mov	r3, r1
 	strb	r3, [r7, #3]
-	.loc 1 192 4
+	.loc 1 190 4
 	ldrb	r3, [r7, #3]	@ zero_extendqisi2
-	cmp	r3, #1
-	bne	.L42
-	.loc 1 194 18
+	cmp	r3, #0
+	beq	.L40
+	.loc 1 192 18
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #4]
 	orr	r2, r3, #4
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #4]
-	.loc 1 202 1
-	b	.L44
-.L42:
-	.loc 1 197 10
-	ldrb	r3, [r7, #3]	@ zero_extendqisi2
-	cmp	r3, #0
-	bne	.L44
-	.loc 1 199 18
+	.loc 1 200 1
+	b	.L42
+.L40:
+	.loc 1 197 18
 	ldr	r3, [r7, #4]
 	ldr	r2, [r3, #4]
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #4]
-.L44:
-	.loc 1 202 1
+.L42:
+	.loc 1 200 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -752,6 +757,64 @@ SPI_SSOEConfig:
 	.cfi_endproc
 .LFE6:
 	.size	SPI_SSOEConfig, .-SPI_SSOEConfig
+	.section	.text.spi_enable_spe,"ax",%progbits
+	.align	1
+	.global	spi_enable_spe
+	.syntax unified
+	.thumb
+	.thumb_func
+	.type	spi_enable_spe, %function
+spi_enable_spe:
+.LFB7:
+	.loc 1 203 1
+	.cfi_startproc
+	@ args = 0, pretend = 0, frame = 8
+	@ frame_needed = 1, uses_anonymous_args = 0
+	@ link register save eliminated.
+	push	{r7}
+	.cfi_def_cfa_offset 4
+	.cfi_offset 7, -4
+	sub	sp, sp, #12
+	.cfi_def_cfa_offset 16
+	add	r7, sp, #0
+	.cfi_def_cfa_register 7
+	str	r0, [r7, #4]
+	mov	r3, r1
+	strb	r3, [r7, #3]
+	.loc 1 204 4
+	ldrb	r3, [r7, #3]	@ zero_extendqisi2
+	cmp	r3, #0
+	beq	.L44
+	.loc 1 206 17
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3]
+	orr	r2, r3, #64
+	ldr	r3, [r7, #4]
+	str	r2, [r3]
+	.loc 1 213 1
+	b	.L46
+.L44:
+	.loc 1 210 17
+	ldr	r3, [r7, #4]
+	ldr	r3, [r3]
+	bic	r2, r3, #64
+	ldr	r3, [r7, #4]
+	str	r2, [r3]
+.L46:
+	.loc 1 213 1
+	nop
+	adds	r7, r7, #12
+	.cfi_def_cfa_offset 4
+	mov	sp, r7
+	.cfi_def_cfa_register 13
+	@ sp needed
+	ldr	r7, [sp], #4
+	.cfi_restore 7
+	.cfi_def_cfa_offset 0
+	bx	lr
+	.cfi_endproc
+.LFE7:
+	.size	spi_enable_spe, .-spi_enable_spe
 	.text
 .Letext0:
 	.file 2 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\machine\\_default_types.h"
@@ -760,15 +823,15 @@ SPI_SSOEConfig:
 	.file 5 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x5bd
+	.4byte	0x5f2
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF965
-	.byte	0xc
-	.4byte	.LASF966
 	.4byte	.LASF967
+	.byte	0xc
+	.4byte	.LASF968
+	.4byte	.LASF969
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -1202,55 +1265,55 @@ SPI_SSOEConfig:
 	.uleb128 0xa
 	.byte	0x7
 	.byte	0x5
-	.byte	0x3a
+	.byte	0x39
 	.byte	0x9
 	.4byte	0x3d4
 	.uleb128 0xb
 	.4byte	.LASF940
 	.byte	0x5
-	.byte	0x3c
+	.byte	0x3b
 	.byte	0xa
 	.4byte	0x93
 	.byte	0
 	.uleb128 0xb
 	.4byte	.LASF941
 	.byte	0x5
-	.byte	0x3d
+	.byte	0x3c
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x1
 	.uleb128 0xb
 	.4byte	.LASF942
 	.byte	0x5
-	.byte	0x3e
+	.byte	0x3d
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x2
 	.uleb128 0xb
 	.4byte	.LASF943
 	.byte	0x5
-	.byte	0x3f
+	.byte	0x3e
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x3
 	.uleb128 0xb
 	.4byte	.LASF944
 	.byte	0x5
-	.byte	0x40
+	.byte	0x3f
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x4
 	.uleb128 0xb
 	.4byte	.LASF945
 	.byte	0x5
-	.byte	0x41
+	.byte	0x40
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x5
 	.uleb128 0xb
 	.4byte	.LASF946
 	.byte	0x5
-	.byte	0x42
+	.byte	0x41
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x6
@@ -1258,26 +1321,26 @@ SPI_SSOEConfig:
 	.uleb128 0x3
 	.4byte	.LASF947
 	.byte	0x5
-	.byte	0x44
+	.byte	0x43
 	.byte	0x2
 	.4byte	0x36f
 	.uleb128 0xa
 	.byte	0xc
 	.byte	0x5
-	.byte	0x47
+	.byte	0x45
 	.byte	0x9
 	.4byte	0x404
 	.uleb128 0xb
 	.4byte	.LASF948
 	.byte	0x5
-	.byte	0x49
+	.byte	0x47
 	.byte	0x10
 	.4byte	0x404
 	.byte	0
 	.uleb128 0xb
 	.4byte	.LASF949
 	.byte	0x5
-	.byte	0x4a
+	.byte	0x48
 	.byte	0xf
 	.4byte	0x3d4
 	.byte	0x4
@@ -1288,107 +1351,136 @@ SPI_SSOEConfig:
 	.uleb128 0x3
 	.4byte	.LASF950
 	.byte	0x5
-	.byte	0x4d
+	.byte	0x4b
 	.byte	0x2
 	.4byte	0x3e0
 	.uleb128 0xd
-	.4byte	.LASF956
+	.4byte	.LASF954
 	.byte	0x1
-	.byte	0xbe
+	.byte	0xca
 	.byte	0x6
-	.4byte	.LFB6
-	.4byte	.LFE6-.LFB6
+	.4byte	.LFB7
+	.4byte	.LFE7-.LFB7
 	.uleb128 0x1
 	.byte	0x9c
 	.4byte	0x44b
 	.uleb128 0xe
-	.4byte	.LASF948
+	.4byte	.LASF951
 	.byte	0x1
-	.byte	0xbe
+	.byte	0xca
 	.byte	0x23
 	.4byte	0x404
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
-	.4byte	.LASF951
+	.4byte	.LASF952
 	.byte	0x1
-	.byte	0xbe
-	.byte	0x32
-	.4byte	0x93
+	.byte	0xca
+	.byte	0x2e
+	.4byte	0x44b
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -13
+	.byte	0
+	.uleb128 0x2
+	.byte	0x1
+	.byte	0x2
+	.4byte	.LASF953
+	.uleb128 0xd
+	.4byte	.LASF955
+	.byte	0x1
+	.byte	0xbc
+	.byte	0x6
+	.4byte	.LFB6
+	.4byte	.LFE6-.LFB6
+	.uleb128 0x1
+	.byte	0x9c
+	.4byte	0x487
+	.uleb128 0xe
+	.4byte	.LASF948
+	.byte	0x1
+	.byte	0xbc
+	.byte	0x23
+	.4byte	0x404
+	.uleb128 0x2
+	.byte	0x91
+	.sleb128 -12
+	.uleb128 0xe
+	.4byte	.LASF952
+	.byte	0x1
+	.byte	0xbc
+	.byte	0x2e
+	.4byte	0x44b
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -13
 	.byte	0
 	.uleb128 0xf
-	.4byte	.LASF968
+	.4byte	.LASF970
 	.byte	0x1
-	.byte	0xa9
+	.byte	0xaa
 	.byte	0x5
-	.4byte	0x493
+	.4byte	0x44b
 	.4byte	.LFB5
 	.4byte	.LFE5-.LFB5
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x493
+	.4byte	0x4cf
 	.uleb128 0xe
-	.4byte	.LASF952
+	.4byte	.LASF956
 	.byte	0x1
-	.byte	0xa9
+	.byte	0xaa
 	.byte	0x1d
-	.4byte	0x49a
+	.4byte	0x4cf
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
-	.4byte	.LASF953
+	.4byte	.LASF957
 	.byte	0x1
-	.byte	0xa9
+	.byte	0xaa
 	.byte	0x2f
 	.4byte	0xab
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
 	.uleb128 0xe
-	.4byte	.LASF954
+	.4byte	.LASF958
 	.byte	0x1
-	.byte	0xa9
+	.byte	0xaa
 	.byte	0x45
 	.4byte	0x93
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -17
 	.byte	0
-	.uleb128 0x2
-	.byte	0x1
-	.byte	0x2
-	.4byte	.LASF955
 	.uleb128 0xc
 	.byte	0x4
 	.4byte	0xab
 	.uleb128 0xd
-	.4byte	.LASF957
+	.4byte	.LASF959
 	.byte	0x1
-	.byte	0x90
+	.byte	0x94
 	.byte	0x6
 	.4byte	.LFB4
 	.4byte	.LFE4-.LFB4
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x4d5
+	.4byte	0x50a
 	.uleb128 0xe
-	.4byte	.LASF958
+	.4byte	.LASF960
 	.byte	0x1
-	.byte	0x90
+	.byte	0x94
 	.byte	0x22
-	.4byte	0x4d5
+	.4byte	0x50a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
-	.4byte	.LASF959
+	.4byte	.LASF961
 	.byte	0x1
-	.byte	0x90
+	.byte	0x94
 	.byte	0x37
 	.4byte	0x93
 	.uleb128 0x2
@@ -1399,7 +1491,7 @@ SPI_SSOEConfig:
 	.byte	0x4
 	.4byte	0x40a
 	.uleb128 0x10
-	.4byte	.LASF960
+	.4byte	.LASF962
 	.byte	0x1
 	.byte	0x6d
 	.byte	0x6
@@ -1407,7 +1499,7 @@ SPI_SSOEConfig:
 	.4byte	.LFE3-.LFB3
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x51f
+	.4byte	0x554
 	.uleb128 0xe
 	.4byte	.LASF948
 	.byte	0x1
@@ -1418,11 +1510,11 @@ SPI_SSOEConfig:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
-	.4byte	.LASF961
+	.4byte	.LASF963
 	.byte	0x1
 	.byte	0x6d
 	.byte	0x31
-	.4byte	0x51f
+	.4byte	0x554
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -16
@@ -1440,7 +1532,7 @@ SPI_SSOEConfig:
 	.byte	0x4
 	.4byte	0x93
 	.uleb128 0xd
-	.4byte	.LASF962
+	.4byte	.LASF964
 	.byte	0x1
 	.byte	0x56
 	.byte	0x6
@@ -1448,7 +1540,7 @@ SPI_SSOEConfig:
 	.4byte	.LFE2-.LFB2
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x54b
+	.4byte	0x580
 	.uleb128 0xe
 	.4byte	.LASF948
 	.byte	0x1
@@ -1460,7 +1552,7 @@ SPI_SSOEConfig:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x10
-	.4byte	.LASF963
+	.4byte	.LASF965
 	.byte	0x1
 	.byte	0x3c
 	.byte	0x6
@@ -1468,18 +1560,18 @@ SPI_SSOEConfig:
 	.4byte	.LFE1-.LFB1
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x58f
+	.4byte	0x5c4
 	.uleb128 0xe
-	.4byte	.LASF958
+	.4byte	.LASF960
 	.byte	0x1
 	.byte	0x3c
 	.byte	0x1d
-	.4byte	0x4d5
+	.4byte	0x50a
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -20
 	.uleb128 0xe
-	.4byte	.LASF959
+	.4byte	.LASF961
 	.byte	0x1
 	.byte	0x3c
 	.byte	0x32
@@ -1488,7 +1580,7 @@ SPI_SSOEConfig:
 	.byte	0x91
 	.sleb128 -21
 	.uleb128 0x12
-	.4byte	.LASF969
+	.4byte	.LASF971
 	.byte	0x1
 	.byte	0x40
 	.byte	0xb
@@ -1498,7 +1590,7 @@ SPI_SSOEConfig:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x13
-	.4byte	.LASF970
+	.4byte	.LASF972
 	.byte	0x1
 	.byte	0x18
 	.byte	0x6
@@ -1516,7 +1608,7 @@ SPI_SSOEConfig:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xe
-	.4byte	.LASF964
+	.4byte	.LASF966
 	.byte	0x1
 	.byte	0x18
 	.byte	0x38
@@ -1859,7 +1951,7 @@ SPI_SSOEConfig:
 	.byte	0
 	.byte	0
 	.section	.debug_aranges,"",%progbits
-	.4byte	0x4c
+	.4byte	0x54
 	.2byte	0x2
 	.4byte	.Ldebug_info0
 	.byte	0x4
@@ -1880,6 +1972,8 @@ SPI_SSOEConfig:
 	.4byte	.LFE5-.LFB5
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
+	.4byte	.LFB7
+	.4byte	.LFE7-.LFB7
 	.4byte	0
 	.4byte	0
 	.section	.debug_ranges,"",%progbits
@@ -1898,6 +1992,8 @@ SPI_SSOEConfig:
 	.4byte	.LFE5
 	.4byte	.LFB6
 	.4byte	.LFE6
+	.4byte	.LFB7
+	.4byte	.LFE7
 	.4byte	0
 	.4byte	0
 	.section	.debug_macro,"",%progbits
@@ -3907,7 +4003,7 @@ SPI_SSOEConfig:
 	.uleb128 0x34
 	.4byte	.LASF606
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.stm32f4xx.h.16.c40319f881765d1e9de61ca17379df2d,comdat
+	.section	.debug_macro,"G",%progbits,wm4.stm32f4xx.h.16.868400a28c05fb524ecab19eab8f8d08,comdat
 .Ldebug_macro9:
 	.2byte	0x4
 	.byte	0
@@ -4747,7 +4843,7 @@ SPI_SSOEConfig:
 	.ascii	"RCC ((RCC_RegDef_t*) RCC_BASEADDR)\000"
 .LASF221:
 	.ascii	"__FLT64_HAS_INFINITY__ 1\000"
-.LASF962:
+.LASF964:
 	.ascii	"SPI_DeInit\000"
 .LASF781:
 	.ascii	"SPI_CR2_TXEIE 7\000"
@@ -4839,7 +4935,7 @@ SPI_SSOEConfig:
 	.ascii	"__FLT64_MAX__ 1.7976931348623157e+308F64\000"
 .LASF709:
 	.ascii	"GPIOC_PCLK_DI (RCC->AHB1ENR &= ~(1 << 2))\000"
-.LASF961:
+.LASF963:
 	.ascii	"pTxbuffer\000"
 .LASF502:
 	.ascii	"__INT8 \"hh\"\000"
@@ -4855,8 +4951,6 @@ SPI_SSOEConfig:
 	.ascii	"__ULLFRACT_FBIT__ 64\000"
 .LASF40:
 	.ascii	"__SIG_ATOMIC_TYPE__ int\000"
-.LASF789:
-	.ascii	"SPI_SR_BSY 7\000"
 .LASF700:
 	.ascii	"SPI4_PCLK_EN (RCC->APB2ENR |= (1 << 13))\000"
 .LASF60:
@@ -5084,7 +5178,7 @@ SPI_SSOEConfig:
 	.ascii	"__FLT32X_MIN_EXP__ (-1021)\000"
 .LASF612:
 	.ascii	"ROM 0x1FFF0000U\000"
-.LASF957:
+.LASF959:
 	.ascii	"SPI_busConfig\000"
 .LASF913:
 	.ascii	"AHB1LPENR\000"
@@ -5210,9 +5304,9 @@ SPI_SSOEConfig:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
 .LASF944:
 	.ascii	"SPI_CPOL\000"
-.LASF955:
+.LASF953:
 	.ascii	"_Bool\000"
-.LASF968:
+.LASF970:
 	.ascii	"get_reg_value\000"
 .LASF620:
 	.ascii	"GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)\000"
@@ -5250,7 +5344,7 @@ SPI_SSOEConfig:
 	.ascii	"USART2_PCLK_DI (RCC->APB1ENR &= ~(1 << 17))\000"
 .LASF64:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
-.LASF966:
+.LASF968:
 	.ascii	"../Drivers/Src/stm32f407xx_SPI_driver.c\000"
 .LASF802:
 	.ascii	"GPIO_MODE_OUPUT (1)\000"
@@ -5280,7 +5374,7 @@ SPI_SSOEConfig:
 	.ascii	"__vo volatile\000"
 .LASF245:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
-.LASF960:
+.LASF962:
 	.ascii	"SPI_SendData\000"
 .LASF422:
 	.ascii	"__ARM_NEON\000"
@@ -5302,8 +5396,6 @@ SPI_SSOEConfig:
 	.ascii	"ENABLE_GREEN_LED (GPIOD->ODR |= (1 << 12))\000"
 .LASF619:
 	.ascii	"AHB3PERIPHERAL_BASEADDR 0xA0000000U\000"
-.LASF951:
-	.ascii	"en_or_di\000"
 .LASF916:
 	.ascii	"RESERVED7\000"
 .LASF578:
@@ -5384,9 +5476,8 @@ SPI_SSOEConfig:
 	.ascii	"__LDBL_HAS_INFINITY__ 1\000"
 .LASF745:
 	.ascii	"IRQ_NO_EXTI15_10 (40)\000"
-.LASF733:
-	.ascii	"GPIOD_RESET() do{ (RCC->AHB1RSTR |= (1 << 3)); (RCC"
-	.ascii	"->AHB1RSTR &= ~(1 << 3)); } while(0)\000"
+.LASF789:
+	.ascii	"SPI_SR_BSY 7\000"
 .LASF344:
 	.ascii	"__TA_FBIT__ 63\000"
 .LASF664:
@@ -5405,7 +5496,7 @@ SPI_SSOEConfig:
 	.ascii	"bool _Bool\000"
 .LASF329:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF967:
+.LASF969:
 	.ascii	"D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx"
 	.ascii	"_drivers/Debug\000"
 .LASF149:
@@ -5477,7 +5568,7 @@ SPI_SSOEConfig:
 	.ascii	"SPI_CR2_RXNEIE 6\000"
 .LASF104:
 	.ascii	"__INT_LEAST8_MAX__ 0x7f\000"
-.LASF953:
+.LASF957:
 	.ascii	"spi_register\000"
 .LASF380:
 	.ascii	"__ARM_FEATURE_QBIT 1\000"
@@ -5499,6 +5590,8 @@ SPI_SSOEConfig:
 	.ascii	"__FLT32X_MAX_EXP__ 1024\000"
 .LASF689:
 	.ascii	"GPIOF_PCLK_EN (RCC->AHB1ENR |= (1 << 4))\000"
+.LASF760:
+	.ascii	"DELAY ((for(int i = 0; i < 500000; i++)))\000"
 .LASF120:
 	.ascii	"__UINT_LEAST32_MAX__ 0xffffffffUL\000"
 .LASF692:
@@ -5559,7 +5652,7 @@ SPI_SSOEConfig:
 	.ascii	"GPIO_OP_TYPE_PP (0)\000"
 .LASF142:
 	.ascii	"__FLT_EVAL_METHOD_TS_18661_3__ 0\000"
-.LASF952:
+.LASF956:
 	.ascii	"address\000"
 .LASF498:
 	.ascii	"int +2\000"
@@ -5714,9 +5807,9 @@ SPI_SSOEConfig:
 	.ascii	"DISABLE_GREEN_LED (GPIOD->ODR &= ~(1 << 12))\000"
 .LASF588:
 	.ascii	"WINT_MAX (__WINT_MAX__)\000"
-.LASF924:
-	.ascii	"SSCGR\000"
-.LASF965:
+.LASF952:
+	.ascii	"enable\000"
+.LASF967:
 	.ascii	"GNU C11 10.3.1 20210824 (release) -mcpu=cortex-m4 -"
 	.ascii	"mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -march=ar"
 	.ascii	"mv7e-m+fp -g3 -O0 -std=gnu11 -ffunction-sections -f"
@@ -5790,11 +5883,11 @@ SPI_SSOEConfig:
 	.ascii	"__FLT32_EPSILON__ 1.1920928955078125e-7F32\000"
 .LASF423:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF964:
+.LASF966:
 	.ascii	"enordi\000"
 .LASF918:
 	.ascii	"APB2LPENR\000"
-.LASF963:
+.LASF965:
 	.ascii	"SPI_Init\000"
 .LASF467:
 	.ascii	"__POSIX_VISIBLE 200809\000"
@@ -5802,6 +5895,8 @@ SPI_SSOEConfig:
 	.ascii	"GPIO_MODE_INPUT (0)\000"
 .LASF253:
 	.ascii	"__UFRACT_FBIT__ 16\000"
+.LASF951:
+	.ascii	"spix\000"
 .LASF334:
 	.ascii	"__UDQ_FBIT__ 64\000"
 .LASF169:
@@ -5933,8 +6028,11 @@ SPI_SSOEConfig:
 	.ascii	"__ATFILE_VISIBLE 1\000"
 .LASF262:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
-.LASF126:
-	.ascii	"__INT_FAST16_MAX__ 0x7fffffff\000"
+.LASF924:
+	.ascii	"SSCGR\000"
+.LASF733:
+	.ascii	"GPIOD_RESET() do{ (RCC->AHB1RSTR |= (1 << 3)); (RCC"
+	.ascii	"->AHB1RSTR &= ~(1 << 3)); } while(0)\000"
 .LASF396:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
 .LASF881:
@@ -6005,8 +6103,8 @@ SPI_SSOEConfig:
 	.ascii	"SPI_CR2_ERRIE 5\000"
 .LASF189:
 	.ascii	"__LDBL_HAS_DENORM__ 1\000"
-.LASF772:
-	.ascii	"SPI_CR1_CRC_EN 13\000"
+.LASF669:
+	.ascii	"GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)\000"
 .LASF193:
 	.ascii	"__FLT32_DIG__ 6\000"
 .LASF852:
@@ -6124,11 +6222,11 @@ SPI_SSOEConfig:
 	.ascii	"__FLT64_DIG__ 15\000"
 .LASF948:
 	.ascii	"pSPIx\000"
-.LASF669:
-	.ascii	"GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)\000"
+.LASF126:
+	.ascii	"__INT_FAST16_MAX__ 0x7fffffff\000"
 .LASF472:
 	.ascii	"__have_longlong64 1\000"
-.LASF958:
+.LASF960:
 	.ascii	"pSPIHandler\000"
 .LASF688:
 	.ascii	"GPIOE_PCLK_EN (RCC->AHB1ENR |= (1 << 4))\000"
@@ -6176,6 +6274,8 @@ SPI_SSOEConfig:
 	.ascii	"GPIO_PIN_PU (1)\000"
 .LASF915:
 	.ascii	"AHB3LPENR\000"
+.LASF954:
+	.ascii	"spi_enable_spe\000"
 .LASF337:
 	.ascii	"__UTQ_IBIT__ 0\000"
 .LASF655:
@@ -6240,7 +6340,7 @@ SPI_SSOEConfig:
 	.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 2\000"
 .LASF851:
 	.ascii	"DIVISOR_8 (2)\000"
-.LASF959:
+.LASF961:
 	.ascii	"tx_or_rx\000"
 .LASF425:
 	.ascii	"__ARM_ARCH_7EM__ 1\000"
@@ -6312,7 +6412,7 @@ SPI_SSOEConfig:
 	.ascii	"GPIO_MODE_IT_RFT (6)\000"
 .LASF882:
 	.ascii	"short int\000"
-.LASF970:
+.LASF972:
 	.ascii	"SPI_PeriClockControl\000"
 .LASF641:
 	.ascii	"EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)\000"
@@ -6349,6 +6449,8 @@ SPI_SSOEConfig:
 	.ascii	"PRIORITY_LVL_12 (0xc0)\000"
 .LASF751:
 	.ascii	"DISABLE 0\000"
+.LASF772:
+	.ascii	"SPI_CR1_CRC_EN 13\000"
 .LASF865:
 	.ascii	"DFF_8BIT (0)\000"
 .LASF726:
@@ -6457,8 +6559,6 @@ SPI_SSOEConfig:
 	.ascii	"__INT32 \"l\"\000"
 .LASF431:
 	.ascii	"__ARM_ASM_SYNTAX_UNIFIED__ 1\000"
-.LASF760:
-	.ascii	"DELAY() (for(int i = 0; i < 250000; i++))\000"
 .LASF794:
 	.ascii	"SPI_RX 0\000"
 .LASF47:
@@ -6567,7 +6667,7 @@ SPI_SSOEConfig:
 	.ascii	"__thumb__ 1\000"
 .LASF828:
 	.ascii	"GPIO_PIN_11 (11)\000"
-.LASF969:
+.LASF971:
 	.ascii	"tempReg\000"
 .LASF410:
 	.ascii	"__ARMEL__ 1\000"
@@ -6583,11 +6683,11 @@ SPI_SSOEConfig:
 	.ascii	"SPI_MASTER (1)\000"
 .LASF858:
 	.ascii	"TRAILING_EDGE (1)\000"
-.LASF956:
+.LASF955:
 	.ascii	"SPI_SSOEConfig\000"
 .LASF727:
 	.ascii	"UART4_PCLK_DI (RCC->APB1ENR &= ~(1 << 19))\000"
-.LASF954:
+.LASF958:
 	.ascii	"register_bit\000"
 .LASF401:
 	.ascii	"__ARM_ARCH\000"

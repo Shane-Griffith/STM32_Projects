@@ -1328,7 +1328,7 @@ typedef __uint_least64_t uint_least64_t;
 #define DISABLE_RED_LED (GPIOD->ODR &= ~(1 << 14))
 
 
-#define DELAY() (for(int i = 0; i < 250000; i++))
+#define DELAY ((for(int i = 0; i < 500000; i++)))
 
 
 #define SPI_CR1_CPHA 0
@@ -1677,7 +1677,6 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 
 
 
-
 typedef struct
 {
  uint8_t BusConfig;
@@ -1690,7 +1689,6 @@ typedef struct
 
 }SPI_Config_t;
 
-
 typedef struct
 {
  SPI_RegDef_t *pSPIx;
@@ -1698,8 +1696,15 @@ typedef struct
 
 
 }SPI_Handle_t;
-# 86 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
+# 84 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
+
+
+void spi_enable_spe(SPI_RegDef_t *spix, 
+# 87 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 3 4
+                                       _Bool 
+# 87 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
+                                            enable);
 
 
 void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
@@ -1710,12 +1715,16 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 
-# 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 3 4
+# 97 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 3 4
 _Bool 
-# 96 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
+# 97 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
     get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
-void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, 
+# 99 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 3 4
+                                        _Bool 
+# 99 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h"
+                                             enable);
 
 
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
@@ -1824,11 +1833,7 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 
 void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
 {
- if(!(((RCC_RegDef_t*) (0x40020000U + 0x3800))->APB1ENR & (1 << 14)))
- {
-  SPI_PeriClockControl(pSPIx, 1);
- }
-
+ spi_enable_spe(pSPIx, 1);
 
  while(!get_reg_value((uint32_t*)pSPIx, 2, 1))
  {
@@ -1836,7 +1841,6 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
  }
  while(len > 0)
  {
-
 
   if(pSPIx->SPI_CR1 & (1 << 11))
   {
@@ -1850,10 +1854,19 @@ void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
    len--;
    pTxbuffer++;
   }
+ }
+
+ while(!(pSPIx->SPI_SR & (1 << 1)))
+ {
 
  }
 
- SPI_PeriClockControl(pSPIx, 0);
+ while(pSPIx->SPI_SR & (1 << 7))
+ {
+
+ }
+
+ spi_enable_spe(pSPIx, 0);
 }
 
 
@@ -1877,15 +1890,12 @@ void SPI_busConfig(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
   pSPIHandler->pSPIx->SPI_CR1 |= (1 << 14);
 
  }
-
-
-
 }
 
 
-# 169 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 170 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
 _Bool 
-# 169 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 170 "../Drivers/Src/stm32f407xx_SPI_driver.c"
     get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit)
 {
 
@@ -1897,38 +1907,55 @@ _Bool
  if(*(address + (sizeof(uint32_t) * spi_register)) & (1 << register_bit))
  {
   return 
-# 179 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 180 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
         1
-# 179 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 180 "../Drivers/Src/stm32f407xx_SPI_driver.c"
             ;
  }
  else
  {
   return 
-# 183 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 184 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
         0
-# 183 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 184 "../Drivers/Src/stm32f407xx_SPI_driver.c"
              ;
  }
-
-
-
 }
 
-void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, uint8_t en_or_di)
+void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, 
+# 188 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+                                        _Bool 
+# 188 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+                                             enable)
 {
- if(en_or_di == 1)
+ if(enable)
  {
   pSPIx->SPI_CR2 |= (1 << 2);
 
  }
- else if (en_or_di == 0)
+ else
  {
   pSPIx->SPI_CR2 |= (0 << 2);
 
  }
 }
 
+void spi_enable_spe(SPI_RegDef_t *spix, 
+# 202 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+                                        _Bool 
+# 202 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+                                             enable)
+{
+ if(enable)
+ {
+  spix->SPI_CR1 |= (1 << 6);
+ }
+ else
+ {
+  spix->SPI_CR1 &= ~(1 << 6);
+ }
+
+}
 
 void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 

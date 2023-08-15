@@ -287,7 +287,7 @@
 #define DISABLE_RED_LED		(GPIOD->ODR  &= ~(1 << 14))
 
 
-#define DELAY()				(for(int i = 0; i < 250000; i++))
+#define DELAY				((for(int i = 0; i < 500000; i++)))
 
 //SPIx CR1 Register bit definitions
 #define SPI_CR1_CPHA			0
@@ -388,11 +388,24 @@ typedef struct
 
 }RCC_RegDef_t;
 
+//usart peripheral struct definition
 
+typedef struct
+{
+	__vo uint32_t usart_sr;
+	__vo uint32_t usart_dr;
+	__vo uint32_t usart_brr;
+	__vo uint32_t usart_cr1;
+	__vo uint32_t usart_cr1;
+	__vo uint32_t usart_cr3;
+	__vo uint32_t usart_gtpr;
+
+}usart_regdef_t;
 
 //spi peripheral struct definition
 
-typedef struct{
+typedef struct
+{
 
  __vo uint32_t SPI_CR1;
  __vo uint32_t SPI_CR2;
@@ -405,12 +418,12 @@ typedef struct{
  __vo uint32_t SPI_IS2CFGR;
  __vo uint32_t SPI_IS2PR;
 
-
 }SPI_RegDef_t;
 
 
 //Peripheral definition structure for EXTI
-typedef struct{
+typedef struct
+{
 	__vo uint32_t IMR;
 	__vo uint32_t EMR;
 	__vo uint32_t RTSR;
@@ -423,41 +436,42 @@ typedef struct{
 
 //peripheral definition struct for Syscfg
 
-typedef struct{
-
+typedef struct
+{
 	__vo uint32_t MEMRMP;
 	__vo uint32_t PMC;
 	__vo uint32_t EXTICR[4];
 		 uint32_t RESERVED[2];
 	__vo uint32_t CMPCR;
 
-
 }SYSCFG_RegDef_t;
 
 
 //NVIC Enable Registers
-typedef struct{
+typedef struct
+{
 
 	__vo uint32_t NVIC_ISER[3];
 
 }NVIC_EN_RegDef_t ;
 
 //interupt clear enable registers
-typedef struct{
-
+typedef struct
+{
 	__vo uint32_t NVIC_ICER[3];
 
 }NVIC_DI_RegDef_t;
 
 //interrupt pending register
 
-typedef struct{
-
+typedef struct
+{
 	__vo uint32_t NVIC_IPR[23];
 
 }NVIC_ipr_RegDef_t;
 
-typedef struct{
+typedef struct
+{
 
 	__vo uint32_t  MODER;						//GPIO port mode register
 	__vo uint32_t  OTYPER;						//GPIO port output type register

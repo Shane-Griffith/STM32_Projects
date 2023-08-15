@@ -52,7 +52,6 @@
 //useful spi macros
 #define SPI_ENABLE_MASK		(0x20)
 
-
 //doing this to stop whatever is going on down below
 
 typedef struct
@@ -66,7 +65,6 @@ typedef struct
 	uint8_t SPI_DFF;
 
 }SPI_Config_t;
-
 
 typedef struct
 {
@@ -85,6 +83,9 @@ typedef struct
 //Peripheral Clock Setup
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
 
+//enable/disable spe
+void spi_enable_spe(SPI_RegDef_t *spix, bool enable);
+
 //Init & De-Init
 void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
 void SPI_DeInit(SPI_RegDef_t *pSPIx);
@@ -95,7 +96,7 @@ void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 bool get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
 
-void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, uint8_t en_or_di);
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, bool enable);
 
 //IRQ Config and ISR Handling
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);

@@ -173,24 +173,21 @@ pGPIOHandle->pGPIOx->OSPEEDR |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed <<
 
 //Configure Alt Function Mode
 
-if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN){
-	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber > 7){
+if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN)
+{
+	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber > 7)
+	{
 		pGPIOHandle->pGPIOx->AFRH |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode <<
 				(4 * (pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 8)));
-
-	}else{
+	}
+	else
+	{
 		pGPIOHandle->pGPIOx->AFRL |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode <<
 						(4 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 	}
-
-
-
 }
-
-
 //Configure open drain/push pull
 (pGPIOHandle->pGPIOx->OTYPER |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType  << (pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)));//clear
-
 
 //configure pull up/pull down register
 (pGPIOHandle->pGPIOx->PUPDR |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPDcontrol) <<
