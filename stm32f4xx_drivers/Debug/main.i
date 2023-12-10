@@ -476,7 +476,11 @@
 # 1 "<command-line>"
 #define __USES_INITFINI__ 1
 # 1 "../Src/main.c"
-# 19 "../Src/main.c"
+# 18 "../Src/main.c"
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 16 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define INC_STM32F4XX_H_ 
+
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 1 3 4
 # 9 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdint.h" 3 4
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdint.h" 1 3 4
@@ -1070,7 +1074,845 @@ typedef __uint_least64_t uint_least64_t;
 
 
 #define _GCC_WRAP_STDINT_H 
+# 19 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+
+
+#define __vo volatile
+
+
+#define FLASH_BASEADDR 0x08000000U
+#define SRAM1_BASEADDR 0x20000000U
+#define SRAM2_BASEADDR 0x2001C000U
+#define ROM 0x1FFF0000U
+#define SRAM SRAM1_BASEADDR
+# 37 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define PERIPHERAL_BASEADDR 0x40000000U
+#define APB1PERIPHERAL_BASEADDR PERIPHERAL_BASEADDR
+#define APB2PERIPHERAL_BASEADDR 0x40010000U
+#define AHB1PERIPHERAL_BASEADDR 0x40020000U
+#define AHB2PERIPHERAL_BASEADDR 0x50000000U
+#define AHB3PERIPHERAL_BASEADDR 0xA0000000U
+# 51 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)
+#define GPIOB_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0400)
+#define GPIOC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0800)
+#define GPIOD_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0C00)
+#define GPIOE_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1000)
+#define GPIOF_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1400)
+#define GPIOG_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1800)
+#define GPIOH_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1C00)
+#define GPIOI_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x2000)
+#define RCC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x3800)
+#define RCC_RESET_REG (AHB1PERIPHERAL_BASEADDR + 0x10)
+
+
+
+#define I2C1_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5400)
+#define I2C2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5800)
+#define I2C3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5c00)
+#define SPI2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3800)
+#define SPI3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3c00)
+#define SPI4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3400)
+#define USART2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4400)
+#define USART3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4800)
+#define UART4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4c00)
+#define UART5_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5000)
+
+
+
+#define EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)
+#define SPI1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3000)
+#define USART1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1000)
+#define USART6_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1400)
+#define EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)
+#define SYSCFG_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3800)
+
+
+
+
+
+
+#define NVIC_ISER_BASEADDR (0xE000E100)
+#define NVIC_ICER_BASEADDR (0XE000E180)
+#define NVIC_IPR_BASEADDR (0xE000E400)
+
+
+
+
+
+
+#define PRIORITY_LVL_0 (0x00)
+#define PRIORITY_LVL_1 (0x10)
+#define PRIORITY_LVL_2 (0x20)
+#define PRIORITY_LVL_3 (0x30)
+#define PRIORITY_LVL_4 (0x40)
+#define PRIORITY_LVL_5 (0x50)
+#define PRIORITY_LVL_6 (0x60)
+#define PRIORITY_LVL_7 (0x70)
+#define PRIORITY_LVL_8 (0x80)
+#define PRIORITY_LVL_9 (0x90)
+#define PRIORITY_LVL_10 (0xA0)
+#define PRIORITY_LVL_11 (0xb0)
+#define PRIORITY_LVL_12 (0xc0)
+#define PRIORITY_LVL_13 (0xd0)
+#define PRIORITY_LVL_14 (0xe0)
+#define PRIORITY_LVL_15 (0xf0)
+
+
+
+#define GPIOA ((GPIO_RegDef_t*) GPIOA_BASEADDR)
+#define GPIOB ((GPIO_RegDef_t*) GPIOB_BASEADDR)
+#define GPIOC ((GPIO_RegDef_t*) GPIOC_BASEADDR)
+#define GPIOD ((GPIO_RegDef_t*) GPIOD_BASEADDR)
+#define GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)
+#define GPIOF ((GPIO_RegDef_t*) GPIOF_BASEADDR)
+#define GPIOG ((GPIO_RegDef_t*) GPIOG_BASEADDR)
+#define GPIOH ((GPIO_RegDef_t*) GPIOH_BASEADDR)
+#define GPIOI ((GPIO_RegDef_t*) GPIOI_BASEADDR)
+#define EXTI ((EXTI_RegDef_t*) EXTI_BASEADDR)
+#define SYSCFG ((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
+#define SPI1 ((SPI_RegDef_t*) SPI1_BASEADDR)
+#define SPI2 ((SPI_RegDef_t*) SPI2_BASEADDR)
+#define SPI3 ((SPI_RegDef_t*) SPI3_BASEADDR)
+#define SPI4 ((SPI_RegDef_t*) SPI4_BASEADDR)
+#define USART1 ((usart_regdef_t*)USART1_BASEADDR)
+#define USART2 ((usart_regdef_t*)USART2_BASEADDR)
+#define USART3 ((usart_regdef_t*)USART3_BASEADDR)
+
+
+#define NVIC_Priority_Set ((NVIC_ipr_RegDef_t*) NVIC_IPR_BASEADDR)
+#define NVIC_CLR_EN ((NVIC_DI_RegDef_t*)NVIC_ICER_BASEADDR)
+#define NVIC_SET_EN ((NVIC_EN_RegDef_t*) NVIC_ISER_BASEADDR)
+
+
+
+
+
+#define GPIOA_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 0))
+#define GPIOB_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 1))
+#define GPIOC_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 2))
+#define GPIOD_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 3))
+#define GPIOE_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 4))
+#define GPIOF_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 4))
+#define GPIOG_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 6))
+#define GPIOH_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 7))
+#define GPIOI_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 8))
+#define SYSCFG_PCLK_EN (rcc_inst->APB2ENR |= (1 << 14))
+
+
+
+
+#define I2C1_PCLK_EN (rcc_inst->APB1ENR |= (1 << 21))
+#define I2C2_PCLK_EN (rcc_inst->APB1ENR |= (1 << 22))
+#define I2C3_PCLK_EN (rcc_inst->APB1ENR |= (1 << 23))
+
+
+
+
+
+#define SPI1_PCLK_EN (rcc_inst->APB2ENR |= (1 << 12))
+#define SPI2_PCLK_EN (rcc_inst->APB1ENR |= (1 << 14))
+#define SPI3_PCLK_EN (rcc_inst->APB1ENR |= (1 << 15))
+#define SPI4_PCLK_EN (rcc_inst->APB2ENR |= (1 << 13))
+
+
+
+
+
+#define USART1_PCLK_EN (rcc_inst->APB2ENR |= (1 << 4))
+#define USART6_PCLK_EN (rcc_inst->APB2ENR |= (1 << 5))
+#define USART2_PCLK_EN (rcc_inst->APB1ENR |= (1 << 17))
+#define USART3_PCLK_EN (rcc_inst->APB1ENR |= (1 << 18))
+#define UART4_PCLK_EN (rcc_inst->APB1ENR |= (1 << 19))
+#define UART5_PCLK_EN (rcc_inst->APB1ENR |= (1 << 20))
+# 193 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define GPIOA_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 0))
+#define GPIOB_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 1))
+#define GPIOC_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 2))
+#define GPIOD_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 3))
+#define GPIOE_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 4))
+#define GPIOF_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 4))
+#define GPIOG_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 6))
+#define GPIOH_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 7))
+#define GPIOI_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 8))
+
+
+
+
+
+#define I2C1_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 21))
+#define I2C2_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 22))
+#define I2C3_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 23))
+
+
+
+
+
+
+#define SPI1_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 12))
+#define SPI4_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 13))
+#define SPI2_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 14))
+#define SPI3_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 15))
+
+
+
+
+
+#define USART1_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 4))
+#define USART6_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 5))
+#define USART2_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 17))
+#define USART3_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 18))
+#define UART4_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 19))
+#define UART5_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 20))
+
+
+
+
+
+
+#define SYSCFG_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 14))
+
+
+
+
+
+#define GPIOA_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 0)); (rcc_inst->AHB1RSTR &= ~(1 << 0)); } while(0)
+#define GPIOB_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 1)); (rcc_inst->AHB1RSTR &= ~(1 << 1)); } while(0)
+#define GPIOC_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 2)); (rcc_inst->AHB1RSTR &= ~(1 << 2)); } while(0)
+#define GPIOD_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 3)); (rcc_inst->AHB1RSTR &= ~(1 << 3)); } while(0)
+#define GPIOE_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 4)); (rcc_inst->AHB1RSTR &= ~(1 << 4)); } while(0)
+#define GPIOF_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 5)); (rcc_inst->AHB1RSTR &= ~(1 << 5)); } while(0)
+#define GPIOG_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 6)); (rcc_inst->AHB1RSTR &= ~(1 << 6)); } while(0)
+#define GPIOH_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 7)); (rcc_inst->AHB1RSTR &= ~(1 << 7)); } while(0)
+
+
+#define GPIO_BASEADDR_TO_CODE(x) ((x == GPIOA)? 0 : (x == GPIOB) ? 1 : (x == GPIOC) ? 2 : (x == GPIOD) ? 3 : (x == GPIOE) ? 4 : (x == GPIOF) ? 5 : (x == GPIOG) ? 6 : (x == GPIOH) ? 7 : (x == GPIOI) ? 8 : 0)
+# 267 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+#define IRQ_NO_EXTI0 (6)
+#define IRQ_NO_EXTI1 (7
+#define IRQ_NO_EXTI2 (8)
+#define IRQ_NO_EXTI3 (9)
+#define IRQ_NO_EXTI4 (10)
+#define IRQ_NO_EXTI9_5 (23)
+#define IRQ_NO_EXTI15_10 (40)
+#define IRQ_NO_SPI1 (35)
+#define IRQ_NO_SPI2 (36)
+#define IRQ_NO_SPI3 (51)
+#define IRQ_NO_SPI4 (84)
+
+
+#define ENABLE 1
+#define DISABLE 0
+#define SET ENABLE
+#define RESET DISABLE
+#define GPIO_PIN_SET SET
+#define GPIO_PIN_RESET RESET
+#define ENABLE_GREEN_LED (GPIOD->ODR |= (1 << 12))
+#define ENABLE_RED_LED (GPIOD->ODR |= (1 << 14))
+#define DISABLE_GREEN_LED (GPIOD->ODR &= ~(1 << 12))
+#define DISABLE_RED_LED (GPIOD->ODR &= ~(1 << 14))
+
+
+#define DELAY ((for(int i = 0; i < 500000; i++)))
+
+
+#define SPI_CR1_CPHA 0
+#define SPI_CR1_CPOL 1
+#define SPI_CR1_MSTER 2
+#define SPI_CR1_BAUDRATE 3
+#define SPI_CR1_SPE 6
+#define SPI_CR1_LSB_FIRST 7
+#define SPI_CR1_SSI 8
+#define SPI_CR1_SSM 9
+#define SPI_CR1_RX_ONLY 10
+#define SPI_CR1_DFF 11
+#define SPI_CR1_CRC_NEXT 12
+#define SPI_CR1_CRC_EN 13
+#define SPI_CR1_BIDI_OE 14
+#define SPI_CR1_BIDI_MODE 15
+
+
+#define SPI_CR2_RXDMAEN 0
+#define SPI_CR2_TXDMAEN 1
+#define SPI_CR2_SSOE 2
+#define SPI_CR2_FRF 4
+#define SPI_CR2_ERRIE 5
+#define SPI_CR2_RXNEIE 6
+#define SPI_CR2_TXEIE 7
+
+
+#define SPI_SR_RXNE 0
+#define SPI_SR_TXE 1
+#define SPI_SR_CHSIDE 2
+#define SPI_SR_UDR 3
+#define SPI_SR_CRCERR 4
+#define SPI_SR_MODF 5
+#define SPI_SR_OVR 6
+#define SPI_SR_BSY 7
+#define SPI_SR_FRE 8
+
+
+
+#define SPI_TX_BUFFER_EMPTY (0x2)
+#define SPI_RX_BUFFER_EMPTY (0x1)
+#define SPI_BSY_FLAG (0x80)
+#define SPI_RX 0
+#define SPI_TX 1
+
+
+#define SPI_ENABLE(pSPIx) (pSPIx->CR1 |= (ENABLE << SPI_CR1_SPE))
+#define SPI_DISABLE(pSPIx) (pSPIx->CR1 |= (DISABLE << SPI_CR1_SPE))
+
+
+
+#define SPI_DFF_VALUE (0x400)
+#define FULL_REG_MASK (0xffffffff)
+
+
+
+
+
+
+# 351 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
+typedef struct
+{
+
+ volatile uint32_t CR;
+ volatile uint32_t PLLCFGR;
+ volatile uint32_t CFGR;
+ volatile uint32_t CIR;
+ volatile uint32_t AHB1RSTR;
+ volatile uint32_t AHB2RSTR;
+ volatile uint32_t AHB3RSTR;
+  uint32_t RESERVED;
+ volatile uint32_t APB1RSTR;
+ volatile uint32_t APB2RSTR;
+  uint32_t RESERVED2;
+  uint32_t RESERVED3;
+ volatile uint32_t AHB1ENR;
+ volatile uint32_t AHB2ENR;
+ volatile uint32_t AHB3ENR;
+ volatile uint32_t RESERVED4;
+ volatile uint32_t APB1ENR;
+ volatile uint32_t APB2ENR;
+  uint32_t RESERVED5;
+  uint32_t RESERVED6;
+ volatile uint32_t AHB1LPENR;
+ volatile uint32_t AHB2LPENR;
+ volatile uint32_t AHB3LPENR;
+  uint32_t RESERVED7;
+ volatile uint32_t APB1LPENR;
+ volatile uint32_t APB2LPENR;
+  uint32_t RESERVED8;
+  uint32_t RESERVED9;
+ volatile uint32_t BDCR;
+ volatile uint32_t CSR;
+  uint32_t RESERVED10;
+  uint32_t RESERVED11;
+ volatile uint32_t SSCGR;
+ volatile uint32_t PLLI2SCFGR;
+ volatile uint32_t PLLSAICFGR;
+ volatile uint32_t DCKCFGR;
+
+}RCC_RegDef_t;
+
+extern RCC_RegDef_t *rcc_inst;
+
+
+
+typedef struct
+{
+ volatile uint32_t usart_sr;
+ volatile uint32_t usart_dr;
+ volatile uint32_t usart_brr;
+ volatile uint32_t usart_cr1;
+ volatile uint32_t usart_cr2;
+ volatile uint32_t usart_cr3;
+ volatile uint32_t usart_gtpr;
+
+}usart_regdef_t;
+
+
+
+typedef struct
+{
+
+ volatile uint32_t SPI_CR1;
+ volatile uint32_t SPI_CR2;
+ volatile uint32_t SPI_SR;
+ volatile uint32_t SPI_DR;
+ volatile uint32_t SPI_CRCPR;
+ volatile uint32_t SPIs_RXCRCR;
+ volatile uint32_t SPI_TXCRCR;
+ volatile uint32_t SPI_TXRCR;
+ volatile uint32_t SPI_IS2CFGR;
+ volatile uint32_t SPI_IS2PR;
+
+}SPI_RegDef_t;
+
+
+
+typedef struct
+{
+ volatile uint32_t IMR;
+ volatile uint32_t EMR;
+ volatile uint32_t RTSR;
+ volatile uint32_t FTRS;
+ volatile uint32_t SWIER;
+ volatile uint32_t PR;
+
+}EXTI_RegDef_t;
+
+
+
+
+typedef struct
+{
+ volatile uint32_t MEMRMP;
+ volatile uint32_t PMC;
+ volatile uint32_t EXTICR[4];
+   uint32_t RESERVED[2];
+ volatile uint32_t CMPCR;
+
+}SYSCFG_RegDef_t;
+
+
+
+typedef struct
+{
+
+ volatile uint32_t NVIC_ISER[3];
+
+}NVIC_EN_RegDef_t ;
+
+
+typedef struct
+{
+ volatile uint32_t NVIC_ICER[3];
+
+}NVIC_DI_RegDef_t;
+
+
+
+typedef struct
+{
+ volatile uint32_t NVIC_IPR[23];
+
+}NVIC_ipr_RegDef_t;
+
+typedef struct
+{
+
+ volatile uint32_t MODER;
+ volatile uint32_t OTYPER;
+ volatile uint32_t OSPEEDR;
+ volatile uint32_t PUPDR;
+ volatile uint32_t IDR;
+ volatile uint32_t ODR;
+ volatile uint32_t BSRR;
+ volatile uint32_t LCKR;
+ volatile uint32_t AFRL;
+ volatile uint32_t AFRH;
+
+}GPIO_RegDef_t;
+
+
+
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
+# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+#define INC_STM32F407XX_GPIO_DRIVER_H_ 
+
+
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
+# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
+
+
+
+
+#define GPIO_MODE_INPUT (0)
+#define GPIO_MODE_OUPUT (1)
+#define GPIO_MODE_ALTFN (2)
+#define GPIO_MODE_ANALOG (3)
+#define GPIO_MODE_IT_FT (4)
+#define GPIO_MODE_IT_RT (5)
+#define GPIO_MODE_IT_RFT (6)
+
+
+#define GPIO_OP_TYPE_PP (0)
+#define GPIO_OP_TYPE_OD (1)
+
+
+#define GPIO_SPEED_LOW (0)
+#define GPIO_SPEED_MED (1)
+#define GPIO_SPEED_HIGH (2)
+#define GPIO_SPEED_VHIGH (3)
+
+
+#define GPIO_NO_PUPD (0)
+#define GPIO_PIN_PU (1)
+#define GPIO_PIN_PD (2)
+
+
+#define GPIO_PIN_0 (0)
+#define GPIO_PIN_1 (1)
+#define GPIO_PIN_2 (2)
+#define GPIO_PIN_3 (3)
+#define GPIO_PIN_4 (4)
+#define GPIO_PIN_5 (5)
+#define GPIO_PIN_6 (6)
+#define GPIO_PIN_7 (7)
+#define GPIO_PIN_8 (8)
+#define GPIO_PIN_9 (9)
+#define GPIO_PIN_10 (10)
+#define GPIO_PIN_11 (11)
+#define GPIO_PIN_12 (12)
+#define GPIO_PIN_13 (13)
+#define GPIO_PIN_14 (14)
+#define GPIO_PIN_15 (15)
+
+
+#define GPIO_AF0 (0)
+#define GPIO_AF1 (1)
+#define GPIO_AF2 (2)
+#define GPIO_AF3 (3)
+#define GPIO_AF4 (4)
+#define GPIO_AF5 (5)
+#define GPIO_AF6 (6)
+#define GPIO_AF7 (7)
+#define GPIO_AF8 (8)
+#define GPIO_AF9 (9)
+#define GPIO_AF10 (10)
+#define GPIO_AF11 (11)
+#define GPIO_AF12 (12)
+#define GPIO_AF13 (13)
+#define GPIO_AF14 (14)
+#define GPIO_AF15 (15)
+
+typedef struct
+{
+
+ uint8_t GPIO_PinNumber;
+ uint8_t GPIO_PinMode;
+ uint8_t GPIO_PinOPType;
+ uint8_t GPIO_PinSpeed;
+ uint8_t GPIO_PinPuPDcontrol;
+ uint8_t GPIO_PinAltFunMode;
+
+
+}GPIO_PinConfig_t;
+
+typedef struct{
+
+ GPIO_RegDef_t *pGPIOx;
+ GPIO_PinConfig_t GPIO_PinConfig;
+
+}GPIO_Handle_t;
+# 104 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
+
+
+
+
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);
+
+
+
+
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx,uint8_t pinNumber, uint8_t value);
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t value);
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
+
+
+
+
+void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
+void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
+void GPIO_IRQHandler(uint8_t pinNumber);
+# 496 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
+# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+#define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
+
+
+# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 1 3 4
+# 29 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
+#define _STDBOOL_H 
+
+
+
+#define bool _Bool
+#define true 1
+#define false 0
+# 52 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
+#define __bool_true_false_are_defined 1
+# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
+
+
+
+
+#define DIVISOR_2 (0)
+#define DIVISOR_4 (1)
+#define DIVISOR_8 (2)
+#define DIVISOR_16 (3)
+#define DIVISOR_32 (4)
+#define DIVISOR_64 (5)
+#define DIVISOR_128 (6)
+#define DIVISOR_256 (7)
+
+
+#define LEADING_EDGE (0)
+#define TRAILING_EDGE (1)
+
+
+#define IDLE_HIGH (1)
+#define IDLE_LOW (0)
+
+
+#define SPI_SW_SSM (1)
+#define SPI_HW_SSM (0)
+
+
+#define SPI_MASTER (1)
+#define SPI_SLAVE (0)
+
+
+#define DFF_8BIT (0)
+#define DFF_16BIT (1)
+
+
+
+#define SPI_CONFIG_HD (1)
+#define SPI_CONFIG_FD (2)
+#define SPI_SIMPLEX_RX_ONLY (3)
+
+
+#define SPI_ENABLE_MASK (0x20)
+
+
+
+typedef struct
+{
+ uint8_t BusConfig;
+ uint8_t SPI_SSM;
+ uint8_t SPI_Speed;
+ uint8_t SPI_CPHA;
+ uint8_t SPI_CPOL;
+ uint8_t SPI_DEVICEMODE;
+ uint8_t SPI_DFF;
+
+}SPI_Config_t;
+
+typedef struct
+{
+ SPI_RegDef_t *pSPIx;
+ SPI_Config_t SPI_Config;
+
+}SPI_Handle_t;
+# 83 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
+
+
+void spi_enable_spe(SPI_RegDef_t *spix, 
+# 86 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+                                       _Bool 
+# 86 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+                                            enable);
+
+
+void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
+
+void SPI_DeInit(SPI_RegDef_t *pSPIx);
+
+
+void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
+
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
+
+
+# 98 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+_Bool 
+# 98 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+    get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
+
+void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, 
+# 100 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
+                                        _Bool 
+# 100 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
+                                             enable);
+
+
+void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
+void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
+void SPI_IRQHandler(SPI_Handle_t *pHandle);
+void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
+# 497 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 1
+# 10 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h"
+#define DRIVERS_INC_STM32F407_USART_DRIVER_H_ 
+
+
+
+#define USART_SR_PE 0
+#define USART_SR_FE 1
+#define USART_SR_NF 2
+#define USART_SR_ORE 3
+#define USART_SR_IDLE 4
+#define USART_SR_RXNE 5
+#define USART_SR_TC 6
+#define USART_SR_TXE 7
+#define USART_SR_LBD 8
+#define USART_SR_CTS 9
+
+
+#define USART_CR1_SBK 0
+#define USART_CR1_RWU 1
+#define USART_CR1_RE 2
+#define USART_CR1_TE 3
+#define USART_CR1_IDLEIE 4
+#define USART_CR1_RXNEIE 5
+#define USART_CR1_TCIE 6
+#define USART_CR1_TXEIE 7
+#define USART_CR1_PEIE 8
+#define USART_CR1_PS 9
+#define USART_CR1_PCE 10
+#define USART_CR1_WAKE 11
+#define USART_CR1_M 12
+#define USART_CR1_UE 13
+#define USART_CR1_OVER8 15
+
+
+#define USART_CR2_ADD 0
+#define USART_CR2_LBDL 6
+#define USART_CR2_LBDIE 7
+#define USART_CR2_LBCL 8
+#define USART_CR2_CPHA 9
+#define USART_CR2_CPOL 10
+#define USART_CR2_CLKEN 11
+#define USART_CR2_STOP 12
+#define USART_CR2_LINEN 14
+
+
+#define USART_BRR_DIV_FRAC 0
+#define USART_BRR_DIV_MANTISSA 4
+
+#define USART_CR3_EIE 0
+#define USART_CR3_IREN 1
+#define USART_CR3_IRLP 2
+#define USART_CR3_HDSEL 3
+#define USART_CR3_NACK 4
+#define USART_CR3_SCEN 5
+#define USART_CR3_DMAR 6
+#define USART_CR3_DMAT 7
+#define USART_CR3_RTSE 8
+#define USART_CR3_CTSE 9
+#define USART_CR3_CTSIE 10
+#define USART_CR3_ONEBIT 11
+
+
+
+#define BITS_8 0
+#define BITS_9 1
+
+
+#define STOP_1 0x0
+#define STOP_HALF 0x1
+#define STOP_2 0x2
+#define STOP_ONE_HALF 0x3
+
+
+#define RX_DEICE 0
+#define TX_DEVICE 1
+
+
+#define SYNCHRONOUS 0
+#define ASYNCHRONOUS 1
+
+
+#define DEVICE_RX 0
+#define DEVICE_TX 1
+
+
+
+
+
+
+typedef struct
+{
+ volatile uint32_t device_mode;
+ volatile uint32_t baud_rate;
+ volatile uint32_t word_length;
+ volatile uint32_t stop_bits;
+ volatile uint32_t cpha;
+ volatile uint32_t cpol;
+ volatile uint32_t parity_ctrl;
+ volatile uint32_t parity_type;
+ volatile uint32_t synchronous_mode;
+
+} usart_config_t;
+
+typedef struct
+{
+ usart_config_t uart_config;
+ usart_regdef_t *usartx;
+
+}usart_handle_t;
+
+void usart_peri_ctrl(usart_handle_t *usartx, 
+# 119 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 3 4
+                                            _Bool 
+# 119 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h"
+                                                 enable);
+void usart_init(usart_handle_t *usartx);
+void get_message(usart_handle_t *uart, char *buffer, uint32_t buffer_size);
+void usart_deinit(usart_handle_t *usartx);
+void usart_send_data(usart_handle_t usartx, uint8_t *tx_data, uint8_t len);
+void usart_receive(usart_handle_t *usartx, uint8_t *tx_data, uint8_t data_size);
+void enable_uart(usart_regdef_t *usartx, 
+# 125 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 3 4
+                                        _Bool 
+# 125 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h"
+                                             enable);
+# 498 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
+# 19 "../Src/main.c" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/gps_interface.h" 1
+# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/gps_interface.h"
+#define SRC_GPS_INTERFACE_H_ 
+
+
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 1
+# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/gps_interface.h" 2
+
+typedef struct
+{
+ char messageID[6];
+ char time[6];
+ char latitude[10];
+ char hemisphere;
+ char longitude[11];
+ char eastWest;
+ char fixQuality;
+ char numSats;
+ char horizonalDilution;
+ char altitude;
+ char altitudeUint;
+ char geoidalSeparation;
+ char geoidalSeparationUnit;
+ char diffCorrectionAge;
+ char referenceStationID[4];
+
+}gps_message_gaa;
+
+void gps_init(usart_handle_t usart_device);
+void parse_data(char *buffer, char start, char end, gps_message_gaa *gps_msg);
 # 20 "../Src/main.c" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
+# 21 "../Src/main.c" 2
+# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
+# 22 "../Src/main.c" 2
+
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 1 3
 # 27 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
 #define _STDIO_H_ 
@@ -1249,6 +2091,8 @@ typedef __uint_least64_t uint_least64_t;
 
 
 
+
+# 209 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
 typedef unsigned int size_t;
 # 231 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stddef.h" 3 4
 #undef __need_size_t
@@ -3270,7 +4114,7 @@ _putchar_unlocked(int _c)
 #define L_ctermid 16
 # 797 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\stdio.h" 3
 
-# 21 "../Src/main.c" 2
+# 24 "../Src/main.c" 2
 # 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 1 3
 
 
@@ -3479,804 +4323,11 @@ char *strsignal (int __signo);
 # 190 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\arm-none-eabi\\include\\string.h" 2 3
 
 
-# 22 "../Src/main.c" 2
-# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 16 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
-#define INC_STM32F4XX_H_ 
-
-
-
-
-#define __vo volatile
-
-
-#define FLASH_BASEADDR 0x08000000U
-#define SRAM1_BASEADDR 0x20000000U
-#define SRAM2_BASEADDR 0x2001C000U
-#define ROM 0x1FFF0000U
-#define SRAM SRAM1_BASEADDR
-# 37 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
-#define PERIPHERAL_BASEADDR 0x40000000U
-#define APB1PERIPHERAL_BASEADDR PERIPHERAL_BASEADDR
-#define APB2PERIPHERAL_BASEADDR 0x40010000U
-#define AHB1PERIPHERAL_BASEADDR 0x40020000U
-#define AHB2PERIPHERAL_BASEADDR 0x50000000U
-#define AHB3PERIPHERAL_BASEADDR 0xA0000000U
-# 51 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
-#define GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)
-#define GPIOB_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0400)
-#define GPIOC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0800)
-#define GPIOD_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0C00)
-#define GPIOE_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1000)
-#define GPIOF_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1400)
-#define GPIOG_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1800)
-#define GPIOH_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1C00)
-#define GPIOI_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x2000)
-#define RCC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x3800)
-#define RCC_RESET_REG (AHB1PERIPHERAL_BASEADDR + 0x10)
-
-
-
-#define I2C1_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5400)
-#define I2C2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5800)
-#define I2C3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5c00)
-#define SPI2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3800)
-#define SPI3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3c00)
-#define SPI4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x3400)
-#define USART2_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4400)
-#define USART3_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4800)
-#define UART4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4c00)
-#define UART5_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x5000)
-
-
-
-#define EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)
-#define SPI1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3000)
-#define USART1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1000)
-#define USART6_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1400)
-#define EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)
-#define SYSCFG_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3800)
-
-
-
-
-
-
-#define NVIC_ISER_BASEADDR (0xE000E100)
-#define NVIC_ICER_BASEADDR (0XE000E180)
-#define NVIC_IPR_BASEADDR (0xE000E400)
-
-
-
-
-
-
-#define PRIORITY_LVL_0 (0x00)
-#define PRIORITY_LVL_1 (0x10)
-#define PRIORITY_LVL_2 (0x20)
-#define PRIORITY_LVL_3 (0x30)
-#define PRIORITY_LVL_4 (0x40)
-#define PRIORITY_LVL_5 (0x50)
-#define PRIORITY_LVL_6 (0x60)
-#define PRIORITY_LVL_7 (0x70)
-#define PRIORITY_LVL_8 (0x80)
-#define PRIORITY_LVL_9 (0x90)
-#define PRIORITY_LVL_10 (0xA0)
-#define PRIORITY_LVL_11 (0xb0)
-#define PRIORITY_LVL_12 (0xc0)
-#define PRIORITY_LVL_13 (0xd0)
-#define PRIORITY_LVL_14 (0xe0)
-#define PRIORITY_LVL_15 (0xf0)
-
-
-
-#define GPIOA ((GPIO_RegDef_t*) GPIOA_BASEADDR)
-#define GPIOB ((GPIO_RegDef_t*) GPIOB_BASEADDR)
-#define GPIOC ((GPIO_RegDef_t*) GPIOC_BASEADDR)
-#define GPIOD ((GPIO_RegDef_t*) GPIOD_BASEADDR)
-#define GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)
-#define GPIOF ((GPIO_RegDef_t*) GPIOF_BASEADDR)
-#define GPIOG ((GPIO_RegDef_t*) GPIOG_BASEADDR)
-#define GPIOH ((GPIO_RegDef_t*) GPIOH_BASEADDR)
-#define GPIOI ((GPIO_RegDef_t*) GPIOI_BASEADDR)
-#define EXTI ((EXTI_RegDef_t*) EXTI_BASEADDR)
-#define SYSCFG ((SYSCFG_RegDef_t*)SYSCFG_BASEADDR)
-#define SPI1 ((SPI_RegDef_t*) SPI1_BASEADDR)
-#define SPI2 ((SPI_RegDef_t*) SPI2_BASEADDR)
-#define SPI3 ((SPI_RegDef_t*) SPI3_BASEADDR)
-#define SPI4 ((SPI_RegDef_t*) SPI4_BASEADDR)
-#define USART1 ((usart_regdef_t*)USART1_BASEADDR)
-#define USART2 ((usart_regdef_t*)USART2_BASEADDR)
-#define USART3 ((usart_regdef_t*)USART3_BASEADDR)
-
-
-#define NVIC_Priority_Set ((NVIC_ipr_RegDef_t*) NVIC_IPR_BASEADDR)
-#define NVIC_CLR_EN ((NVIC_DI_RegDef_t*)NVIC_ICER_BASEADDR)
-#define NVIC_SET_EN ((NVIC_EN_RegDef_t*) NVIC_ISER_BASEADDR)
-
-
-
-
-
-#define GPIOA_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 0))
-#define GPIOB_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 1))
-#define GPIOC_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 2))
-#define GPIOD_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 3))
-#define GPIOE_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 4))
-#define GPIOF_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 4))
-#define GPIOG_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 6))
-#define GPIOH_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 7))
-#define GPIOI_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 8))
-#define SYSCFG_PCLK_EN (rcc_inst->APB2ENR |= (1 << 14))
-
-
-
-
-#define I2C1_PCLK_EN (rcc_inst->APB1ENR |= (1 << 21))
-#define I2C2_PCLK_EN (rcc_inst->APB1ENR |= (1 << 22))
-#define I2C3_PCLK_EN (rcc_inst->APB1ENR |= (1 << 23))
-
-
-
-
-
-#define SPI1_PCLK_EN (rcc_inst->APB2ENR |= (1 << 12))
-#define SPI2_PCLK_EN (rcc_inst->APB1ENR |= (1 << 14))
-#define SPI3_PCLK_EN (rcc_inst->APB1ENR |= (1 << 15))
-#define SPI4_PCLK_EN (rcc_inst->APB2ENR |= (1 << 13))
-
-
-
-
-
-#define USART1_PCLK_EN (rcc_inst->APB2ENR |= (1 << 4))
-#define USART6_PCLK_EN (rcc_inst->APB2ENR |= (1 << 5))
-#define USART2_PCLK_EN (rcc_inst->APB1ENR |= (1 << 17))
-#define USART3_PCLK_EN (rcc_inst->APB1ENR |= (1 << 18))
-#define UART4_PCLK_EN (rcc_inst->APB1ENR |= (1 << 19))
-#define UART5_PCLK_EN (rcc_inst->APB1ENR |= (1 << 20))
-# 193 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
-#define GPIOA_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 0))
-#define GPIOB_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 1))
-#define GPIOC_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 2))
-#define GPIOD_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 3))
-#define GPIOE_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 4))
-#define GPIOF_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 4))
-#define GPIOG_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 6))
-#define GPIOH_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 7))
-#define GPIOI_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 8))
-
-
-
-
-
-#define I2C1_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 21))
-#define I2C2_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 22))
-#define I2C3_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 23))
-
-
-
-
-
-
-#define SPI1_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 12))
-#define SPI4_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 13))
-#define SPI2_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 14))
-#define SPI3_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 15))
-
-
-
-
-
-#define USART1_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 4))
-#define USART6_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 5))
-#define USART2_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 17))
-#define USART3_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 18))
-#define UART4_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 19))
-#define UART5_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 20))
-
-
-
-
-
-
-#define SYSCFG_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 14))
-
-
-
-
-
-#define GPIOA_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 0)); (rcc_inst->AHB1RSTR &= ~(1 << 0)); } while(0)
-#define GPIOB_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 1)); (rcc_inst->AHB1RSTR &= ~(1 << 1)); } while(0)
-#define GPIOC_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 2)); (rcc_inst->AHB1RSTR &= ~(1 << 2)); } while(0)
-#define GPIOD_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 3)); (rcc_inst->AHB1RSTR &= ~(1 << 3)); } while(0)
-#define GPIOE_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 4)); (rcc_inst->AHB1RSTR &= ~(1 << 4)); } while(0)
-#define GPIOF_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 5)); (rcc_inst->AHB1RSTR &= ~(1 << 5)); } while(0)
-#define GPIOG_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 6)); (rcc_inst->AHB1RSTR &= ~(1 << 6)); } while(0)
-#define GPIOH_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 7)); (rcc_inst->AHB1RSTR &= ~(1 << 7)); } while(0)
-
-
-#define GPIO_BASEADDR_TO_CODE(x) ((x == GPIOA)? 0 : (x == GPIOB) ? 1 : (x == GPIOC) ? 2 : (x == GPIOD) ? 3 : (x == GPIOE) ? 4 : (x == GPIOF) ? 5 : (x == GPIOG) ? 6 : (x == GPIOH) ? 7 : (x == GPIOI) ? 8 : 0)
-# 267 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
-#define IRQ_NO_EXTI0 (6)
-#define IRQ_NO_EXTI1 (7
-#define IRQ_NO_EXTI2 (8)
-#define IRQ_NO_EXTI3 (9)
-#define IRQ_NO_EXTI4 (10)
-#define IRQ_NO_EXTI9_5 (23)
-#define IRQ_NO_EXTI15_10 (40)
-#define IRQ_NO_SPI1 (35)
-#define IRQ_NO_SPI2 (36)
-#define IRQ_NO_SPI3 (51)
-#define IRQ_NO_SPI4 (84)
-
-
-#define ENABLE 1
-#define DISABLE 0
-#define SET ENABLE
-#define RESET DISABLE
-#define GPIO_PIN_SET SET
-#define GPIO_PIN_RESET RESET
-#define ENABLE_GREEN_LED (GPIOD->ODR |= (1 << 12))
-#define ENABLE_RED_LED (GPIOD->ODR |= (1 << 14))
-#define DISABLE_GREEN_LED (GPIOD->ODR &= ~(1 << 12))
-#define DISABLE_RED_LED (GPIOD->ODR &= ~(1 << 14))
-
-
-#define DELAY ((for(int i = 0; i < 500000; i++)))
-
-
-#define SPI_CR1_CPHA 0
-#define SPI_CR1_CPOL 1
-#define SPI_CR1_MSTER 2
-#define SPI_CR1_BAUDRATE 3
-#define SPI_CR1_SPE 6
-#define SPI_CR1_LSB_FIRST 7
-#define SPI_CR1_SSI 8
-#define SPI_CR1_SSM 9
-#define SPI_CR1_RX_ONLY 10
-#define SPI_CR1_DFF 11
-#define SPI_CR1_CRC_NEXT 12
-#define SPI_CR1_CRC_EN 13
-#define SPI_CR1_BIDI_OE 14
-#define SPI_CR1_BIDI_MODE 15
-
-
-#define SPI_CR2_RXDMAEN 0
-#define SPI_CR2_TXDMAEN 1
-#define SPI_CR2_SSOE 2
-#define SPI_CR2_FRF 4
-#define SPI_CR2_ERRIE 5
-#define SPI_CR2_RXNEIE 6
-#define SPI_CR2_TXEIE 7
-
-
-#define SPI_SR_RXNE 0
-#define SPI_SR_TXE 1
-#define SPI_SR_CHSIDE 2
-#define SPI_SR_UDR 3
-#define SPI_SR_CRCERR 4
-#define SPI_SR_MODF 5
-#define SPI_SR_OVR 6
-#define SPI_SR_BSY 7
-#define SPI_SR_FRE 8
-
-
-
-#define SPI_TX_BUFFER_EMPTY (0x2)
-#define SPI_RX_BUFFER_EMPTY (0x1)
-#define SPI_BSY_FLAG (0x80)
-#define SPI_RX 0
-#define SPI_TX 1
-
-
-#define SPI_ENABLE(pSPIx) (pSPIx->CR1 |= (ENABLE << SPI_CR1_SPE))
-#define SPI_DISABLE(pSPIx) (pSPIx->CR1 |= (DISABLE << SPI_CR1_SPE))
-
-
-
-#define SPI_DFF_VALUE (0x400)
-#define FULL_REG_MASK (0xffffffff)
-
-
-
-
-
-
-# 351 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h"
-typedef struct
-{
-
- volatile uint32_t CR;
- volatile uint32_t PLLCFGR;
- volatile uint32_t CFGR;
- volatile uint32_t CIR;
- volatile uint32_t AHB1RSTR;
- volatile uint32_t AHB2RSTR;
- volatile uint32_t AHB3RSTR;
-  uint32_t RESERVED;
- volatile uint32_t APB1RSTR;
- volatile uint32_t APB2RSTR;
-  uint32_t RESERVED2;
-  uint32_t RESERVED3;
- volatile uint32_t AHB1ENR;
- volatile uint32_t AHB2ENR;
- volatile uint32_t AHB3ENR;
- volatile uint32_t RESERVED4;
- volatile uint32_t APB1ENR;
- volatile uint32_t APB2ENR;
-  uint32_t RESERVED5;
-  uint32_t RESERVED6;
- volatile uint32_t AHB1LPENR;
- volatile uint32_t AHB2LPENR;
- volatile uint32_t AHB3LPENR;
-  uint32_t RESERVED7;
- volatile uint32_t APB1LPENR;
- volatile uint32_t APB2LPENR;
-  uint32_t RESERVED8;
-  uint32_t RESERVED9;
- volatile uint32_t BDCR;
- volatile uint32_t CSR;
-  uint32_t RESERVED10;
-  uint32_t RESERVED11;
- volatile uint32_t SSCGR;
- volatile uint32_t PLLI2SCFGR;
- volatile uint32_t PLLSAICFGR;
- volatile uint32_t DCKCFGR;
-
-}RCC_RegDef_t;
-
-extern RCC_RegDef_t *rcc_inst;
-
-
-
-typedef struct
-{
- volatile uint32_t usart_sr;
- volatile uint32_t usart_dr;
- volatile uint32_t usart_brr;
- volatile uint32_t usart_cr1;
- volatile uint32_t usart_cr2;
- volatile uint32_t usart_cr3;
- volatile uint32_t usart_gtpr;
-
-}usart_regdef_t;
-
-
-
-typedef struct
-{
-
- volatile uint32_t SPI_CR1;
- volatile uint32_t SPI_CR2;
- volatile uint32_t SPI_SR;
- volatile uint32_t SPI_DR;
- volatile uint32_t SPI_CRCPR;
- volatile uint32_t SPIs_RXCRCR;
- volatile uint32_t SPI_TXCRCR;
- volatile uint32_t SPI_TXRCR;
- volatile uint32_t SPI_IS2CFGR;
- volatile uint32_t SPI_IS2PR;
-
-}SPI_RegDef_t;
-
-
-
-typedef struct
-{
- volatile uint32_t IMR;
- volatile uint32_t EMR;
- volatile uint32_t RTSR;
- volatile uint32_t FTRS;
- volatile uint32_t SWIER;
- volatile uint32_t PR;
-
-}EXTI_RegDef_t;
-
-
-
-
-typedef struct
-{
- volatile uint32_t MEMRMP;
- volatile uint32_t PMC;
- volatile uint32_t EXTICR[4];
-   uint32_t RESERVED[2];
- volatile uint32_t CMPCR;
-
-}SYSCFG_RegDef_t;
-
-
-
-typedef struct
-{
-
- volatile uint32_t NVIC_ISER[3];
-
-}NVIC_EN_RegDef_t ;
-
-
-typedef struct
-{
- volatile uint32_t NVIC_ICER[3];
-
-}NVIC_DI_RegDef_t;
-
-
-
-typedef struct
-{
- volatile uint32_t NVIC_IPR[23];
-
-}NVIC_ipr_RegDef_t;
-
-typedef struct
-{
-
- volatile uint32_t MODER;
- volatile uint32_t OTYPER;
- volatile uint32_t OSPEEDR;
- volatile uint32_t PUPDR;
- volatile uint32_t IDR;
- volatile uint32_t ODR;
- volatile uint32_t BSRR;
- volatile uint32_t LCKR;
- volatile uint32_t AFRL;
- volatile uint32_t AFRH;
-
-}GPIO_RegDef_t;
-
-
-
-# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
-# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
-#define INC_STM32F407XX_GPIO_DRIVER_H_ 
-
-
-# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 1
-# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 2
-
-
-
-
-#define GPIO_MODE_INPUT (0)
-#define GPIO_MODE_OUPUT (1)
-#define GPIO_MODE_ALTFN (2)
-#define GPIO_MODE_ANALOG (3)
-#define GPIO_MODE_IT_FT (4)
-#define GPIO_MODE_IT_RT (5)
-#define GPIO_MODE_IT_RFT (6)
-
-
-#define GPIO_OP_TYPE_PP (0)
-#define GPIO_OP_TYPE_OD (1)
-
-
-#define GPIO_SPEED_LOW (0)
-#define GPIO_SPEED_MED (1)
-#define GPIO_SPEED_HIGH (2)
-#define GPIO_SPEED_VHIGH (3)
-
-
-#define GPIO_NO_PUPD (0)
-#define GPIO_PIN_PU (1)
-#define GPIO_PIN_PD (2)
-
-
-#define GPIO_PIN_0 (0)
-#define GPIO_PIN_1 (1)
-#define GPIO_PIN_2 (2)
-#define GPIO_PIN_3 (3)
-#define GPIO_PIN_4 (4)
-#define GPIO_PIN_5 (5)
-#define GPIO_PIN_6 (6)
-#define GPIO_PIN_7 (7)
-#define GPIO_PIN_8 (8)
-#define GPIO_PIN_9 (9)
-#define GPIO_PIN_10 (10)
-#define GPIO_PIN_11 (11)
-#define GPIO_PIN_12 (12)
-#define GPIO_PIN_13 (13)
-#define GPIO_PIN_14 (14)
-#define GPIO_PIN_15 (15)
-
-
-#define GPIO_AF0 (0)
-#define GPIO_AF1 (1)
-#define GPIO_AF2 (2)
-#define GPIO_AF3 (3)
-#define GPIO_AF4 (4)
-#define GPIO_AF5 (5)
-#define GPIO_AF6 (6)
-#define GPIO_AF7 (7)
-#define GPIO_AF8 (8)
-#define GPIO_AF9 (9)
-#define GPIO_AF10 (10)
-#define GPIO_AF11 (11)
-#define GPIO_AF12 (12)
-#define GPIO_AF13 (13)
-#define GPIO_AF14 (14)
-#define GPIO_AF15 (15)
-
-typedef struct
-{
-
- uint8_t GPIO_PinNumber;
- uint8_t GPIO_PinMode;
- uint8_t GPIO_PinOPType;
- uint8_t GPIO_PinSpeed;
- uint8_t GPIO_PinPuPDcontrol;
- uint8_t GPIO_PinAltFunMode;
-
-
-}GPIO_PinConfig_t;
-
-typedef struct{
-
- GPIO_RegDef_t *pGPIOx;
- GPIO_PinConfig_t GPIO_PinConfig;
-
-}GPIO_Handle_t;
-# 104 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h"
-void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
-
-
-
-
-void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
-void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);
-
-
-
-
-uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
-uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
-void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx,uint8_t pinNumber, uint8_t value);
-void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t value);
-void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
-
-
-
-
-void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
-void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
-void GPIO_IRQHandler(uint8_t pinNumber);
-# 496 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
-# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
-# 9 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
-#define DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ 
-
-
-# 1 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 1 3 4
-# 29 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
-#define _STDBOOL_H 
-
-
-
-#define bool _Bool
-#define true 1
-#define false 0
-# 52 "c:\\st\\stm32cubeide_1.12.1\\stm32cubeide\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\\tools\\lib\\gcc\\arm-none-eabi\\10.3.1\\include\\stdbool.h" 3 4
-#define __bool_true_false_are_defined 1
-# 13 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 2
-
-
-
-
-#define DIVISOR_2 (0)
-#define DIVISOR_4 (1)
-#define DIVISOR_8 (2)
-#define DIVISOR_16 (3)
-#define DIVISOR_32 (4)
-#define DIVISOR_64 (5)
-#define DIVISOR_128 (6)
-#define DIVISOR_256 (7)
-
-
-#define LEADING_EDGE (0)
-#define TRAILING_EDGE (1)
-
-
-#define IDLE_HIGH (1)
-#define IDLE_LOW (0)
-
-
-#define SPI_SW_SSM (1)
-#define SPI_HW_SSM (0)
-
-
-#define SPI_MASTER (1)
-#define SPI_SLAVE (0)
-
-
-#define DFF_8BIT (0)
-#define DFF_16BIT (1)
-
-
-
-#define SPI_CONFIG_HD (1)
-#define SPI_CONFIG_FD (2)
-#define SPI_SIMPLEX_RX_ONLY (3)
-
-
-#define SPI_ENABLE_MASK (0x20)
-
-
-
-typedef struct
-{
- uint8_t BusConfig;
- uint8_t SPI_SSM;
- uint8_t SPI_Speed;
- uint8_t SPI_CPHA;
- uint8_t SPI_CPOL;
- uint8_t SPI_DEVICEMODE;
- uint8_t SPI_DFF;
-
-}SPI_Config_t;
-
-typedef struct
-{
- SPI_RegDef_t *pSPIx;
- SPI_Config_t SPI_Config;
-
-}SPI_Handle_t;
-# 83 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
-void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
-
-
-void spi_enable_spe(SPI_RegDef_t *spix, 
-# 86 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
-                                       _Bool 
-# 86 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
-                                            enable);
-
-
-void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
-
-void SPI_DeInit(SPI_RegDef_t *pSPIx);
-
-
-void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t Len);
-
-void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
-
-
-# 98 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
-_Bool 
-# 98 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
-    get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit);
-
-void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, 
-# 100 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 3 4
-                                        _Bool 
-# 100 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h"
-                                             enable);
-
-
-void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
-void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
-void SPI_IRQHandler(SPI_Handle_t *pHandle);
-void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
-# 497 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
-# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 1
-# 10 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h"
-#define DRIVERS_INC_STM32F407_USART_DRIVER_H_ 
-
-
-
-#define USART_SR_PE 0
-#define USART_SR_FE 1
-#define USART_SR_NF 2
-#define USART_SR_ORE 3
-#define USART_SR_IDLE 4
-#define USART_SR_RXNE 5
-#define USART_SR_TC 6
-#define USART_SR_TXE 7
-#define USART_SR_LBD 8
-#define USART_SR_CTS 9
-
-
-#define USART_CR1_SBK 0
-#define USART_CR1_RWU 1
-#define USART_CR1_RE 2
-#define USART_CR1_TE 3
-#define USART_CR1_IDLEIE 4
-#define USART_CR1_RXNEIE 5
-#define USART_CR1_TCIE 6
-#define USART_CR1_TXEIE 7
-#define USART_CR1_PEIE 8
-#define USART_CR1_PS 9
-#define USART_CR1_PCE 10
-#define USART_CR1_WAKE 11
-#define USART_CR1_M 12
-#define USART_CR1_UE 13
-#define USART_CR1_OVER8 15
-
-
-#define USART_CR2_ADD 0
-#define USART_CR2_LBDL 6
-#define USART_CR2_LBDIE 7
-#define USART_CR2_LBCL 8
-#define USART_CR2_CPHA 9
-#define USART_CR2_CPOL 10
-#define USART_CR2_CLKEN 11
-#define USART_CR2_STOP 12
-#define USART_CR2_LINEN 14
-
-
-#define USART_BRR_DIV_FRAC 0
-#define USART_BRR_DIV_MANTISSA 4
-
-#define USART_CR3_EIE 0
-#define USART_CR3_IREN 1
-#define USART_CR3_IRLP 2
-#define USART_CR3_HDSEL 3
-#define USART_CR3_NACK 4
-#define USART_CR3_SCEN 5
-#define USART_CR3_DMAR 6
-#define USART_CR3_DMAT 7
-#define USART_CR3_RTSE 8
-#define USART_CR3_CTSE 9
-#define USART_CR3_CTSIE 10
-#define USART_CR3_ONEBIT 11
-
-
-
-#define BITS_8 0
-#define BITS_9 1
-
-
-#define STOP_1 0x0
-#define STOP_HALF 0x1
-#define STOP_2 0x2
-#define STOP_ONE_HALF 0x3
-
-typedef struct
-{
- volatile uint32_t baud_rate;
- volatile uint32_t word_length;
- volatile uint32_t stop_bits;
- volatile uint32_t dma_en;
- volatile uint32_t device_type;
- volatile uint32_t cpha;
- volatile uint32_t cpol;
- volatile uint32_t parity_ctrl;
- volatile uint32_t parity_type;
-
- volatile uint32_t clock_en;
- volatile uint32_t tx_it_en;
- volatile uint32_t rx_it_en;
-
-}usart_config_t;
-
-typedef struct
-{
- usart_config_t uart_config;
- usart_regdef_t *usartx;
-
-}usart_handle_t;
-
-void usart_peri_ctrl(usart_handle_t *usartx, 
-# 106 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 3 4
-                                            _Bool 
-# 106 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h"
-                                                 enable);
-
-void usart_init(usart_handle_t *usartx);
-
-void usart_deinit(usart_handle_t *usartx);
-
-void usart_tx_data(usart_regdef_t *usartx, uint16_t* tx_data, uint16_t data_size);
-
-void usart_rx_data(usart_regdef_t *usartx, uint16_t* tx_data, uint16_t data_size);
-# 498 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
-# 23 "../Src/main.c" 2
-# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_spi_driver.h" 1
-# 24 "../Src/main.c" 2
-# 1 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_gpio_driver.h" 1
 # 25 "../Src/main.c" 2
 
+
+
+# 27 "../Src/main.c"
 RCC_RegDef_t* rcc_inst = (RCC_RegDef_t*) (0x40020000U + 0x3800);
 
 void delay(void)

@@ -56,7 +56,7 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi)
 }
 
 //Init & De-Init
-void SPI_Init(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
+void SPI_Config(SPI_Handle_t *pSPIHandler)
 {
 	SPI_PeriClockControl(pSPIHandler->pSPIx, ENABLE);
 
@@ -74,8 +74,7 @@ void SPI_Init(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
 
 	tempReg |= (pSPIHandler->SPI_Config.SPI_CPHA << SPI_CR1_CPHA);
 
-	SPI_busConfig(pSPIHandler, tx_or_rx);
-
+	SPI_busConfig(pSPIHandler);
 
 //input settings into the register
 	pSPIHandler->pSPIx->SPI_CR1 = tempReg;
@@ -87,19 +86,19 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx)
 
 	if(pSPIx == SPI1)
 	{
-		(rcc_inst->APB2RSTR |= (1 << 12));
+		(RCC_INST->APB2RSTR |= (1 << 12));
 	}
 	if(pSPIx == SPI4)
 	{
-		rcc_inst->APB2RSTR |= (1 << 13);
+		RCC_INST->APB2RSTR |= (1 << 13);
 	}
 	if(pSPIx == SPI2)
 	{
-		rcc_inst->APB1RSTR |= (1 << 14);
+		RCC_INST->APB1RSTR |= (1 << 14);
 	}
 	if(pSPIx == SPI3)
 	{
-		rcc_inst->APB1RSTR |= (1 << 15);
+		RCC_INST->APB1RSTR |= (1 << 15);
 	}
 
 }
@@ -144,7 +143,7 @@ void  SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxbuffer, uint32_t len)
 }
 
 //use SPI_RX or SPI_TX for tx_or_rx
-void SPI_busConfig(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
+void SPI_busConfig(SPI_Handle_t *pSPIHandler)
 {
 	if(pSPIHandler->SPI_Config.BusConfig == SPI_CONFIG_FD)
 	{	//reset bidimode for 2 line unidirection data
@@ -168,7 +167,6 @@ void SPI_busConfig(SPI_Handle_t *pSPIHandler, uint8_t tx_or_rx)
 
 bool get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit)
 {
-
 	if(register_bit > SPI_IS2PR_POSITION)
 	{
 		return 0;

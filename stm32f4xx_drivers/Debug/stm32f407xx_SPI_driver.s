@@ -679,38 +679,38 @@ get_reg_value:
 	str	r1, [r7, #8]
 	mov	r3, r2
 	strb	r3, [r7, #7]
-	.loc 1 172 4
+	.loc 1 171 4
 	ldrb	r3, [r7, #7]	@ zero_extendqisi2
 	cmp	r3, #8
 	bls	.L36
-	.loc 1 174 10
+	.loc 1 173 10
 	movs	r3, #0
 	b	.L37
 .L36:
-	.loc 1 177 15
+	.loc 1 176 15
 	ldr	r3, [r7, #8]
 	lsls	r3, r3, #4
 	ldr	r2, [r7, #12]
 	add	r3, r3, r2
-	.loc 1 177 5
+	.loc 1 176 5
 	ldr	r3, [r3]
-	.loc 1 177 57
+	.loc 1 176 57
 	ldrb	r2, [r7, #7]	@ zero_extendqisi2
 	movs	r1, #1
 	lsl	r2, r1, r2
-	.loc 1 177 52
+	.loc 1 176 52
 	ands	r3, r3, r2
-	.loc 1 177 4
+	.loc 1 176 4
 	cmp	r3, #0
 	beq	.L38
-	.loc 1 179 9
+	.loc 1 178 9
 	movs	r3, #1
 	b	.L37
 .L38:
-	.loc 1 183 9
+	.loc 1 182 9
 	movs	r3, #0
 .L37:
-	.loc 1 185 1
+	.loc 1 184 1
 	mov	r0, r3
 	adds	r7, r7, #20
 	.cfi_def_cfa_offset 4
@@ -733,7 +733,7 @@ get_reg_value:
 	.type	SPI_SSOEConfig, %function
 SPI_SSOEConfig:
 .LFB6:
-	.loc 1 188 1
+	.loc 1 187 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -748,26 +748,26 @@ SPI_SSOEConfig:
 	str	r0, [r7, #4]
 	mov	r3, r1
 	strb	r3, [r7, #3]
-	.loc 1 189 4
+	.loc 1 188 4
 	ldrb	r3, [r7, #3]	@ zero_extendqisi2
 	cmp	r3, #0
 	beq	.L40
-	.loc 1 191 18
+	.loc 1 190 18
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3, #4]
 	orr	r2, r3, #4
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #4]
-	.loc 1 199 1
+	.loc 1 198 1
 	b	.L42
 .L40:
-	.loc 1 196 18
+	.loc 1 195 18
 	ldr	r3, [r7, #4]
 	ldr	r2, [r3, #4]
 	ldr	r3, [r7, #4]
 	str	r2, [r3, #4]
 .L42:
-	.loc 1 199 1
+	.loc 1 198 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -790,7 +790,7 @@ SPI_SSOEConfig:
 	.type	spi_enable_spe, %function
 spi_enable_spe:
 .LFB7:
-	.loc 1 202 1
+	.loc 1 201 1
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 1, uses_anonymous_args = 0
@@ -805,27 +805,27 @@ spi_enable_spe:
 	str	r0, [r7, #4]
 	mov	r3, r1
 	strb	r3, [r7, #3]
-	.loc 1 203 4
+	.loc 1 202 4
 	ldrb	r3, [r7, #3]	@ zero_extendqisi2
 	cmp	r3, #0
 	beq	.L44
-	.loc 1 205 17
+	.loc 1 204 17
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
 	orr	r2, r3, #64
 	ldr	r3, [r7, #4]
 	str	r2, [r3]
-	.loc 1 212 1
+	.loc 1 211 1
 	b	.L46
 .L44:
-	.loc 1 209 17
+	.loc 1 208 17
 	ldr	r3, [r7, #4]
 	ldr	r3, [r3]
 	bic	r2, r3, #64
 	ldr	r3, [r7, #4]
 	str	r2, [r3]
 .L46:
-	.loc 1 212 1
+	.loc 1 211 1
 	nop
 	adds	r7, r7, #12
 	.cfi_def_cfa_offset 4
@@ -852,10 +852,10 @@ spi_enable_spe:
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF1024
+	.4byte	.LASF1030
 	.byte	0xc
-	.4byte	.LASF1025
-	.4byte	.LASF1026
+	.4byte	.LASF1031
+	.4byte	.LASF1032
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -863,9 +863,9 @@ spi_enable_spe:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x6
-	.4byte	.LASF937
+	.4byte	.LASF943
 	.uleb128 0x3
-	.4byte	.LASF940
+	.4byte	.LASF946
 	.byte	0x2
 	.byte	0x2b
 	.byte	0x17
@@ -873,13 +873,13 @@ spi_enable_spe:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x8
-	.4byte	.LASF938
+	.4byte	.LASF944
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x5
-	.4byte	.LASF939
+	.4byte	.LASF945
 	.uleb128 0x3
-	.4byte	.LASF941
+	.4byte	.LASF947
 	.byte	0x2
 	.byte	0x39
 	.byte	0x1c
@@ -887,13 +887,13 @@ spi_enable_spe:
 	.uleb128 0x2
 	.byte	0x2
 	.byte	0x7
-	.4byte	.LASF942
+	.4byte	.LASF948
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x5
-	.4byte	.LASF943
+	.4byte	.LASF949
 	.uleb128 0x3
-	.4byte	.LASF944
+	.4byte	.LASF950
 	.byte	0x2
 	.byte	0x4f
 	.byte	0x1b
@@ -901,15 +901,15 @@ spi_enable_spe:
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF945
+	.4byte	.LASF951
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x5
-	.4byte	.LASF946
+	.4byte	.LASF952
 	.uleb128 0x2
 	.byte	0x8
 	.byte	0x7
-	.4byte	.LASF947
+	.4byte	.LASF953
 	.uleb128 0x4
 	.byte	0x4
 	.byte	0x5
@@ -917,21 +917,21 @@ spi_enable_spe:
 	.uleb128 0x2
 	.byte	0x4
 	.byte	0x7
-	.4byte	.LASF948
+	.4byte	.LASF954
 	.uleb128 0x3
-	.4byte	.LASF949
+	.4byte	.LASF955
 	.byte	0x3
 	.byte	0x18
 	.byte	0x13
 	.4byte	0x30
 	.uleb128 0x3
-	.4byte	.LASF950
+	.4byte	.LASF956
 	.byte	0x3
 	.byte	0x24
 	.byte	0x14
 	.4byte	0x4a
 	.uleb128 0x3
-	.4byte	.LASF951
+	.4byte	.LASF957
 	.byte	0x3
 	.byte	0x30
 	.byte	0x14
@@ -952,14 +952,14 @@ spi_enable_spe:
 	.4byte	0xb7
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF952
+	.4byte	.LASF958
 	.byte	0x4
 	.2byte	0x163
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x4
 	.uleb128 0x8
-	.4byte	.LASF953
+	.4byte	.LASF959
 	.byte	0x4
 	.2byte	0x164
 	.byte	0x14
@@ -973,175 +973,175 @@ spi_enable_spe:
 	.4byte	0xb7
 	.byte	0xc
 	.uleb128 0x8
-	.4byte	.LASF954
+	.4byte	.LASF960
 	.byte	0x4
 	.2byte	0x166
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x10
 	.uleb128 0x8
-	.4byte	.LASF955
+	.4byte	.LASF961
 	.byte	0x4
 	.2byte	0x167
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x14
 	.uleb128 0x8
-	.4byte	.LASF956
+	.4byte	.LASF962
 	.byte	0x4
 	.2byte	0x168
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x18
 	.uleb128 0x8
-	.4byte	.LASF957
+	.4byte	.LASF963
 	.byte	0x4
 	.2byte	0x169
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x1c
 	.uleb128 0x8
-	.4byte	.LASF958
+	.4byte	.LASF964
 	.byte	0x4
 	.2byte	0x16a
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x20
 	.uleb128 0x8
-	.4byte	.LASF959
+	.4byte	.LASF965
 	.byte	0x4
 	.2byte	0x16b
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x24
 	.uleb128 0x8
-	.4byte	.LASF960
+	.4byte	.LASF966
 	.byte	0x4
 	.2byte	0x16c
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x28
 	.uleb128 0x8
-	.4byte	.LASF961
+	.4byte	.LASF967
 	.byte	0x4
 	.2byte	0x16d
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x2c
 	.uleb128 0x8
-	.4byte	.LASF962
+	.4byte	.LASF968
 	.byte	0x4
 	.2byte	0x16e
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x30
 	.uleb128 0x8
-	.4byte	.LASF963
+	.4byte	.LASF969
 	.byte	0x4
 	.2byte	0x16f
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x34
 	.uleb128 0x8
-	.4byte	.LASF964
+	.4byte	.LASF970
 	.byte	0x4
 	.2byte	0x170
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x38
 	.uleb128 0x8
-	.4byte	.LASF965
+	.4byte	.LASF971
 	.byte	0x4
 	.2byte	0x171
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x3c
 	.uleb128 0x8
-	.4byte	.LASF966
+	.4byte	.LASF972
 	.byte	0x4
 	.2byte	0x172
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x40
 	.uleb128 0x8
-	.4byte	.LASF967
+	.4byte	.LASF973
 	.byte	0x4
 	.2byte	0x173
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x44
 	.uleb128 0x8
-	.4byte	.LASF968
+	.4byte	.LASF974
 	.byte	0x4
 	.2byte	0x174
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x48
 	.uleb128 0x8
-	.4byte	.LASF969
+	.4byte	.LASF975
 	.byte	0x4
 	.2byte	0x175
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x4c
 	.uleb128 0x8
-	.4byte	.LASF970
+	.4byte	.LASF976
 	.byte	0x4
 	.2byte	0x176
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x50
 	.uleb128 0x8
-	.4byte	.LASF971
+	.4byte	.LASF977
 	.byte	0x4
 	.2byte	0x177
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x54
 	.uleb128 0x8
-	.4byte	.LASF972
+	.4byte	.LASF978
 	.byte	0x4
 	.2byte	0x178
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x58
 	.uleb128 0x8
-	.4byte	.LASF973
+	.4byte	.LASF979
 	.byte	0x4
 	.2byte	0x179
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x5c
 	.uleb128 0x8
-	.4byte	.LASF974
+	.4byte	.LASF980
 	.byte	0x4
 	.2byte	0x17a
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x60
 	.uleb128 0x8
-	.4byte	.LASF975
+	.4byte	.LASF981
 	.byte	0x4
 	.2byte	0x17b
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x64
 	.uleb128 0x8
-	.4byte	.LASF976
+	.4byte	.LASF982
 	.byte	0x4
 	.2byte	0x17c
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x68
 	.uleb128 0x8
-	.4byte	.LASF977
+	.4byte	.LASF983
 	.byte	0x4
 	.2byte	0x17d
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x6c
 	.uleb128 0x8
-	.4byte	.LASF978
+	.4byte	.LASF984
 	.byte	0x4
 	.2byte	0x17e
 	.byte	0x14
@@ -1155,42 +1155,42 @@ spi_enable_spe:
 	.4byte	0xb7
 	.byte	0x74
 	.uleb128 0x8
-	.4byte	.LASF979
+	.4byte	.LASF985
 	.byte	0x4
 	.2byte	0x180
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x78
 	.uleb128 0x8
-	.4byte	.LASF980
+	.4byte	.LASF986
 	.byte	0x4
 	.2byte	0x181
 	.byte	0xc
 	.4byte	0xab
 	.byte	0x7c
 	.uleb128 0x8
-	.4byte	.LASF981
+	.4byte	.LASF987
 	.byte	0x4
 	.2byte	0x182
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x80
 	.uleb128 0x8
-	.4byte	.LASF982
+	.4byte	.LASF988
 	.byte	0x4
 	.2byte	0x183
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x84
 	.uleb128 0x8
-	.4byte	.LASF983
+	.4byte	.LASF989
 	.byte	0x4
 	.2byte	0x184
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x88
 	.uleb128 0x8
-	.4byte	.LASF984
+	.4byte	.LASF990
 	.byte	0x4
 	.2byte	0x185
 	.byte	0x14
@@ -1198,13 +1198,13 @@ spi_enable_spe:
 	.byte	0x8c
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF985
+	.4byte	.LASF991
 	.byte	0x4
 	.2byte	0x187
 	.byte	0x2
 	.4byte	0xbc
 	.uleb128 0xa
-	.4byte	.LASF1027
+	.4byte	.LASF1033
 	.byte	0x4
 	.2byte	0x189
 	.byte	0x16
@@ -1219,70 +1219,70 @@ spi_enable_spe:
 	.byte	0x9
 	.4byte	0x375
 	.uleb128 0x8
-	.4byte	.LASF986
+	.4byte	.LASF992
 	.byte	0x4
 	.2byte	0x19e
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0
 	.uleb128 0x8
-	.4byte	.LASF987
+	.4byte	.LASF993
 	.byte	0x4
 	.2byte	0x19f
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x4
 	.uleb128 0x8
-	.4byte	.LASF988
+	.4byte	.LASF994
 	.byte	0x4
 	.2byte	0x1a0
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x8
 	.uleb128 0x8
-	.4byte	.LASF989
+	.4byte	.LASF995
 	.byte	0x4
 	.2byte	0x1a1
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0xc
 	.uleb128 0x8
-	.4byte	.LASF990
+	.4byte	.LASF996
 	.byte	0x4
 	.2byte	0x1a2
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x10
 	.uleb128 0x8
-	.4byte	.LASF991
+	.4byte	.LASF997
 	.byte	0x4
 	.2byte	0x1a3
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x14
 	.uleb128 0x8
-	.4byte	.LASF992
+	.4byte	.LASF998
 	.byte	0x4
 	.2byte	0x1a4
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x18
 	.uleb128 0x8
-	.4byte	.LASF993
+	.4byte	.LASF999
 	.byte	0x4
 	.2byte	0x1a5
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x1c
 	.uleb128 0x8
-	.4byte	.LASF994
+	.4byte	.LASF1000
 	.byte	0x4
 	.2byte	0x1a6
 	.byte	0x14
 	.4byte	0xb7
 	.byte	0x20
 	.uleb128 0x8
-	.4byte	.LASF995
+	.4byte	.LASF1001
 	.byte	0x4
 	.2byte	0x1a7
 	.byte	0x14
@@ -1290,7 +1290,7 @@ spi_enable_spe:
 	.byte	0x24
 	.byte	0
 	.uleb128 0x9
-	.4byte	.LASF996
+	.4byte	.LASF1002
 	.byte	0x4
 	.2byte	0x1a9
 	.byte	0x2
@@ -1302,49 +1302,49 @@ spi_enable_spe:
 	.byte	0x9
 	.4byte	0x3e7
 	.uleb128 0xd
-	.4byte	.LASF997
+	.4byte	.LASF1003
 	.byte	0x5
 	.byte	0x3b
 	.byte	0xa
 	.4byte	0x93
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF998
+	.4byte	.LASF1004
 	.byte	0x5
 	.byte	0x3c
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x1
 	.uleb128 0xd
-	.4byte	.LASF999
+	.4byte	.LASF1005
 	.byte	0x5
 	.byte	0x3d
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x2
 	.uleb128 0xd
-	.4byte	.LASF1000
+	.4byte	.LASF1006
 	.byte	0x5
 	.byte	0x3e
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x3
 	.uleb128 0xd
-	.4byte	.LASF1001
+	.4byte	.LASF1007
 	.byte	0x5
 	.byte	0x3f
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x4
 	.uleb128 0xd
-	.4byte	.LASF1002
+	.4byte	.LASF1008
 	.byte	0x5
 	.byte	0x40
 	.byte	0xa
 	.4byte	0x93
 	.byte	0x5
 	.uleb128 0xd
-	.4byte	.LASF1003
+	.4byte	.LASF1009
 	.byte	0x5
 	.byte	0x41
 	.byte	0xa
@@ -1352,7 +1352,7 @@ spi_enable_spe:
 	.byte	0x6
 	.byte	0
 	.uleb128 0x3
-	.4byte	.LASF1004
+	.4byte	.LASF1010
 	.byte	0x5
 	.byte	0x43
 	.byte	0x2
@@ -1364,14 +1364,14 @@ spi_enable_spe:
 	.byte	0x9
 	.4byte	0x417
 	.uleb128 0xd
-	.4byte	.LASF1005
+	.4byte	.LASF1011
 	.byte	0x5
 	.byte	0x47
 	.byte	0x10
 	.4byte	0x417
 	.byte	0
 	.uleb128 0xd
-	.4byte	.LASF1006
+	.4byte	.LASF1012
 	.byte	0x5
 	.byte	0x48
 	.byte	0xf
@@ -1382,15 +1382,15 @@ spi_enable_spe:
 	.byte	0x4
 	.4byte	0x375
 	.uleb128 0x3
-	.4byte	.LASF1007
+	.4byte	.LASF1013
 	.byte	0x5
 	.byte	0x4a
 	.byte	0x2
 	.4byte	0x3f3
 	.uleb128 0xe
-	.4byte	.LASF1011
+	.4byte	.LASF1017
 	.byte	0x1
-	.byte	0xc9
+	.byte	0xc8
 	.byte	0x6
 	.4byte	.LFB7
 	.4byte	.LFE7-.LFB7
@@ -1398,18 +1398,18 @@ spi_enable_spe:
 	.byte	0x9c
 	.4byte	0x45e
 	.uleb128 0xf
-	.4byte	.LASF1008
+	.4byte	.LASF1014
 	.byte	0x1
-	.byte	0xc9
+	.byte	0xc8
 	.byte	0x23
 	.4byte	0x417
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xf
-	.4byte	.LASF1009
+	.4byte	.LASF1015
 	.byte	0x1
-	.byte	0xc9
+	.byte	0xc8
 	.byte	0x2e
 	.4byte	0x45e
 	.uleb128 0x2
@@ -1419,11 +1419,11 @@ spi_enable_spe:
 	.uleb128 0x2
 	.byte	0x1
 	.byte	0x2
-	.4byte	.LASF1010
+	.4byte	.LASF1016
 	.uleb128 0xe
-	.4byte	.LASF1012
+	.4byte	.LASF1018
 	.byte	0x1
-	.byte	0xbb
+	.byte	0xba
 	.byte	0x6
 	.4byte	.LFB6
 	.4byte	.LFE6-.LFB6
@@ -1431,18 +1431,18 @@ spi_enable_spe:
 	.byte	0x9c
 	.4byte	0x49a
 	.uleb128 0xf
-	.4byte	.LASF1005
+	.4byte	.LASF1011
 	.byte	0x1
-	.byte	0xbb
+	.byte	0xba
 	.byte	0x23
 	.4byte	0x417
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xf
-	.4byte	.LASF1009
+	.4byte	.LASF1015
 	.byte	0x1
-	.byte	0xbb
+	.byte	0xba
 	.byte	0x2e
 	.4byte	0x45e
 	.uleb128 0x2
@@ -1450,7 +1450,7 @@ spi_enable_spe:
 	.sleb128 -13
 	.byte	0
 	.uleb128 0x10
-	.4byte	.LASF1028
+	.4byte	.LASF1034
 	.byte	0x1
 	.byte	0xa9
 	.byte	0x5
@@ -1461,7 +1461,7 @@ spi_enable_spe:
 	.byte	0x9c
 	.4byte	0x4e2
 	.uleb128 0xf
-	.4byte	.LASF1013
+	.4byte	.LASF1019
 	.byte	0x1
 	.byte	0xa9
 	.byte	0x1d
@@ -1470,7 +1470,7 @@ spi_enable_spe:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xf
-	.4byte	.LASF1014
+	.4byte	.LASF1020
 	.byte	0x1
 	.byte	0xa9
 	.byte	0x2f
@@ -1479,7 +1479,7 @@ spi_enable_spe:
 	.byte	0x91
 	.sleb128 -16
 	.uleb128 0xf
-	.4byte	.LASF1015
+	.4byte	.LASF1021
 	.byte	0x1
 	.byte	0xa9
 	.byte	0x45
@@ -1492,7 +1492,7 @@ spi_enable_spe:
 	.byte	0x4
 	.4byte	0xab
 	.uleb128 0xe
-	.4byte	.LASF1016
+	.4byte	.LASF1022
 	.byte	0x1
 	.byte	0x93
 	.byte	0x6
@@ -1502,7 +1502,7 @@ spi_enable_spe:
 	.byte	0x9c
 	.4byte	0x51d
 	.uleb128 0xf
-	.4byte	.LASF1017
+	.4byte	.LASF1023
 	.byte	0x1
 	.byte	0x93
 	.byte	0x22
@@ -1511,7 +1511,7 @@ spi_enable_spe:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xf
-	.4byte	.LASF1018
+	.4byte	.LASF1024
 	.byte	0x1
 	.byte	0x93
 	.byte	0x37
@@ -1524,7 +1524,7 @@ spi_enable_spe:
 	.byte	0x4
 	.4byte	0x41d
 	.uleb128 0x11
-	.4byte	.LASF1019
+	.4byte	.LASF1025
 	.byte	0x1
 	.byte	0x6c
 	.byte	0x6
@@ -1534,7 +1534,7 @@ spi_enable_spe:
 	.byte	0x9c
 	.4byte	0x567
 	.uleb128 0xf
-	.4byte	.LASF1005
+	.4byte	.LASF1011
 	.byte	0x1
 	.byte	0x6c
 	.byte	0x21
@@ -1543,7 +1543,7 @@ spi_enable_spe:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xf
-	.4byte	.LASF1020
+	.4byte	.LASF1026
 	.byte	0x1
 	.byte	0x6c
 	.byte	0x31
@@ -1565,7 +1565,7 @@ spi_enable_spe:
 	.byte	0x4
 	.4byte	0x93
 	.uleb128 0xe
-	.4byte	.LASF1021
+	.4byte	.LASF1027
 	.byte	0x1
 	.byte	0x55
 	.byte	0x6
@@ -1575,7 +1575,7 @@ spi_enable_spe:
 	.byte	0x9c
 	.4byte	0x593
 	.uleb128 0xf
-	.4byte	.LASF1005
+	.4byte	.LASF1011
 	.byte	0x1
 	.byte	0x55
 	.byte	0x1f
@@ -1585,7 +1585,7 @@ spi_enable_spe:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x11
-	.4byte	.LASF1022
+	.4byte	.LASF1028
 	.byte	0x1
 	.byte	0x3b
 	.byte	0x6
@@ -1595,7 +1595,7 @@ spi_enable_spe:
 	.byte	0x9c
 	.4byte	0x5d7
 	.uleb128 0xf
-	.4byte	.LASF1017
+	.4byte	.LASF1023
 	.byte	0x1
 	.byte	0x3b
 	.byte	0x1d
@@ -1604,7 +1604,7 @@ spi_enable_spe:
 	.byte	0x91
 	.sleb128 -20
 	.uleb128 0xf
-	.4byte	.LASF1018
+	.4byte	.LASF1024
 	.byte	0x1
 	.byte	0x3b
 	.byte	0x32
@@ -1613,7 +1613,7 @@ spi_enable_spe:
 	.byte	0x91
 	.sleb128 -21
 	.uleb128 0x13
-	.4byte	.LASF1029
+	.4byte	.LASF1035
 	.byte	0x1
 	.byte	0x3f
 	.byte	0xb
@@ -1623,7 +1623,7 @@ spi_enable_spe:
 	.sleb128 -12
 	.byte	0
 	.uleb128 0x14
-	.4byte	.LASF1030
+	.4byte	.LASF1036
 	.byte	0x1
 	.byte	0x17
 	.byte	0x6
@@ -1632,7 +1632,7 @@ spi_enable_spe:
 	.uleb128 0x1
 	.byte	0x9c
 	.uleb128 0xf
-	.4byte	.LASF1005
+	.4byte	.LASF1011
 	.byte	0x1
 	.byte	0x17
 	.byte	0x29
@@ -1641,7 +1641,7 @@ spi_enable_spe:
 	.byte	0x91
 	.sleb128 -12
 	.uleb128 0xf
-	.4byte	.LASF1023
+	.4byte	.LASF1029
 	.byte	0x1
 	.byte	0x17
 	.byte	0x38
@@ -3496,31 +3496,31 @@ spi_enable_spe:
 	.byte	0x4
 	.byte	0x5
 	.uleb128 0x6
-	.4byte	.LASF928
-	.byte	0x5
-	.uleb128 0x7
-	.4byte	.LASF929
-	.byte	0x5
-	.uleb128 0x8
-	.4byte	.LASF930
-	.byte	0x5
-	.uleb128 0x9
-	.4byte	.LASF931
-	.byte	0x5
-	.uleb128 0xa
-	.4byte	.LASF932
-	.byte	0x5
-	.uleb128 0xb
-	.4byte	.LASF933
-	.byte	0x5
-	.uleb128 0xc
 	.4byte	.LASF934
 	.byte	0x5
-	.uleb128 0xd
+	.uleb128 0x7
 	.4byte	.LASF935
 	.byte	0x5
-	.uleb128 0xe
+	.uleb128 0x8
 	.4byte	.LASF936
+	.byte	0x5
+	.uleb128 0x9
+	.4byte	.LASF937
+	.byte	0x5
+	.uleb128 0xa
+	.4byte	.LASF938
+	.byte	0x5
+	.uleb128 0xb
+	.4byte	.LASF939
+	.byte	0x5
+	.uleb128 0xc
+	.4byte	.LASF940
+	.byte	0x5
+	.uleb128 0xd
+	.4byte	.LASF941
+	.byte	0x5
+	.uleb128 0xe
+	.4byte	.LASF942
 	.byte	0x4
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4._newlib_version.h.4.bfdf54b0af045d4a71376ae00f63a22c,comdat
@@ -4804,7 +4804,7 @@ spi_enable_spe:
 	.uleb128 0x4a
 	.4byte	.LASF850
 	.byte	0
-	.section	.debug_macro,"G",%progbits,wm4.stm32f407_usart_driver.h.10.ea462e47ab7b6f5da845f410a13312ab,comdat
+	.section	.debug_macro,"G",%progbits,wm4.stm32f407_usart_driver.h.10.84adf31a444a98cd8004df1ad111d156,comdat
 .Ldebug_macro11:
 	.2byte	0x4
 	.byte	0
@@ -4973,6 +4973,24 @@ spi_enable_spe:
 	.byte	0x5
 	.uleb128 0x4f
 	.4byte	.LASF905
+	.byte	0x5
+	.uleb128 0x52
+	.4byte	.LASF906
+	.byte	0x5
+	.uleb128 0x53
+	.4byte	.LASF907
+	.byte	0x5
+	.uleb128 0x56
+	.4byte	.LASF908
+	.byte	0x5
+	.uleb128 0x57
+	.4byte	.LASF909
+	.byte	0x5
+	.uleb128 0x5a
+	.4byte	.LASF910
+	.byte	0x5
+	.uleb128 0x5b
+	.4byte	.LASF911
 	.byte	0
 	.section	.debug_macro,"G",%progbits,wm4.stm32f407xx_SPI_driver.h.17.630c22b6ec73290cc1b69e04b8b5e98e,comdat
 .Ldebug_macro12:
@@ -4980,75 +4998,75 @@ spi_enable_spe:
 	.byte	0
 	.byte	0x5
 	.uleb128 0x11
-	.4byte	.LASF906
-	.byte	0x5
-	.uleb128 0x12
-	.4byte	.LASF907
-	.byte	0x5
-	.uleb128 0x13
-	.4byte	.LASF908
-	.byte	0x5
-	.uleb128 0x14
-	.4byte	.LASF909
-	.byte	0x5
-	.uleb128 0x15
-	.4byte	.LASF910
-	.byte	0x5
-	.uleb128 0x16
-	.4byte	.LASF911
-	.byte	0x5
-	.uleb128 0x17
 	.4byte	.LASF912
 	.byte	0x5
-	.uleb128 0x18
+	.uleb128 0x12
 	.4byte	.LASF913
 	.byte	0x5
-	.uleb128 0x1b
+	.uleb128 0x13
 	.4byte	.LASF914
 	.byte	0x5
-	.uleb128 0x1c
+	.uleb128 0x14
 	.4byte	.LASF915
 	.byte	0x5
-	.uleb128 0x1f
+	.uleb128 0x15
 	.4byte	.LASF916
 	.byte	0x5
-	.uleb128 0x20
+	.uleb128 0x16
 	.4byte	.LASF917
 	.byte	0x5
-	.uleb128 0x23
+	.uleb128 0x17
 	.4byte	.LASF918
 	.byte	0x5
-	.uleb128 0x24
+	.uleb128 0x18
 	.4byte	.LASF919
 	.byte	0x5
-	.uleb128 0x27
+	.uleb128 0x1b
 	.4byte	.LASF920
 	.byte	0x5
-	.uleb128 0x28
+	.uleb128 0x1c
 	.4byte	.LASF921
 	.byte	0x5
-	.uleb128 0x2b
+	.uleb128 0x1f
 	.4byte	.LASF922
 	.byte	0x5
-	.uleb128 0x2c
+	.uleb128 0x20
 	.4byte	.LASF923
 	.byte	0x5
-	.uleb128 0x30
+	.uleb128 0x23
 	.4byte	.LASF924
 	.byte	0x5
-	.uleb128 0x31
+	.uleb128 0x24
 	.4byte	.LASF925
 	.byte	0x5
-	.uleb128 0x32
+	.uleb128 0x27
 	.4byte	.LASF926
 	.byte	0x5
-	.uleb128 0x35
+	.uleb128 0x28
 	.4byte	.LASF927
+	.byte	0x5
+	.uleb128 0x2b
+	.4byte	.LASF928
+	.byte	0x5
+	.uleb128 0x2c
+	.4byte	.LASF929
+	.byte	0x5
+	.uleb128 0x30
+	.4byte	.LASF930
+	.byte	0x5
+	.uleb128 0x31
+	.4byte	.LASF931
+	.byte	0x5
+	.uleb128 0x32
+	.4byte	.LASF932
+	.byte	0x5
+	.uleb128 0x35
+	.4byte	.LASF933
 	.byte	0
 	.section	.debug_line,"",%progbits
 .Ldebug_line0:
 	.section	.debug_str,"MS",%progbits,1
-.LASF910:
+.LASF916:
 	.ascii	"DIVISOR_32 (4)\000"
 .LASF899:
 	.ascii	"USART_CR3_ONEBIT 11\000"
@@ -5082,7 +5100,7 @@ spi_enable_spe:
 	.ascii	"GPIO_PIN_9 (9)\000"
 .LASF221:
 	.ascii	"__FLT64_HAS_INFINITY__ 1\000"
-.LASF1021:
+.LASF1027:
 	.ascii	"SPI_DeInit\000"
 .LASF783:
 	.ascii	"SPI_CR2_TXEIE 7\000"
@@ -5118,13 +5136,13 @@ spi_enable_spe:
 	.ascii	"__int20__\000"
 .LASF838:
 	.ascii	"GPIO_AF3 (3)\000"
-.LASF998:
+.LASF1004:
 	.ascii	"SPI_SSM\000"
 .LASF18:
 	.ascii	"__SIZEOF_LONG_LONG__ 8\000"
 .LASF166:
 	.ascii	"__DBL_MAX_10_EXP__ 308\000"
-.LASF991:
+.LASF997:
 	.ascii	"SPIs_RXCRCR\000"
 .LASF250:
 	.ascii	"__FRACT_MIN__ (-0.5R-0.5R)\000"
@@ -5178,7 +5196,9 @@ spi_enable_spe:
 	.ascii	"USART_BRR_DIV_FRAC 0\000"
 .LASF215:
 	.ascii	"__FLT64_MAX__ 1.7976931348623157e+308F64\000"
-.LASF1020:
+.LASF934:
+	.ascii	"SPI_CR1_POSITION 0\000"
+.LASF1026:
 	.ascii	"pTxbuffer\000"
 .LASF502:
 	.ascii	"__INT8 \"hh\"\000"
@@ -5202,17 +5222,19 @@ spi_enable_spe:
 	.ascii	"__WINT_TYPE__ unsigned int\000"
 .LASF543:
 	.ascii	"INT8_MAX (__INT8_MAX__)\000"
-.LASF914:
+.LASF920:
 	.ascii	"LEADING_EDGE (0)\000"
 .LASF584:
 	.ascii	"PTRDIFF_MAX (__PTRDIFF_MAX__)\000"
 .LASF197:
 	.ascii	"__FLT32_MAX_10_EXP__ 38\000"
-.LASF989:
+.LASF995:
 	.ascii	"SPI_DR\000"
+.LASF910:
+	.ascii	"DEVICE_RX 0\000"
 .LASF750:
 	.ascii	"IRQ_NO_SPI3 (51)\000"
-.LASF931:
+.LASF937:
 	.ascii	"SPI_DR_POSITION 3\000"
 .LASF246:
 	.ascii	"__USFRACT_MAX__ 0XFFP-8UHR\000"
@@ -5226,6 +5248,8 @@ spi_enable_spe:
 	.ascii	"__FLT32_MIN_EXP__ (-125)\000"
 .LASF297:
 	.ascii	"__UACCUM_EPSILON__ 0x1P-16UK\000"
+.LASF911:
+	.ascii	"DEVICE_TX 1\000"
 .LASF549:
 	.ascii	"INT16_MAX (__INT16_MAX__)\000"
 .LASF872:
@@ -5244,7 +5268,7 @@ spi_enable_spe:
 	.ascii	"__int_fast32_t_defined 1\000"
 .LASF131:
 	.ascii	"__INT_FAST64_WIDTH__ 64\000"
-.LASF1007:
+.LASF1013:
 	.ascii	"SPI_Handle_t\000"
 .LASF665:
 	.ascii	"GPIOA ((GPIO_RegDef_t*) GPIOA_BASEADDR)\000"
@@ -5258,7 +5282,7 @@ spi_enable_spe:
 	.ascii	"IRQ_NO_EXTI0 (6)\000"
 .LASF111:
 	.ascii	"__INT32_C(c) c ## L\000"
-.LASF916:
+.LASF922:
 	.ascii	"IDLE_HIGH (1)\000"
 .LASF27:
 	.ascii	"__ORDER_BIG_ENDIAN__ 4321\000"
@@ -5292,7 +5316,7 @@ spi_enable_spe:
 	.ascii	"__LACCUM_IBIT__ 32\000"
 .LASF546:
 	.ascii	"INT_LEAST8_MAX (__INT_LEAST8_MAX__)\000"
-.LASF940:
+.LASF946:
 	.ascii	"__uint8_t\000"
 .LASF79:
 	.ascii	"__SCHAR_WIDTH__ 8\000"
@@ -5306,7 +5330,7 @@ spi_enable_spe:
 	.ascii	"__INT64 \"ll\"\000"
 .LASF136:
 	.ascii	"__INTPTR_MAX__ 0x7fffffff\000"
-.LASF971:
+.LASF977:
 	.ascii	"AHB2LPENR\000"
 .LASF763:
 	.ascii	"SPI_CR1_CPHA 0\000"
@@ -5329,8 +5353,8 @@ spi_enable_spe:
 	.ascii	"_INTPTR_T_DECLARED \000"
 .LASF682:
 	.ascii	"USART3 ((usart_regdef_t*)USART3_BASEADDR)\000"
-.LASF907:
-	.ascii	"DIVISOR_4 (1)\000"
+.LASF906:
+	.ascii	"RX_DEICE 0\000"
 .LASF236:
 	.ascii	"__FLT32X_HAS_INFINITY__ 1\000"
 .LASF572:
@@ -5339,7 +5363,7 @@ spi_enable_spe:
 	.ascii	"__FLT64_MANT_DIG__ 53\000"
 .LASF53:
 	.ascii	"__UINT_LEAST8_TYPE__ unsigned char\000"
-.LASF912:
+.LASF918:
 	.ascii	"DIVISOR_128 (6)\000"
 .LASF288:
 	.ascii	"__ACCUM_FBIT__ 15\000"
@@ -5347,11 +5371,11 @@ spi_enable_spe:
 	.ascii	"SPI_SR_UDR 3\000"
 .LASF294:
 	.ascii	"__UACCUM_IBIT__ 16\000"
-.LASF943:
+.LASF949:
 	.ascii	"long int\000"
 .LASF847:
 	.ascii	"GPIO_AF12 (12)\000"
-.LASF933:
+.LASF939:
 	.ascii	"SPI_RXCRCR_POSITION 5\000"
 .LASF130:
 	.ascii	"__INT_FAST64_MAX__ 0x7fffffffffffffffLL\000"
@@ -5391,7 +5415,7 @@ spi_enable_spe:
 	.ascii	"UINTPTR_MAX (__UINTPTR_MAX__)\000"
 .LASF196:
 	.ascii	"__FLT32_MAX_EXP__ 128\000"
-.LASF979:
+.LASF985:
 	.ascii	"RESERVED10\000"
 .LASF37:
 	.ascii	"__UINTMAX_TYPE__ long long unsigned int\000"
@@ -5399,7 +5423,7 @@ spi_enable_spe:
 	.ascii	"__ULLFRACT_MAX__ 0XFFFFFFFFFFFFFFFFP-64ULLR\000"
 .LASF765:
 	.ascii	"SPI_CR1_MSTER 2\000"
-.LASF993:
+.LASF999:
 	.ascii	"SPI_TXRCR\000"
 .LASF525:
 	.ascii	"_UINT64_T_DECLARED \000"
@@ -5413,11 +5437,11 @@ spi_enable_spe:
 	.ascii	"_POSIX_C_SOURCE 200809L\000"
 .LASF134:
 	.ascii	"__UINT_FAST32_MAX__ 0xffffffffU\000"
-.LASF990:
+.LASF996:
 	.ascii	"SPI_CRCPR\000"
 .LASF17:
 	.ascii	"__SIZEOF_LONG__ 4\000"
-.LASF967:
+.LASF973:
 	.ascii	"APB2ENR\000"
 .LASF21:
 	.ascii	"__SIZEOF_DOUBLE__ 8\000"
@@ -5427,11 +5451,11 @@ spi_enable_spe:
 	.ascii	"__FLT32X_MIN_EXP__ (-1021)\000"
 .LASF612:
 	.ascii	"ROM 0x1FFF0000U\000"
-.LASF1016:
+.LASF1022:
 	.ascii	"SPI_busConfig\000"
-.LASF970:
+.LASF976:
 	.ascii	"AHB1LPENR\000"
-.LASF1004:
+.LASF1010:
 	.ascii	"SPI_Config_t\000"
 .LASF800:
 	.ascii	"SPI_DFF_VALUE (0x400)\000"
@@ -5441,7 +5465,7 @@ spi_enable_spe:
 	.ascii	"USART_CR1_M 12\000"
 .LASF448:
 	.ascii	"__NEWLIB__ 4\000"
-.LASF984:
+.LASF990:
 	.ascii	"DCKCFGR\000"
 .LASF678:
 	.ascii	"SPI3 ((SPI_RegDef_t*) SPI3_BASEADDR)\000"
@@ -5453,9 +5477,9 @@ spi_enable_spe:
 	.ascii	"__FLT_DECIMAL_DIG__ 9\000"
 .LASF516:
 	.ascii	"_UINT8_T_DECLARED \000"
-.LASF937:
+.LASF943:
 	.ascii	"signed char\000"
-.LASF949:
+.LASF955:
 	.ascii	"uint8_t\000"
 .LASF579:
 	.ascii	"INTMAX_MIN (-INTMAX_MAX - 1)\000"
@@ -5495,27 +5519,27 @@ spi_enable_spe:
 	.ascii	"GPIO_SPEED_VHIGH (3)\000"
 .LASF793:
 	.ascii	"SPI_TX_BUFFER_EMPTY (0x2)\000"
-.LASF1027:
+.LASF1033:
 	.ascii	"rcc_inst\000"
 .LASF76:
 	.ascii	"__WINT_MIN__ 0U\000"
 .LASF63:
 	.ascii	"__UINT_FAST32_TYPE__ unsigned int\000"
-.LASF960:
+.LASF966:
 	.ascii	"RESERVED2\000"
 .LASF3:
 	.ascii	"__STDC_UTF_32__ 1\000"
-.LASF965:
+.LASF971:
 	.ascii	"RESERVED4\000"
 .LASF234:
 	.ascii	"__FLT32X_DENORM_MIN__ 4.9406564584124654e-324F32x\000"
-.LASF969:
+.LASF975:
 	.ascii	"RESERVED6\000"
 .LASF150:
 	.ascii	"__FLT_MAX_10_EXP__ 38\000"
-.LASF976:
+.LASF982:
 	.ascii	"RESERVED8\000"
-.LASF977:
+.LASF983:
 	.ascii	"RESERVED9\000"
 .LASF251:
 	.ascii	"__FRACT_MAX__ 0X7FFFP-15R\000"
@@ -5523,9 +5547,9 @@ spi_enable_spe:
 	.ascii	"SPI1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3000)\000"
 .LASF777:
 	.ascii	"SPI_CR2_RXDMAEN 0\000"
-.LASF932:
+.LASF938:
 	.ascii	"SPI_CRCPR_POSITION 4\000"
-.LASF1000:
+.LASF1006:
 	.ascii	"SPI_CPHA\000"
 .LASF128:
 	.ascii	"__INT_FAST32_MAX__ 0x7fffffff\000"
@@ -5555,7 +5579,7 @@ spi_enable_spe:
 	.ascii	"__int_fast64_t_defined 1\000"
 .LASF879:
 	.ascii	"USART_CR2_LBDIE 7\000"
-.LASF950:
+.LASF956:
 	.ascii	"uint16_t\000"
 .LASF672:
 	.ascii	"GPIOH ((GPIO_RegDef_t*) GPIOH_BASEADDR)\000"
@@ -5563,11 +5587,11 @@ spi_enable_spe:
 	.ascii	"__thumb2__ 1\000"
 .LASF313:
 	.ascii	"__ULLACCUM_FBIT__ 32\000"
-.LASF1001:
+.LASF1007:
 	.ascii	"SPI_CPOL\000"
-.LASF1010:
+.LASF1016:
 	.ascii	"_Bool\000"
-.LASF1028:
+.LASF1034:
 	.ascii	"get_reg_value\000"
 .LASF620:
 	.ascii	"GPIOA_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0000)\000"
@@ -5577,13 +5601,13 @@ spi_enable_spe:
 	.ascii	"_SYS_FEATURES_H \000"
 .LASF703:
 	.ascii	"USART1_PCLK_EN (rcc_inst->APB2ENR |= (1 << 4))\000"
-.LASF961:
+.LASF967:
 	.ascii	"RESERVED3\000"
 .LASF707:
 	.ascii	"UART4_PCLK_EN (rcc_inst->APB1ENR |= (1 << 19))\000"
 .LASF22:
 	.ascii	"__SIZEOF_LONG_DOUBLE__ 8\000"
-.LASF968:
+.LASF974:
 	.ascii	"RESERVED5\000"
 .LASF658:
 	.ascii	"PRIORITY_LVL_9 (0x90)\000"
@@ -5607,7 +5631,7 @@ spi_enable_spe:
 	.ascii	"SPI_CR1_RX_ONLY 10\000"
 .LASF64:
 	.ascii	"__UINT_FAST64_TYPE__ long long unsigned int\000"
-.LASF1025:
+.LASF1031:
 	.ascii	"../Drivers/Src/stm32f407xx_SPI_driver.c\000"
 .LASF804:
 	.ascii	"GPIO_MODE_OUPUT (1)\000"
@@ -5631,9 +5655,9 @@ spi_enable_spe:
 	.ascii	"GPIOD_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x0C00)\000"
 .LASF600:
 	.ascii	"_GCC_WRAP_STDINT_H \000"
-.LASF941:
+.LASF947:
 	.ascii	"__uint16_t\000"
-.LASF963:
+.LASF969:
 	.ascii	"AHB2ENR\000"
 .LASF890:
 	.ascii	"USART_CR3_IRLP 2\000"
@@ -5641,7 +5665,7 @@ spi_enable_spe:
 	.ascii	"__vo volatile\000"
 .LASF245:
 	.ascii	"__USFRACT_MIN__ 0.0UHR\000"
-.LASF1019:
+.LASF1025:
 	.ascii	"SPI_SendData\000"
 .LASF422:
 	.ascii	"__ARM_NEON\000"
@@ -5665,7 +5689,7 @@ spi_enable_spe:
 	.ascii	"ENABLE_GREEN_LED (GPIOD->ODR |= (1 << 12))\000"
 .LASF619:
 	.ascii	"AHB3PERIPHERAL_BASEADDR 0xA0000000U\000"
-.LASF973:
+.LASF979:
 	.ascii	"RESERVED7\000"
 .LASF578:
 	.ascii	"INTMAX_MAX (__INTMAX_MAX__)\000"
@@ -5713,7 +5737,7 @@ spi_enable_spe:
 	.ascii	"__int_least16_t_defined 1\000"
 .LASF629:
 	.ascii	"RCC_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x3800)\000"
-.LASF995:
+.LASF1001:
 	.ascii	"SPI_IS2PR\000"
 .LASF558:
 	.ascii	"INT_LEAST32_MAX (__INT_LEAST32_MAX__)\000"
@@ -5731,7 +5755,7 @@ spi_enable_spe:
 	.ascii	"GPIOB_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 1))\000"
 .LASF466:
 	.ascii	"__MISC_VISIBLE 1\000"
-.LASF978:
+.LASF984:
 	.ascii	"BDCR\000"
 .LASF742:
 	.ascii	"IRQ_NO_EXTI1 (7\000"
@@ -5766,7 +5790,7 @@ spi_enable_spe:
 	.ascii	"GPIOD_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 3))\000"
 .LASF329:
 	.ascii	"__UQQ_IBIT__ 0\000"
-.LASF1026:
+.LASF1032:
 	.ascii	"D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx"
 	.ascii	"_drivers/Debug\000"
 .LASF149:
@@ -5775,7 +5799,7 @@ spi_enable_spe:
 	.ascii	"__SIG_ATOMIC_MIN__ (-__SIG_ATOMIC_MAX__ - 1)\000"
 .LASF116:
 	.ascii	"__UINT_LEAST8_MAX__ 0xff\000"
-.LASF957:
+.LASF963:
 	.ascii	"RESERVED\000"
 .LASF700:
 	.ascii	"SPI2_PCLK_EN (rcc_inst->APB1ENR |= (1 << 14))\000"
@@ -5803,7 +5827,7 @@ spi_enable_spe:
 	.ascii	"__ARM_FEATURE_FP16_FML\000"
 .LASF247:
 	.ascii	"__USFRACT_EPSILON__ 0x1P-8UHR\000"
-.LASF953:
+.LASF959:
 	.ascii	"CFGR\000"
 .LASF480:
 	.ascii	"___int_least32_t_defined 1\000"
@@ -5821,7 +5845,7 @@ spi_enable_spe:
 	.ascii	"__UINT64_MAX__ 0xffffffffffffffffULL\000"
 .LASF881:
 	.ascii	"USART_CR2_CPHA 9\000"
-.LASF926:
+.LASF932:
 	.ascii	"SPI_SIMPLEX_RX_ONLY (3)\000"
 .LASF102:
 	.ascii	"__UINT32_MAX__ 0xffffffffUL\000"
@@ -5879,7 +5903,7 @@ spi_enable_spe:
 	.ascii	"__INT_LEAST64_WIDTH__ 64\000"
 .LASF158:
 	.ascii	"__FLT_HAS_INFINITY__ 1\000"
-.LASF999:
+.LASF1005:
 	.ascii	"SPI_Speed\000"
 .LASF770:
 	.ascii	"SPI_CR1_SSM 9\000"
@@ -5895,7 +5919,7 @@ spi_enable_spe:
 	.ascii	"___int8_t_defined 1\000"
 .LASF240:
 	.ascii	"__SFRACT_MIN__ (-0.5HR-0.5HR)\000"
-.LASF945:
+.LASF951:
 	.ascii	"long unsigned int\000"
 .LASF341:
 	.ascii	"__SA_IBIT__ 16\000"
@@ -5934,7 +5958,7 @@ spi_enable_spe:
 	.ascii	"GPIO_OP_TYPE_PP (0)\000"
 .LASF142:
 	.ascii	"__FLT_EVAL_METHOD_TS_18661_3__ 0\000"
-.LASF1013:
+.LASF1019:
 	.ascii	"address\000"
 .LASF498:
 	.ascii	"int +2\000"
@@ -5964,7 +5988,7 @@ spi_enable_spe:
 	.ascii	"USART_CR2_ADD 0\000"
 .LASF192:
 	.ascii	"__FLT32_MANT_DIG__ 24\000"
-.LASF911:
+.LASF917:
 	.ascii	"DIVISOR_64 (5)\000"
 .LASF203:
 	.ascii	"__FLT32_DENORM_MIN__ 1.4012984643248171e-45F32\000"
@@ -6001,7 +6025,7 @@ spi_enable_spe:
 	.ascii	" (rcc_inst->AHB1RSTR &= ~(1 << 1)); } while(0)\000"
 .LASF375:
 	.ascii	"__PRAGMA_REDEFINE_EXTNAME 1\000"
-.LASF994:
+.LASF1000:
 	.ascii	"SPI_IS2CFGR\000"
 .LASF296:
 	.ascii	"__UACCUM_MAX__ 0XFFFFFFFFP-16UK\000"
@@ -6039,11 +6063,11 @@ spi_enable_spe:
 	.ascii	"USART_CR1_PEIE 8\000"
 .LASF643:
 	.ascii	"USART1_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1000)\000"
-.LASF952:
+.LASF958:
 	.ascii	"PLLCFGR\000"
 .LASF373:
 	.ascii	"__HAVE_SPECULATION_SAFE_VALUE 1\000"
-.LASF935:
+.LASF941:
 	.ascii	"SPI_IS2CFGR_POSITION 7\000"
 .LASF644:
 	.ascii	"USART6_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x1400)\000"
@@ -6069,7 +6093,7 @@ spi_enable_spe:
 	.ascii	"__GCC_ATOMIC_LONG_LOCK_FREE 2\000"
 .LASF305:
 	.ascii	"__ULACCUM_MIN__ 0.0ULK\000"
-.LASF944:
+.LASF950:
 	.ascii	"__uint32_t\000"
 .LASF184:
 	.ascii	"__LDBL_MAX__ 1.7976931348623157e+308L\000"
@@ -6083,7 +6107,7 @@ spi_enable_spe:
 	.ascii	"STOP_1 0x0\000"
 .LASF144:
 	.ascii	"__FLT_RADIX__ 2\000"
-.LASF946:
+.LASF952:
 	.ascii	"long long int\000"
 .LASF710:
 	.ascii	"GPIOB_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 1))\000"
@@ -6105,9 +6129,9 @@ spi_enable_spe:
 	.ascii	"DISABLE_GREEN_LED (GPIOD->ODR &= ~(1 << 12))\000"
 .LASF588:
 	.ascii	"WINT_MAX (__WINT_MAX__)\000"
-.LASF1009:
+.LASF1015:
 	.ascii	"enable\000"
-.LASF1024:
+.LASF1030:
 	.ascii	"GNU C11 10.3.1 20210824 (release) -mcpu=cortex-m4 -"
 	.ascii	"mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -march=ar"
 	.ascii	"mv7e-m+fp -g3 -O0 -std=gnu11 -ffunction-sections -f"
@@ -6131,7 +6155,7 @@ spi_enable_spe:
 	.ascii	"__FLT64_MIN__ 2.2250738585072014e-308F64\000"
 .LASF476:
 	.ascii	"___int32_t_defined 1\000"
-.LASF959:
+.LASF965:
 	.ascii	"APB2RSTR\000"
 .LASF398:
 	.ascii	"__ARM_ARCH_PROFILE\000"
@@ -6154,8 +6178,8 @@ spi_enable_spe:
 	.ascii	"__BSD_VISIBLE 1\000"
 .LASF551:
 	.ascii	"INT_LEAST16_MIN (-__INT_LEAST16_MAX__ - 1)\000"
-.LASF928:
-	.ascii	"SPI_CR1_POSITION 0\000"
+.LASF913:
+	.ascii	"DIVISOR_4 (1)\000"
 .LASF732:
 	.ascii	"GPIOA_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 0));"
 	.ascii	" (rcc_inst->AHB1RSTR &= ~(1 << 0)); } while(0)\000"
@@ -6184,11 +6208,11 @@ spi_enable_spe:
 	.ascii	"__FLT32_EPSILON__ 1.1920928955078125e-7F32\000"
 .LASF423:
 	.ascii	"__ARM_NEON_FP\000"
-.LASF1023:
+.LASF1029:
 	.ascii	"enordi\000"
-.LASF975:
+.LASF981:
 	.ascii	"APB2LPENR\000"
-.LASF1022:
+.LASF1028:
 	.ascii	"SPI_Init\000"
 .LASF467:
 	.ascii	"__POSIX_VISIBLE 200809\000"
@@ -6196,7 +6220,7 @@ spi_enable_spe:
 	.ascii	"GPIO_MODE_INPUT (0)\000"
 .LASF253:
 	.ascii	"__UFRACT_FBIT__ 16\000"
-.LASF1008:
+.LASF1014:
 	.ascii	"spix\000"
 .LASF334:
 	.ascii	"__UDQ_FBIT__ 64\000"
@@ -6212,9 +6236,9 @@ spi_enable_spe:
 	.ascii	"L)\000"
 .LASF561:
 	.ascii	"INT64_MAX (__INT64_MAX__)\000"
-.LASF948:
+.LASF954:
 	.ascii	"unsigned int\000"
-.LASF992:
+.LASF998:
 	.ascii	"SPI_TXCRCR\000"
 .LASF449:
 	.ascii	"__NEWLIB_MINOR__ 1\000"
@@ -6240,7 +6264,7 @@ spi_enable_spe:
 	.ascii	"SPI1_PCLK_EN (rcc_inst->APB2ENR |= (1 << 12))\000"
 .LASF867:
 	.ascii	"USART_CR1_RXNEIE 5\000"
-.LASF988:
+.LASF994:
 	.ascii	"SPI_SR\000"
 .LASF24:
 	.ascii	"__CHAR_BIT__ 8\000"
@@ -6262,7 +6286,7 @@ spi_enable_spe:
 	.ascii	"USART_CR2_LINEN 14\000"
 .LASF391:
 	.ascii	"__ARM_FEATURE_LDREX\000"
-.LASF1003:
+.LASF1009:
 	.ascii	"SPI_DFF\000"
 .LASF328:
 	.ascii	"__UQQ_FBIT__ 8\000"
@@ -6297,7 +6321,7 @@ spi_enable_spe:
 	.ascii	"UART4_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 19))\000"
 .LASF45:
 	.ascii	"__UINT8_TYPE__ unsigned char\000"
-.LASF985:
+.LASF991:
 	.ascii	"RCC_RegDef_t\000"
 .LASF535:
 	.ascii	"__int_fast8_t_defined 1\000"
@@ -6323,7 +6347,7 @@ spi_enable_spe:
 	.ascii	"true 1\000"
 .LASF348:
 	.ascii	"__USA_FBIT__ 16\000"
-.LASF974:
+.LASF980:
 	.ascii	"APB1LPENR\000"
 .LASF59:
 	.ascii	"__INT_FAST32_TYPE__ int\000"
@@ -6335,11 +6359,11 @@ spi_enable_spe:
 	.ascii	"__ATFILE_VISIBLE 1\000"
 .LASF262:
 	.ascii	"__LFRACT_EPSILON__ 0x1P-31LR\000"
-.LASF981:
+.LASF987:
 	.ascii	"SSCGR\000"
 .LASF396:
 	.ascii	"__ARM_SIZEOF_MINIMAL_ENUM 1\000"
-.LASF938:
+.LASF944:
 	.ascii	"unsigned char\000"
 .LASF231:
 	.ascii	"__FLT32X_NORM_MAX__ 1.7976931348623157e+308F32x\000"
@@ -6371,7 +6395,7 @@ spi_enable_spe:
 	.ascii	"_MACHINE__DEFAULT_TYPES_H \000"
 .LASF25:
 	.ascii	"__BIGGEST_ALIGNMENT__ 8\000"
-.LASF980:
+.LASF986:
 	.ascii	"RESERVED11\000"
 .LASF857:
 	.ascii	"USART_SR_RXNE 5\000"
@@ -6385,11 +6409,11 @@ spi_enable_spe:
 	.ascii	"__ARM_FEATURE_QRDMX\000"
 .LASF614:
 	.ascii	"PERIPHERAL_BASEADDR 0x40000000U\000"
-.LASF906:
+.LASF912:
 	.ascii	"DIVISOR_2 (0)\000"
 .LASF785:
 	.ascii	"SPI_SR_TXE 1\000"
-.LASF956:
+.LASF962:
 	.ascii	"AHB3RSTR\000"
 .LASF738:
 	.ascii	"GPIOG_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 6));"
@@ -6426,7 +6450,7 @@ spi_enable_spe:
 	.ascii	"GPIOE ((GPIO_RegDef_t*) GPIOE_BASEADDR)\000"
 .LASF193:
 	.ascii	"__FLT32_DIG__ 6\000"
-.LASF909:
+.LASF915:
 	.ascii	"DIVISOR_16 (3)\000"
 .LASF685:
 	.ascii	"NVIC_SET_EN ((NVIC_EN_RegDef_t*) NVIC_ISER_BASEADDR"
@@ -6447,7 +6471,7 @@ spi_enable_spe:
 	.ascii	"__SACCUM_FBIT__ 7\000"
 .LASF361:
 	.ascii	"__GCC_HAVE_SYNC_COMPARE_AND_SWAP_4 1\000"
-.LASF958:
+.LASF964:
 	.ascii	"APB1RSTR\000"
 .LASF290:
 	.ascii	"__ACCUM_MIN__ (-0X1P15K-0X1P15K)\000"
@@ -6455,9 +6479,9 @@ spi_enable_spe:
 	.ascii	"SPI_CR2_TXDMAEN 1\000"
 .LASF382:
 	.ascii	"__ARM_FEATURE_CRYPTO\000"
-.LASF966:
+.LASF972:
 	.ascii	"APB1ENR\000"
-.LASF930:
+.LASF936:
 	.ascii	"SPI_SR_POSITION 2\000"
 .LASF639:
 	.ascii	"UART4_BASEADDR (APB1PERIPHERAL_BASEADDR + 0x4c00)\000"
@@ -6481,7 +6505,7 @@ spi_enable_spe:
 	.ascii	"__ORDER_LITTLE_ENDIAN__ 1234\000"
 .LASF153:
 	.ascii	"__FLT_NORM_MAX__ 3.4028234663852886e+38F\000"
-.LASF947:
+.LASF953:
 	.ascii	"long long unsigned int\000"
 .LASF565:
 	.ascii	"UINT_LEAST64_MAX (__UINT_LEAST64_MAX__)\000"
@@ -6517,7 +6541,7 @@ spi_enable_spe:
 	.ascii	"SPI_CR1_BAUDRATE 3\000"
 .LASF58:
 	.ascii	"__INT_FAST16_TYPE__ int\000"
-.LASF997:
+.LASF1003:
 	.ascii	"BusConfig\000"
 .LASF627:
 	.ascii	"GPIOH_BASEADDR (AHB1PERIPHERAL_BASEADDR + 0x1C00)\000"
@@ -6541,7 +6565,7 @@ spi_enable_spe:
 	.ascii	"__FLT32X_DIG__ 15\000"
 .LASF719:
 	.ascii	"I2C2_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 22))\000"
-.LASF913:
+.LASF919:
 	.ascii	"DIVISOR_256 (7)\000"
 .LASF336:
 	.ascii	"__UTQ_FBIT__ 128\000"
@@ -6550,15 +6574,15 @@ spi_enable_spe:
 .LASF739:
 	.ascii	"GPIOH_RESET() do{ (rcc_inst->AHB1RSTR |= (1 << 7));"
 	.ascii	" (rcc_inst->AHB1RSTR &= ~(1 << 7)); } while(0)\000"
-.LASF1005:
+.LASF1011:
 	.ascii	"pSPIx\000"
-.LASF1014:
+.LASF1020:
 	.ascii	"spi_register\000"
 .LASF126:
 	.ascii	"__INT_FAST16_MAX__ 0x7fffffff\000"
 .LASF472:
 	.ascii	"__have_longlong64 1\000"
-.LASF1017:
+.LASF1023:
 	.ascii	"pSPIHandler\000"
 .LASF749:
 	.ascii	"IRQ_NO_SPI2 (36)\000"
@@ -6586,6 +6610,8 @@ spi_enable_spe:
 	.ascii	"SIZE_MAX (__SIZE_MAX__)\000"
 .LASF325:
 	.ascii	"__DQ_IBIT__ 0\000"
+.LASF908:
+	.ascii	"SYNCHRONOUS 0\000"
 .LASF439:
 	.ascii	"__ARM_BF16_FORMAT_ALTERNATIVE\000"
 .LASF43:
@@ -6604,11 +6630,11 @@ spi_enable_spe:
 	.ascii	"_INT64_T_DECLARED \000"
 .LASF817:
 	.ascii	"GPIO_PIN_PU (1)\000"
-.LASF972:
+.LASF978:
 	.ascii	"AHB3LPENR\000"
 .LASF694:
 	.ascii	"GPIOI_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 8))\000"
-.LASF1011:
+.LASF1017:
 	.ascii	"spi_enable_spe\000"
 .LASF337:
 	.ascii	"__UTQ_IBIT__ 0\000"
@@ -6624,7 +6650,7 @@ spi_enable_spe:
 	.ascii	"___int16_t_defined 1\000"
 .LASF427:
 	.ascii	"__ARM_EABI__ 1\000"
-.LASF917:
+.LASF923:
 	.ascii	"IDLE_LOW (0)\000"
 .LASF441:
 	.ascii	"__ELF__ 1\000"
@@ -6634,7 +6660,7 @@ spi_enable_spe:
 	.ascii	"__THUMBEL__ 1\000"
 .LASF755:
 	.ascii	"RESET DISABLE\000"
-.LASF918:
+.LASF924:
 	.ascii	"SPI_SW_SSM (1)\000"
 .LASF379:
 	.ascii	"__ARM_FEATURE_DSP 1\000"
@@ -6644,9 +6670,9 @@ spi_enable_spe:
 	.ascii	"__QQ_IBIT__ 0\000"
 .LASF808:
 	.ascii	"GPIO_MODE_IT_RT (5)\000"
-.LASF986:
+.LASF992:
 	.ascii	"SPI_CR1\000"
-.LASF987:
+.LASF993:
 	.ascii	"SPI_CR2\000"
 .LASF892:
 	.ascii	"USART_CR3_NACK 4\000"
@@ -6676,15 +6702,15 @@ spi_enable_spe:
 	.ascii	"GPIO_PIN_7 (7)\000"
 .LASF368:
 	.ascii	"__GCC_ATOMIC_INT_LOCK_FREE 2\000"
-.LASF908:
+.LASF914:
 	.ascii	"DIVISOR_8 (2)\000"
-.LASF1018:
+.LASF1024:
 	.ascii	"tx_or_rx\000"
 .LASF425:
 	.ascii	"__ARM_ARCH_7EM__ 1\000"
 .LASF417:
 	.ascii	"__ARM_FEATURE_FP16_SCALAR_ARITHMETIC\000"
-.LASF962:
+.LASF968:
 	.ascii	"AHB1ENR\000"
 .LASF287:
 	.ascii	"__USACCUM_EPSILON__ 0x1P-8UHK\000"
@@ -6696,13 +6722,13 @@ spi_enable_spe:
 	.ascii	"UINT_FAST16_MAX (__UINT_FAST16_MAX__)\000"
 .LASF271:
 	.ascii	"__LLFRACT_MAX__ 0X7FFFFFFFFFFFFFFFP-63LLR\000"
-.LASF925:
+.LASF931:
 	.ascii	"SPI_CONFIG_FD (2)\000"
 .LASF559:
 	.ascii	"UINT_LEAST32_MAX (__UINT_LEAST32_MAX__)\000"
 .LASF281:
 	.ascii	"__SACCUM_MAX__ 0X7FFFP-7HK\000"
-.LASF964:
+.LASF970:
 	.ascii	"AHB3ENR\000"
 .LASF900:
 	.ascii	"BITS_8 0\000"
@@ -6716,7 +6742,7 @@ spi_enable_spe:
 	.ascii	"__DBL_DIG__ 15\000"
 .LASF267:
 	.ascii	"__ULFRACT_EPSILON__ 0x1P-32ULR\000"
-.LASF955:
+.LASF961:
 	.ascii	"AHB2RSTR\000"
 .LASF23:
 	.ascii	"__SIZEOF_SIZE_T__ 4\000"
@@ -6726,7 +6752,7 @@ spi_enable_spe:
 	.ascii	"__int_least32_t_defined 1\000"
 .LASF114:
 	.ascii	"__INT64_C(c) c ## LL\000"
-.LASF923:
+.LASF929:
 	.ascii	"DFF_16BIT (1)\000"
 .LASF186:
 	.ascii	"__LDBL_MIN__ 2.2250738585072014e-308L\000"
@@ -6744,9 +6770,9 @@ spi_enable_spe:
 	.ascii	"GPIO_MODE_IT_RFT (6)\000"
 .LASF730:
 	.ascii	"UART5_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 20))\000"
-.LASF939:
+.LASF945:
 	.ascii	"short int\000"
-.LASF1030:
+.LASF1036:
 	.ascii	"SPI_PeriClockControl\000"
 .LASF641:
 	.ascii	"EXTI_BASEADDR (APB2PERIPHERAL_BASEADDR + 0x3c00)\000"
@@ -6756,7 +6782,7 @@ spi_enable_spe:
 	.ascii	"__UDA_IBIT__ 32\000"
 .LASF511:
 	.ascii	"__LEAST16 \"h\"\000"
-.LASF1002:
+.LASF1008:
 	.ascii	"SPI_DEVICEMODE\000"
 .LASF357:
 	.ascii	"__NO_INLINE__ 1\000"
@@ -6773,11 +6799,11 @@ spi_enable_spe:
 	.ascii	"__ATOMIC_RELAXED 0\000"
 .LASF432:
 	.ascii	"__ARM_FEATURE_COPROC\000"
-.LASF927:
+.LASF933:
 	.ascii	"SPI_ENABLE_MASK (0x20)\000"
 .LASF174:
 	.ascii	"__DBL_HAS_INFINITY__ 1\000"
-.LASF934:
+.LASF940:
 	.ascii	"SPI_TXCRCR_POSITION 6\000"
 .LASF93:
 	.ascii	"__SIG_ATOMIC_MAX__ 0x7fffffff\000"
@@ -6789,7 +6815,7 @@ spi_enable_spe:
 	.ascii	"DISABLE 0\000"
 .LASF774:
 	.ascii	"SPI_CR1_CRC_EN 13\000"
-.LASF922:
+.LASF928:
 	.ascii	"DFF_8BIT (0)\000"
 .LASF442:
 	.ascii	"__USES_INITFINI__ 1\000"
@@ -6927,7 +6953,7 @@ spi_enable_spe:
 	.ascii	"_INT8_T_DECLARED \000"
 .LASF16:
 	.ascii	"__SIZEOF_INT__ 4\000"
-.LASF982:
+.LASF988:
 	.ascii	"PLLI2SCFGR\000"
 .LASF269:
 	.ascii	"__LLFRACT_IBIT__ 0\000"
@@ -6935,7 +6961,7 @@ spi_enable_spe:
 	.ascii	"UINT16_C(x) __UINT16_C(x)\000"
 .LASF270:
 	.ascii	"__LLFRACT_MIN__ (-0.5LLR-0.5LLR)\000"
-.LASF951:
+.LASF957:
 	.ascii	"uint32_t\000"
 .LASF483:
 	.ascii	"_SYS__INTSUP_H \000"
@@ -6964,21 +6990,23 @@ spi_enable_spe:
 	.ascii	"__ACCUM_EPSILON__ 0x1P-15K\000"
 .LASF307:
 	.ascii	"__ULACCUM_EPSILON__ 0x1P-32ULK\000"
+.LASF909:
+	.ascii	"ASYNCHRONOUS 1\000"
 .LASF177:
 	.ascii	"__LDBL_DIG__ 15\000"
 .LASF858:
 	.ascii	"USART_SR_TC 6\000"
 .LASF87:
 	.ascii	"__SIZE_WIDTH__ 32\000"
-.LASF1006:
+.LASF1012:
 	.ascii	"SPI_Config\000"
-.LASF983:
+.LASF989:
 	.ascii	"PLLSAICFGR\000"
 .LASF501:
 	.ascii	"_INT32_EQ_LONG \000"
 .LASF75:
 	.ascii	"__WINT_MAX__ 0xffffffffU\000"
-.LASF996:
+.LASF1002:
 	.ascii	"SPI_RegDef_t\000"
 .LASF106:
 	.ascii	"__INT_LEAST8_WIDTH__ 8\000"
@@ -6994,7 +7022,7 @@ spi_enable_spe:
 	.ascii	"__DBL_MAX__ ((double)1.7976931348623157e+308L)\000"
 .LASF646:
 	.ascii	"NVIC_ISER_BASEADDR (0xE000E100)\000"
-.LASF942:
+.LASF948:
 	.ascii	"short unsigned int\000"
 .LASF268:
 	.ascii	"__LLFRACT_FBIT__ 63\000"
@@ -7004,11 +7032,11 @@ spi_enable_spe:
 	.ascii	"__thumb__ 1\000"
 .LASF830:
 	.ascii	"GPIO_PIN_11 (11)\000"
-.LASF1029:
+.LASF1035:
 	.ascii	"tempReg\000"
 .LASF410:
 	.ascii	"__ARMEL__ 1\000"
-.LASF919:
+.LASF925:
 	.ascii	"SPI_HW_SSM (0)\000"
 .LASF320:
 	.ascii	"__HQ_FBIT__ 15\000"
@@ -7016,11 +7044,11 @@ spi_enable_spe:
 	.ascii	"__bool_true_false_are_defined 1\000"
 .LASF648:
 	.ascii	"NVIC_IPR_BASEADDR (0xE000E400)\000"
-.LASF920:
+.LASF926:
 	.ascii	"SPI_MASTER (1)\000"
-.LASF915:
+.LASF921:
 	.ascii	"TRAILING_EDGE (1)\000"
-.LASF1012:
+.LASF1018:
 	.ascii	"SPI_SSOEConfig\000"
 .LASF691:
 	.ascii	"GPIOF_PCLK_EN (rcc_inst->AHB1ENR |= (1 << 4))\000"
@@ -7028,7 +7056,7 @@ spi_enable_spe:
 	.ascii	"USART2_PCLK_DI (rcc_inst->APB1ENR &= ~(1 << 17))\000"
 .LASF708:
 	.ascii	"UART5_PCLK_EN (rcc_inst->APB1ENR |= (1 << 20))\000"
-.LASF1015:
+.LASF1021:
 	.ascii	"register_bit\000"
 .LASF401:
 	.ascii	"__ARM_ARCH\000"
@@ -7040,17 +7068,19 @@ spi_enable_spe:
 	.ascii	"__int_least8_t_defined 1\000"
 .LASF499:
 	.ascii	"long +4\000"
-.LASF954:
+.LASF960:
 	.ascii	"AHB1RSTR\000"
 .LASF895:
 	.ascii	"USART_CR3_DMAT 7\000"
+.LASF907:
+	.ascii	"TX_DEVICE 1\000"
 .LASF392:
 	.ascii	"__ARM_FEATURE_LDREX 7\000"
 .LASF443:
 	.ascii	"_STDINT_H \000"
 .LASF722:
 	.ascii	"SPI4_PCLK_DI (rcc_inst->APB2ENR &= ~(1 << 13))\000"
-.LASF929:
+.LASF935:
 	.ascii	"SPI_CR2_POSITION 1\000"
 .LASF332:
 	.ascii	"__USQ_FBIT__ 32\000"
@@ -7090,7 +7120,7 @@ spi_enable_spe:
 	.ascii	"__DBL_MIN_10_EXP__ (-307)\000"
 .LASF135:
 	.ascii	"__UINT_FAST64_MAX__ 0xffffffffffffffffULL\000"
-.LASF936:
+.LASF942:
 	.ascii	"SPI_IS2PR_POSITION 8\000"
 .LASF709:
 	.ascii	"GPIOA_PCLK_DI (rcc_inst->AHB1ENR &= ~(1 << 0))\000"
@@ -7100,11 +7130,11 @@ spi_enable_spe:
 	.ascii	"INT_FAST32_MAX (__INT_FAST32_MAX__)\000"
 .LASF200:
 	.ascii	"__FLT32_NORM_MAX__ 3.4028234663852886e+38F32\000"
-.LASF921:
+.LASF927:
 	.ascii	"SPI_SLAVE (0)\000"
 .LASF775:
 	.ascii	"SPI_CR1_BIDI_OE 14\000"
-.LASF924:
+.LASF930:
 	.ascii	"SPI_CONFIG_HD (1)\000"
 .LASF457:
 	.ascii	"_POSIX_C_SOURCE\000"

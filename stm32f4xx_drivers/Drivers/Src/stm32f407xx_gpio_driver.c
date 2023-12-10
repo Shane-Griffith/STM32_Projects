@@ -5,7 +5,9 @@
  *      Author: shane
  */
 #include "stm32f407xx_GPIO_driver.h"
+
 #include <stdint.h>
+#include <stdio.h>
 
 /*
  *
@@ -27,132 +29,49 @@
  * @Note              -  none
  */
 
-void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
+void GPIO_PeriClockControl(GPIO_PinConfig_t gpio, uint8_t enordi)
 {
-
-if(EnorDi == ENABLE)
-{
-	if(pGPIOx == GPIOA)
+	if(enordi == ENABLE)
 	{
-		GPIOA_PCLK_EN;
-	}
-	else if(pGPIOx == GPIOB)
-	{
-		GPIOB_PCLK_EN;
-	}
-	else if(pGPIOx == GPIOC)
-	{
-		GPIOC_PCLK_EN;
-	}
-	else if(pGPIOx == GPIOD)
-	{
-		GPIOD_PCLK_EN;
-	}
-	else if(pGPIOx == GPIOE)
-	{
-		GPIOE_PCLK_EN;
-	}
-	else if(pGPIOx == GPIOF)
-	{
-		GPIOF_PCLK_EN;
-	}
-	else if(pGPIOx == GPIOG)
-	{
-		GPIOG_PCLK_EN;
-	}
-	else if(pGPIOx == GPIOH)
-	{
-		GPIOH_PCLK_EN;
-	}
-	else if(pGPIOx == GPIOI)
-	{
-		GPIOI_PCLK_EN;
+		RCC_INST->AHB1ENR |= (ENABLE << gpio.GPIO_PORT);
 	}
 	else
 	{
-		if(pGPIOx == GPIOA)
-		{
-			GPIOA_PCLK_DI;
-		}
-		else if(pGPIOx == GPIOB)
-		{
-			GPIOB_PCLK_DI;
-		}
-		else if(pGPIOx == GPIOC)
-		{
-			GPIOC_PCLK_DI;
-		}
-		else if(pGPIOx == GPIOD)
-		{
-			GPIOD_PCLK_DI;
-		}
-		else if(pGPIOx == GPIOE)
-		{
-			GPIOE_PCLK_DI;
-		}
-		else if(pGPIOx == GPIOF)
-		{
-			GPIOF_PCLK_DI;
-		}
-		else if(pGPIOx == GPIOG)
-		{
-			GPIOG_PCLK_DI;
-		}
-		else if(pGPIOx == GPIOH)
-		{
-			GPIOH_PCLK_DI;
-		}
-		else if(pGPIOx == GPIOI)
-		{
-			GPIOI_PCLK_DI;
-		}
+		RCC_INST->AHB1ENR &= ~(ENABLE << gpio.GPIO_PORT);
 	}
-}
-
 }
 
 /*
  *  Init - Deinit
  */
-void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
+void GPIO_config(GPIO_Handle_t *pGPIOHandle)
 {
 
-GPIO_PeriClockControl(pGPIOHandle->pGPIOx, ENABLE);
+GPIO_PeriClockControl(pGPIOHandle->GPIO_PinConfig, ENABLE);
 
 //Configure pin mode
+GPIO_Set_Pin_Mode(pGPIOHandle);
 
-//if interrupt is true
-if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode < GPIO_MODE_IT_FT){
+//configure pin for desired interrupt trigger type
+if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_FT)
+{
+	//configure falling edge
+	EXTI->FTRS |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+	//make sure that rising edge is clear
+	EXTI->RTSR &= ~ (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 
-	pGPIOHandle->pGPIOx->MODER |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode <<
-			(2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+}else if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RT)
+{
+	//configure for rising edge
+	EXTI->RTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+	//make sure falling edge is clear
+	EXTI->FTRS &= ~(1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 
-}else{
-
-	//configure pin mode
-	pGPIOHandle->pGPIOx->MODER |= (GPIO_MODE_INPUT << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
-
-	//configure pin for desired interrupt trigger type
-	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_FT){
-
-
-		//configure falling edge
-		EXTI->FTRS |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
-		//make sure that rising edge is clear
-		EXTI->RTSR &= ~ (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
-
-	}else if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RT){
-		//configure for rising edge
-		EXTI->RTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
-		//make sure falling edge is clear
-		EXTI->FTRS &= ~(1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
-
-	}else if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RFT){
-		//configure rising & falling edge
-		EXTI->FTRS |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
-		EXTI->RTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
-
-	}
+}else if (pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_IT_RFT)
+{
+	//configure rising & falling edge
+	EXTI->FTRS |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
+	EXTI->RTSR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
 
 	//enable the interrupt over that pin/port + enable pclk for syscfg
 	uint8_t temp1 = pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber / 4;
@@ -162,38 +81,17 @@ if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode < GPIO_MODE_IT_FT){
 	SYSCFG->EXTICR[temp1] |= (portCode << temp2);
 	//enable exti interrupt using imr
 	EXTI->IMR |= (1 << pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber);
-
-
 }
 
 //configure pin speed
-pGPIOHandle->pGPIOx->OSPEEDR |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed <<
-		(2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
+pGPIOHandle->pGPIOx->OSPEEDR |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinSpeed << (2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
 
-//Configure Alt Function Mode
-
-if(pGPIOHandle->GPIO_PinConfig.GPIO_PinMode == GPIO_MODE_ALTFN)
-{
-	if(pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber > 7)
-	{
-		pGPIOHandle->pGPIOx->AFRH |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode <<
-				(4 * (pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber % 8)));
-	}
-	else
-	{
-		pGPIOHandle->pGPIOx->AFRL |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinAltFunMode <<
-						(4 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));
-	}
-}
 //Configure open drain/push pull
-(pGPIOHandle->pGPIOx->OTYPER |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType  << (pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)));//clear
+(pGPIOHandle->pGPIOx->OTYPER |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinOPType  << (pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber)));
 
 //configure pull up/pull down register
 (pGPIOHandle->pGPIOx->PUPDR |= (pGPIOHandle->GPIO_PinConfig.GPIO_PinPuPDcontrol) <<
 		(2 * pGPIOHandle->GPIO_PinConfig.GPIO_PinNumber));//set
-
-
-
 }
 
 void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
@@ -216,6 +114,31 @@ void GPIO_DeInit(GPIO_RegDef_t *pGPIOx)
 	}else if (pGPIOx == GPIOH){
 		GPIOH_RESET();
 	}
+}
+
+bool GPIO_Set_Pin_Mode(GPIO_Handle_t *gpiox)
+{
+	//if desired pin mode is alternate function - set it for that pin
+	if (gpiox->GPIO_PinConfig.GPIO_PinMode == alt_function)
+	{
+		gpiox->pGPIOx->MODER |= (GPIO_MODE_ALTFN << (2 * gpiox->GPIO_PinConfig.GPIO_PinNumber));
+		gpiox->pGPIOx->AFRL |= (ALT_FUNC_EN(gpiox->GPIO_PinConfig.alt_func_modes, gpiox->GPIO_PinConfig.GPIO_PinNumber));
+		return true;
+	}
+	// if desired pin is input | output
+	if (gpiox->GPIO_PinConfig.GPIO_PinMode == input)
+	{
+		gpiox->pGPIOx->MODER |= (GPIO_MODE_INPUT << (2 * gpiox->GPIO_PinConfig.GPIO_PinNumber));
+		return true;
+	}
+	else if (gpiox->GPIO_PinConfig.GPIO_PinMode == output)
+	{
+		gpiox->pGPIOx->MODER |= (GPIO_MODE_OUTPUT << (2 * gpiox->GPIO_PinConfig.GPIO_PinNumber));
+		return true;
+	}
+
+	printf("Invalid Choice\n");
+	return false;
 }
 
 //Read data from pin and return it

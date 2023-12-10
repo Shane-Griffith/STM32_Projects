@@ -3,7 +3,13 @@
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.1771224160">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.config.exe.debug.1771224160" moduleId="org.eclipse.cdt.core.settings" name="Debug">
-				<externalSettings/>
+				<externalSettings>
+					<externalSetting>
+						<entry flags="RESOLVED" kind="includePath" name="D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Drivers\Src"/>
+						<entry flags="RESOLVED" kind="includePath" name="D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Drivers\Inc"/>
+						<entry flags="RESOLVED" kind="includePath" name="D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Src"/>
+					</externalSetting>
+				</externalSettings>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -37,9 +43,10 @@
 									<listOptionValue builtIn="false" value="-save-temps"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths.105588375" name="Include paths (-I)" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.includepaths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Src&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Drivers\Src&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Drivers\Inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\GPS_Project&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;D:\Repos\STM32_Projects\stm32f4xx_drivers\stm32f4xx_drivers\Src&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.1471962653" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>

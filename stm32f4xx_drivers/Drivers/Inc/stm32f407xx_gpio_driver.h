@@ -8,14 +8,15 @@
 #ifndef INC_STM32F407XX_GPIO_DRIVER_H_
 #define INC_STM32F407XX_GPIO_DRIVER_H_
 
-#include <stdint.h>
 #include "stm32f4xx.h"
 
+#include <stdint.h>
+#include <stdbool.h>
 
 
 //@GPIO_PIN_MODES PIN POSSIBLE MODES
 #define GPIO_MODE_INPUT		(0)
-#define GPIO_MODE_OUPUT		(1)
+#define GPIO_MODE_OUTPUT	(1)
 #define GPIO_MODE_ALTFN		(2)
 #define GPIO_MODE_ANALOG	(3)
 #define GPIO_MODE_IT_FT		(4)
@@ -73,24 +74,33 @@
 #define GPIO_AF14		(14)
 #define GPIO_AF15		(15)
 
+#define ALT_FUNC_EN(VAL, SHIFT) (VAL << (4 * SHIFT))
+
+typedef enum
+{
+	alt_function,
+	input,
+	output,
+
+
+}pin_modes;
+
+
 typedef struct
 {
-
 	uint8_t GPIO_PinNumber;				/*Possible Pin Numbers from @GPIO_PIN_NO*/
-	uint8_t	GPIO_PinMode;				/*Possible pin modes from @GPIO_PIN_MODES */
+	uint8_t alt_func_modes;				/* Possible aflt function modes range from 0 - 1 */
+	pin_modes GPIO_PinMode;				/*Possible pin modes from @GPIO_PIN_MODES */
 	uint8_t GPIO_PinOPType;				/*Possible pin modes from @GPIO_PIN_OP_TYPE (open drain/push pull)*/
 	uint8_t	GPIO_PinSpeed;				/*Possible pin modes from @GPIO_PIN_SPEED */
 	uint8_t GPIO_PinPuPDcontrol; 		/*Possible PUPD modes from @GPIO_PUPD_CONTROL */
-	uint8_t GPIO_PinAltFunMode;			/*Possible alt fun modes from @GPIO_Pin_Altfn_Modes*/
-
-
+	uint8_t GPIO_PORT;					/*Possible options: 0 - 9 for GPIO port */
 }GPIO_PinConfig_t;
 
-typedef struct{
-
+typedef struct
+{
 	GPIO_RegDef_t 		*pGPIOx; 			//Holds base address of the gpio port where pin belongs
 	GPIO_PinConfig_t 	GPIO_PinConfig; 	//Holds GPIO pin config settings
-
 }GPIO_Handle_t;
 
 /*****************Api's to support this driver*****************/
@@ -101,12 +111,12 @@ typedef struct{
  *
  */
 
-void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi);
+void GPIO_PeriClockControl(GPIO_PinConfig_t gpio, uint8_t EnorDi);
 
 /*
  *  Init - Deinit
  */
-void GPIO_Init(GPIO_Handle_t *pGPIOHandle);
+void GPIO_config(GPIO_Handle_t *pGPIOHandle);
 void GPIO_DeInit(GPIO_RegDef_t *pGPIOx);
 
 /*
@@ -117,6 +127,7 @@ uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx);
 void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx,uint8_t pinNumber, uint8_t value);
 void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx, uint16_t value);
 void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
+bool GPIO_Set_Pin_Mode(GPIO_Handle_t *gpiox);
 
 /*
  * IRQ Configuration and ISR handling
@@ -124,9 +135,6 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t pinNumber);
 void GPIO_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void GPIO_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void GPIO_IRQHandler(uint8_t pinNumber);
-
-
-
 
 
 #endif /* INC_STM32F407XX_GPIO_DRIVER_H_ */

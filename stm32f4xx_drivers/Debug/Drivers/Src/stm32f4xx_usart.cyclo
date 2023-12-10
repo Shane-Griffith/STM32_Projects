@@ -1,2 +1,6 @@
-stm32f4xx_usart.c:19:6:usart_peri_ctrl	8
-stm32f4xx_usart.c:51:6:usart_init	2
+../Drivers/Src/stm32f4xx_usart.c:20:6:usart_peri_ctrl	8
+../Drivers/Src/stm32f4xx_usart.c:57:6:usart_config	3
+../Drivers/Src/stm32f4xx_usart.c:87:6:enable_usart	2
+../Drivers/Src/stm32f4xx_usart.c:99:6:usart_tx_data	4
+../Drivers/Src/stm32f4xx_usart.c:129:6:usart_rx_data	3
+../Drivers/Src/stm32f4xx_usart.c:160:6:set_baud	1

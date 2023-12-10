@@ -63,6 +63,7 @@ typedef struct
 	uint8_t SPI_CPOL;				//@CPOL
 	uint8_t SPI_DEVICEMODE;			//@DEVICE_MODE
 	uint8_t SPI_DFF;
+	uint8_t SPI_PORT;
 
 }SPI_Config_t;
 
@@ -86,7 +87,7 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t enordi);
 void spi_enable_spe(SPI_RegDef_t *spix, bool enable);
 
 //Init & De-Init
-void SPI_Init(SPI_Handle_t* pSPIHandler, uint8_t rx_or_tx);
+void SPI_Config(SPI_Handle_t* pSPIHandler);
 
 void SPI_DeInit(SPI_RegDef_t *pSPIx);
 
@@ -103,6 +104,9 @@ void SPI_SSOEConfig(SPI_RegDef_t *pSpiX, bool enable);
 void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint8_t IRQPriority);
 void SPI_IRQHandler(SPI_Handle_t *pHandle);
-void SPI_busConfig(SPI_Handle_t *pHandle, uint8_t rx_or_tx);
+void SPI_busConfig(SPI_Handle_t *pHandle);
+
+extern SPI_Handle_t *spi_inst;
+
 
 #endif /* DRIVERS_INC_STM32F407XX_SPI_DRIVER_H_ */

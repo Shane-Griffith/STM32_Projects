@@ -1,2 +1,6 @@
-../Drivers/Src/stm32f4xx_usart.c:19:6:usart_peri_ctrl	16	static
-../Drivers/Src/stm32f4xx_usart.c:51:6:usart_init	16	static
+../Drivers/Src/stm32f4xx_usart.c:20:6:usart_peri_ctrl	16	static
+../Drivers/Src/stm32f4xx_usart.c:57:6:usart_config	16	static
+../Drivers/Src/stm32f4xx_usart.c:87:6:enable_usart	16	static
+../Drivers/Src/stm32f4xx_usart.c:99:6:usart_tx_data	8	static
+../Drivers/Src/stm32f4xx_usart.c:129:6:usart_rx_data	32	static
+../Drivers/Src/stm32f4xx_usart.c:160:6:set_baud	40	static

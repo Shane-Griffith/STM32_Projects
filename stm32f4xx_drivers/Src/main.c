@@ -16,91 +16,14 @@
  ******************************************************************************
  */
 
+#include "../inc/gps.h"
+
 #include <stdint.h>
 #include <stdio.h>
 #include <string.h>
-#include "stm32f4xx.h"
-#include "stm32f407xx_spi_driver.h"
-#include "stm32f407xx_gpio_driver.h"
-
-RCC_RegDef_t* rcc_inst = (RCC_RegDef_t*) RCC_BASEADDR;
-
-void delay(void)
-{
-	for(int i = 0; i < 500000; i++);
-}
-void spi_config(void)
-{
-	SPI_Handle_t SPIx = {0};
-	//configure pin for spi2
-	SPIx.pSPIx = SPI2;
-	SPIx.SPI_Config.BusConfig = SPI_CONFIG_FD;
-	SPIx.SPI_Config.SPI_CPOL = IDLE_LOW;
-	SPIx.SPI_Config.SPI_CPHA = LEADING_EDGE;
-	SPIx.SPI_Config.SPI_DEVICEMODE = SPI_MASTER;
-	SPIx.SPI_Config.SPI_SSM = SPI_HW_SSM;
-	SPIx.SPI_Config.SPI_DFF = DFF_8BIT;
-	SPIx.SPI_Config.SPI_Speed = DIVISOR_8;
-
-	SPI_Init(&SPIx, SPI_RX);
-	SPI_busConfig(&SPIx, SPI_TX);
-}
-
-void spi_pin_config(void)
-{
-	//setup MOSI pin
-	GPIO_Handle_t gpiox = {0};
-	gpiox.pGPIOx = GPIOB;
-	gpiox.GPIO_PinConfig.GPIO_PinAltFunMode = GPIO_AF5;
-	gpiox.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_ALTFN;
-	gpiox.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_15;
-	gpiox.GPIO_PinConfig.GPIO_PinPuPDcontrol = GPIO_NO_PUPD;
-	gpiox.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
-	gpiox.GPIO_PinConfig.GPIO_PinSpeed = GPIO_SPEED_HIGH;
-	GPIO_Init(&gpiox);
-
-	gpiox.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_13;
-	GPIO_Init(&gpiox);
-
-
-	gpiox.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_12;
-	GPIO_Init(&gpiox);
-
-}
-
-void user_button(void)
-{
-	GPIO_Handle_t pGPIOx = {0};
-
-	pGPIOx.pGPIOx = GPIOA;
-	//This line should do everything needed to enable interrupt in pgpio init
-	pGPIOx.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_INPUT;
-	pGPIOx.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_0;
-	pGPIOx.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_PP;
-	pGPIOx.GPIO_PinConfig.GPIO_PinSpeed = GPIO_NO_PUPD;
-
-	GPIO_Init(&pGPIOx);
-}
-
 
 
 int main(void)
 {
-	//data to send
-
-
-	spi_config();
-	spi_pin_config();
-	user_button();
-
-	SPI_SSOEConfig(SPI2, ENABLE);
-	while(1)
-	{
-		rcc_inst->AHB1ENR |= (1 << 15);
-		SPI1_PCLK_EN;
-
-
-	}
-
-
+	usart_init();
 }

@@ -1724,23 +1724,36 @@ void GPIO_IRQHandler(uint8_t pinNumber);
 #define STOP_2 0x2
 #define STOP_ONE_HALF 0x3
 
+
+#define RX_DEICE 0
+#define TX_DEVICE 1
+
+
+#define SYNCHRONOUS 0
+#define ASYNCHRONOUS 1
+
+
+#define DEVICE_RX 0
+#define DEVICE_TX 1
+
+
+
+
+
+
 typedef struct
 {
+ volatile uint32_t device_mode;
  volatile uint32_t baud_rate;
  volatile uint32_t word_length;
  volatile uint32_t stop_bits;
- volatile uint32_t dma_en;
- volatile uint32_t device_type;
  volatile uint32_t cpha;
  volatile uint32_t cpol;
  volatile uint32_t parity_ctrl;
  volatile uint32_t parity_type;
+ volatile uint32_t synchronous_mode;
 
- volatile uint32_t clock_en;
- volatile uint32_t tx_it_en;
- volatile uint32_t rx_it_en;
-
-}usart_config_t;
+} usart_config_t;
 
 typedef struct
 {
@@ -1750,18 +1763,20 @@ typedef struct
 }usart_handle_t;
 
 void usart_peri_ctrl(usart_handle_t *usartx, 
-# 106 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 3 4
+# 119 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 3 4
                                             _Bool 
-# 106 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h"
+# 119 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h"
                                                  enable);
-
 void usart_init(usart_handle_t *usartx);
-
+void get_message(usart_handle_t *uart, char *buffer, uint32_t buffer_size);
 void usart_deinit(usart_handle_t *usartx);
-
-void usart_tx_data(usart_regdef_t *usartx, uint16_t* tx_data, uint16_t data_size);
-
-void usart_rx_data(usart_regdef_t *usartx, uint16_t* tx_data, uint16_t data_size);
+void usart_send_data(usart_handle_t usartx, uint8_t *tx_data, uint8_t len);
+void usart_receive(usart_handle_t *usartx, uint8_t *tx_data, uint8_t data_size);
+void enable_uart(usart_regdef_t *usartx, 
+# 125 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h" 3 4
+                                        _Bool 
+# 125 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407_usart_driver.h"
+                                             enable);
 # 498 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f4xx.h" 2
 # 14 "D:/Repos/STM32_Projects/stm32f4xx_drivers/stm32f4xx_drivers/Drivers/Inc/stm32f407xx_SPI_driver.h" 2
 
@@ -2029,7 +2044,6 @@ _Bool
 # 169 "../Drivers/Src/stm32f407xx_SPI_driver.c"
     get_reg_value(uint32_t *address, uint32_t spi_register, uint8_t register_bit)
 {
-
  if(register_bit > 8)
  {
   return 0;
@@ -2038,25 +2052,25 @@ _Bool
  if(*(address + (sizeof(uint32_t) * spi_register)) & (1 << register_bit))
  {
   return 
-# 179 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 178 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
         1
-# 179 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 178 "../Drivers/Src/stm32f407xx_SPI_driver.c"
             ;
  }
  else
  {
   return 
-# 183 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 182 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
         0
-# 183 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 182 "../Drivers/Src/stm32f407xx_SPI_driver.c"
              ;
  }
 }
 
 void SPI_SSOEConfig(SPI_RegDef_t *pSPIx, 
-# 187 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 186 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
                                         _Bool 
-# 187 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 186 "../Drivers/Src/stm32f407xx_SPI_driver.c"
                                              enable)
 {
  if(enable)
@@ -2072,9 +2086,9 @@ void SPI_SSOEConfig(SPI_RegDef_t *pSPIx,
 }
 
 void spi_enable_spe(SPI_RegDef_t *spix, 
-# 201 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
+# 200 "../Drivers/Src/stm32f407xx_SPI_driver.c" 3 4
                                         _Bool 
-# 201 "../Drivers/Src/stm32f407xx_SPI_driver.c"
+# 200 "../Drivers/Src/stm32f407xx_SPI_driver.c"
                                              enable)
 {
  if(enable)
